@@ -81,4 +81,8 @@ extern SoftwareSerial HMISerial;
 Sketch | Bibliothek einbinden | Bibliotheken verwalten ..
 
 ### DHT sensor library by Ardafruit ###
-über Bibliotheksverwaltung installieren. 
+über Bibliotheksverwaltung installieren.
+
+### Adafruit Unified Sensor ###
+Bei neuster DHT-lib erforderlich
+`git clone https://github.com/adafruit/Adafruit_Sensor.git`
