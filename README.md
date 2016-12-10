@@ -42,22 +42,38 @@ Debug deaktivieren und Serial2 nach Serial anpassen
 
 https://github.com/itead/ITEADLIB_Arduino_Nextion#uno-like-mainboards
 
+
+SoftwareSeriel: https://www.reddit.com/r/arduino/comments/4b6jfi/nexconfigh_for_nextion_display_on_arduino_uno/
+
+C:\Users\<username>\Documents\Arduino\libraries\ITEADLIB_Arduino_Nextion\NexConfig.h
+
 ```
-//#define DEBUG_SERIAL_ENAB#define dbSerial SerialLE
-#define dbSerial Serial
-//#define nexSerial Serial
 /** 
-* activate SoftSerial 
-*/ 
-#include <SoftwareSerial.h> 
-extern SoftwareSerial HMISerial; 
+ * Define DEBUG_SERIAL_ENABLE to enable debug serial. 
+ * Comment it to disable debug serial. 
+ */
+//#define DEBUG_SERIAL_ENABLE
+
+/**
+ * Define dbSerial for the output of debug messages. 
+ */
+#define dbSerial Serial
+
+/**
+ * Define nexSerial for communicate with Nextion touch panel. 
+ */
+//#define nexSerial Serial
+
+/**
+ * activate SoftSerial
+ */
+#include <SoftwareSerial.h>
+extern SoftwareSerial HMISerial;
 #define nexSerial HMISerial
 ```
 
 ### SoftSerial ###
 `git clone https://github.com/plerup/espsoftwareserial.git`
-
-normal: https://www.reddit.com/r/arduino/comments/4b6jfi/nexconfigh_for_nextion_display_on_arduino_uno/
 
 ### elapsedMillis ###
 über Bibliotheksverwaltung installieren.
