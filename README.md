@@ -10,9 +10,9 @@ ESP2866com (weiß nicht mehr)
 
 Datei | Voreinstellungen | Zusätzliche Boardverwalter …
 
-Stabel: http://arduino.esp8266.com/stable/package_esp8266com_index.json
+Stabel (momentan nicht kompatibel >2.3.0): http://arduino.esp8266.com/stable/package_esp8266com_index.json
 
-Getestet: http://arduino.esp8266.com/stable/package_esp8266com_index.json
+erfolgreich getestet: https://github.com/esp8266/Arduino/releases/tag/2.2.0
 
 
 Werkzeuge | Board: [..] | Boardverwalter...
