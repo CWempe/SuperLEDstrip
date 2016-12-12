@@ -1,0 +1,35 @@
+# this is a Inkfile
+
+
+gui_00_background.png         gui.svg    -*   "+background" "+main" "+app bar"
+
+gui_01_specials.png           gui.svg    -*   "+background" "+main" "+app bar" "+tabs"   "+cells big" "+fab"     "+tiles" "+tile specials"
+gui_02_specials_pressed.png   gui.svg    -*   "+background" "+main" "+app bar" "+tabs"   "+cells big" "+fab"     "+tiles" "+tile specials"        "+pressed" "+pressed cells big"   "+pressed tabs" "+pressed fab"
+
+
+gui_03_signals.png            gui.svg    -*   "+background" "+main" "+app bar" "+tabs"   "+cells big" "+fab"     "+tiles" "+tile signal lights"
+gui_04_signals_pressed.png    gui.svg    -*   "+background" "+main" "+app bar" "+tabs"   "+cells big" "+fab"     "+tiles" "+tile signal lights"   "+pressed" "+pressed cells big"   "+pressed tabs" "+pressed fab"
+
+
+gui_05_flags.png              gui.svg    -*   "+background" "+main" "+app bar" "+tabs"   "+cells big" "+fab"     "+tiles" "+tile flags"
+gui_06_flags_pressed.png      gui.svg    -*   "+background" "+main" "+app bar" "+tabs"   "+cells big" "+fab"     "+tiles" "+tile flags"           "+pressed" "+pressed cells big"   "+pressed tabs" "+pressed fab"
+
+
+gui_07_clubs.png             gui.svg     -*   "+background" "+main" "+app bar" "+tabs"   "+cells big" "+fab"     "+tiles" "+tile clubs"
+gui_08_clubs_pressed.png     gui.svg     -*   "+background" "+main" "+app bar" "+tabs"   "+cells big" "+fab"     "+tiles" "+tile clubs"           "+pressed" "+pressed cells big"   "+pressed tabs" "+pressed fab"
+
+
+gui_09_colors.png            gui.svg     -*   "+background" "+main" "+app bar" "+tabs"   "+cells big" "+fab"     "+tiles" "+tile colors"
+gui_10_colors_pressed.png    gui.svg     -*   "+background" "+main" "+app bar" "+tabs"   "+cells big" "+fab"     "+tiles" "+tile colors"          "+pressed" "+pressed cells big"   "+pressed tabs" "+pressed fab"
+
+
+gui_11_tab06.png             gui.svg     -*   "+background" "+main" "+app bar" "+tabs"   "+cells big" "+fab"     "+tiles" "+tile 06"
+gui_12_tab06_pressed.png     gui.svg     -*   "+background" "+main" "+app bar" "+tabs"   "+cells big" "+fab"     "+tiles" "+tile 06"              "+pressed" "+pressed cells big"   "+pressed tabs" "+pressed fab"
+
+
+gui_13_tab07.png             gui.svg     -*   "+background" "+main" "+app bar" "+tabs"   "+cells big" "+fab"     "+tiles" "+tile 07"
+gui_14_tab07_pressed.png     gui.svg     -*   "+background" "+main" "+app bar" "+tabs"   "+cells big" "+fab"     "+tiles" "+tile 07"              "+pressed" "+pressed cells big"   "+pressed tabs" "+pressed fab"
+
+
+gui_15_settings.png           gui.svg    -*   "+background" "+main" "+app bar" "+tabs"   "+cells small" "+fab"   "+tiles" "+tile settings"
+gui_16_settings_pressed.png   gui.svg    -*   "+background" "+main" "+app bar" "+tabs"   "+cells small" "+fab"   "+tiles" "+tile settings"        "+pressed" "+pressed cells small" "+pressed tabs" "+pressed fab"
