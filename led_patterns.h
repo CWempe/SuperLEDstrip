@@ -1,7 +1,7 @@
 
 void oneColor()
 {
-  // nothing changes ofer time in this this color pattern
+  // nothing changes over time in this this color pattern
   fill_solid(leds, NUM_LEDS, baseColor1);
 }
 
@@ -307,5 +307,70 @@ void flashingLights()
     timeElapsed2 = 0;
   }
 
+}
+
+
+
+/*
+ *  christmas tree
+ *  based on https://gist.github.com/kriegsman/d0a5ed3c8f38c64adcb4837dafb6e690
+ */
+
+// Helper function that blends one uint8_t toward another by a given amount
+void nblendU8TowardU8( uint8_t& cur, const uint8_t target, uint8_t amount)
+{
+  if( cur == target) return;
+  
+  if( cur < target ) {
+    uint8_t delta = target - cur;
+    delta = scale8_video( delta, amount);
+    cur += delta;
+  } else {
+    uint8_t delta = cur - target;
+    delta = scale8_video( delta, amount);
+    cur -= delta;
+  }
+}
+
+// Blend one CRGB color toward another CRGB color by a given amount.
+// Blending is linear, and done in the RGB color space.
+// This function modifies 'cur' in place.
+CRGB fadeTowardColor( CRGB& cur, const CRGB& target, uint8_t amount)
+{
+  nblendU8TowardU8( cur.red,   target.red,   amount);
+  nblendU8TowardU8( cur.green, target.green, amount);
+  nblendU8TowardU8( cur.blue,  target.blue,  amount);
+  return cur;
+}
+
+// Fade an entire array of CRGBs toward a given background color by a given amount
+// This function modifies the pixel array in place.
+void fadeTowardColor( CRGB* L, uint16_t N, const CRGB& bgColor, uint8_t fadeAmount)
+{
+  for( uint16_t i = 0; i < N; i++) {
+    fadeTowardColor( L[i], bgColor, fadeAmount);
+  }
+}
+
+
+void xmas()
+{
+  //dark green background color for christmas tree
+  CRGB bgColor  = CHSV( HUE_GREEN, 255, 96);
+  
+  // fade all existing pixels toward bgColor by "1" (out of 255)
+  // remeber this gets called 120 (FRAMES_PER_SECOND) times per second
+  fadeTowardColor( leds, NUM_LEDS, bgColor, 1);
+
+  // periodically set random pixel to a highlight color
+  // one led per sesond (1000ms) for every meter
+  EVERY_N_MILLISECONDS( 1000 * LEDS_PER_METER / NUM_LEDS ) {
+    // set an array of possible highlight colors
+    CRGB highlightColor[] = {CRGB::Grey, CRGB::Red, CRGB::Yellow, CRGB::Blue, CRGB::Magenta};
+
+    // set highlight color for random led, except first and last led
+    uint16_t pos = random16( NUM_LEDS - 2 );
+    leds[ pos + 1 ] = highlightColor[random16(5)];
+  }
 }
 

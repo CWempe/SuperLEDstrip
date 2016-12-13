@@ -32,11 +32,12 @@ char  sHumid[10]    = "";
 /*
  * FastLED
  */
-#define DATA_PIN    D3
-#define NUM_LEDS    60
-#define LED_TYPE    WS2811
-#define COLOR_ORDER GRB
-#define DEFAULT_BRIGHTNESS  128
+#define DATA_PIN            D3
+#define NUM_LEDS           134
+#define LEDS_PER_METER      60
+#define LED_TYPE        WS2811
+#define COLOR_ORDER        GRB
+#define DEFAULT_BRIGHTNESS 128
 #define FRAMES_PER_SECOND  120
 
 CRGBArray<NUM_LEDS> leds;
@@ -107,8 +108,8 @@ void loopDHT()
 #include "led_patterns.h";
 
 typedef void (*SimplePatternList[])();
-//     Pattern IDs              0          1      2         3        4    5     6               7
-SimplePatternList gPatterns = { oneColor, stars, confetti, rainbow, bpm, kitt, flashingLights, runningPalette };
+//     Pattern IDs              0          1      2         3        4    5     6               7              8
+SimplePatternList gPatterns = { oneColor, stars, confetti, rainbow, bpm, kitt, flashingLights, runningPalette, xmas };
 
 
 // set brightness and save current value
@@ -137,7 +138,7 @@ void toggleBrightness()
 
 void setupFastLED()
 {
-  gCurrentPatternNumber = 3; // Index number of which pattern is current
+  gCurrentPatternNumber = 8; // Index number of which pattern is current; default is 3
   setBrightness(DEFAULT_BRIGHTNESS);
   FastLED.addLeds<LED_TYPE, DATA_PIN, COLOR_ORDER>(leds, NUM_LEDS);
 }
