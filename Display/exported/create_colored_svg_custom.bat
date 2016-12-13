@@ -6,7 +6,7 @@ SET XSLFILE=%WORKDIR%\xsl\variable_colors_dark.xsl
 SET ORIGINALXSLFILE=%WORKDIR%\xsl\original.xsl
 SET INPUTFILE=%WORKDIR%\display_matarial_design.svg
 SET OUTPUTPATH=%WORKDIR%\exported
-SET INKMATE=C:\Ruby23-x64\bin\inkmake.bat
+SET INKMATE=c:\tools\ruby23\bin\inkmake.bat
 SET STARTTIME=%TIME%
 
 cd %WORKDIR%
@@ -17,7 +17,7 @@ ECHO original ...
 %MSXSL% %INPUTFILE% %ORIGINALXSLFILE% -o %OUTPUTPATH%\original.svg
 
 
-call:SetColor  brown, lightgreen
+call:SetColor  dark, white
 EXIT
 
 FOR %%i IN (red pink purple deeppurple indigo blue lightblue cyan teal green lightgreen lime yellow amber orange deeporange brown grey bluegrey dark light) do (
