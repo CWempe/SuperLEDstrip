@@ -3,7 +3,7 @@
 #include <elapsedMillis.h>
 #include <DHT.h>
 #include <stdlib.h>
-#include "nextion_declaration.h";
+#include "nextion_declaration.h"
 FASTLED_USING_NAMESPACE
 
 // Master RX, TX, connect to Nextion TX, RX
@@ -105,7 +105,7 @@ void loopDHT()
  * ### FastLED Functions ###
  * #########################
  */
-#include "led_patterns.h";
+#include "led_patterns.h"
 
 typedef void (*SimplePatternList[])();
 //     Pattern IDs              0          1      2         3        4    5     6               7              8
@@ -160,9 +160,9 @@ void loopFastLED()
    ### Nextion Functions ###
    #########################
 */
-#include "nextion_registration.h";
-#include "nextion_callback_functions.h";
-#include "nextion_initialization.h";
+#include "nextion_registration.h"
+#include "nextion_callback_functions.h"
+#include "nextion_initialization.h"
 
 
 void setTextTitle()
