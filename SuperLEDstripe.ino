@@ -108,8 +108,8 @@ void loopDHT()
 #include "led_patterns.h"
 
 typedef void (*SimplePatternList[])();
-//     Pattern IDs              0          1      2         3        4    5     6               7              8
-SimplePatternList gPatterns = { oneColor, stars, confetti, rainbow, bpm, kitt, flashingLights, runningPalette, xmas };
+//     Pattern IDs              0          1      2         3        4    5     6               7              8     9
+SimplePatternList gPatterns = { oneColor, stars, confetti, rainbow, bpm, kitt, flashingLights, runningPalette, xmas, Fire2012 };
 
 
 // set brightness and save current value

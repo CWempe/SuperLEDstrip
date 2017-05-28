@@ -22,7 +22,7 @@ void p01c02PopCallback(void *ptr) { gCurrentPatternNumber = 1; }
 void p01c03PopCallback(void *ptr) { gCurrentPatternNumber = 2; }
 void p01c04PopCallback(void *ptr) { gCurrentPatternNumber = 4; }
 void p01c05PopCallback(void *ptr) { gCurrentPatternNumber = 8; }
-void p01c06PopCallback(void *ptr) { }
+void p01c06PopCallback(void *ptr) { gCurrentPatternNumber = 9; }
 void p01c07PopCallback(void *ptr) { }
 void p01c08PopCallback(void *ptr) { }
 // page 2
