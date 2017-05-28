@@ -4,6 +4,8 @@
 #include <DHT.h>
 #include <stdlib.h>
 #include "nextion_declaration.h"
+
+
 FASTLED_USING_NAMESPACE
 
 // Master RX, TX, connect to Nextion TX, RX
@@ -108,8 +110,8 @@ void loopDHT()
 #include "led_patterns.h"
 
 typedef void (*SimplePatternList[])();
-//     Pattern IDs              0          1      2         3        4    5     6               7              8     9
-SimplePatternList gPatterns = { oneColor, stars, confetti, rainbow, bpm, kitt, flashingLights, runningPalette, xmas, Fire2012 };
+//     Pattern IDs              0          1      2         3        4    5     6               7              8     9         10
+SimplePatternList gPatterns = { oneColor, stars, confetti, rainbow, bpm, kitt, flashingLights, runningPalette, xmas, Fire2012, arc_pulse };
 
 
 // set brightness and save current value
@@ -138,7 +140,7 @@ void toggleBrightness()
 
 void setupFastLED()
 {
-  gCurrentPatternNumber = 3; // Index number of which pattern is current; default is 3 (rainbow)
+  gCurrentPatternNumber = 10; // Index number of which pattern is current; default is 3 (rainbow)
   setBrightness(DEFAULT_BRIGHTNESS);
   FastLED.addLeds<LED_TYPE, DATA_PIN, COLOR_ORDER>(leds, NUM_LEDS);
 }
