@@ -83,19 +83,7 @@ uint8_t currentPatternIndex = 0;
 
 void arc_pulse() {
   shiftDown();
-
   fadeToBlackBy(leds, 1, 10);
-
-  EVERY_N_MILLISECONDS(1000)
-  {
-    leds[0] += CHSV( random8(255), 200, 255);
-  }
-
-//  for (uint8_t i = 0; i < buttonCount; i++) {
-//    if (buttons[i].fell()) {
-//      leds[0] += buttonColors[i];
-//    }
-//  }
 }
 
 //void add() {

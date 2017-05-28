@@ -7,8 +7,14 @@ void oneColor()
 
 void setupOneColor(CRGB color)
 {
-  baseColor1 = color;
-  gCurrentPatternNumber = 0;
+  // set firt LED to selected color when arcade pattern is active
+  if ( gCurrentPatternNumber >= 10 && gCurrentPatternNumber <= 10 ) {
+    leds[0] += color;
+  } else {
+    // else set the whole stripe in one color
+    baseColor1 = color;
+    gCurrentPatternNumber = 0;
+  }
 }
 
 
