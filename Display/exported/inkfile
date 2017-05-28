@@ -23,8 +23,8 @@ gui_09_colors.png            gui.svg     -*   "+background" "+main" "+app bar" "
 gui_10_colors_pressed.png    gui.svg     -*   "+background" "+main" "+app bar" "+tabs"   "+cells big" "+fab"     "+tiles" "+tile colors"          "+pressed" "+pressed cells big"   "+pressed tabs" "+pressed fab"
 
 
-gui_11_tab06.png             gui.svg     -*   "+background" "+main" "+app bar" "+tabs"   "+cells big" "+fab"     "+tiles" "+tile 06"
-gui_12_tab06_pressed.png     gui.svg     -*   "+background" "+main" "+app bar" "+tabs"   "+cells big" "+fab"     "+tiles" "+tile 06"              "+pressed" "+pressed cells big"   "+pressed tabs" "+pressed fab"
+gui_11_arcade.png            gui.svg     -*   "+background" "+main" "+app bar" "+tabs"   "+cells big" "+fab"     "+tiles" "+tile arcade"
+gui_12_arcade_pressed.png    gui.svg     -*   "+background" "+main" "+app bar" "+tabs"   "+cells big" "+fab"     "+tiles" "+tile arcade"          "+pressed" "+pressed cells big"   "+pressed tabs" "+pressed fab"
 
 
 gui_13_tab07.png             gui.svg     -*   "+background" "+main" "+app bar" "+tabs"   "+cells big" "+fab"     "+tiles" "+tile 07"
