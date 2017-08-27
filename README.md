@@ -35,11 +35,11 @@ The graphical layout is based on [Googles Material Design Guidelines](https://ma
     
 ### Software
 
+* You might need [**Git**](https://git-scm.com/download/win) to download some libraries  
+  In Windows (10) start `Git Bash` and change to the libraries directory.  
+  `cd ~/Documents/Arduino/libraries/`      
+  Here you can `git clone`some libraries if necessary.
 * [**Arduino IDE**](https://www.arduino.cc/en/Main/Software) (tested with v1.8.3)
-  * You might need [**Git**](https://git-scm.com/download/win) to download some libraries  
-    In Windows (10) start `Git Bash` and change to the libraries directory.  
-    `cd ~/Documents/Arduino/libraries/`      
-    Here you can `git clone`some libraries if necessary.
   * [**ESP8266 platform package**](https://github.com/esp8266/Arduino#installing-with-boards-manager) (tested with v2.3.0)  
      If you use an esp8266 device
   * libraries:
@@ -58,7 +58,6 @@ The graphical layout is based on [Googles Material Design Guidelines](https://ma
     * requires [Ruby](http://rubyinstaller.org/)
 * [**msxml**](https://www.microsoft.com/en-us/download/details.aspx?id=21714)  
    to automatically replace colors in the svg file before exporting to png
-* 
 
 ### Preparation
 
