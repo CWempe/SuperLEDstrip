@@ -15,7 +15,7 @@ The graphical layout is based on [Googles Material Design Guidelines](https://ma
   or any other LED strip that is [suported by FastLED](https://github.com/FastLED/FastLED#supported-led-chipsets)
    * It is recommended to use a **capacitor** to smooth out the power supply.  
       I used one with *1000 µF* and *16 V*.
-* **level shifter** from 5V to 3.3V  
+* **level shifter** from 3.3V to 5V  
   like [Texas Instruments SN74HCT245N](http://www.ti.com/lit/ds/symlink/sn74hct245.pdf)
   * a 20 pin **IC socket** for this chip is a good idea, too
 * [**DHT22**](https://www.aliexpress.com/wholesale?SearchText=dht22&opensearch=true)
