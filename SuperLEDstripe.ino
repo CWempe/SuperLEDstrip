@@ -4,44 +4,12 @@
 #include <DHT.h>
 #include <stdlib.h>
 #include "nextion_declaration.h"
-
-
-FASTLED_USING_NAMESPACE
-
-// Master RX, TX, connect to Nextion TX, RX
-SoftwareSerial HMISerial(D1, D2);
-
-char displayTitle[40] = "Klaas LED-Leiste";
+#include "custom_values.h"
 
 /*
- * DHT sensor
+ *  FastLED
  */
-#define DHT_DATA_PIN  D4
-#define DHT_POWER_PIN D0
-#define DHT_READ_INTERVAL 120   // Interval the sensor data is read
-#define DHT_WARMUP          5   // Time between power on and reading data
-#define DHT_TYPE DHT22          // Change this if you have a DHT11
-bool DHT_POWER_STATE;           // power state of DHT
-DHT dht(DHT_DATA_PIN, DHT_TYPE);
-elapsedMillis timeElapsedDHT;
-float OffsetTemp    = -0;
-float OffsetHumid   = 5;
-float fTemp         = 0;
-char  sTemp[10]     = "";
-float fHumid        = 0;
-char  sHumid[10]    = "";
-
-/*
- * FastLED
- */
-#define DATA_PIN            D3
-#define NUM_LEDS           134
-#define LEDS_PER_METER      60
-#define LED_TYPE        WS2811
-#define COLOR_ORDER        GRB
-#define DEFAULT_BRIGHTNESS 128
-#define FRAMES_PER_SECOND  120
-
+FASTLED_USING_NAMESPACE 
 CRGBArray<NUM_LEDS> leds;
 uint8_t gHue = 0; // rotating "base color" used by many of the patterns
 CRGB baseColor1 = CRGB::Blue;
@@ -49,13 +17,26 @@ CRGB baseColor2 = CRGB::Blue;
 CRGBPalette16 currentPalette;
 TBlendType    currentBlending;
 uint8_t currentBrightness = DEFAULT_BRIGHTNESS;
-bool lightOFF = false;
-
 uint8_t gCurrentPatternNumber; // Index number of which pattern is current
 uint8_t gLastPatternNumber = 255;
-
 elapsedMillis timeElapsed1;
 elapsedMillis timeElapsed2;
+
+/*
+ * Nextion display
+ */
+SoftwareSerial HMISerial(NEXTION_TX, NEXTION_RX);
+
+/*
+ * DHT sensor
+ */
+bool DHT_POWER_STATE;           // power state of DHT
+DHT dht(DHT_DATA_PIN, DHT_TYPE);
+elapsedMillis timeElapsedDHT;
+float fTemp         = 0;
+char  sTemp[10]     = "";
+float fHumid        = 0;
+char  sHumid[10]    = "";
 
 
 /*
@@ -84,11 +65,11 @@ void loopDHT()
   // When seonsor is on and warmup time is reached, then read data and power off
   if ( DHT_POWER_STATE && (timeElapsedDHT/1000) > DHT_WARMUP )
   {
-    fTemp = dht.readTemperature() + OffsetTemp;
+    fTemp = dht.readTemperature() + DHT_OFFSET_TEMP;
     dtostrf(fTemp, 4, 1, sTemp);
     sprintf(sTemp, "%s C", sTemp);
 
-    fHumid = dht.readHumidity() + OffsetHumid;
+    fHumid = dht.readHumidity() + DHT_OFFSET_HUMID;
     dtostrf(fHumid, 3, 0, sHumid);
     sprintf(sHumid, "%s %", sHumid);
     
@@ -169,8 +150,8 @@ void loopFastLED()
 
 void setTextTitle()
 {
-    title.setText(displayTitle);
-    p01title.setText(displayTitle);
+    title.setText(DISPLAY_TITLE);
+    p01title.setText(DISPLAY_TITLE);
 }
 
 void setTextTemp()

@@ -1,0 +1,55 @@
+/*
+ * This file contains all variables that may be defined different for each user.
+ * Make a copy of this file and name it "custom_values.h".
+ * Define your values as necessary.
+ * 
+ * Values you most likely will have to change or at least check for correctness:
+ *  - DISPLAY_TITLE
+ *  - NUM_LEDS
+ *  - LEDS_PER_METER
+ *  - LED_TYPE
+ *  - NEXTION_TX
+ *  - NEXTION_RX
+ *  - DHT_DATA_PIN
+ *  - DHT_POWER_PIN
+ */
+
+// Text that will be printed on the top left corner of the display
+#define DISPLAY_TITLE    "SuperLEDstripe"
+
+/*
+ * FastLED
+ */
+#define DATA_PIN            D3
+#define NUM_LEDS            30
+#define LEDS_PER_METER      60
+#define LED_TYPE        WS2811
+#define COLOR_ORDER        GRB
+#define DEFAULT_BRIGHTNESS 128
+#define FRAMES_PER_SECOND  120
+
+// Start with lights off?
+bool lightOFF = false;
+
+
+/*
+ * Nextion Display
+ */
+// Master RX, TX, connected to Nextion TX, RX
+#define NEXTION_TX          D1
+#define NEXTION_RX          D2
+
+
+/*
+ * DHT sensor
+ */
+#define DHT_DATA_PIN        D4
+#define DHT_POWER_PIN       D0   // DHT will pe turned off between reads to prevent heating itself
+#define DHT_READ_INTERVAL  120   // Interval the sensor data is read
+#define DHT_WARMUP           5   // Time between power on and reading data
+#define DHT_TYPE         DHT22   // Change this if you have a DHT11
+
+// define custom offsets is necessary
+#define DHT_OFFSET_TEMP      0   // can be nagativ and float (like -0.8)
+#define DHT_OFFSET_HUMID     0   // can be nagativ and float (like -0.8)
+
