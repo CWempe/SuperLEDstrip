@@ -159,7 +159,7 @@ To use other theme colors you can change these in line 20.
 call:SetColor  dark, white
 ```
 
-If you run `create_colored_svg.bat` the script will create **all possible color combinations according to [Googles material design color palette](https://material.io/guidelines/style/color.html#color-color-tool).
+If you run `create_colored_svg.bat` the script will create **all possible color combinations** according to [Googles material design color palette](https://material.io/guidelines/style/color.html#color-color-tool).
 It took my computer about **24 hours** to do this!
 
 After the graphics are exported you need to replace the old ones in the Nextion file.  
