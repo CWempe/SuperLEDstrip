@@ -103,7 +103,7 @@ see:
 
 First you need to combine the hardware components.
 
-![breadboard]
+![breadboard view][breadboard]
 
 There is also a pcb view in the `photos` folder if you want to build a pcb.
 
@@ -112,7 +112,7 @@ After you installed the libraries you define the parameters of your device befor
 
 Be aware to **not connect the LED stripe while the system is only powered by usb** via the Arduino, because this will put to much power through the Arduino. I recomment to disconnect the LED strip and the display while programming the Arduino.
 
-![Arduino_Wemos_config]
+![configure serial parameters for Wemos in Arduino][Arduino_Wemos_config]
 
 After this you copy the compiled HMI file (will be uploaded to the release page) to an FAT32 formatted microSD card, plug it into the display, and connect power to the display. This will automatically start the flashing of the firmware.
 
@@ -147,7 +147,7 @@ First you open the `Display\exported\display_matarial_design.svg` with Inkscape 
 Now you insert or create you new graphic (we will call it "tile" on top of the cell and group this with the object manager under the tile group of your choice (e.g. "tiles specials").
 This is necessary, because the export script will automatically mark the different tile groups as (in-)visible.
 
-![display_add_tile_inkscape]
+![add tile to graphics][display_add_tile_inkscape]
 
 In case you manually export the graphics you might want to change the theme colors and make the individual groups (in-)visible before each export.
 For each tile group (settings, flags, ...) you need two exports. One with the `pressed` group disabled and one with it enabled.
@@ -169,7 +169,7 @@ Each tabulator of the interface has two pictures within the Nextion file. One wi
 So for the first tab you need to replace pictures 1 and 2.
 Then you select the page (top right corner) and the tile you want the new pattern to be displayed at (here: `p01c07`) and change the attributes (bottem right) `picc` to `1` and `picc2` to `2`.
 
-![display_add_tile_nextion]
+![add tile to display][display_add_tile_nextion]
 
 Now you can see the result by clicking `Debug` or hit `Compile` to create a binary file. Put this file (*File | Open build folder*) in the root directory of your microSD card , put it into the display, connect power and wait while the new firmware is flashed.
 
