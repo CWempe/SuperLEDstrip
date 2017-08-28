@@ -177,5 +177,5 @@ Now you can see the result by clicking `Debug` or hit `Compile` to create a bina
 [breadboard]: photos/WeMos_LEDstrip_Nextion_DHT_bb.png
 [pcb]: photos/WeMos_LEDstrip_Nextion_DHT_pcb.png
 [Arduino_Wemos_config]: photos/Arduino_Wemos_config.png
-[display_add_tile_inkscape]: photos\display_add_tile_inkscape.png
-[display_add_tile_nextion]: photos\display_add_tile_nextion.png
+[display_add_tile_inkscape]: photos/display_add_tile_inkscape.png
+[display_add_tile_nextion]: photos/display_add_tile_nextion.png
