@@ -22,9 +22,11 @@ The graphical layout is based on [Googles Material Design Guidelines](https://ma
   to get current temperture and humidity  
   This is not necessary, but it is very cheap. So why not?
 * [**Nextion HMI touch screen**](https://nextion.itead.cc/)  
-  I used the 3.2" basic model ([NX4024T032](https://www.itead.cc/wiki/NX4024T032))  
-  * a few connectors to make it easier to (dis-)connect the display  
+  I used the 3.2" basic model ([NX4024T032](https://www.itead.cc/wiki/NX4024T032))    
+  You cannot simply use another size without putting much effort into resizing all graphics!
+  * a few **connectors** to make it easier to (dis-)connect the display  
     [XHP-4](http://www.jst-mfg.com/product/pdf/eng/eXH.pdf)  
+  * a **microSD** card to flash the firmware to the display
 * **Power supply** like [this](https://de.aliexpress.com/item/5V-LED-Power-Supply-1A-2A-3A-6A-8A-10A-Switching-Adapter-AC110-240V-AC-to/32810906485.html)
   * a suitable male adapter like [these](https://de.aliexpress.com/item/10-pair-Led-Light-Strip-connector-DC-male-to-DC-female-Plug-Jack-cctv-connect-Adapter/1672619063.html) (not tested)
 * **470Ω resistor**
@@ -42,13 +44,18 @@ The graphical layout is based on [Googles Material Design Guidelines](https://ma
 * [**Arduino IDE**](https://www.arduino.cc/en/Main/Software) (tested with v1.8.3)
   * [**ESP8266 platform package**](https://github.com/esp8266/Arduino#installing-with-boards-manager) (tested with v2.3.0)  
      If you use an esp8266 device
-  * libraries:
+  * Most libraries are availabe via the Library Manager in Arduino  
+    Some need to be downloaded manually (via git).
       * [**FastLED**](https://github.com/FastLED/FastLED) (tested with v3.1.6)
       * [**ITEADLIB\\_Arduino\\_Nextion**](https://github.com/itead/ITEADLIB_Arduino_Nextion#latestunstable) (tested with v0.9.0)
       * [**espsoftwareserial**](https://github.com/plerup/espsoftwareserial) (tested with v1.0)
       * [**elapsedMillis**](https://github.com/pfeerick/elapsedMillis) (tested with v1.0.4)
       * [**DHT sensor library**](https://github.com/adafruit/DHT-sensor-library) (tested with v1.3.0)
       * [**Adafruit Unified Sensor Driver**](https://github.com/adafruit/Adafruit_Sensor) (tested with v1.0.2)
+
+In case you want to edit the content of the display to use other theme colors or add/replace some LED patterns, you also need the following programs.  
+Only tested and used with Windows 10.
+
 * [**Nextion Editor**](https://nextion.itead.cc/resource/download/nextion-editor/)  
    This software is needed if you want to change the content of the display
 * [**Inkscape**](https://inkscape.org/download)  
@@ -64,7 +71,7 @@ The graphical layout is based on [Googles Material Design Guidelines](https://ma
 #### Nextion
 Before you can start to compile the project you need to make some changes to the Nextion library.
 
-Open the folling file with a text editor.  
+Open the following file with a text editor.  
 `C:\Users\<username>\Documents\Arduino\libraries\ITEADLIB_Arduino_Nextion\NexConfig.h`
 
 Disable debug by commenting it.
@@ -91,3 +98,84 @@ see:
 
 * https://github.com/itead/ITEADLIB_Arduino_Nextion#uno-like-mainboards
 * https://www.reddit.com/r/arduino/comments/4b6jfi/nexconfigh_for_nextion_display_on_arduino_uno/
+
+## Usage
+
+First you need to combine the hardware components.
+
+![breadboard]
+
+There is also a pcb view in the `photos` folder if you want to build a pcb.
+
+Next you need to compile and upload the Arduino sketch to your device.
+After you installed the libraries you define the parameters of your device before you can hit the upload button.
+
+Be aware to **not connect the LED stripe while the system is only powered by usb** via the Arduino, because this will put to much power through the Arduino. I recomment to disconnect the LED strip and the display while programming the Arduino.
+
+![Arduino_Wemos_config]
+
+After this you copy the compiled HMI file (will be uploaded to the release page) to an FAT32 formatted microSD card, plug it into the display, and connect power to the display. This will automatically start the flashing of the firmware.
+
+## Customizing
+
+Let's say you want to add an LED pattern you developed as the function `mynewpattern()`.
+
+First you need to add the pattern in `SuperLEDstripe.ino`.
+
+```
+//     Pattern IDs              0          1      2         3        4    5     6               7              8     9        10  
+SimplePatternList gPatterns = { oneColor, stars, confetti, rainbow, bpm, kitt, flashingLights, runningPalette, xmas, Fire2012,  mynewpattern};
+```
+
+While you are developing you might want to change the default pattern to be your new one.
+
+```
+void setupFastLED()
+{
+  gCurrentPatternNumber = 10;
+```
+
+To start the pattern from a cell (virtual button) from the display, you add the pattern to the according callback function in `nextion_callback_functions.h`.  
+Here it is `p01c07PopCallback` (p01 = page 1; c07 = cell 7).
+
+```
+void p01c07PopCallback(void *ptr) { gCurrentPatternNumber = 10; }
+```
+
+You also need to change the graphics of the display, if you add a new pattern.
+First you open the `Display\exported\display_matarial_design.svg` with Inkscape and enable the **object manger**.
+Now you insert or create you new graphic (we will call it "tile" on top of the cell and group this with the object manager under the tile group of your choice (e.g. "tiles specials").
+This is necessary, because the export script will automatically mark the different tile groups as (in-)visible.
+
+![display_add_tile_inkscape]
+
+In case you manually export the graphics you might want to change the theme colors and make the individual groups (in-)visible before each export.
+For each tile group (settings, flags, ...) you need two exports. One with the `pressed` group disabled and one with it enabled.
+
+The export script `Display\exported\create_colored_svg_custom.bat` will do all this automatically.
+To use other theme colors you can change these in line 20.
+
+```
+call:SetColor  dark, white
+```
+
+If you run `create_colored_svg.bat` the script will create **all possible color combinations according to [Googles material design color palette](https://material.io/guidelines/style/color.html#color-color-tool).
+It took my computer about **24 hours** to do this!
+
+After the graphics are exported you need to replace the old ones in the Nextion file.  
+Open `Display\400x240_black_white_light.HMI` with the Nextion Editor.
+
+Each tabulator of the interface has two pictures within the Nextion file. One with and one without 'pressed' objects.
+So for the first tab you need to replace pictures 1 and 2.
+Then you select the page (top right corner) and the tile you want the new pattern to be displayed at (here: `p01c07`) and change the attributes (bottem right) `picc` to `1` and `picc2` to `2`.
+
+![display_add_tile_nextion]
+
+Now you can see the result by clicking `Debug` or hit `Compile` to create a binary file. Put this file (*File | Open build folder*) in the root directory of your microSD card , put it into the display, connect power and wait while the new firmware is flashed.
+
+
+[breadboard]: photos/WeMos_LEDstrip_Nextion_DHT_bb.png
+[pcb]: photos/WeMos_LEDstrip_Nextion_DHT_pcb.png
+[Arduino_Wemos_config]: photos/Arduino_Wemos_config.png
+[display_add_tile_inkscape]: photos\display_add_tile_inkscape.png
+[display_add_tile_nextion]: photos\display_add_tile_nextion.png
