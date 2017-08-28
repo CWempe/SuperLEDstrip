@@ -105,7 +105,7 @@ First you need to combine the hardware components.
 
 ![breadboard view][breadboard]
 
-There is also a pcb view in the `photos` folder if you want to build a pcb.
+There is also a [pcb view][pcb] when you are done testing. (not tested!)
 
 Next you need to compile and upload the Arduino sketch to your device.
 After you installed the libraries you define the parameters of your device before you can hit the upload button.
