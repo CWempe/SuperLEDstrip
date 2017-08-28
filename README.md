@@ -1,4 +1,4 @@
-# SuperLEDstripe
+# SuperLEDstrip
 
 I started this project as a gift for my little cousin.
 The goal was to create an LED strip that could be controlled by a kid via touchscreen.

@@ -15,7 +15,7 @@
  */
 
 // Text that will be printed on the top left corner of the display
-#define DISPLAY_TITLE    "SuperLEDstripe"
+#define DISPLAY_TITLE    "SuperLEDstrip"
 
 /*
  * FastLED
