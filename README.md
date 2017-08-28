@@ -147,7 +147,7 @@ First you open the `Display\exported\display_matarial_design.svg` with Inkscape 
 Now you insert or create you new graphic (we will call it "tile" on top of the cell and group this with the object manager under the tile group of your choice (e.g. "tiles specials").
 This is necessary, because the export script will automatically mark the different tile groups as (in-)visible.
 
-![add tile to graphics][display_add_tile_inkscape]
+![add tile to graphics][add_tile_inkscape]
 
 In case you manually export the graphics you might want to change the theme colors and make the individual groups (in-)visible before each export.
 For each tile group (settings, flags, ...) you need two exports. One with the `pressed` group disabled and one with it enabled.
@@ -169,7 +169,7 @@ Each tabulator of the interface has two pictures within the Nextion file. One wi
 So for the first tab you need to replace pictures 1 and 2.
 Then you select the page (top right corner) and the tile you want the new pattern to be displayed at (here: `p01c07`) and change the attributes (bottem right) `picc` to `1` and `picc2` to `2`.
 
-![add tile to display][display_add_tile_nextion]
+![add tile to display][add_tile_nextion]
 
 Now you can see the result by clicking `Debug` or hit `Compile` to create a binary file. Put this file (*File | Open build folder*) in the root directory of your microSD card , put it into the display, connect power and wait while the new firmware is flashed.
 
@@ -177,5 +177,5 @@ Now you can see the result by clicking `Debug` or hit `Compile` to create a bina
 [breadboard]: photos/WeMos_LEDstrip_Nextion_DHT_bb.png
 [pcb]: photos/WeMos_LEDstrip_Nextion_DHT_pcb.png
 [Arduino_Wemos_config]: photos/Arduino_Wemos_config.png
-[display_add_tile_inkscape]: photos/display_add_tile_inkscape.png
-[display_add_tile_nextion]: photos/display_add_tile_nextion.png
+[add_tile_inkscape]: photos/add_tile_inkscape.png
+[add_tile_nextion]: photos/add_tile_nextion.png
