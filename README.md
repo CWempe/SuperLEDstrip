@@ -4,6 +4,8 @@ I started this project as a gift for my little cousin.
 The goal was to create an LED strip that could be controlled by a kid via touchscreen.
 The graphical layout is based on [Googles Material Design Guidelines](https://material.io/guidelines/material-design/introduction.html).
 
+[![SuperLEDstrip v1.0 ](http://img.youtube.com/vi/CBAr6hmqsu4/0.jpg)](http://www.youtube.com/watch?v=CBAr6hmqsu4)
+
 ## Requirements
 
 ### Hardware
