@@ -1,0 +1,16 @@
+#!/bin/bash
+
+FILENAME="SuperLEDstrip.ino.d1_mini.bin"
+SERVER_IP=192.168.1.25
+SERVER_PORT=9080
+
+echo "Description: "
+read DESCRIPTION
+
+echo ""
+echo "FILENAME: $FILENAME"
+echo "DESCRIPTION: $DESCRIPTION"
+echo "SERVER: $SERVER_IP:$SERVER_PORT"
+echo ""
+
+curl -F upload=@$FILENAME -F description="$DESCRIPTION" http://$SERVER_IP:$SERVER_PORT/upload
