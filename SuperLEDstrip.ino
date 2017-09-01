@@ -200,7 +200,7 @@ void setup(void)
   delay(1000);
   setupFastLED();
 
-  Homie_setFirmware("SuperLEDstrip", "1.1.0"); // The underscore is not a typo! See Magic bytes
+  Homie_setFirmware("SuperLEDstrip", "2.0.0"); // The underscore is not a typo! See Magic bytes
   
   // uncomment if you do not want to use wifi
   //Homie.setStandalone();
