@@ -54,6 +54,12 @@ The graphical layout is based on [Googles Material Design Guidelines](https://ma
       * [**elapsedMillis**](https://github.com/pfeerick/elapsedMillis) (tested with v1.0.4)
       * [**DHT sensor library**](https://github.com/adafruit/DHT-sensor-library) (tested with v1.3.0)
       * [**Adafruit Unified Sensor Driver**](https://github.com/adafruit/Adafruit_Sensor) (tested with v1.0.2)
+      * [**homie-esp8266**]([https://github.com/marvinroger/homie-esp8266](https://github.com/marvinroger/homie-esp8266)) (tested with v2.0.0-beta.1)  
+        Homie itself has some [dependencies](https://marvinroger.github.io/homie-esp8266/develop/quickstart/getting-started/#1a-for-the-arduino-ide):
+         * ArduinoJson (=>v5.0.8 [<v5.11](https://github.com/bblanchon/ArduinoJson/issues/541))
+         * Bouncer2
+         * ESPAsyncTCP( >= c8ed544)
+         * AsyncMqttClient
 
 In case you want to edit the content of the display to use other theme colors or add/replace some LED patterns, you also need the following programs.  
 Only tested and used with Windows 10.
