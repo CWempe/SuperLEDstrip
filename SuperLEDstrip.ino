@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include "nextion_declaration.h"
 #include "custom_values.h"
+#include <Homie.h>
 
 /*
  *  FastLED
@@ -199,6 +200,11 @@ void setup(void)
   delay(1000);
   setupFastLED();
 
+  Homie_setFirmware("SuperLEDstrip", "1.1.0"); // The underscore is not a typo! See Magic bytes
+  
+  // uncomment if you do not want to use wifi
+  //Homie.setStandalone();
+  Homie.setup();
 }
 
 void loop(void)
@@ -215,6 +221,8 @@ void loop(void)
   }
 
   loopDHT();
+
+  Homie.loop();
 
 }
 
