@@ -182,6 +182,16 @@ Then you select the page (top right corner) and the tile you want the new patter
 Now you can see the result by clicking `Debug` or hit `Compile` to create a binary file. Put this file (*File | Open build folder*) in the root directory of your microSD card , put it into the display, connect power and wait while the new firmware is flashed.
 
 
+## OTA-Update
+
+With the integration of homie-esp8266 there comes the ability to flash the firmware via wifi.
+
+* make sure the device is connected to your mqtt broker
+* install and configure the [homie-ota server](https://github.com/jpmens/homie-ota)
+* download the latest binary firmware release or compile it yourself with the Arduino IDE and select *Sketch | Export compiled Binary*
+* Upload the firmware via the web interface of homie-ota or with the `upload_firmware.sh` script
+* select firmware and device in the web interface and start the process
+
 [breadboard]: photos/WeMos_LEDstrip_Nextion_DHT_bb.png
 [pcb]: photos/WeMos_LEDstrip_Nextion_DHT_pcb.png
 [Arduino_Wemos_config]: photos/Arduino_Wemos_config.png
