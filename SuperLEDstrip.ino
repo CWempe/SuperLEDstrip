@@ -38,6 +38,8 @@ float fTemp         = 0;
 char  sTemp[10]     = "";
 float fHumid        = 0;
 char  sHumid[10]    = "";
+// Define HomieNode
+HomieNode temperatureNode("temperature", "temperature");
 
 
 /*
@@ -69,6 +71,7 @@ void loopDHT()
     fTemp = dht.readTemperature() + DHT_OFFSET_TEMP;
     dtostrf(fTemp, 4, 1, sTemp);
     sprintf(sTemp, "%s C", sTemp);
+    temperatureNode.setProperty("degrees").send(String(fTemp));
 
     fHumid = dht.readHumidity() + DHT_OFFSET_HUMID;
     dtostrf(fHumid, 3, 0, sHumid);
@@ -184,6 +187,22 @@ void updateTab()
 {
   setTextAll();
 }
+
+/*
+   #######################
+   ### Homie Functions ###
+   #######################
+ */
+
+void setupHandler() {
+  temperatureNode.setProperty("unit").send("°C");
+}
+
+void loopHandler() {
+  
+}
+
+
 /*
    ######################
    ### Main Functions ###
@@ -198,6 +217,9 @@ void setup(void)
   Homie_setFirmware("SuperLEDstrip", "2.0.0"); // The underscore is not a typo! See Magic bytes
   Homie.disableResetTrigger();                 // disable ResetTrigger, because it creates some problemes for me
   //Homie.setStandalone();                     // uncomment if you do not want to use wifi
+  Homie.setSetupFunction(setupHandler).setLoopFunction(loopHandler);
+  temperatureNode.advertise("unit");
+  temperatureNode.advertise("degrees");
   Homie.setup();
   
   NextionSetup();
