@@ -186,3 +186,4 @@ void NextionSetup()
     p08humid02.attachPop(p08humidPopCallback);
     dbSerialPrintln("setup done");
 }
+

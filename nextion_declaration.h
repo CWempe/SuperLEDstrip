@@ -183,3 +183,4 @@ NexButton p08c07      = NexButton(7, 16, "p08c07");
 NexButton p08c08      = NexButton(7, 17, "p08c08");
 NexText   p08temp02   = NexText(  7, 18, "p08temp02");
 NexText   p08humid02  = NexText(  7, 19, "p08humid02");
+

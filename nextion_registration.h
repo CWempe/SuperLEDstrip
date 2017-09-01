@@ -36,3 +36,4 @@ NexTouch *nex_listen_list[] =
     &p08temp02, &p08humid02,
     NULL
 };
+
