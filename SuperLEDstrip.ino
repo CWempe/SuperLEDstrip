@@ -195,16 +195,15 @@ void setup(void)
   
   setupDHT();
   
+  Homie_setFirmware("SuperLEDstrip", "2.0.0"); // The underscore is not a typo! See Magic bytes
+  Homie.disableResetTrigger();                 // disable ResetTrigger, because it creates some problemes for me
+  //Homie.setStandalone();                     // uncomment if you do not want to use wifi
+  Homie.setup();
+  
   NextionSetup();
   setTextTitle();
   delay(1000);
   setupFastLED();
-
-  Homie_setFirmware("SuperLEDstrip", "2.0.0"); // The underscore is not a typo! See Magic bytes
-  
-  // uncomment if you do not want to use wifi
-  //Homie.setStandalone();
-  Homie.setup();
 }
 
 void loop(void)
