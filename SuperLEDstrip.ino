@@ -38,8 +38,9 @@ float fTemp         = 0;
 char  sTemp[10]     = "";
 float fHumid        = 0;
 char  sHumid[10]    = "";
-// Define HomieNode
+// Define HomieNodes
 HomieNode temperatureNode("temperature", "temperature");
+HomieNode humidityNode("humidity", "humidity");
 
 
 /*
@@ -76,6 +77,7 @@ void loopDHT()
     fHumid = dht.readHumidity() + DHT_OFFSET_HUMID;
     dtostrf(fHumid, 3, 0, sHumid);
     sprintf(sHumid, "%s %", sHumid);
+    humidityNode.setProperty("percentage").send(String(fHumid));
     
     setTextAllSensors();
     
@@ -196,6 +198,7 @@ void updateTab()
 
 void setupHandler() {
   temperatureNode.setProperty("unit").send("°C");
+  humidityNode.setProperty("unit").send("%");
 }
 
 void loopHandler() {
@@ -220,6 +223,7 @@ void setup(void)
   Homie.setSetupFunction(setupHandler).setLoopFunction(loopHandler);
   temperatureNode.advertise("unit");
   temperatureNode.advertise("degrees");
+  humidityNode.advertise("percentage");
   Homie.setup();
   
   NextionSetup();
