@@ -25,7 +25,7 @@
 #define LEDS_PER_METER      60
 #define LED_TYPE        WS2811
 #define COLOR_ORDER        GRB
-#define DEFAULT_BRIGHTNESS 128
+#define DEFAULT_BRIGHTNESS  50
 #define FRAMES_PER_SECOND  120
 
 // Start with lights off?

@@ -172,9 +172,9 @@ void p08t05PopCallback(void *ptr) { updateTab(); }
 void p08t06PopCallback(void *ptr) { updateTab(); }
 void p08t07PopCallback(void *ptr) { updateTab(); }
 void p08c01PopCallback(void *ptr) { setBrightness(DEFAULT_BRIGHTNESS); }
-void p08c02PopCallback(void *ptr) { setBrightness(255); }
-void p08c03PopCallback(void *ptr) { setBrightness(170); }
-void p08c04PopCallback(void *ptr) { setBrightness(85); }
+void p08c02PopCallback(void *ptr) { setBrightness(100); }
+void p08c03PopCallback(void *ptr) { setBrightness(66); }
+void p08c04PopCallback(void *ptr) { setBrightness(33); }
 void p08c05PopCallback(void *ptr) { setTextTemp(); }
 void p08c06PopCallback(void *ptr) { setTextHumid(); }
 void p08c07PopCallback(void *ptr) { }

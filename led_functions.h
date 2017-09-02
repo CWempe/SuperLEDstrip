@@ -1,10 +1,11 @@
 
 
 // set brightness and save current value
+// newBrightness is percentage (0-100) and will be mapped to 0-255 for FastLED
 void setBrightness(uint8_t newBrightness)
 {
    currentBrightness = newBrightness;
-   FastLED.setBrightness(currentBrightness);
+   FastLED.setBrightness(map(currentBrightness, 0, 100, 0, 255));
    lightNode.setProperty("brightness").send(String(currentBrightness));
 }
 
@@ -14,7 +15,7 @@ void toggleBrightness()
   if (lightON == false)
   {
     // When light is off switch back on to current brightness
-    FastLED.setBrightness(currentBrightness);
+    FastLED.setBrightness(map(currentBrightness, 0, 100, 0, 255));
     lightNode.setProperty("on").send("true");
     lightON = true;
   }
