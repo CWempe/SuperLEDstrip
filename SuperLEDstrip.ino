@@ -38,9 +38,13 @@ float fTemp         = 0;
 char  sTemp[10]     = "";
 float fHumid        = 0;
 char  sHumid[10]    = "";
-// Define HomieNodes
+
+/*
+ * define HomieNodes
+ */
 HomieNode temperatureNode("temperature", "temperature");
 HomieNode humidityNode("humidity", "humidity");
+HomieNode lightNode("light", "switch");
 
 
 /*
@@ -199,6 +203,18 @@ void updateTab()
 void setupHandler() {
   temperatureNode.setProperty("unit").send("°C");
   humidityNode.setProperty("unit").send("%");
+  
+}
+
+bool lightOnHandler(const HomieRange& range, const String& value) {
+  if (value != "true" && value != "false") return false;
+
+  bool on = (value == "true");
+  FastLED.setBrightness(on ? currentBrightness : 0);
+  lightNode.setProperty("on").send(value);
+  Homie.getLogger() << "Light is " << (on ? "on" : "off") << endl;
+
+  return true;
 }
 
 void loopHandler() {
@@ -224,6 +240,7 @@ void setup(void)
   temperatureNode.advertise("unit");
   temperatureNode.advertise("degrees");
   humidityNode.advertise("percentage");
+  lightNode.advertise("on").settable(lightOnHandler);
   Homie.setup();
   
   NextionSetup();
