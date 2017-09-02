@@ -9,6 +9,11 @@ void setBrightness(uint8_t newBrightness)
    lightNode.setProperty("brightness").send(String(currentBrightness));
 }
 
+void setTempo(uint8_t tempo) {
+  BeatsPerMinute = tempo;
+  lightNode.setProperty("tempo").send(String(BeatsPerMinute));
+}
+
 // toggle brightness between 0 and current
 void toggleBrightness()
 {

@@ -105,6 +105,11 @@ bool lightSceneHandler(const HomieRange& range, const String& value) {
   return true;
 }
 
+bool lightTempoHandler(const HomieRange& range, const String& value) {
+  setTempo(value.toInt());
+  return true;
+}
+
 
 
 bool lightOnHandler(const HomieRange& range, const String& value) {
@@ -151,9 +156,11 @@ void setup(void)
   lightNode.advertise("on").settable(lightOnHandler);
   lightNode.advertise("brightness").settable(lightBrightnessHandler);
   lightNode.advertise("scene").settable(lightSceneHandler);
+  lightNode.advertise("tempo").settable(lightTempoHandler);
   Homie.setGlobalInputHandler(globalInputHandler);
   Homie.setup();
   
+  setTempo(BeatsPerMinute);
   NextionSetup();
   setTextTitle();
   delay(1000);
