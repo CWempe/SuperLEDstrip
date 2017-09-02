@@ -117,17 +117,19 @@ void setBrightness(uint8_t newBrightness)
 // toggle brightness between 0 and current
 void toggleBrightness()
 {
-  if (lightOFF == true)
+  if (lightON == false)
   {
     // When light is off switch back on to current brightness
-    lightNode.setProperty("on/set").send("true");
-    lightOFF = false;
+    FastLED.setBrightness(currentBrightness);
+    lightNode.setProperty("on").send("true");
+    lightON = true;
   }
   else
   {
-    // else set brightness to 0 and lightOFF to true
-    lightNode.setProperty("on/set").send("false");
-    lightOFF = true;
+    // else set brightness to 0 and lightON to true
+    FastLED.setBrightness(0);
+    lightNode.setProperty("on").send("false");
+    lightON = false;
   }  
 }
 
@@ -222,7 +224,7 @@ bool lightOnHandler(const HomieRange& range, const String& value) {
   bool on = (value == "true");
   FastLED.setBrightness(on ? currentBrightness : 0);
   lightNode.setProperty("on").send(value);
-  lightOFF = (value == "false");
+  lightON = (value == "true");
   Homie.getLogger() << "Light is " << (on ? "on" : "off") << endl;
 
   return true;
