@@ -1,0 +1,36 @@
+sitemap superledstrip label="SuperLEDstrip"
+{
+    Frame label="Strip1" {
+        Text        item=sLED_signal
+        Text        item=sLED_uptime
+        Switch      item=sLED_light
+        Slider      item=sLED_brightness
+        Selection   item=sLED_scene    mappings=[ 101='rainbow',
+                                                  102='stars',
+                                                  103='confetti',
+                                                  104='bpm',
+                                                  105='xmas',
+                                                  106='fire',
+                                                  201='german police',
+                                                  202='american police',
+                                                  203='orange flashing lights',
+                                                  204='kitt',
+                                                  301='german flag',
+                                                  302='italian flag',
+                                                  303='brazilian flag',
+                                                  401='BVB',
+                                                  402='FC Bayern Munich',
+                                                  403='Werder Bremen',
+                                                  404='1860 Munich',
+                                                  501='white',
+                                                  502='warm white',
+                                                  503='red',
+                                                  504='green',
+                                                  505='blue',
+                                                  506='magenta',
+                                                  507='cyan',
+                                                  508='yellow' ]
+        Text        item=sLED_temp
+        Text        item=sLED_humid
+    }
+}

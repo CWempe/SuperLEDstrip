@@ -192,8 +192,18 @@ With the integration of homie-esp8266 there comes the ability to flash the firmw
 * Upload the firmware via the web interface of homie-ota or with the `upload_firmware.sh` script
 * select firmware and device in the web interface and start the process
 
+## openHAB
+
+Once you got your device connected to your mqtt broker you can configure your smart home (in this case [openHAB](http://www.openhab.org/)) to control SuperLEDstrip.
+
+![openhab_sitemap]
+
+You can find configuration examples in the `openhab` folder.
+
+
 [breadboard]: photos/WeMos_LEDstrip_Nextion_DHT_bb.png
 [pcb]: photos/WeMos_LEDstrip_Nextion_DHT_pcb.png
 [Arduino_Wemos_config]: photos/Arduino_Wemos_config.png
 [add_tile_inkscape]: photos/add_tile_inkscape.png
 [add_tile_nextion]: photos/add_tile_nextion.png
+[openhab_sitemap]: photos/openhab_sitemap.png

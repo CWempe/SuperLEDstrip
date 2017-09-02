@@ -1,0 +1,11 @@
+/* SuperLEDstrip */
+Number sLED_signal     "Signal [%d %%]" <signal> { mqtt="<[mosquitto:homie/5ccf7f15b638/$stats/signal:state:default]"}
+Number sLED_uptime     "Uptime [%d s]"  <clock>  { mqtt="<[mosquitto:homie/5ccf7f15b638/$stats/uptime:state:default]"}
+
+
+Switch sLED_light      "Light"           <light> { mqtt="<[mosquitto:homie/5ccf7f15b638/light/on:state:ON:true], <[mosquitto:homie/5ccf7f15b638/light/on:state:OFF:false], >[mosquitto:homie/5ccf7f15b638/light/on/set:command:ON:true], >[mosquitto:homie/5ccf7f15b638/light/on/set:command:OFF:false]" }
+Dimmer sLED_brightness "Brightness [%d]" <light> { mqtt="<[mosquitto:homie/5ccf7f15b638/light/brightness:state:default], >[mosquitto:homie/5ccf7f15b638/light/brightness/set:command:*:default]" }
+Number sLED_scene      "Scene"           <colorwheel> { mqtt="<[mosquitto:homie/5ccf7f15b638/light/scene:state:default], >[mosquitto:homie/5ccf7f15b638/light/scene/set:command:*:default]" }
+
+Number sLED_temp       "Temperatur [%.1f °C]" <temperature> { mqtt="<[mosquitto:homie/5ccf7f15b638/temperature/degrees:state:default]"}
+Number sLED_humid      "Humidity [%.1f %%]"   <humidity>    { mqtt="<[mosquitto:homie/5ccf7f15b638/humidity/percentage:state:default]"}
