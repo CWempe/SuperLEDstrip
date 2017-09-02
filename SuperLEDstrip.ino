@@ -218,6 +218,12 @@ bool lightOnHandler(const HomieRange& range, const String& value) {
   return true;
 }
 
+bool globalInputHandler(const HomieNode& node, const String& property, const HomieRange& range, const String& value) {
+  Homie.getLogger() << "Received on node " << node.getId() << ": " << property << " = " << value << endl;
+  
+  return false;
+}
+
 void loopHandler() {
   
 }
@@ -242,6 +248,7 @@ void setup(void)
   temperatureNode.advertise("degrees");
   humidityNode.advertise("percentage");
   lightNode.advertise("on").settable(lightOnHandler);
+  Homie.setGlobalInputHandler(globalInputHandler);
   Homie.setup();
   
   NextionSetup();
