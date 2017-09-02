@@ -3,7 +3,6 @@
 #include <elapsedMillis.h>
 #include <DHT.h>
 #include <stdlib.h>
-#include "nextion_declaration.h"
 #include "custom_values.h"
 #include <Homie.h>
 
@@ -13,6 +12,14 @@
 void setTextAllSensors(void);
 void Fire2012(void);
 void arc_pulse(void);
+
+void updateTab(void);
+void setTextAll(void);
+void setTextAllSensors(void);
+void setTextHumid(void);
+void setTextTemp(void);
+void setTextTitle(void);
+
 
 /*
  *  FastLED
@@ -60,51 +67,7 @@ typedef void (*SimplePatternList[])();
 //     Pattern IDs              0          1      2         3        4    5     6               7              8     9         10
 SimplePatternList gPatterns = { oneColor, stars, confetti, rainbow, bpm, kitt, flashingLights, runningPalette, xmas, Fire2012, arc_pulse };
 
-
-// set brightness and save current value
-void setBrightness(uint8_t newBrightness)
-{
-   currentBrightness = newBrightness;
-   FastLED.setBrightness(currentBrightness);
-   lightNode.setProperty("brightness").send(String(currentBrightness));
-}
-
-// toggle brightness between 0 and current
-void toggleBrightness()
-{
-  if (lightON == false)
-  {
-    // When light is off switch back on to current brightness
-    FastLED.setBrightness(currentBrightness);
-    lightNode.setProperty("on").send("true");
-    lightON = true;
-  }
-  else
-  {
-    // else set brightness to 0 and lightON to true
-    FastLED.setBrightness(0);
-    lightNode.setProperty("on").send("false");
-    lightON = false;
-  }  
-}
-
-void setupFastLED()
-{
-  gCurrentPatternNumber = 3; // Index number of which pattern is current; default is 3 (rainbow)
-  setBrightness(DEFAULT_BRIGHTNESS);
-  FastLED.addLeds<LED_TYPE, DATA_PIN, COLOR_ORDER>(leds, NUM_LEDS);
-}
-
-void loopFastLED()
-{
-  if ( gLastPatternNumber != gCurrentPatternNumber) {
-    leds(0, NUM_LEDS - 1) = CRGB::Black;
-    gLastPatternNumber = gCurrentPatternNumber;
-  }
-  gPatterns[gCurrentPatternNumber]();
-  FastLED.show();
-}
-
+#include "led_functions.h"
 
 
 /*
@@ -112,46 +75,13 @@ void loopFastLED()
    ### Nextion Functions ###
    #########################
 */
+
+#include "nextion_declaration.h"
 #include "nextion_registration.h"
 #include "nextion_callback_functions.h"
 #include "nextion_initialization.h"
+#include "nextion_functions.h"
 
-
-void setTextTitle()
-{
-    title.setText(DISPLAY_TITLE);
-    p01title.setText(DISPLAY_TITLE);
-}
-
-void setTextTemp()
-{
-    temp.setText(sTemp);
-    p08temp02.setText(sTemp);
-}
-
-void setTextHumid()
-{
-    humid.setText(sHumid);
-    p08humid02.setText(sHumid);
-}
-
-void setTextAllSensors()
-{
-    setTextTemp();
-    setTextHumid();
-}
-
-void setTextAll()
-{
-    //setTextTitle();
-    //setTextTemp();
-    //setTextHumid();
-}
-
-void updateTab()
-{
-  setTextAll();
-}
 
 /*
    #######################
