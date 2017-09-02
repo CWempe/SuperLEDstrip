@@ -45,6 +45,7 @@ char  sHumid[10]    = "";
 HomieNode temperatureNode("temperature", "temperature");
 HomieNode humidityNode("humidity", "humidity");
 HomieNode lightNode("light", "switch");
+//HomieNode lightNode("brightness", "brightness");
 
 
 /*
@@ -110,6 +111,7 @@ void setBrightness(uint8_t newBrightness)
 {
    currentBrightness = newBrightness;
    FastLED.setBrightness(currentBrightness);
+   lightNode.setProperty("brightness").send(String(currentBrightness));
 }
 
 // toggle brightness between 0 and current
@@ -206,6 +208,14 @@ void setupHandler() {
   
 }
 
+bool lightBrightnessHandler(const HomieRange& range, const String& value) {
+  Homie.getLogger() << "Brightness is " << value << endl;
+  setBrightness(value.toInt());
+  return true;
+}
+
+
+
 bool lightOnHandler(const HomieRange& range, const String& value) {
   if (value != "true" && value != "false") return false;
 
@@ -248,6 +258,7 @@ void setup(void)
   temperatureNode.advertise("degrees");
   humidityNode.advertise("percentage");
   lightNode.advertise("on").settable(lightOnHandler);
+  lightNode.advertise("brightness").settable(lightBrightnessHandler);
   Homie.setGlobalInputHandler(globalInputHandler);
   Homie.setup();
   
