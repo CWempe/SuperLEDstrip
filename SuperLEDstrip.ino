@@ -49,7 +49,6 @@ SoftwareSerial HMISerial(NEXTION_TX, NEXTION_RX);
 HomieNode temperatureNode("temperature", "temperature");
 HomieNode humidityNode("humidity", "humidity");
 HomieNode lightNode("light", "switch");
-//HomieNode lightNode("brightness", "brightness");
 
 
 #include "dht.h"
@@ -101,6 +100,11 @@ bool lightBrightnessHandler(const HomieRange& range, const String& value) {
   return true;
 }
 
+bool lightSceneHandler(const HomieRange& range, const String& value) {
+  setScene(value.toInt());
+  return true;
+}
+
 
 
 bool lightOnHandler(const HomieRange& range, const String& value) {
@@ -146,6 +150,7 @@ void setup(void)
   humidityNode.advertise("percentage");
   lightNode.advertise("on").settable(lightOnHandler);
   lightNode.advertise("brightness").settable(lightBrightnessHandler);
+  lightNode.advertise("scene").settable(lightSceneHandler);
   Homie.setGlobalInputHandler(globalInputHandler);
   Homie.setup();
   
