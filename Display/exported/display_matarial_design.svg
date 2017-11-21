@@ -15,7 +15,7 @@
    version="1.1"
    pencil:version="1.2.2"
    sodipodi:docname="display_matarial_design.svg"
-   inkscape:version="0.92.1 r15371"
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
    inkscape:export-filename="\\qnap\home\Projekte\LED-Leiste für Klaas\Display\exported\display_matarial_design_017_dark_clubs_p.png"
    inkscape:export-xdpi="90"
    inkscape:export-ydpi="90">
@@ -1261,6 +1261,22 @@
          x="124.34293"
          y="22.103678" />
     </clipPath>
+    <pattern
+       y="0"
+       x="0"
+       height="6"
+       width="6"
+       patternUnits="userSpaceOnUse"
+       id="EMFhbasepattern" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath846">
+      <path
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.01px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="M 0,6 9,0 v 6 z"
+         id="path848"
+         inkscape:connector-curvature="0" />
+    </clipPath>
   </defs>
   <sodipodi:namedview
      pagecolor="#ffffff"
@@ -1291,13 +1307,13 @@
      guideopacity="0.49803922"
      guidehicolor="#16ff00"
      guidehiopacity="0.49803922"
-     inkscape:zoom="3.2575"
-     inkscape:cx="204.09443"
-     inkscape:cy="109.42081"
+     inkscape:zoom="2.3034003"
+     inkscape:cx="135.70721"
+     inkscape:cy="81.332794"
      inkscape:window-x="1912"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="tile_06">
+     inkscape:current-layer="tile_flags">
     <sodipodi:guide
        position="4,226.64633"
        orientation="1,0"
@@ -1643,7 +1659,8 @@
        xlink:href="#tile_big"
        id="use5296"
        width="100%"
-       height="100%" />
+       height="100%"
+       transform="translate(0,-2.2999953)" />
     <use
        x="0"
        y="0"
@@ -4251,55 +4268,26 @@
        inkscape:groupmode="layer"
        id="tile_flags"
        inkscape:label="tile flags"
-       style="display:none">
+       style="display:inline">
       <g
-         id="germany">
-        <rect
-           x="4"
-           y="122.4"
-           width="77.999992"
-           height="15.600001"
-           style="fill:#ffe600;fill-rule:evenodd;stroke-width:1.00000003pt"
-           id="rect171" />
-        <rect
-           x="4"
-           y="91.199997"
-           width="77.999992"
-           height="15.600001"
-           style="fill-rule:evenodd;stroke-width:1.00000003pt"
-           id="rect256" />
-        <rect
-           x="4"
-           y="106.8"
-           width="77.999992"
-           height="15.600001"
-           style="fill:#ff0000;fill-rule:evenodd;stroke-width:1.00000003pt"
-           id="rect255" />
-      </g>
-      <g
-         transform="matrix(0.026,0,0,0.026,4,171)"
-         id="italy">
-        <rect
-           style="fill:#009145"
-           x="0"
-           y="0"
-           width="1010"
-           height="2000"
-           id="rect5229" />
-        <rect
-           style="fill:#f8f8f8"
-           x="1000"
-           y="0"
-           width="1010"
-           height="2000"
-           id="rect5231" />
-        <rect
-           style="fill:#cf2b38"
-           x="2000"
-           y="0"
-           width="1000"
-           height="2000"
-           id="rect5233" />
+         id="g1638"
+         inkscape:label="sweden"
+         transform="translate(-25.875,-127.375)">
+        <path
+           inkscape:connector-curvature="0"
+           style="fill:#006aa7;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.04875036"
+           d="m 111.875,300 h 78 v 48.75 h -78 z"
+           id="path1619" />
+        <path
+           inkscape:connector-curvature="0"
+           style="fill:#fecc00;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.04875036"
+           d="M 136.25,300 H 146 v 48.75 h -9.75 z"
+           id="path1621" />
+        <path
+           inkscape:connector-curvature="0"
+           style="fill:#fecc00;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.04875036"
+           d="m 111.875,319.5 h 78 v 9.75 h -78 z"
+           id="path1623" />
       </g>
       <g
          id="brazil"
@@ -4643,6 +4631,86 @@
            xlink:href="#star5"
            y="575" />
       </g>
+      <g
+         transform="matrix(0.026,0,0,0.026,4,171)"
+         id="italy">
+        <rect
+           style="fill:#009145"
+           x="0"
+           y="0"
+           width="1010"
+           height="2000"
+           id="rect5229" />
+        <rect
+           style="fill:#f8f8f8"
+           x="1000"
+           y="0"
+           width="1010"
+           height="2000"
+           id="rect5231" />
+        <rect
+           style="fill:#cf2b38"
+           x="2000"
+           y="0"
+           width="1000"
+           height="2000"
+           id="rect5233" />
+      </g>
+      <g
+         id="g1712"
+         inkscape:label="belgium_germany"
+         transform="matrix(0.86666675,0,0,0.86666675,10.933333,21.966657)">
+        <g
+           transform="matrix(0.17333333,0,0,0.17333333,-7.999999,76)"
+           inkscape:label="belgium"
+           id="g824">
+          <rect
+             style="fill:#ed2939"
+             y="0"
+             x="0"
+             width="450"
+             height="300"
+             id="rect2-9" />
+          <rect
+             style="fill:#fae042"
+             y="0"
+             x="0"
+             width="300"
+             height="300"
+             id="rect4-0" />
+          <rect
+             style="fill:#000000"
+             y="0"
+             x="0"
+             width="150"
+             height="300"
+             id="rect6-8" />
+        </g>
+        <g
+           id="germany">
+          <rect
+             id="rect171"
+             style="fill:#ffe600;fill-rule:evenodd;stroke-width:1.00000003pt"
+             height="15.600001"
+             width="77.999992"
+             y="122.4"
+             x="4" />
+          <rect
+             id="rect256"
+             style="fill-rule:evenodd;stroke-width:1.00000003pt"
+             height="15.600001"
+             width="77.999992"
+             y="91.199997"
+             x="4" />
+          <rect
+             id="rect255"
+             style="fill:#ff0000;fill-rule:evenodd;stroke-width:1.00000003pt"
+             height="15.600001"
+             width="77.999992"
+             y="106.8"
+             x="4" />
+        </g>
+      </g>
       <rect
          style="display:inline;opacity:1;fill:url(#tab_indicator);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:354.33071899;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          id="tab_flags_active"
@@ -4651,6 +4719,114 @@
          x="100"
          y="70"
          inkscape:label="tab flags active" />
+      <g
+         id="g858"
+         inkscape:label="france_netherland"
+         transform="matrix(0.07120523,0,0,0.07120523,168,168.43661)">
+        <g
+           inkscape:label="france"
+           id="g843">
+          <rect
+             style="fill:#ed2939"
+             y="0"
+             x="0"
+             width="900"
+             height="600"
+             id="rect2" />
+          <rect
+             style="fill:#ffffff"
+             y="0"
+             x="0"
+             width="600"
+             height="600"
+             id="rect4" />
+          <rect
+             style="fill:#002395"
+             y="0"
+             x="0"
+             width="300"
+             height="600"
+             id="rect6" />
+        </g>
+        <g
+           inkscape:label="netherland"
+           id="g848">
+          <path
+             id="path824-3"
+             d="M 195.43191,202.28793 H 1095.4252 V 802.28349 H 195.43191 Z"
+             style="fill:#21468b;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             inkscape:connector-curvature="0" />
+          <path
+             id="path826-6"
+             d="M 195.43191,202.28793 H 1095.4252 V 602.28497 H 195.43191 Z"
+             style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             inkscape:connector-curvature="0" />
+          <path
+             id="path828"
+             d="M 195.43191,202.28793 H 1095.4252 V 402.28645 H 195.43191 Z"
+             style="fill:#ae1c28;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             inkscape:connector-curvature="0" />
+        </g>
+      </g>
+      <g
+         id="g1745"
+         inkscape:label="england_denmark"
+         transform="translate(-7.2786309,-12.661591)">
+        <g
+           transform="matrix(2.625789,0,0,2.625789,172.44184,129.4716)"
+           inkscape:label="denmark"
+           id="g836-1">
+          <rect
+             y="-11.107142"
+             x="1.0803572"
+             style="fill:#c60c30;stroke-width:0.03125"
+             height="17.5"
+             width="23.125"
+             id="rect2-8" />
+          <rect
+             y="-11.107142"
+             style="fill:#ffffff;stroke-width:0.03125"
+             height="17.5"
+             width="2.5"
+             x="8.5803576"
+             id="rect4-5" />
+          <rect
+             x="1.0803572"
+             style="fill:#ffffff;stroke-width:0.03125"
+             height="2.5"
+             width="23.125"
+             y="-3.6071429"
+             id="rect6-3" />
+        </g>
+        <g
+           transform="matrix(2.625789,0,0,2.625789,187.63391,115.02976)"
+           inkscape:label="england"
+           id="g842">
+          <rect
+             style="fill:#ffffff"
+             y="0"
+             x="0"
+             width="25"
+             height="15"
+             id="rect2-4" />
+          <g
+             id="g8"
+             style="fill:#cd202c">
+            <rect
+               width="3"
+               height="15"
+               x="11"
+               id="rect4-6"
+               y="0" />
+            <rect
+               width="25"
+               height="3"
+               y="6"
+               id="rect6-1"
+               x="0" />
+          </g>
+        </g>
+      </g>
     </g>
     <g
        inkscape:groupmode="layer"
@@ -4758,17 +4934,17 @@
              id="_94316080"
              style="fill-rule:evenodd"
              transform="matrix(3.543307e-5,0,0,3.543307e-5,9.091797e-6,3.428073e-4)"
-             points="15500000,3484100 15500000,2127950 14456200,905320 14076000,459500 13873800,459500 2131100,458480 1928810,458480 503250,2128320 503250,3484380 500000,17871800 1925560,19541500 3603860,19541500 12399400,19541200 14078000,19541200 15056800,18394600 15499400,17871400 " />
+             points="503250,3484380 500000,17871800 1925560,19541500 3603860,19541500 12399400,19541200 14078000,19541200 15056800,18394600 15499400,17871400 15500000,3484100 15500000,2127950 14456200,905320 14076000,459500 13873800,459500 2131100,458480 1928810,458480 503250,2128320 " />
           <polygon
              id="_95104984"
              style="fill:#000000;fill-opacity:1;fill-rule:evenodd"
              transform="matrix(3.543307e-5,0,0,3.543307e-5,9.091797e-6,3.428073e-4)"
-             points="15500000,3484100 15500000,2127950 14456200,905320 14076000,459500 13873800,459500 2131100,458480 1928810,458480 503250,2128320 503250,3484380 500000,17871800 1925560,19541500 3603860,19541500 12399400,19541200 14078000,19541200 15056800,18394600 15499400,17871400 " />
+             points="503250,3484380 500000,17871800 1925560,19541500 3603860,19541500 12399400,19541200 14078000,19541200 15056800,18394600 15499400,17871400 15500000,3484100 15500000,2127950 14456200,905320 14076000,459500 13873800,459500 2131100,458480 1928810,458480 503250,2128320 " />
           <polygon
              id="_97350032"
              style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd"
              transform="matrix(3.543307e-5,0,0,3.543307e-5,9.091797e-6,3.428073e-4)"
-             points="950000,3458180 950000,2285360 2134720,905600 2769360,904020 13868900,905320 15053500,2284710 15053200,3457810 15053900,17714500 13872200,19094100 12451500,19094100 3551730,19094500 2131100,19094500 946470,17714700 " />
+             points="950000,2285360 2134720,905600 2769360,904020 13868900,905320 15053500,2284710 15053200,3457810 15053900,17714500 13872200,19094100 12451500,19094100 3551730,19094500 2131100,19094500 946470,17714700 950000,3458180 " />
           <path
              id="_98178992"
              style="fill:#000000;fill-opacity:1;fill-rule:evenodd"
@@ -4872,7 +5048,7 @@
          inkscape:label="cell1" />
     </g>
     <g
-       style="display:inline"
+       style="display:none"
        inkscape:label="tile arcade"
        id="tile_06"
        inkscape:groupmode="layer">
