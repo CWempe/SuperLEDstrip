@@ -102,6 +102,7 @@ void setupPaletteWerder()
 
 
 // This function sets up a palette of the german flag.
+// also works for Belgium
 void setupPaletteGermany()
 {
   CRGB black  = CRGB::Black;
@@ -150,6 +151,54 @@ void setupPaletteBrazil()
                                  blue,  blue,  yellow,  yellow );
 }
 
+
+// This function sets up a palette of the swedish flag.
+void setupPaletteSweden()
+{
+  CRGB blue   = CRGB::Blue;
+  CRGB yellow = CRGB::Yellow;
+
+  gCurrentPatternNumber = 7;
+  currentBlending = NOBLEND;
+  currentPalette = CRGBPalette16(
+                                 blue, blue, blue,   blue,
+                                 yellow,  yellow,  yellow,  yellow,
+                                 blue, blue, blue,   blue,
+                                 yellow,  yellow,  yellow,  yellow );
+}
+
+
+// This function sets up a palette of the english flag.
+// also works for Denmark
+void setupPaletteEngland()
+{
+  CRGB white  = CRGB::Grey;
+  CRGB red    = CRGB::DarkRed;
+
+  gCurrentPatternNumber = 7;
+  currentBlending = NOBLEND;
+  currentPalette = CRGBPalette16(
+                                 white, white, white,   white,
+                                 red,  red,  red,  red,
+                                 white, white, white,   white,
+                                 red,  red,  red,  red );
+}
+
+// This function sets up a palette of the french flag.
+void setupPaletteFrance()
+{
+  CRGB blue   = CRGB::Blue;
+  CRGB white  = CRGB::Grey;
+  CRGB red    = CRGB::DarkRed;
+  
+  gCurrentPatternNumber = 7;
+  currentBlending = NOBLEND;
+  currentPalette = CRGBPalette16(
+                                 blue,  blue,  blue,   white,
+                                 white,    red,    red,  red,
+                                 blue, blue,  blue,   white,
+                                 white,    red,    red,  red );
+}
 
 void stars()
 {

@@ -64,9 +64,9 @@ void p03t07PopCallback(void *ptr) { updateTab(); }
 void p03c01PopCallback(void *ptr) { setScene(301); }
 void p03c02PopCallback(void *ptr) { setScene(302); }
 void p03c03PopCallback(void *ptr) { setScene(303); }
-void p03c04PopCallback(void *ptr) { }
-void p03c05PopCallback(void *ptr) { }
-void p03c06PopCallback(void *ptr) { }
+void p03c04PopCallback(void *ptr) { setScene(304); }
+void p03c05PopCallback(void *ptr) { setScene(305); }
+void p03c06PopCallback(void *ptr) { setScene(306); }
 void p03c07PopCallback(void *ptr) { }
 void p03c08PopCallback(void *ptr) { }
 // page 4

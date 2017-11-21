@@ -100,7 +100,7 @@ void setScene (uint16_t scene) {
       break;
       
     // page 3
-    case 301:   // german flag
+    case 301:   // german/beglium flag
       setupPaletteGermany();
       break;
     case 302:   // italian flag
@@ -108,6 +108,15 @@ void setScene (uint16_t scene) {
       break;
     case 303:   // brazilian flag
       setupPaletteBrazil();
+      break;
+    case 304:   // swedish flag
+      setupPaletteSweden();
+      break;
+    case 305:   // english/danish flag
+      setupPaletteEngland();
+      break;
+    case 306:   // french flag
+      setupPaletteFrance();
       break;
       
     // page 4
