@@ -12,6 +12,7 @@
 void setTextAllSensors(void);
 void Fire2012(void);
 void arc_pulse(void);
+void setScene(uint16_t scene);
 
 void updateTab(void);
 void setTextAll(void);
@@ -36,6 +37,7 @@ uint8_t gCurrentPatternNumber; // Index number of which pattern is current
 uint8_t gLastPatternNumber = 255;
 elapsedMillis timeElapsed1;
 elapsedMillis timeElapsed2;
+uint8_t BeatsPerMinute = DEFAULT_TEMPO;
 
 /*
  * Nextion display
@@ -146,7 +148,7 @@ void setup(void)
   
   setupDHT();
   
-  Homie_setFirmware("SuperLEDstrip", "2.0.0"); // The underscore is not a typo! See Magic bytes
+  Homie_setFirmware(HOMIE_FW_NAME, HOMIE_FW_VERSION); // The underscore is not a typo! See Magic bytes
   Homie.disableResetTrigger();                 // disable ResetTrigger, because it creates some problemes for me
   //Homie.setStandalone();                     // uncomment if you do not want to use wifi
   Homie.setSetupFunction(setupHandler).setLoopFunction(loopHandler);
@@ -161,6 +163,7 @@ void setup(void)
   Homie.setup();
   
   setTempo(BeatsPerMinute);
+  //setTempo(DEFAULT_TEMPO);
   NextionSetup();
   setTextTitle();
   delay(1000);
@@ -175,7 +178,7 @@ void loop(void)
     gHue++;  // slowly cycle the "base color" through the rainbow
   }
   // Call FastLED commands every 1/120th ms
-  EVERY_N_MILLISECONDS(1000 / FRAMES_PER_SECOND)
+  EVERY_N_MILLISECONDS(1000 / DEFAULT_FPS)
   {
     loopFastLED();
   }

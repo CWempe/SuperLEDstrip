@@ -26,11 +26,20 @@
 #define LED_TYPE        WS2811
 #define COLOR_ORDER        GRB
 #define DEFAULT_BRIGHTNESS  50
-#define FRAMES_PER_SECOND  120
+#define DEFAULT_SCENE        1  // default: 1 (rainbow); see list in led_functions.h
+#define DEFAULT_FPS        120  // frames per second
+#define DEFAULT_TEMPO       80  // betas per minute
 
 // Start with lights off?
 bool lightOFF = false;
 
+uint8_t BeatsPerMinute = 80;
+
+/*
+ * Homie parameters
+ */
+#define HOMIE_FW_NAME     "SuperLEDstrip"
+#define HOMIE_FW_VERSION  "2.0.1"
 
 /*
  * Nextion Display

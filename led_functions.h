@@ -33,9 +33,11 @@ void toggleBrightness()
   }  
 }
 
+
 void setupFastLED()
 {
-  gCurrentPatternNumber = 3; // Index number of which pattern is current; default is 3 (rainbow)
+  //gCurrentPatternNumber = DEFAULT_PATTERN; // Index number of which pattern is current; default is 3 (rainbow)
+  setScene(DEFAULT_SCENE);
   setBrightness(DEFAULT_BRIGHTNESS);
   FastLED.addLeds<LED_TYPE, DATA_PIN, COLOR_ORDER>(leds, NUM_LEDS);
 }
