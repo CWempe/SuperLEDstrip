@@ -101,7 +101,7 @@ void setupPaletteWerder()
 }
 
 
-// This function sets up a palette of Bayern Munich.
+// This function sets up a palette of the german flag.
 void setupPaletteGermany()
 {
   CRGB black  = CRGB::Black;
@@ -117,7 +117,7 @@ void setupPaletteGermany()
                                  red,    red,    yellow,  yellow );
 }
 
-// This function sets up a palette of Bayern Munich.
+// This function sets up a palette of the italian flag.
 void setupPaletteItaly()
 {
   CRGB green  = CRGB::DarkGreen;
@@ -134,7 +134,7 @@ void setupPaletteItaly()
 }
 
 
-// This function sets up a palette of Bayern Munich.
+// This function sets up a palette of the brazilian flag.
 void setupPaletteBrazil()
 {
   CRGB blue   = CRGB::Blue;
