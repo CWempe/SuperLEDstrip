@@ -128,19 +128,26 @@ After this you copy the compiled HMI file (will be uploaded to the release page)
 
 Let's say you want to add an LED pattern you developed as the function `mynewpattern()`.
 
-First you need to add the pattern in `SuperLEDstripe.ino`.
+First you need to add the pattern in `SuperLEDstripe.ino` if you create a new animation.
+If your are only ading a new color pattern for an existing animation (like `runningPalette`) you can skip this part.
 
 ```
 //     Pattern IDs              0          1      2         3        4    5     6               7              8     9        10  
 SimplePatternList gPatterns = { oneColor, stars, confetti, rainbow, bpm, kitt, flashingLights, runningPalette, xmas, Fire2012,  mynewpattern};
 ```
 
-While you are developing you might want to change the default pattern to be your new one.
+Add the new secen to the `setScene()` function in `led_functions.h`.
 
 ```
-void setupFastLED()
-{
-  gCurrentPatternNumber = 10;
+    case 304:   // swedish flag
+      setupPaletteSweden();
+      break;     
+```
+
+While you are developing you might want to change the default scene to be your new one.
+
+```
+#define DEFAULT_SCENE      304
 ```
 
 To start the pattern from a cell (virtual button) from the display, you add the pattern to the according callback function in `nextion_callback_functions.h`.  
