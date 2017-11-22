@@ -147,7 +147,7 @@ void setup(void)
   Serial.begin(115200);
   
   setupDHT();
-  
+
   Homie_setFirmware(HOMIE_FW_NAME, HOMIE_FW_VERSION); // The underscore is not a typo! See Magic bytes
   Homie.disableResetTrigger();                 // disable ResetTrigger, because it creates some problemes for me
   //Homie.setStandalone();                     // uncomment if you do not want to use wifi
@@ -160,6 +160,9 @@ void setup(void)
   lightNode.advertise("scene").settable(lightSceneHandler);
   lightNode.advertise("tempo").settable(lightTempoHandler);
   Homie.setGlobalInputHandler(globalInputHandler);
+  if ( HOMIE_STANDALONE == true ) {
+    Homie.setHomieBootMode(HomieBootMode::STANDALONE);
+  }
   Homie.setup();
   
   setTempo(BeatsPerMinute);

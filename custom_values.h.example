@@ -39,7 +39,8 @@ uint8_t BeatsPerMinute = 80;
  * Homie parameters
  */
 #define HOMIE_FW_NAME     "SuperLEDstrip"
-#define HOMIE_FW_VERSION  "2.0.1"
+#define HOMIE_FW_VERSION  "2.1.0"
+#define HOMIE_STANDALONE  false   // here you can enable Homies standalone mode
 
 /*
  * Nextion Display
