@@ -23,7 +23,7 @@ void p01c03PopCallback(void *ptr) { setScene(103); }
 void p01c04PopCallback(void *ptr) { setScene(104); }
 void p01c05PopCallback(void *ptr) { setScene(105); }
 void p01c06PopCallback(void *ptr) { setScene(106); }
-void p01c07PopCallback(void *ptr) { }
+void p01c07PopCallback(void *ptr) { setScene(107); }
 void p01c08PopCallback(void *ptr) { }
 // page 2
 void p02PopCallback(void *ptr) { }

@@ -428,4 +428,24 @@ void xmas()
   }
 }
 
+void ice()
+{
+  //light blue background color for ice
+  CRGB bgColor  = CRGB::LightSkyBlue;
+  
+  // fade all existing pixels toward bgColor by "1" (out of 255)
+  // remeber this gets called 120 (FRAMES_PER_SECOND) times per second
+  fadeTowardColor( leds, NUM_LEDS, bgColor, 1);
+
+  // periodically set random pixel to a highlight color
+  // one led per sesond (1000ms) for every meter
+  EVERY_N_MILLISECONDS( 250 * LEDS_PER_METER / NUM_LEDS ) {
+    // set an array of possible highlight colors
+    CRGB highlightColor[] = {CRGB::Blue, CRGB::White, CRGB::DeepSkyBlue};
+
+    // set highlight color for random led, except first and last led
+    uint16_t pos = random16( NUM_LEDS - 2 );
+    leds[ pos + 1 ] = highlightColor[random16(3)];
+  }
+}
 

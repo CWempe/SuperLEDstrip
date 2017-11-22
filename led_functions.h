@@ -84,6 +84,9 @@ void setScene (uint16_t scene) {
     case 106:   // fire
       gCurrentPatternNumber = 9;
       break;
+    case 107:   // ice
+      gCurrentPatternNumber = 11;
+      break;
       
     // page 2
     case 201:   // german police
