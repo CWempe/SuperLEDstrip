@@ -48,18 +48,17 @@ The graphical layout is based on [Googles Material Design Guidelines](https://ma
      If you use an esp8266 device
   * Most libraries are availabe via the Library Manager in Arduino  
     Some need to be downloaded manually (via git).
-      * [**FastLED**](https://github.com/FastLED/FastLED) (tested with v3.1.6)
+      * [**FastLED**](https://github.com/FastLED/FastLED) (tested with v3.1.6; via Library Manager)
       * [**ITEADLIB\\_Arduino\\_Nextion**](https://github.com/itead/ITEADLIB_Arduino_Nextion#latestunstable) (tested with v0.9.0)
-      * [**espsoftwareserial**](https://github.com/plerup/espsoftwareserial) (tested with v1.0)
-      * [**elapsedMillis**](https://github.com/pfeerick/elapsedMillis) (tested with v1.0.4)
-      * [**DHT sensor library**](https://github.com/adafruit/DHT-sensor-library) (tested with v1.3.0)
-      * [**Adafruit Unified Sensor Driver**](https://github.com/adafruit/Adafruit_Sensor) (tested with v1.0.2)
-      * [**homie-esp8266**]([https://github.com/marvinroger/homie-esp8266](https://github.com/marvinroger/homie-esp8266)) (tested with v2.0.0-beta.1)  
+      * [**elapsedMillis**](https://github.com/pfeerick/elapsedMillis) (tested with v1.0.4; via Library Manager)
+      * [**DHT sensor library**](https://github.com/adafruit/DHT-sensor-library) (tested with v1.3.0; via Library Manager)
+      * [**Adafruit Unified Sensor**](https://github.com/adafruit/Adafruit_Sensor) (tested with v1.0.2; via Library Manager)
+      * [**homie-esp8266**](https://github.com/marvinroger/homie-esp8266)) (tested with v2.0.0-beta.1, via zip file)  
         Homie itself has some [dependencies](https://marvinroger.github.io/homie-esp8266/develop/quickstart/getting-started/#1a-for-the-arduino-ide):
-         * ArduinoJson (=>v5.0.8 [<v5.11](https://github.com/bblanchon/ArduinoJson/issues/541); tested with v5.10.0)
-         * Bouncer2 (tested with v2.3.0)
-         * ESPAsyncTCP( >= c8ed544)
-         * AsyncMqttClient (tested with v0.8.1)
+         * [ArduinoJson](http://arduinojson.org/) (=>v5.0.8 [<v5.11](https://github.com/bblanchon/ArduinoJson/issues/541); tested with v5.10.1; via Library Manager)
+         * [Bounce2](https://github.com/thomasfredericks/Bounce2) (tested with v2.3.0; via Library Manager)
+         * [ESPAsyncTCP](https://github.com/me-no-dev/ESPAsyncTCP) (>= c8ed544; via git)
+         * [AsyncMqttClient](https://github.com/marvinroger/async-mqtt-client) (tested with v0.8.1)
 
 In case you want to edit the content of the display to use other theme colors or add/replace some LED patterns, you also need the following programs.  
 Only tested and used with Windows 10.
