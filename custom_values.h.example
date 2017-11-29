@@ -26,14 +26,12 @@
 #define LED_TYPE        WS2811
 #define COLOR_ORDER        GRB
 #define DEFAULT_BRIGHTNESS  50
-#define DEFAULT_SCENE        1  // default: 101 (rainbow); see list in led_functions.h
+#define DEFAULT_SCENE      101  // default: 101 (rainbow); see list in led_functions.h
 #define DEFAULT_FPS        120  // frames per second
 #define DEFAULT_TEMPO       80  // betas per minute
 
 // Start with lights off?
-bool lightOFF = false;
-
-uint8_t BeatsPerMinute = 80;
+bool lightON = false;
 
 /*
  * Homie parameters
