@@ -34,6 +34,14 @@
 bool lightON = false;
 
 /*
+ * Buttons
+ */
+#define BUTTON01_PIN        D5
+#define BUTTON02_PIN        D6
+#define BUTTON03_PIN        D7
+#define BUTTON04_PIN        D8
+
+/*
  * Homie parameters
  */
 #define HOMIE_FW_NAME     "SuperLEDstrip"

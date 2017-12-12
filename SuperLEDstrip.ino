@@ -54,7 +54,7 @@ HomieNode lightNode("light", "switch");
 
 
 #include "dht.h"
-
+#include "buttons.h"
 
 
 /*
@@ -133,7 +133,7 @@ bool globalInputHandler(const HomieNode& node, const String& property, const Hom
 }
 
 void loopHandler() {
-  
+  HomieLoopButtons();
 }
 
 
@@ -159,6 +159,7 @@ void setup(void)
   lightNode.advertise("brightness").settable(lightBrightnessHandler);
   lightNode.advertise("scene").settable(lightSceneHandler);
   lightNode.advertise("tempo").settable(lightTempoHandler);
+  HomieSetupButtons();
   Homie.setGlobalInputHandler(globalInputHandler);
   if ( HOMIE_STANDALONE == true ) {
     Homie.setHomieBootMode(HomieBootMode::STANDALONE);
