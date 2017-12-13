@@ -59,8 +59,14 @@ void HomieLoopButtons() {
   debouncer04.update();
   int button04Value = debouncer04.read();
   if (button04Value != lastButton04Value) {
-    // set Scene to kitt when button pressed
-    if ( button04Value ) { setScene(204); } ;
+    // set Scene to arcade pulse and set first LED to random color
+      leds[0] = CHSV( random8(255), 255, 255);
+    if ( button04Value ) {
+      if ( currentScene != 601 ) {
+        setScene(601);
+        arc_pulse();
+      }
+    } 
     Homie.getLogger() << "Button04 is now " << (button04Value ? "pressed" : "unpressed") << endl;
     button04Node.setProperty("pressed").send(button04Value ? "true" : "false");
     lastButton04Value = button04Value;

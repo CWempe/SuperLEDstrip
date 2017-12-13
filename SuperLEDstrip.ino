@@ -54,7 +54,6 @@ HomieNode lightNode("light", "switch");
 
 
 #include "dht.h"
-#include "buttons.h"
 
 
 /*
@@ -71,6 +70,7 @@ SimplePatternList gPatterns = { oneColor, stars, confetti, rainbow, bpm, kitt, f
 
 #include "led_functions.h"
 
+#include "buttons.h"
 
 /*
    #########################
