@@ -26,8 +26,8 @@ void HomieLoopButtons() {
   debouncer01.update();
   int button01Value = debouncer01.read();
   if (button01Value != lastButton01Value) {
-    // set Scene to stars when button pressed
-    if ( button01Value ) { setScene(102); } ;
+    // set next 100er scene
+    if ( button01Value ) { setScene(100); } ;
     Homie.getLogger() << "Button01 is now " << (button01Value ? "pressed" : "unpressed") << endl;
     button01Node.setProperty("pressed").send(button01Value ? "true" : "false");
     lastButton01Value = button01Value;
@@ -37,8 +37,8 @@ void HomieLoopButtons() {
   debouncer02.update();
   int button02Value = debouncer02.read();
   if (button02Value != lastButton02Value) {
-    // set Scene to confetti when button pressed
-    if ( button02Value ) { setScene(103); } ;
+    // set next 200er scene
+    if ( button02Value ) { setScene(200); } ;
     Homie.getLogger() << "Button02 is now " << (button02Value ? "pressed" : "unpressed") << endl;
     button02Node.setProperty("pressed").send(button02Value ? "true" : "false");
     lastButton02Value = button02Value;
@@ -48,8 +48,8 @@ void HomieLoopButtons() {
   debouncer03.update();
   int button03Value = debouncer03.read();
   if (button03Value != lastButton03Value) {
-    // set Scene to german police when button pressed
-    if ( button03Value ) { setScene(201); } ;
+    // set next 300er scene
+    if ( button03Value ) { setScene(300); } ;
     Homie.getLogger() << "Button03 is now " << (button03Value ? "pressed" : "unpressed") << endl;
     button03Node.setProperty("pressed").send(button03Value ? "true" : "false");
     lastButton03Value = button03Value;

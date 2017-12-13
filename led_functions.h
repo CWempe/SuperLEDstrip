@@ -66,6 +66,23 @@ void loopFastLED()
 void setScene (uint16_t scene) {
   switch (scene) {
     // page 1
+    case 100:   // cycle through scenes of this page scenes
+      switch (currentScene) {
+        case 101:
+        case 102:
+        case 103:
+        case 104:
+        case 105:
+        case 106:
+          // set to next scene ...
+          setScene(currentScene+1);
+          break;
+        default:
+          // ... or first scene of currentScene is at the end
+          setScene(101);
+          break;
+      }
+      break;
     case 101:   // rainbow
       gCurrentPatternNumber = 3;
       break;
@@ -89,6 +106,20 @@ void setScene (uint16_t scene) {
       break;
       
     // page 2
+    case 200:   // cycle through scenes of this page scenes
+      switch (currentScene) {
+        case 201:
+        case 202:
+        case 203:
+          // set to next scene ...
+          setScene(currentScene+1);
+          break;
+        default:
+          // ... or first scene of currentScene is at the end
+          setScene(201);
+          break;
+      }
+      break;
     case 201:   // german police
       setupFlashingLights(CRGB::Blue, CRGB::Blue);
       break;
@@ -103,6 +134,22 @@ void setScene (uint16_t scene) {
       break;
       
     // page 3
+    case 300:   // cycle through scenes of this page scenes
+      switch (currentScene) {
+        case 301:
+        case 302:
+        case 303:
+        case 304:
+        case 305:
+          // set to next scene ...
+          setScene(currentScene+1);
+          break;
+        default:
+          // ... or first scene of currentScene is at the end
+          setScene(301);
+          break;
+      }
+      break;
     case 301:   // german/beglium flag
       setupPaletteGermany();
       break;
@@ -123,6 +170,20 @@ void setScene (uint16_t scene) {
       break;
       
     // page 4
+    case 400:   // cycle through scenes of this page scenes
+      switch (currentScene) {
+        case 401:
+        case 402:
+        case 403:
+          // set to next scene ...
+          setScene(currentScene+1);
+          break;
+        default:
+          // ... or first scene of currentScene is at the end
+          setScene(401);
+          break;
+      }
+      break;
     case 401:   // BVB
       setupPaletteBVB();
       break;
@@ -137,6 +198,24 @@ void setScene (uint16_t scene) {
       break;
       
     // page 5
+    case 500:   // cycle through scenes of this page scenes
+      switch (currentScene) {
+        case 501:
+        case 502:
+        case 503:
+        case 504:
+        case 505:
+        case 506:
+        case 507:
+          // set to next scene ...
+          setScene(currentScene+1);
+          break;
+        default:
+          // ... or first scene of currentScene is at the end
+          setScene(501);
+          break;
+      }
+      break;
     case 501:   // white
       setupOneColor(CRGB::White);
       break;
@@ -167,7 +246,10 @@ void setScene (uint16_t scene) {
       gCurrentPatternNumber = 10;
       break;
   }
-  currentScene = scene;
-  lightNode.setProperty("scene").send(String(currentScene));
+  if (scene % 100 != 0 ) {
+    // set new scene if it's not 100 or 200 or 300 or ...
+    currentScene = scene;
+    lightNode.setProperty("scene").send(String(currentScene));
+  }
 }
 
