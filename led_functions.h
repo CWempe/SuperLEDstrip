@@ -167,7 +167,7 @@ void setScene (uint16_t scene) {
       gCurrentPatternNumber = 10;
       break;
   }
-      
-  lightNode.setProperty("scene").send(String(scene));
+  currentScene = scene;
+  lightNode.setProperty("scene").send(String(currentScene));
 }
 
