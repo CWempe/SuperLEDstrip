@@ -161,6 +161,11 @@ void setScene (uint16_t scene) {
     case 508:   // yellow
       setupOneColor(CRGB::Yellow);
       break;
+      
+    // page 6
+    case 601:   // arcade pulse
+      gCurrentPatternNumber = 10;
+      break;
   }
       
   lightNode.setProperty("scene").send(String(scene));

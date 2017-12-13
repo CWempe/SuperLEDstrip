@@ -127,7 +127,7 @@ void p06t04PopCallback(void *ptr) { updateTab(); }
 void p06t05PopCallback(void *ptr) { updateTab(); }
 void p06t06PopCallback(void *ptr) { updateTab(); }
 void p06t07PopCallback(void *ptr) { updateTab(); }
-void p06c01PopCallback(void *ptr) { gCurrentPatternNumber = 10; }
+void p06c01PopCallback(void *ptr) { setScene(601); }
 void p06c02PopCallback(void *ptr) { }
 void p06c03PopCallback(void *ptr) { }
 void p06c04PopCallback(void *ptr) { }
