@@ -60,12 +60,14 @@ void loopButtons() {
   int button04Value = debouncer04.read();
   if (button04Value != lastButton04Value) {
     if ( button04Value ) {
-      // set Scene to arcade pulse and set first LED to random color
-      leds[0] = CHSV( random8(255), 255, 255);
       if ( currentScene != 601 ) {
+        // set all leds to black
+        leds(0, NUM_LEDS - 1) = CRGB::Black;
         setScene(601);
         arc_pulse();
       }
+      // set Scene to arcade pulse and set first LED to random color
+      leds[0] = CHSV( random8(255), 255, 255);
     } 
     Homie.getLogger() << "Button04 is now " << (button04Value ? "pressed" : "unpressed") << endl;
     if ( !HOMIE_STANDALONE ) { button04Node.setProperty("pressed").send(button04Value ? "true" : "false"); };
