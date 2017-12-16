@@ -59,9 +59,9 @@ void loopButtons() {
   debouncer04.update();
   int button04Value = debouncer04.read();
   if (button04Value != lastButton04Value) {
-    // set Scene to arcade pulse and set first LED to random color
-      leds[0] = CHSV( random8(255), 255, 255);
     if ( button04Value ) {
+      // set Scene to arcade pulse and set first LED to random color
+      leds[0] = CHSV( random8(255), 255, 255);
       if ( currentScene != 601 ) {
         setScene(601);
         arc_pulse();
