@@ -35,12 +35,12 @@ void loopDHT()
     fTemp = dht.readTemperature() + DHT_OFFSET_TEMP;
     dtostrf(fTemp, 4, 1, sTemp);
     sprintf(sTemp, "%s C", sTemp);
-    temperatureNode.setProperty("degrees").send(String(fTemp));
+    if ( !HOMIE_STANDALONE ) { temperatureNode.setProperty("degrees").send(String(fTemp)); };
 
     fHumid = dht.readHumidity() + DHT_OFFSET_HUMID;
     dtostrf(fHumid, 3, 0, sHumid);
     sprintf(sHumid, "%s %", sHumid);
-    humidityNode.setProperty("percentage").send(String(fHumid));
+    if ( !HOMIE_STANDALONE ) { humidityNode.setProperty("percentage").send(String(fHumid)); };
     
     setTextAllSensors();
     

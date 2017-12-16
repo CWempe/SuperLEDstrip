@@ -6,12 +6,12 @@ void setBrightness(uint8_t newBrightness)
 {
    currentBrightness = newBrightness;
    FastLED.setBrightness(map(currentBrightness, 0, 100, 0, 255));
-   lightNode.setProperty("brightness").send(String(currentBrightness));
+   if ( !HOMIE_STANDALONE ) { lightNode.setProperty("brightness").send(String(currentBrightness)); };
 }
 
 void setTempo(uint8_t tempo) {
   BeatsPerMinute = tempo;
-  lightNode.setProperty("tempo").send(String(BeatsPerMinute));
+  if ( !HOMIE_STANDALONE ) { lightNode.setProperty("tempo").send(String(BeatsPerMinute)); };
 }
 
 // toggle brightness between 0 and current
@@ -21,14 +21,14 @@ void toggleBrightness()
   {
     // When light is off switch back on to current brightness
     FastLED.setBrightness(map(currentBrightness, 0, 100, 0, 255));
-    lightNode.setProperty("on").send("true");
+    if ( !HOMIE_STANDALONE ) { lightNode.setProperty("on").send("true"); };
     lightON = true;
   }
   else
   {
     // else set brightness to 0 and lightON to true
     FastLED.setBrightness(0);
-    lightNode.setProperty("on").send("false");
+    if ( !HOMIE_STANDALONE ) { lightNode.setProperty("on").send("false"); };
     lightON = false;
   }  
 }
@@ -249,7 +249,7 @@ void setScene (uint16_t scene) {
   if (scene % 100 != 0 ) {
     // set new scene if it's not 100 or 200 or 300 or ...
     currentScene = scene;
-    lightNode.setProperty("scene").send(String(currentScene));
+    if ( !HOMIE_STANDALONE ) { lightNode.setProperty("scene").send(String(currentScene)); };
   }
 }
 

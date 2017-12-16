@@ -21,7 +21,7 @@ int lastButton03Value = -1;
 int lastButton04Value = -1;
 
 
-void HomieLoopButtons() {
+void loopButtons() {
   // Button01
   debouncer01.update();
   int button01Value = debouncer01.read();
@@ -29,7 +29,7 @@ void HomieLoopButtons() {
     // set next 100er scene
     if ( button01Value ) { setScene(100); } ;
     Homie.getLogger() << "Button01 is now " << (button01Value ? "pressed" : "unpressed") << endl;
-    button01Node.setProperty("pressed").send(button01Value ? "true" : "false");
+    if ( !HOMIE_STANDALONE ) { button01Node.setProperty("pressed").send(button01Value ? "true" : "false"); };
     lastButton01Value = button01Value;
   }
 
@@ -40,7 +40,7 @@ void HomieLoopButtons() {
     // set next 200er scene
     if ( button02Value ) { setScene(200); } ;
     Homie.getLogger() << "Button02 is now " << (button02Value ? "pressed" : "unpressed") << endl;
-    button02Node.setProperty("pressed").send(button02Value ? "true" : "false");
+    if ( !HOMIE_STANDALONE ) { button02Node.setProperty("pressed").send(button02Value ? "true" : "false"); };
     lastButton02Value = button02Value;
   }
 
@@ -51,7 +51,7 @@ void HomieLoopButtons() {
     // set next 300er scene
     if ( button03Value ) { setScene(300); } ;
     Homie.getLogger() << "Button03 is now " << (button03Value ? "pressed" : "unpressed") << endl;
-    button03Node.setProperty("pressed").send(button03Value ? "true" : "false");
+    if ( !HOMIE_STANDALONE ) { button03Node.setProperty("pressed").send(button03Value ? "true" : "false"); };
     lastButton03Value = button03Value;
   }
   
@@ -68,7 +68,7 @@ void HomieLoopButtons() {
       }
     } 
     Homie.getLogger() << "Button04 is now " << (button04Value ? "pressed" : "unpressed") << endl;
-    button04Node.setProperty("pressed").send(button04Value ? "true" : "false");
+    if ( !HOMIE_STANDALONE ) { button04Node.setProperty("pressed").send(button04Value ? "true" : "false"); };
     lastButton04Value = button04Value;
   }
 }

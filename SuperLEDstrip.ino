@@ -92,8 +92,8 @@ SimplePatternList gPatterns = { oneColor, stars, confetti, rainbow, bpm, kitt, f
  */
 
 void setupHandler() {
-  temperatureNode.setProperty("unit").send("°C");
-  humidityNode.setProperty("unit").send("%");
+  if ( !HOMIE_STANDALONE ) { temperatureNode.setProperty("unit").send("°C"); };
+  if ( !HOMIE_STANDALONE ) { humidityNode.setProperty("unit").send("%"); };
   
 }
 
@@ -120,7 +120,7 @@ bool lightOnHandler(const HomieRange& range, const String& value) {
 
   bool on = (value == "true");
   FastLED.setBrightness(on ? currentBrightness : 0);
-  lightNode.setProperty("on").send(value);
+  if ( !HOMIE_STANDALONE ) { lightNode.setProperty("on").send(value); };
   lightON = (value == "true");
   Homie.getLogger() << "Light is " << (on ? "on" : "off") << endl;
 
@@ -134,7 +134,6 @@ bool globalInputHandler(const HomieNode& node, const String& property, const Hom
 }
 
 void loopHandler() {
-  HomieLoopButtons();
 }
 
 
@@ -162,7 +161,7 @@ void setup(void)
   lightNode.advertise("tempo").settable(lightTempoHandler);
   HomieSetupButtons();
   Homie.setGlobalInputHandler(globalInputHandler);
-  if ( HOMIE_STANDALONE == true ) {
+  if ( HOMIE_STANDALONE ) {
     Homie.setHomieBootMode(HomieBootMode::STANDALONE);
   }
   Homie.setup();
@@ -189,6 +188,7 @@ void loop(void)
   }
 
   loopDHT();
+  loopButtons();
 
   Homie.loop();
 
