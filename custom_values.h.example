@@ -20,7 +20,7 @@
 /*
  * FastLED
  */
-#define DATA_PIN            D3
+#define DATA_PIN            RX
 #define NUM_LEDS            30
 #define LEDS_PER_METER      60
 #define LED_TYPE        WS2811
@@ -36,10 +36,11 @@ bool lightON = false;
 /*
  * Buttons
  */
-#define BUTTON01_PIN        D5
-#define BUTTON02_PIN        D6
-#define BUTTON03_PIN        D7
-#define BUTTON04_PIN        D8
+#define BUTTON01_PIN        D0
+#define BUTTON02_PIN        D5
+#define BUTTON03_PIN        D6
+#define BUTTON04_PIN        D7
+#define BUTTON05_PIN        D8
 
 /*
  * Homie parameters
@@ -59,8 +60,8 @@ bool lightON = false;
 /*
  * DHT sensor
  */
-#define DHT_DATA_PIN        D4
-#define DHT_POWER_PIN       D0   // DHT will pe turned off between reads to prevent heating itself
+#define DHT_DATA_PIN        D3
+#define DHT_POWER_PIN       D4   // DHT will pe turned off between reads to prevent heating itself
 #define DHT_READ_INTERVAL  120   // Interval the sensor data is read
 #define DHT_WARMUP           5   // Time between power on and reading data
 #define DHT_TYPE         DHT22   // Change this if you have a DHT11
