@@ -5,6 +5,9 @@ upload_firmware.sh
 # ignore complied firmware files
 *.bin
 
+# ignore exported files for etching
+etching/*
+
 # ignore data folder in case you want to upload homie configiration manually.
 # see: https://marvinroger.github.io/homie-esp8266/develop/configuration/json-configuration-file/
 data/*
