@@ -6,7 +6,7 @@ SET XSLFILE=%WORKDIR%\xsl\variable_colors_dark.xsl
 SET ORIGINALXSLFILE=%WORKDIR%\xsl\original.xsl
 SET INPUTFILE=%WORKDIR%\display_matarial_design.svg
 SET OUTPUTPATH=%WORKDIR%\exported
-SET INKMATE=c:\tools\ruby23\bin\inkmake.bat
+SET INKMATE=c:\tools\ruby25\bin\inkmake.bat
 SET STARTTIME=%TIME%
 
 cd %WORKDIR%
