@@ -31,7 +31,7 @@ uint8_t gHue = 0; // rotating "base color" used by many of the patterns
 CRGB baseColor1 = CRGB::Blue;
 CRGB baseColor2 = CRGB::Blue;
 // Array of random default colors
-CRGB randomColorArray[] = {CRGB::White, CRGB::Red, CRGB::Green, CRGB::Blue, CRGB::Magenta, CRGB::Cyan, CRGB::Yellow};
+CRGB randomColorArray[] = {CRGB::White, CRGB( 255, 147, 41), CRGB::Red, CRGB::Green, CRGB::Blue, CRGB::Magenta, CRGB::Cyan, CRGB::Yellow};
 CRGBPalette16 currentPalette;
 TBlendType    currentBlending;
 uint8_t currentBrightness = DEFAULT_BRIGHTNESS;

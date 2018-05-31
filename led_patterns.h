@@ -22,7 +22,7 @@ void setupRandomColor()
   // show random color three times a secondd and stay after 20 iterations
   EVERY_N_MILLIS_I(RandomColor, 1000/3)
   {
-    fill_solid(leds, NUM_LEDS, randomColorArray[random(7)]);
+    fill_solid(leds, NUM_LEDS, randomColorArray[random(8)]);
   }
 }
 
