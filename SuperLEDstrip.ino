@@ -30,6 +30,8 @@ CRGBArray<NUM_LEDS> leds;
 uint8_t gHue = 0; // rotating "base color" used by many of the patterns
 CRGB baseColor1 = CRGB::Blue;
 CRGB baseColor2 = CRGB::Blue;
+// Array of random default colors
+CRGB randomColorArray[] = {CRGB::White, CRGB::Red, CRGB::Green, CRGB::Blue, CRGB::Magenta, CRGB::Cyan, CRGB::Yellow};
 CRGBPalette16 currentPalette;
 TBlendType    currentBlending;
 uint8_t currentBrightness = DEFAULT_BRIGHTNESS;
@@ -65,8 +67,9 @@ HomieNode lightNode("light", "switch");
 #include "led_patterns.h"
 
 typedef void (*SimplePatternList[])();
-//     Pattern IDs              0          1      2         3        4    5     6               7              8     9         10         11
-SimplePatternList gPatterns = { oneColor, stars, confetti, rainbow, bpm, kitt, flashingLights, runningPalette, xmas, Fire2012, arc_pulse, ice };
+//     Pattern IDs              0          1      2         3        4    5     6               7              8     9         10         11   12
+SimplePatternList gPatterns = { oneColor, stars, confetti, rainbow, bpm, kitt, flashingLights, runningPalette, xmas, Fire2012, arc_pulse, ice, setupRandomColor };
+
 
 #include "led_functions.h"
 
