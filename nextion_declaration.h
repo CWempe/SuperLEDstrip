@@ -115,6 +115,7 @@ NexButton p05c05      = NexButton(4, 14, "p05c05");
 NexButton p05c06      = NexButton(4, 15, "p05c06");
 NexButton p05c07      = NexButton(4, 16, "p05c07");
 NexButton p05c08      = NexButton(4, 17, "p05c08");
+NexButton p05c09      = NexButton(4, 21, "p05c09");
 // page 6
 NexPage   p06         = NexPage(  5,  0, "p06");
 NexText   p06title    = NexText(  5,  1, "p06title");

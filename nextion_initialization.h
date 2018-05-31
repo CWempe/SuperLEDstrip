@@ -116,6 +116,7 @@ void NextionSetup()
     p05c06.attachPop(p05c06PopCallback);
     p05c07.attachPop(p05c07PopCallback);
     p05c08.attachPop(p05c08PopCallback);
+    p05c09.attachPop(p05c09PopCallback);
     // page 6
     p06.attachPop(p06PopCallback);
     p06title.attachPop(p06titlePopCallback);
