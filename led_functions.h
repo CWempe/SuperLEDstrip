@@ -136,7 +136,7 @@ void setScene (uint16_t scene) {
       setupPalette1860();
       break;
     case 405:   // ESV München
-      setupPaletteWerder();
+      setupPaletteESV();
       break;
       
     // page 5
