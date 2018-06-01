@@ -22,12 +22,27 @@ void randomColor()
   // show random color three times a secondd and stay after 20 iterations
   EVERY_N_MILLIS_I(RandomColor, 1000/3)
   {
-    fill_solid(leds, NUM_LEDS, randomColorArray[random(8)]);
+    if ( randomColorsCountdown > 1 ) {
+      // if countdown is running then descrease countdown
+      fill_solid(leds, NUM_LEDS, randomColorArray[random(8)]);
+      randomColorsCountdown--;
+    } else if ( randomColorsCountdown == 0 ) {
+      // keep showing colors when countdown is disabled
+      fill_solid(leds, NUM_LEDS, randomColorArray[random(8)]);
+    }
   }
 }
 
 void setupRandomColor()
 {
+  if ( randomColorsCountdown == 0 ) {
+    // if countdown is disabled, start countdown
+    // 6 = schow five more colors
+    randomColorsCountdown = 6;
+  } else {
+    // else disable countdown
+    randomColorsCountdown = 0;
+  }
   gCurrentPatternNumber = 12;
 }
 

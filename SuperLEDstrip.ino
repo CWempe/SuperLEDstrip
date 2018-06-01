@@ -32,6 +32,7 @@ CRGB baseColor1 = CRGB::Blue;
 CRGB baseColor2 = CRGB::Blue;
 // Array of random default colors
 CRGB randomColorArray[] = {CRGB::White, CRGB( 255, 147, 41), CRGB::Red, CRGB::Green, CRGB::Blue, CRGB::Magenta, CRGB::Cyan, CRGB::Yellow};
+uint8_t randomColorsCountdown = 2;    // will be set to 0 (disable countdown) via first use of setupRandomColor
 CRGBPalette16 currentPalette;
 TBlendType    currentBlending;
 uint8_t currentBrightness = DEFAULT_BRIGHTNESS;
