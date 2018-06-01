@@ -162,7 +162,7 @@ void setScene (uint16_t scene) {
       setupOneColor(CRGB::Yellow);
       break;
     case 509:   // random color
-      gCurrentPatternNumber = 12;
+      setupRandomColor();
       break;
       
     // page 6
