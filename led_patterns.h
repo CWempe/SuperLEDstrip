@@ -135,6 +135,22 @@ void setupPaletteWerder()
   gCurrentPatternNumber = 7;
 }
 
+// This function sets up a palette of green stripes.
+void setupPaletteESV()
+{
+  CRGB blue   = CRGB(  0, 118, 182);
+  CRGB green  = CRGB(130, 175,  32);
+  CRGB white  = CRGB::Grey;
+
+  currentBlending = NOBLEND;
+  currentPalette = CRGBPalette16(
+                                 white,  white,  white,  blue,
+                                 blue,  blue,  blue,  blue,
+                                 white,  white,  white,  green,
+                                 green,  green,  green,  green );
+  gCurrentPatternNumber = 7;
+}
+
 
 // This function sets up a palette of the german flag.
 // also works for Belgium

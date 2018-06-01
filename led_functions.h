@@ -135,6 +135,9 @@ void setScene (uint16_t scene) {
     case 404:   // 1860 Munich
       setupPalette1860();
       break;
+    case 405:   // ESV München
+      setupPaletteWerder();
+      break;
       
     // page 5
     case 501:   // white
