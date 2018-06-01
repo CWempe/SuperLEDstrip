@@ -170,7 +170,11 @@ void setScene (uint16_t scene) {
       gCurrentPatternNumber = 10;
       break;
   }
-      
+
+  // reset randomColorsCountdown if another scene is selected
+  if ( scene != 509 ) {
+    randomColorsCountdown = 2;
+  }
   lightNode.setProperty("scene").send(String(scene));
 }
 
