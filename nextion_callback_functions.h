@@ -87,7 +87,7 @@ void p04c01PopCallback(void *ptr) { setScene(401); }
 void p04c02PopCallback(void *ptr) { setScene(402); }
 void p04c03PopCallback(void *ptr) { setScene(403); }
 void p04c04PopCallback(void *ptr) { setScene(404); }
-void p04c05PopCallback(void *ptr) { }
+void p04c05PopCallback(void *ptr) { setScene(405); }
 void p04c06PopCallback(void *ptr) { }
 void p04c07PopCallback(void *ptr) { }
 void p04c08PopCallback(void *ptr) { }
