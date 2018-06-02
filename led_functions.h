@@ -87,6 +87,9 @@ void setScene (uint16_t scene) {
     case 107:   // ice
       gCurrentPatternNumber = 11;
       break;
+    case 108:   // color rotation
+      gCurrentPatternNumber = 13;
+      break;
       
     // page 2
     case 201:   // german police

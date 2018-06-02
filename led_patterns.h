@@ -276,6 +276,16 @@ void rainbow()
   fill_rainbow( leds, NUM_LEDS, gHue, 7);
 }
 
+void colorRotation()
+{
+  baseColor1.setHue(gHue2);
+  fill_solid(leds, NUM_LEDS, baseColor1);
+  EVERY_N_MILLIS_I(ColorRotation, 1000/ DEFAULT_FPS * rotationSpeed) {
+    gHue2++;  // cycle the "base color" through the rainbow
+  }
+}
+
+
 
 void bpm()
 {

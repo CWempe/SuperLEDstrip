@@ -29,6 +29,7 @@
 #define DEFAULT_SCENE      101  // default: 101 (rainbow); see list in led_functions.h
 #define DEFAULT_FPS        120  // frames per second
 #define DEFAULT_TEMPO       80  // betas per minute
+#define DEFAULT_ROTATION_SPEED 20  // higher is slower; 1 = increments Hue value per 1 every FRAME
 
 // Start with lights off?
 bool lightON = false;

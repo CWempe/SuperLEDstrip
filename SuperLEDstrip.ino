@@ -27,7 +27,9 @@ void setTextTitle(void);
  */
 FASTLED_USING_NAMESPACE 
 CRGBArray<NUM_LEDS> leds;
-uint8_t gHue = 0; // rotating "base color" used by many of the patterns
+uint8_t gHue  = 0; // rotating "base color" used by many of the patterns
+uint8_t gHue2 = 0; // rotating "color" incremented by some pattern with specific speed
+uint8_t rotationSpeed = DEFAULT_ROTATION_SPEED; // default speed for color rotation
 CRGB baseColor1 = CRGB::Blue;
 CRGB baseColor2 = CRGB::Blue;
 // Array of random default colors
@@ -68,8 +70,8 @@ HomieNode lightNode("light", "switch");
 #include "led_patterns.h"
 
 typedef void (*SimplePatternList[])();
-//     Pattern IDs              0          1      2         3        4    5     6               7              8     9         10         11   12
-SimplePatternList gPatterns = { oneColor, stars, confetti, rainbow, bpm, kitt, flashingLights, runningPalette, xmas, Fire2012, arc_pulse, ice, randomColor };
+//     Pattern IDs              0          1      2         3        4    5     6               7              8     9         10         11   12           13
+SimplePatternList gPatterns = { oneColor, stars, confetti, rainbow, bpm, kitt, flashingLights, runningPalette, xmas, Fire2012, arc_pulse, ice, randomColor, colorRotation };
 
 
 #include "led_functions.h"
