@@ -4,6 +4,8 @@ I started this project as a gift for my little cousin.
 The goal was to create an LED strip that could be controlled by a kid via touchscreen.
 The graphical layout is based on [Googles Material Design Guidelines](https://material.io/guidelines/material-design/introduction.html).
 
+![display animation][display_gif]
+
 [![SuperLEDstrip v1.0 ](http://img.youtube.com/vi/CBAr6hmqsu4/0.jpg)](http://www.youtube.com/watch?v=CBAr6hmqsu4)
 
 ## Requirements
@@ -207,6 +209,7 @@ Once you got your device connected to your mqtt broker you can configure your sm
 You can find configuration examples in the `openhab` folder.
 
 
+[display_gif]: photos/gui.gif
 [breadboard]: photos/WeMos_LEDstrip_Nextion_DHT_bb.png
 [pcb]: photos/WeMos_LEDstrip_Nextion_DHT_pcb.png
 [Arduino_Wemos_config]: photos/Arduino_Wemos_config.png
