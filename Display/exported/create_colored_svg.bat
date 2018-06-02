@@ -6,7 +6,9 @@ SET XSLFILE=%WORKDIR%\xsl\variable_colors_dark.xsl
 SET ORIGINALXSLFILE=%WORKDIR%\xsl\original.xsl
 SET INPUTFILE=%WORKDIR%\display_matarial_design.svg
 SET OUTPUTPATH=%WORKDIR%\exported
+SET PHOTOPATH=%WORKDIR%\..\..\photos
 SET INKMATE=C:\Ruby23-x64\bin\inkmake.bat
+SET IMAGEMAGICK=magick.exe
 SET STARTTIME=%TIME%
 
 cd %WORKDIR%
@@ -108,4 +110,16 @@ MKDIR %OUTPUTPATH%\%FOLDER%
 copy /Y %WORKDIR%\inkfile %OUTPUTPATH%\%FOLDER%\inkfile
 call %INKMATE% -s %OUTPUTPATH%\%FOLDER% -o %OUTPUTPATH%\%FOLDER%
 
+ECHO.
+ECHO Generate GIF..
+%IMAGEMAGICK% convert -loop 0 -delay 100^
+ %OUTPUTPATH%\%FOLDER%\gui_01_specials.png^
+ %OUTPUTPATH%\%FOLDER%\gui_03_signals.png^
+ %OUTPUTPATH%\%FOLDER%\gui_05_flags.png^
+ %OUTPUTPATH%\%FOLDER%\gui_07_clubs.png^
+ %OUTPUTPATH%\%FOLDER%\gui_09_colors.png^
+ %OUTPUTPATH%\%FOLDER%\gui_11_arcade.png^
+ %OUTPUTPATH%\%FOLDER%\gui_13_tab07.png^
+ %OUTPUTPATH%\%FOLDER%\gui_15_settings.png^
+ %PHOTOPATH%\gui.gif
 GOTO:EOF
