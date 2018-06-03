@@ -185,6 +185,7 @@ void NextionSetup()
     p08c08.attachPop(p08c08PopCallback);
     p08temp02.attachPop(p08tempPopCallback);
     p08humid02.attachPop(p08humidPopCallback);
+    p08speed01.attachPop(p08speed01PopCallback);
     dbSerialPrintln("setup done");
 }
 

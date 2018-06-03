@@ -8,7 +8,7 @@ void p01PopCallback(void *ptr) { }
 void p01titlePopCallback(void *ptr) { }
 void p01tempPopCallback(void *ptr) { }
 void p01humidPopCallback(void *ptr) { }
-void p01settingsPopCallback(void *ptr) { setTextAllSensors(); }
+void p01settingsPopCallback(void *ptr) { setTextAll(); }
 void p01powerPopCallback(void *ptr) { toggleBrightness(); }
 void p01t01PopCallback(void *ptr) { updateTab(); }
 void p01t02PopCallback(void *ptr) { updateTab(); }
@@ -30,7 +30,7 @@ void p02PopCallback(void *ptr) { }
 void p02titlePopCallback(void *ptr) { }
 void p02tempPopCallback(void *ptr) { }
 void p02humidPopCallback(void *ptr) { }
-void p02settingsPopCallback(void *ptr) { setTextAllSensors(); }
+void p02settingsPopCallback(void *ptr) { setTextAll(); }
 void p02powerPopCallback(void *ptr) { toggleBrightness(); }
 void p02t01PopCallback(void *ptr) { updateTab(); }
 void p02t02PopCallback(void *ptr) { updateTab(); }
@@ -52,7 +52,7 @@ void p03PopCallback(void *ptr) { }
 void p03titlePopCallback(void *ptr) { }
 void p03tempPopCallback(void *ptr) { }
 void p03humidPopCallback(void *ptr) { }
-void p03settingsPopCallback(void *ptr) { setTextAllSensors(); }
+void p03settingsPopCallback(void *ptr) { setTextAll(); }
 void p03powerPopCallback(void *ptr) { toggleBrightness(); }
 void p03t01PopCallback(void *ptr) { updateTab(); }
 void p03t02PopCallback(void *ptr) { updateTab(); }
@@ -74,7 +74,7 @@ void p04PopCallback(void *ptr) { }
 void p04titlePopCallback(void *ptr) { }
 void p04tempPopCallback(void *ptr) { }
 void p04humidPopCallback(void *ptr) { }
-void p04settingsPopCallback(void *ptr) { setTextAllSensors(); }
+void p04settingsPopCallback(void *ptr) { setTextAll(); }
 void p04powerPopCallback(void *ptr) { toggleBrightness(); }
 void p04t01PopCallback(void *ptr) { updateTab(); }
 void p04t02PopCallback(void *ptr) { updateTab(); }
@@ -96,7 +96,7 @@ void p05PopCallback(void *ptr) { }
 void p05titlePopCallback(void *ptr) { }
 void p05tempPopCallback(void *ptr) { }
 void p05humidPopCallback(void *ptr) { }
-void p05settingsPopCallback(void *ptr) { setTextAllSensors(); }
+void p05settingsPopCallback(void *ptr) { setTextAll(); }
 void p05powerPopCallback(void *ptr) { toggleBrightness(); }
 void p05t01PopCallback(void *ptr) { updateTab(); }
 void p05t02PopCallback(void *ptr) { updateTab(); }
@@ -119,7 +119,7 @@ void p06PopCallback(void *ptr) { }
 void p06titlePopCallback(void *ptr) { }
 void p06tempPopCallback(void *ptr) { }
 void p06humidPopCallback(void *ptr) { }
-void p06settingsPopCallback(void *ptr) { setTextAllSensors(); }
+void p06settingsPopCallback(void *ptr) { setTextAll(); }
 void p06powerPopCallback(void *ptr) { toggleBrightness(); }
 void p06t01PopCallback(void *ptr) { updateTab(); }
 void p06t02PopCallback(void *ptr) { updateTab(); }
@@ -141,7 +141,7 @@ void p07PopCallback(void *ptr) { }
 void p07titlePopCallback(void *ptr) { }
 void p07tempPopCallback(void *ptr) { }
 void p07humidPopCallback(void *ptr) { }
-void p07settingsPopCallback(void *ptr) { setTextAllSensors(); }
+void p07settingsPopCallback(void *ptr) { setTextAll(); }
 void p07powerPopCallback(void *ptr) { toggleBrightness(); }
 void p07t01PopCallback(void *ptr) { updateTab(); }
 void p07t02PopCallback(void *ptr) { updateTab(); }
@@ -163,7 +163,7 @@ void p08PopCallback(void *ptr) { }
 void p08titlePopCallback(void *ptr) { }
 void p08tempPopCallback(void *ptr) { }
 void p08humidPopCallback(void *ptr) { }
-void p08settingsPopCallback(void *ptr) { setTextAllSensors(); }
+void p08settingsPopCallback(void *ptr) { setTextAll(); }
 void p08powerPopCallback(void *ptr) { toggleBrightness(); }
 void p08t01PopCallback(void *ptr) { updateTab(); }
 void p08t02PopCallback(void *ptr) { updateTab(); }
@@ -178,8 +178,9 @@ void p08c03PopCallback(void *ptr) { setBrightness(75); }
 void p08c04PopCallback(void *ptr) { setBrightness(25); }
 void p08c05PopCallback(void *ptr) { setTextTemp(); }
 void p08c06PopCallback(void *ptr) { setTextHumid(); }
-void p08c07PopCallback(void *ptr) { }
-void p08c08PopCallback(void *ptr) { }
+void p08c07PopCallback(void *ptr) { changeRotationSpeed(true); }
+void p08c08PopCallback(void *ptr) { changeRotationSpeed(false); }
 void p08temp02PopCallback(void *ptr) { }
 void p08humid02PopCallback(void *ptr) { }
+void p08speed01PopCallback(void *ptr) { changeRotationSpeed(true); }
 

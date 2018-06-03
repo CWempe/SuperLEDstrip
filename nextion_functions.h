@@ -23,11 +23,18 @@ void setTextAllSensors()
     setTextHumid();
 }
 
+void setTextRotationSpeed()
+{
+    //sRotationSpeed = String(rotationSpeed);
+    dtostrf(rotationSpeed, 3, 0, sRotationSpeed);
+    p08speed01.setText(sRotationSpeed);
+}
+
 void setTextAll()
 {
-    //setTextTitle();
-    //setTextTemp();
-    //setTextHumid();
+    setTextTitle();
+    setTextAllSensors();
+    setTextRotationSpeed();
 }
 
 void updateTab()
@@ -35,4 +42,23 @@ void updateTab()
   setTextAll();
 }
 
+
+void updateRotationSpeed () {
+  rotationSpeedMs = 3 * rotationSpeed * rotationSpeed - 120 * rotationSpeed + 1200;
+  if ( rotationSpeedMs < 1 ) {
+    rotationSpeedMs = 1;
+  }
+  ColorRotation.setPeriod(rotationSpeedMs);
+  setTextRotationSpeed();
+}
+
+void changeRotationSpeed (bool increaseSpeed)
+{
+  if ( increaseSpeed == true && rotationSpeed < 20 ) {
+     rotationSpeed++;
+  } else if ( increaseSpeed == false && rotationSpeed > 1 ) {
+    rotationSpeed--;
+  }
+  updateRotationSpeed();
+}
 

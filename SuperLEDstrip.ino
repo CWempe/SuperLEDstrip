@@ -20,6 +20,8 @@ void setTextAllSensors(void);
 void setTextHumid(void);
 void setTextTemp(void);
 void setTextTitle(void);
+void updateRotationSpeed();
+void changeRotationSpeed(bool increaseSpeed);
 
 
 /*
@@ -30,6 +32,8 @@ CRGBArray<NUM_LEDS> leds;
 uint8_t gHue  = 0; // rotating "base color" used by many of the patterns
 uint8_t gHue2 = 0; // rotating "color" incremented by some pattern with specific speed
 uint8_t rotationSpeed = DEFAULT_ROTATION_SPEED; // default speed for color rotation
+int rotationSpeedMs; // rotationSpeed converted to delay between color changing in ms
+static CEveryNMilliseconds ColorRotation(100);
 CRGB baseColor1 = CRGB::Blue;
 CRGB baseColor2 = CRGB::Blue;
 // Array of random default colors
@@ -177,6 +181,7 @@ void setup(void)
   setTextTitle();
   delay(1000);
   setupFastLED();
+  updateRotationSpeed();
 }
 
 void loop(void)

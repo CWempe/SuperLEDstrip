@@ -33,7 +33,7 @@ NexTouch *nex_listen_list[] =
     &p08settings, &p08power,
     &p08t01, &p08t02, &p08t03, &p08t04, &p08t05, &p08t06, &p08t07, 
     &p08c01, &p08c02, &p08c03, &p08c04, &p08c05, &p08c06, &p08c07, &p08c08, 
-    &p08temp02, &p08humid02,
+    &p08temp02, &p08humid02, &p08speed01,
     NULL
 };
 

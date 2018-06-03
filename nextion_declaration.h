@@ -2,6 +2,9 @@
 // global
 // page 1
 
+
+char sRotationSpeed[2] = "";
+
 NexText   title       = NexText(  0, 21, "title");
 NexText   temp        = NexText(  0, 22, "temp");
 NexText   humid       = NexText(  0, 23, "humid");
@@ -184,4 +187,5 @@ NexButton p08c07      = NexButton(7, 16, "p08c07");
 NexButton p08c08      = NexButton(7, 17, "p08c08");
 NexText   p08temp02   = NexText(  7, 18, "p08temp02");
 NexText   p08humid02  = NexText(  7, 19, "p08humid02");
+NexText   p08speed01  = NexText(  7, 31, "p08speed01");
 
