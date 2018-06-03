@@ -125,7 +125,6 @@ bool lightTempoHandler(const HomieRange& range, const String& value) {
 
 bool lightRotationSpeedHandler(const HomieRange& range, const String& value) {
   Homie.getLogger() << "rotationSpeed is " << value << endl;
-  //rotationSpeed = value.toInt();
   setRotationSpeed(value.toInt());
   return true;
 }
