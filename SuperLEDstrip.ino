@@ -20,7 +20,8 @@ void setTextAllSensors(void);
 void setTextHumid(void);
 void setTextTemp(void);
 void setTextTitle(void);
-void updateRotationSpeed();
+void setTextRotationSpeed(void);
+void updateRotationSpeed(void);
 void changeRotationSpeed(bool increaseSpeed);
 
 
@@ -122,6 +123,13 @@ bool lightTempoHandler(const HomieRange& range, const String& value) {
   return true;
 }
 
+bool lightRotationSpeedHandler(const HomieRange& range, const String& value) {
+  Homie.getLogger() << "rotationSpeed is " << value << endl;
+  //rotationSpeed = value.toInt();
+  setRotationSpeed(value.toInt());
+  return true;
+}
+
 
 
 bool lightOnHandler(const HomieRange& range, const String& value) {
@@ -169,6 +177,7 @@ void setup(void)
   lightNode.advertise("brightness").settable(lightBrightnessHandler);
   lightNode.advertise("scene").settable(lightSceneHandler);
   lightNode.advertise("tempo").settable(lightTempoHandler);
+  lightNode.advertise("rotationSpeed").settable(lightRotationSpeedHandler);
   Homie.setGlobalInputHandler(globalInputHandler);
   if ( HOMIE_STANDALONE == true ) {
     Homie.setHomieBootMode(HomieBootMode::STANDALONE);
@@ -176,12 +185,11 @@ void setup(void)
   Homie.setup();
   
   setTempo(BeatsPerMinute);
-  //setTempo(DEFAULT_TEMPO);
+  setRotationSpeed(rotationSpeed);
   NextionSetup();
   setTextTitle();
   delay(1000);
   setupFastLED();
-  updateRotationSpeed();
 }
 
 void loop(void)

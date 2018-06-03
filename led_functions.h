@@ -14,6 +14,19 @@ void setTempo(uint8_t tempo) {
   lightNode.setProperty("tempo").send(String(BeatsPerMinute));
 }
 
+void setRotationSpeed(uint8_t speed) {
+  // prevent speed from exceeding 20
+  if ( speed > 20 ) {
+    speed = 20;
+  }
+  rotationSpeed = speed;
+  //lightNode.setProperty("rotationSpeed").send(String(speed));
+  updateRotationSpeed();
+}
+
+
+
+
 // toggle brightness between 0 and current
 void toggleBrightness()
 {

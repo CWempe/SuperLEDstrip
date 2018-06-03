@@ -25,7 +25,6 @@ void setTextAllSensors()
 
 void setTextRotationSpeed()
 {
-    //sRotationSpeed = String(rotationSpeed);
     dtostrf(rotationSpeed, 3, 0, sRotationSpeed);
     p08speed01.setText(sRotationSpeed);
 }
@@ -42,14 +41,15 @@ void updateTab()
   setTextAll();
 }
 
-
 void updateRotationSpeed () {
+  lightNode.setProperty("rotationSpeed").send(String(rotationSpeed));
   rotationSpeedMs = 3 * rotationSpeed * rotationSpeed - 120 * rotationSpeed + 1200;
   if ( rotationSpeedMs < 1 ) {
     rotationSpeedMs = 1;
   }
   ColorRotation.setPeriod(rotationSpeedMs);
-  setTextRotationSpeed();
+  // Deactivated setTextRotationSpeed() here because it can produce "wdt reset"
+  //setTextRotationSpeed();
 }
 
 void changeRotationSpeed (bool increaseSpeed)
@@ -59,6 +59,8 @@ void changeRotationSpeed (bool increaseSpeed)
   } else if ( increaseSpeed == false && rotationSpeed > 1 ) {
     rotationSpeed--;
   }
+  // setTextRotationSpeed() can be deleted here if bug from updateRotationSpeed() is fixed
+  setTextRotationSpeed();
   updateRotationSpeed();
 }
 
