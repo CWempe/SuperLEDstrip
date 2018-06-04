@@ -35,3 +35,17 @@ void readEepromBrightness() {
     setBrightness(brightnessValue.toInt());
   }
 }
+
+void readEepromTempo() {
+  String tempoValue;
+  // read value from eeprom
+  Embedis::get("tempoValue", tempoValue);
+
+  if ( tempoValue == "" ) {
+    // set to DEFAULT_TEMPO if no value was stored
+    setTempo(DEFAULT_TEMPO);
+  } else {
+  // set Tempo to the Number that was read from the eeprom
+    setTempo(tempoValue.toInt());
+  }
+}

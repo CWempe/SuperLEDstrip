@@ -14,6 +14,8 @@ void setBrightness(uint8_t newBrightness)
 void setTempo(uint8_t tempo) {
   BeatsPerMinute = tempo;
   lightNode.setProperty("tempo").send(String(BeatsPerMinute));
+  // store current scene number to eeprom
+  Embedis::set("tempoValue", String(tempo));
 }
 
 void setRotationSpeed(uint8_t speed) {
@@ -51,9 +53,10 @@ void toggleBrightness()
 
 void setupFastLED()
 {
-  // restore last scene value from eeprom
+  // restore last values from eeprom
   readEepromScene();
   readEepromBrightness();
+  readEepromTempo();
   FastLED.addLeds<LED_TYPE, DATA_PIN, COLOR_ORDER>(leds, NUM_LEDS);
 }
 

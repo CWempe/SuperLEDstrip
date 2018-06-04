@@ -17,6 +17,7 @@ void Fire2012(void);
 void arc_pulse(void);
 void setScene(uint16_t scene);
 void setBrightness(uint8_t newBrightness);
+void setTempo(uint8_t tempo);
 
 void updateTab(void);
 void setTextAll(void);
