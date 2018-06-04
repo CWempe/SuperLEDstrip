@@ -7,6 +7,8 @@ void setBrightness(uint8_t newBrightness)
    currentBrightness = newBrightness;
    FastLED.setBrightness(map(currentBrightness, 0, 100, 0, 255));
    lightNode.setProperty("brightness").send(String(currentBrightness));
+   // store current scene number to eeprom
+   Embedis::set("brightnessValue", String(currentBrightness));
 }
 
 void setTempo(uint8_t tempo) {
@@ -51,7 +53,7 @@ void setupFastLED()
 {
   // restore last scene value from eeprom
   readEepromScene();
-  setBrightness(DEFAULT_BRIGHTNESS);
+  readEepromBrightness();
   FastLED.addLeds<LED_TYPE, DATA_PIN, COLOR_ORDER>(leds, NUM_LEDS);
 }
 

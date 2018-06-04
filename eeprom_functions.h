@@ -21,3 +21,17 @@ void readEepromScene() {
     setScene(sceneValue.toInt());
   }
 }
+
+void readEepromBrightness() {
+  String brightnessValue;
+  // read value from eeprom
+  Embedis::get("brightnessValue", brightnessValue);
+
+  if ( brightnessValue == "" ) {
+    // set to DEFAULT_BRIGHTNESS if no value was stored
+    setBrightness(DEFAULT_BRIGHTNESS);
+  } else {
+  // set Brightness to the Number that was read from the eeprom
+    setBrightness(brightnessValue.toInt());
+  }
+}
