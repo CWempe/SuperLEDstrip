@@ -192,8 +192,6 @@ void setup(void)
   }
   Homie.setup();
 
-  setTempo(BeatsPerMinute);
-  setRotationSpeed(rotationSpeed);
   NextionSetup();
   setTextTitle();
   setupEeprom();
