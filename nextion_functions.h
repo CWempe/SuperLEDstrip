@@ -50,6 +50,8 @@ void updateRotationSpeed () {
   ColorRotation.setPeriod(rotationSpeedMs);
   // Deactivated setTextRotationSpeed() here because it can produce "wdt reset"
   //setTextRotationSpeed();
+  // store current scene number to eeprom
+  Embedis::set("rotationSpeedValue", String(rotationSpeed));
 }
 
 void changeRotationSpeed (bool increaseSpeed)

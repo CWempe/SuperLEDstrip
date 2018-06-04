@@ -49,3 +49,17 @@ void readEepromTempo() {
     setTempo(tempoValue.toInt());
   }
 }
+
+void readEepromRotationSpeed() {
+  String rotationSpeedValue;
+  // read value from eeprom
+  Embedis::get("rotationSpeedValue", rotationSpeedValue);
+
+  if ( rotationSpeedValue == "" ) {
+    // set to DEFAULT_ROTATION_SPEED if no value was stored
+    setRotationSpeed(DEFAULT_ROTATION_SPEED);
+  } else {
+  // set RotationSpeed to the Number that was read from the eeprom
+    setRotationSpeed(rotationSpeedValue.toInt());
+  }
+}

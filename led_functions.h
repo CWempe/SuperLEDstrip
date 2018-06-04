@@ -57,6 +57,7 @@ void setupFastLED()
   readEepromScene();
   readEepromBrightness();
   readEepromTempo();
+  readEepromRotationSpeed();
   FastLED.addLeds<LED_TYPE, DATA_PIN, COLOR_ORDER>(leds, NUM_LEDS);
 }
 
