@@ -52,6 +52,8 @@ The graphical layout is based on [Googles Material Design Guidelines](https://ma
     Some need to be downloaded manually (via git).
       * [**FastLED**](https://github.com/FastLED/FastLED) (tested with v3.1.6; via Library Manager)
       * [**ITEADLIB\_Arduino\_Nextion**](https://github.com/itead/ITEADLIB_Arduino_Nextion#latestunstable) (tested with v0.9.0)
+      * [**EEPROM**](https://www.arduino.cc/en/Reference/EEPROM) (tested with v1.0.0; via Library Manager)
+      * [**Embedis**](https://github.com/thingSoC/embedis) (tested with v1.2.0; via Library Manager)
       * [**elapsedMillis**](https://github.com/pfeerick/elapsedMillis) (tested with v1.0.4; via Library Manager)
       * [**DHT sensor library**](https://github.com/adafruit/DHT-sensor-library) (tested with v1.3.0; via Library Manager)
       * [**Adafruit Unified Sensor**](https://github.com/adafruit/Adafruit_Sensor) (tested with v1.0.2; via Library Manager)
