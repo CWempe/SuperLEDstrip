@@ -5,6 +5,9 @@
 #include <stdlib.h>
 #include "custom_values.h"
 #include <Homie.h>
+#include <EEPROM.h>
+#include <Embedis.h>
+#include "spi_flash.h"
 
 /*
  * Function prototypes
@@ -23,7 +26,10 @@ void setTextTitle(void);
 void setTextRotationSpeed(void);
 void updateRotationSpeed(void);
 void changeRotationSpeed(bool increaseSpeed);
+void readEepromScene(void);
 
+
+Embedis embedis(Serial);
 
 /*
  *  FastLED
@@ -64,7 +70,7 @@ HomieNode lightNode("light", "switch");
 
 
 #include "dht.h"
-
+#include "eeprom_functions.h";
 
 
 /*
@@ -182,11 +188,12 @@ void setup(void)
     Homie.setHomieBootMode(HomieBootMode::STANDALONE);
   }
   Homie.setup();
-  
+
   setTempo(BeatsPerMinute);
   setRotationSpeed(rotationSpeed);
   NextionSetup();
   setTextTitle();
+  setupEeprom();
   delay(1000);
   setupFastLED();
 }

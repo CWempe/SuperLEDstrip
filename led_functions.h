@@ -49,7 +49,8 @@ void toggleBrightness()
 
 void setupFastLED()
 {
-  setScene(DEFAULT_SCENE);
+  // restore last scene value from eeprom
+  readEepromScene();
   setBrightness(DEFAULT_BRIGHTNESS);
   FastLED.addLeds<LED_TYPE, DATA_PIN, COLOR_ORDER>(leds, NUM_LEDS);
 }
@@ -194,6 +195,10 @@ void setScene (uint16_t scene) {
   if ( scene != 509 ) {
     randomColorsCountdown = 2;
   }
+  // publish new scene number via mqtt
   lightNode.setProperty("scene").send(String(scene));
+
+  // store current scene number to eeprom
+  Embedis::set("sceneValue", String(scene));
 }
 
