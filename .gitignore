@@ -8,3 +8,6 @@ upload_firmware.sh
 # ignore data folder in case you want to upload homie configiration manually.
 # see: https://marvinroger.github.io/homie-esp8266/develop/configuration/json-configuration-file/
 data/*
+
+# ignore vscode files
+.vscode/*
