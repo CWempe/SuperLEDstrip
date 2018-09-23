@@ -2054,6 +2054,13 @@
        x2="225.80248"
        y2="244.81208"
        gradientUnits="userSpaceOnUse" />
+    <clipPath
+       id="clipPath18">
+      <path
+         inkscape:connector-curvature="0"
+         id="path20"
+         d="M 0,38 H 38 V 0 H 0 Z" />
+    </clipPath>
   </defs>
   <sodipodi:namedview
      pagecolor="#ffffff"
@@ -2084,13 +2091,13 @@
      guideopacity="0.49803922"
      guidehicolor="#16ff00"
      guidehiopacity="0.49803922"
-     inkscape:zoom="3.535"
-     inkscape:cx="200"
-     inkscape:cy="120"
+     inkscape:zoom="2.4996225"
+     inkscape:cx="185.19393"
+     inkscape:cy="107.45673"
      inkscape:window-x="1912"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="cells_small"
+     inkscape:current-layer="tile_special"
      inkscape:object-nodes="false"
      inkscape:snap-nodes="false">
     <sodipodi:guide
@@ -2430,7 +2437,7 @@
      inkscape:groupmode="layer"
      id="cells"
      inkscape:label="cells big"
-     style="display:none">
+     style="display:inline">
     <use
        x="0"
        y="0"
@@ -2512,7 +2519,7 @@
        inkscape:tiled-clone-of="#cell_big"
        y="0"
        x="0"
-       style="display:none" />
+       style="display:inline" />
     <use
        style="display:inline"
        height="100%"
@@ -2528,7 +2535,7 @@
      inkscape:groupmode="layer"
      id="cells_small"
      inkscape:label="cells small"
-     style="display:inline">
+     style="display:none">
     <use
        style="display:inline"
        x="0"
@@ -2698,7 +2705,7 @@
        inkscape:groupmode="layer"
        id="tile_special"
        inkscape:label="tile specials"
-       style="display:none">
+       style="display:inline">
       <g
          transform="matrix(4.0000001,0,0,4.0000001,82,154)"
          style="fill:none;stroke-width:1.20000005"
@@ -5022,6 +5029,75 @@
          d="M 289.00087,160.00087 A 36.99949,36.99949 0 0 0 252,197 36.99949,36.99949 0 0 0 289.00087,233.99913 36.99949,36.99949 0 0 0 326,197 36.99949,36.99949 0 0 0 289.00087,160.00087 Z m 0,14.21291 A 22.786772,22.786772 0 0 1 311.78709,197 22.786772,22.786772 0 0 1 289.00087,219.78622 22.786772,22.786772 0 0 1 266.21291,197 22.786772,22.786772 0 0 1 289.00087,174.21378 Z"
          id="color_wheel"
          inkscape:connector-curvature="0" />
+      <g
+         id="pumpkin"
+         clip-path="url(#clipPath18)"
+         transform="matrix(1.4117647,0,0,-1.4117647,338.17647,143.91592)"
+         style="display:inline">
+        <g
+           id="g22"
+           transform="translate(19,32.0005)">
+          <path
+             style="fill:#f18f26;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             id="path24"
+             d="m 0,0 h 6 c 7,0 11,-7.887 11,-16 0,-15.001 -9,-15 -17,-15 -8,0 -17,0 -17,15 0,9.958 6,16 11,16 h 6"
+             inkscape:connector-curvature="0" />
+        </g>
+        <g
+           id="g26"
+           transform="translate(27.9717,12.6289)">
+          <path
+             style="fill:#642116;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             id="path28"
+             d="m 0,0 c -0.035,-0.669 -0.352,-1.405 -0.972,-2.129 -1.605,-1.873 -3.386,-1.481 -4.039,0.82 -1.224,-0.194 -2.549,-0.32 -3.961,-0.32 -7,0 -12,3 -12,3 0,-2.673 1.015,-4.438 2.465,-5.624 0.148,0.32 0.345,0.634 0.635,0.924 1.485,1.485 3.105,0.675 3.601,-1.8 0.077,-0.389 0.099,-0.733 0.096,-1.057 2.052,-0.44 4.062,-0.443 5.203,-0.443 3,0 12,0 12,8 C 3.028,1.371 1.907,0.704 0,0"
+             inkscape:connector-curvature="0" />
+        </g>
+        <g
+           id="g30"
+           transform="translate(21.873,31.7642)">
+          <path
+             style="fill:#3f7123;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             id="path32"
+             d="m 0,0 c 0.069,-0.42 -0.222,-0.764 -0.647,-0.764 h -4.452 c -0.425,0 -0.717,0.344 -0.647,0.764 L -5,4.472 c 0.07,0.42 0.476,0.764 0.901,0.764 h 2.452 c 0.425,0 0.832,-0.344 0.901,-0.764 z"
+             inkscape:connector-curvature="0" />
+        </g>
+        <g
+           id="g34"
+           transform="translate(17,31)">
+          <path
+             style="fill:#5c913b;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             id="path36"
+             d="m 0,0 c 0,0 2,5 8,5 5,0 7,-5 7,-5 z"
+             inkscape:connector-curvature="0" />
+        </g>
+        <g
+           id="g38"
+           transform="translate(9.6914,25.8911)">
+          <path
+             style="fill:#642116;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             id="path40"
+             d="M 0,0 C 0.793,1.479 2.093,1.479 2.887,-0.001 L 5.05,-4.034 C 5.845,-5.513 4.744,-6.723 2.604,-6.723 H 0.28 c -2.139,0 -3.239,1.21 -2.446,2.689 z"
+             inkscape:connector-curvature="0" />
+        </g>
+        <g
+           id="g42"
+           transform="translate(25.4229,25.8911)">
+          <path
+             style="fill:#642116;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             id="path44"
+             d="M 0,0 C 0.794,1.479 2.093,1.479 2.887,-0.001 L 5.051,-4.034 C 5.845,-5.513 4.744,-6.723 2.604,-6.723 H 0.28 c -2.138,0 -3.239,1.21 -2.445,2.689 z"
+             inkscape:connector-curvature="0" />
+        </g>
+        <g
+           id="g46"
+           transform="translate(20.1982,14.0381)">
+          <path
+             style="fill:#642116;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             id="path48-1"
+             d="m 0,0 c -0.586,-1.091 -1.544,-1.091 -2.131,0 l -1.597,2.977 c -0.586,1.092 0.226,1.985 1.805,1.985 h 1.715 c 1.58,0 2.393,-0.893 1.806,-1.985 z"
+             inkscape:connector-curvature="0" />
+        </g>
+      </g>
     </g>
     <g
        inkscape:groupmode="layer"
@@ -5715,7 +5791,7 @@
           <g
              id="Ebene_1">
             <polygon
-               points="0.0001,26.4871 17.6581,52.9741 35.3159,26.4871 17.6581,-0.0001 "
+               points="17.6581,52.9741 35.3159,26.4871 17.6581,-0.0001 0.0001,26.4871 "
                class="fil0"
                id="_44070144"
                style="fill:#1d9053" />
@@ -5743,17 +5819,17 @@
              id="_94316080"
              style="fill-rule:evenodd"
              transform="matrix(3.543307e-5,0,0,3.543307e-5,9.091797e-6,3.428073e-4)"
-             points="503250,2128320 503250,3484380 500000,17871800 1925560,19541500 3603860,19541500 12399400,19541200 14078000,19541200 15056800,18394600 15499400,17871400 15500000,3484100 15500000,2127950 14456200,905320 14076000,459500 13873800,459500 2131100,458480 1928810,458480 " />
+             points="12399400,19541200 14078000,19541200 15056800,18394600 15499400,17871400 15500000,3484100 15500000,2127950 14456200,905320 14076000,459500 13873800,459500 2131100,458480 1928810,458480 503250,2128320 503250,3484380 500000,17871800 1925560,19541500 3603860,19541500 " />
           <polygon
              id="_95104984"
              style="fill:#000000;fill-opacity:1;fill-rule:evenodd"
              transform="matrix(3.543307e-5,0,0,3.543307e-5,9.091797e-6,3.428073e-4)"
-             points="503250,2128320 503250,3484380 500000,17871800 1925560,19541500 3603860,19541500 12399400,19541200 14078000,19541200 15056800,18394600 15499400,17871400 15500000,3484100 15500000,2127950 14456200,905320 14076000,459500 13873800,459500 2131100,458480 1928810,458480 " />
+             points="12399400,19541200 14078000,19541200 15056800,18394600 15499400,17871400 15500000,3484100 15500000,2127950 14456200,905320 14076000,459500 13873800,459500 2131100,458480 1928810,458480 503250,2128320 503250,3484380 500000,17871800 1925560,19541500 3603860,19541500 " />
           <polygon
              id="_97350032"
              style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd"
              transform="matrix(3.543307e-5,0,0,3.543307e-5,9.091797e-6,3.428073e-4)"
-             points="950000,2285360 2134720,905600 2769360,904020 13868900,905320 15053500,2284710 15053200,3457810 15053900,17714500 13872200,19094100 12451500,19094100 3551730,19094500 2131100,19094500 946470,17714700 950000,3458180 " />
+             points="12451500,19094100 3551730,19094500 2131100,19094500 946470,17714700 950000,3458180 950000,2285360 2134720,905600 2769360,904020 13868900,905320 15053500,2284710 15053200,3457810 15053900,17714500 13872200,19094100 " />
           <path
              id="_98178992"
              style="fill:#000000;fill-opacity:1;fill-rule:evenodd"
@@ -6071,7 +6147,7 @@
        inkscape:label="tile settings"
        id="tile_settings"
        inkscape:groupmode="layer"
-       style="display:inline">
+       style="display:none">
       <rect
          inkscape:label="tab light active"
          y="70"

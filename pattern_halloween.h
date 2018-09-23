@@ -27,7 +27,6 @@ void halloween()
       // try again later when not flashing
       halloweenFlickerTimer = random16(500, 8000);
     }
-    // Homie.getLogger() << "Flicker: " << halloweenFlickerState << " [" << halloweenFlickerTimer << ", (" << baseColor1.r << ", " << baseColor1.g << ", " << baseColor1.b << ")]" << endl;
     HalloweenFlickerTimer.setPeriod(halloweenFlickerTimer);
   }
 
@@ -52,10 +51,8 @@ void halloween()
       // try again later when not flickering
       halloweenFlashTimer = random16(1000, 5000);
     }
-    // Homie.getLogger() << "Flash: " << halloweenFlashState << "   [" << halloweenFlashTimer << ", (" << baseColor1.r << ", " << baseColor1.g << ", " << baseColor1.b << ")]" << endl;
     HalloweenFlashTimer.setPeriod(halloweenFlashTimer);
   }
 
   fadeTowardColor( leds, NUM_LEDS, baseColor1, 32);
-  //fill_solid(leds, NUM_LEDS, baseColor1);
 }

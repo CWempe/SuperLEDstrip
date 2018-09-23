@@ -30,6 +30,7 @@ NexButton p01c05      = NexButton(0, 14, "p01c05");
 NexButton p01c06      = NexButton(0, 15, "p01c06");
 NexButton p01c07      = NexButton(0, 16, "p01c07");
 NexButton p01c08      = NexButton(0, 17, "p01c08");
+NexButton p01c09      = NexButton(0, 25, "p01c09");
 // page 2
 NexPage   p02         = NexPage(  1,  0, "p02");
 NexText   p02title    = NexText(  1,  1, "p02title");
