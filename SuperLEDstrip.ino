@@ -59,10 +59,13 @@ uint8_t gLastPatternNumber = 255;
 elapsedMillis timeElapsed1;
 elapsedMillis timeElapsed2;
 uint8_t BeatsPerMinute = DEFAULT_TEMPO;
-uint8_t halloweenBreath = 2;  // smaller = faster
-
-uint16_t halloweenTimer = 1000;        // initial timer value
+uint8_t halloweenBaseBrightness = DEFAULT_BRIGHTNESS;  // default brightness of orange light
+CRGB halloweenColorArray[] = {CRGB::White, CRGB::LimeGreen, CRGB::BlueViolet}; //
+uint16_t halloweenFlickerTimer = 1000;  // initial flicker timer value
 bool     halloweenFlickerState = false; // helper to save current state of flickering; true = light of
+uint16_t halloweenFlashTimer = 1000;    // initial flash timer value
+bool     halloweenFlashState = false;   // helper to save current state of flashing; true = flashing on
+
 
 /*
  * Nextion display
