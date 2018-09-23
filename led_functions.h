@@ -59,6 +59,8 @@ void setupFastLED()
   readEepromTempo();
   readEepromRotationSpeed();
   FastLED.addLeds<LED_TYPE, DATA_PIN, COLOR_ORDER>(leds, NUM_LEDS);
+  FastLED.setCorrection( COLOR_CORRECTION );
+  FastLED.setTemperature( COLOR_TEMPERATURE) ;
 }
 
 void loopFastLED()
