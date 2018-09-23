@@ -61,6 +61,9 @@ elapsedMillis timeElapsed2;
 uint8_t BeatsPerMinute = DEFAULT_TEMPO;
 uint8_t halloweenBreath = 2;  // smaller = faster
 
+uint16_t halloweenTimer = 1000;        // initial timer value
+bool     halloweenFlickerState = false; // helper to save current state of flickering; true = light of
+
 /*
  * Nextion display
  */
@@ -84,20 +87,6 @@ HomieNode lightNode("light", "switch");
  * ### FastLED Functions ###
  * #########################
  */
-
-// DEFINE_GRADIENT_PALETTE( halloween_gp ) {
-//     0,     0,  0,  0,   //black
-//    32,   247, 95, 28,   //orange
-//   164,   255,154,  2,   //orange
-//   204,   136, 30,228,   //purple
-//   232,   133,226, 21,   //green
-//   255,     0,  0,  0    //black
-// };
-
-// DEFINE_GRADIENT_PALETTE( halloween_gp ) {
-//     0,   255,165,  0,   //DarkOrange
-//   255,   255,140,  0    //Orange
-// };
 
 #include "led_patterns.h"
 #include "pattern_halloween.h"
