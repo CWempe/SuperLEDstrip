@@ -3,7 +3,7 @@ void setupHalloween()
 {
   baseColor1 = CRGB::DarkOrange;    
   gCurrentPatternNumber = 14;
-  FastLED.setBrightness(halloweenBaseBrightness);
+  FastLED.setBrightness(currentBrightness);
 }
 
 void halloween()
@@ -22,12 +22,12 @@ void halloween()
         halloweenFlickerTimer = random16(100, 3000);
         halloweenFlickerState = false;
       }
-      FastLED.setBrightness(halloweenBaseBrightness);
+      FastLED.setBrightness(currentBrightness);
     } else {
       // try again later when not flashing
       halloweenFlickerTimer = random16(500, 1000);
     }
-    Homie.getLogger() << "Flicker: " << halloweenFlickerState << " [" << halloweenFlickerTimer << ", (" << baseColor1.r << ", " << baseColor1.g << ", " << baseColor1.b << ")]" << endl;
+    // Homie.getLogger() << "Flicker: " << halloweenFlickerState << " [" << halloweenFlickerTimer << ", (" << baseColor1.r << ", " << baseColor1.g << ", " << baseColor1.b << ")]" << endl;
     HalloweenFlickerTimer.setPeriod(halloweenFlickerTimer);
   }
 
@@ -45,14 +45,14 @@ void halloween()
         // return to normal for a longer time
         baseColor1 = CRGB::DarkOrange;
         halloweenFlashTimer = random16(3000, 30000);
-        FastLED.setBrightness(halloweenBaseBrightness);
+        FastLED.setBrightness(currentBrightness);
         halloweenFlashState = false;
       }
     } else {
       // try again later when not flickering
       halloweenFlickerTimer = random16(1000, 5000);
     }
-    Homie.getLogger() << "Flash: " << halloweenFlashState << "   [" << halloweenFlashTimer << ", (" << baseColor1.r << ", " << baseColor1.g << ", " << baseColor1.b << ")]" << endl;
+    // Homie.getLogger() << "Flash: " << halloweenFlashState << "   [" << halloweenFlashTimer << ", (" << baseColor1.r << ", " << baseColor1.g << ", " << baseColor1.b << ")]" << endl;
     HalloweenFlashTimer.setPeriod(halloweenFlashTimer);
   }
 

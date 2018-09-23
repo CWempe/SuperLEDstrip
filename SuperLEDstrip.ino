@@ -59,7 +59,6 @@ uint8_t gLastPatternNumber = 255;
 elapsedMillis timeElapsed1;
 elapsedMillis timeElapsed2;
 uint8_t BeatsPerMinute = DEFAULT_TEMPO;
-uint8_t halloweenBaseBrightness = DEFAULT_BRIGHTNESS;  // default brightness of orange light
 CRGB halloweenColorArray[] = {CRGB::White, CRGB::LimeGreen, CRGB::BlueViolet}; //
 uint16_t halloweenFlickerTimer = 1000;  // initial flicker timer value
 bool     halloweenFlickerState = false; // helper to save current state of flickering; true = light of
