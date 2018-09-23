@@ -251,6 +251,21 @@ void setupPaletteFrance()
                                  white,    red,    red,  red );
 }
 
+// This function sets up a palette of the spanish flag.
+void setupPaletteSpain()
+{
+  CRGB red   = CRGB::Red;
+  CRGB yellow = CRGB::Yellow;
+
+  gCurrentPatternNumber = 7;
+  currentBlending = NOBLEND;
+  currentPalette = CRGBPalette16(
+                                 red, red, red,   red,
+                                 yellow,  yellow,  yellow,  yellow,
+                                 red, red, red,   red,
+                                 yellow,  yellow,  yellow,  yellow );
+}
+
 void stars()
 {
   fadeToBlackBy( leds, NUM_LEDS, 1);

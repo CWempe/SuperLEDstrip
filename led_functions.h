@@ -149,6 +149,9 @@ void setScene (uint16_t scene) {
     case 306:   // french flag
       setupPaletteFrance();
       break;
+    case 307:   // spanish flag
+      setupPaletteSpain();
+      break;
       
     // page 4
     case 401:   // BVB

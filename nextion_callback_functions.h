@@ -68,7 +68,7 @@ void p03c03PopCallback(void *ptr) { setScene(303); }
 void p03c04PopCallback(void *ptr) { setScene(304); }
 void p03c05PopCallback(void *ptr) { setScene(305); }
 void p03c06PopCallback(void *ptr) { setScene(306); }
-void p03c07PopCallback(void *ptr) { }
+void p03c07PopCallback(void *ptr) { setScene(307); }
 void p03c08PopCallback(void *ptr) { }
 // page 4
 void p04PopCallback(void *ptr) { }
