@@ -38,7 +38,7 @@ void halloween()
       if ( halloweenFlashState == false ) {
         // flash with full brightness and a random pre-defined color
         baseColor1 = halloweenColorArray[random(3)];
-        halloweenFlashTimer = random16(200, 400);
+        halloweenFlashTimer = random16(300, 500);
         FastLED.setBrightness(255);
         halloweenFlashState = true;
       } else {
@@ -56,5 +56,6 @@ void halloween()
     HalloweenFlashTimer.setPeriod(halloweenFlashTimer);
   }
 
-  fill_solid(leds, NUM_LEDS, baseColor1);
+  fadeTowardColor( leds, NUM_LEDS, baseColor1, 32);
+  //fill_solid(leds, NUM_LEDS, baseColor1);
 }
