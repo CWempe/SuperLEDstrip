@@ -15,6 +15,8 @@
 void setTextAllSensors(void);
 void Fire2012(void);
 void arc_pulse(void);
+void setupHalloween(void);
+void halloween(void);
 void setScene(uint16_t scene);
 void setBrightness(uint8_t newBrightness);
 void setTempo(uint8_t tempo);
@@ -57,6 +59,7 @@ uint8_t gLastPatternNumber = 255;
 elapsedMillis timeElapsed1;
 elapsedMillis timeElapsed2;
 uint8_t BeatsPerMinute = DEFAULT_TEMPO;
+uint8_t halloweenBreath = 2;  // smaller = faster
 
 /*
  * Nextion display
@@ -81,11 +84,27 @@ HomieNode lightNode("light", "switch");
  * ### FastLED Functions ###
  * #########################
  */
+
+// DEFINE_GRADIENT_PALETTE( halloween_gp ) {
+//     0,     0,  0,  0,   //black
+//    32,   247, 95, 28,   //orange
+//   164,   255,154,  2,   //orange
+//   204,   136, 30,228,   //purple
+//   232,   133,226, 21,   //green
+//   255,     0,  0,  0    //black
+// };
+
+// DEFINE_GRADIENT_PALETTE( halloween_gp ) {
+//     0,   255,165,  0,   //DarkOrange
+//   255,   255,140,  0    //Orange
+// };
+
 #include "led_patterns.h"
+#include "pattern_halloween.h"
 
 typedef void (*SimplePatternList[])();
-//     Pattern IDs              0          1      2         3        4    5     6               7              8     9         10         11   12           13
-SimplePatternList gPatterns = { oneColor, stars, confetti, rainbow, bpm, kitt, flashingLights, runningPalette, xmas, Fire2012, arc_pulse, ice, randomColor, colorRotation };
+//     Pattern IDs              0          1      2         3        4    5     6               7              8     9         10         11   12           13             14
+SimplePatternList gPatterns = { oneColor, stars, confetti, rainbow, bpm, kitt, flashingLights, runningPalette, xmas, Fire2012, arc_pulse, ice, randomColor, colorRotation, halloween };
 
 
 #include "led_functions.h"
@@ -217,4 +236,3 @@ void loop(void)
   Homie.loop();
 
 }
-

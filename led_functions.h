@@ -112,6 +112,9 @@ void setScene (uint16_t scene) {
     case 108:   // color rotation
       gCurrentPatternNumber = 13;
       break;
+    case 109:   // Halloween
+      setupHalloween();
+      break;
       
     // page 2
     case 201:   // german police
