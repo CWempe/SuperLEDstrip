@@ -169,6 +169,9 @@ void setScene (uint16_t scene) {
     case 405:   // ESV München
       setupPaletteESV();
       break;
+    case 406:   // HSV München
+      setupPaletteHSV();
+      break;
       
     // page 5
     case 501:   // white
