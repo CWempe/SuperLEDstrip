@@ -129,6 +129,7 @@ After this you copy the compiled HMI file (will be uploaded to the release page)
 
 ## Customizing
 
+### Arduino Code
 Let's say you want to add an LED pattern you developed as the function `mynewpattern()`.
 
 First you need to add the pattern in `SuperLEDstripe.ino` if you create a new animation.
@@ -160,9 +161,17 @@ Here it is `p01c07PopCallback` (p01 = page 1; c07 = cell 7).
 void p01c07PopCallback(void *ptr) { gCurrentPatternNumber = 10; }
 ```
 
+### Display Graphics
+
 You also need to change the graphics of the display, if you add a new pattern.
-First you open the `Display\exported\display_matarial_design.svg` with Inkscape and enable the **object manger**.
-Now you insert or create you new graphic (we will call it "tile" on top of the cell and group this with the object manager under the tile group of your choice (e.g. "tiles specials").
+First you need to download some pictures from the internet that are not includes in this project.
+
+```
+./Display/exported/get_images.sh
+```
+
+Now you can open the `Display\exported\display_matarial_design.svg` with Inkscape and enable the **object manger**.
+Next you insert or create your new graphic (we will call it "tile" on top of the cell and group this with the object manager under the tile group of your choice (e.g. "tiles specials").
 This is necessary, because the export script will automatically mark the different tile groups as (in-)visible.
 
 ![add tile to graphics][add_tile_inkscape]

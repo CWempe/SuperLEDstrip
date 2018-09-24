@@ -11,3 +11,10 @@ data/*
 
 # ignore vscode files
 .vscode/*
+
+# ignore external images
+Display/exported/external_images/*
+
+# ignore other files
+Display/exported/fart.exe
+Display/exported/gui_themed.svg

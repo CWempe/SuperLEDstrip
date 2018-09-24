@@ -2,22 +2,26 @@
 
 SET WORKDIR=%~dp0
 SET MSXSL=%WORKDIR%\xsl\msxsl.exe
+SET FARTEXE=%WORKDIR%\fart.exe
 SET XSLFILE=%WORKDIR%\xsl\variable_colors_dark.xsl
 SET ORIGINALXSLFILE=%WORKDIR%\xsl\original.xsl
 SET INPUTFILE=%WORKDIR%\display_matarial_design.svg
+SET GUITHEMED=%WORKDIR%\gui_themed.svg
 SET OUTPUTPATH=%WORKDIR%\exported
+SET EXTERNALIMAGES=%WORKDIR%\external_images
 SET PHOTOPATH=%WORKDIR%\..\..\photos
-SET INKMATE=c:\tools\ruby25\bin\inkmake.bat
+SET INKMAKE=c:\tools\ruby25\bin\inkmake.bat
 SET IMAGEMAGICK=magick.exe
 SET STARTTIME=%TIME%
 
 cd %WORKDIR%
 
 
-REM copy content 1:1 from original, but format the code like the rest
-ECHO original ...
-%MSXSL% %INPUTFILE% %ORIGINALXSLFILE% -o %OUTPUTPATH%\original.svg
 
+IF NOT EXIST %FARTEXE% (
+    ECHO Please download fart.exe from http://sourceforge.net/projects/fart-it/files/
+    EXIT
+)
 
 call:SetColor  dark, white
 EXIT
@@ -27,7 +31,6 @@ FOR %%i IN (red pink purple deeppurple indigo blue lightblue cyan teal green lig
 		call:SetColor  %%i, %%j
 	)
 )
-
 
 
 
@@ -87,13 +90,10 @@ IF "%COLOR2%"=="bluegrey"    SET SECONDARYHEX=#607D8B  &  SET SECONDARYBRIGHT=da
 IF "%COLOR2%"=="black"       SET SECONDARYHEX=#000000  &  SET SECONDARYBRIGHT=dark
 IF "%COLOR2%"=="white"       SET SECONDARYHEX=#ffffff  &  SET SECONDARYBRIGHT=light
 
-call:ExportPNG dark
+REM call:ExportPNG dark
 call:ExportPNG light
 
 GOTO:EOF
-
-
-
 
 
 :ExportPNG
@@ -103,14 +103,18 @@ SET FOLDER=%COLOR1%_%COLOR2%_%THEME%
 ECHO.
 ECHO %FOLDER% ...
 MKDIR %OUTPUTPATH%\%FOLDER%
-%MSXSL% %INPUTFILE% %XSLFILE% -o %OUTPUTPATH%\%FOLDER%\gui.svg ^
+%MSXSL% %INPUTFILE% %XSLFILE% -o %GUITHEMED% ^
   primary_color=%PRIMARYHEX% secondary_color=%SECONDARYHEX% ^
   primary_bright=%PRIMARYBRIGHT% secondary_bright=%SECONDARYBRIGHT% ^
   theme=%THEME%
   
-  
 copy /Y %WORKDIR%\inkfile %OUTPUTPATH%\%FOLDER%\inkfile
-call %INKMATE% -s %OUTPUTPATH%\%FOLDER% -o %OUTPUTPATH%\%FOLDER%
+
+ECHO Replace relative path to external images with absolut path for inkmake...
+%FARTEXE% %GUITHEMED% "./external_images/" "%EXTERNALIMAGES%\\"
+
+ECHO create images based on layers in svg file...
+call %INKMAKE% -s %WORKDIR% -o %OUTPUTPATH%\%FOLDER%
 
 ECHO.
 ECHO Generate GIF..
