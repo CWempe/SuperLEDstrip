@@ -389,7 +389,7 @@ void flashingLights()
   // When status 3 is older than flash1secondOff
   if ( flash1status == 3 && ( timeElapsed1 > flash1secondOff ) )
   {
-    leds(0, NUM_LEDS / 4 - 1) = baseColor1;
+    leds[0, NUM_LEDS / 4 - 1] = baseColor1;
     flash1status = 0;
     timeElapsed1 = 0;
   }
@@ -397,7 +397,7 @@ void flashingLights()
   // When status 0 is older than flashPause
   if ( flash1status == 0 && ( timeElapsed1 > flashDuration ) )
   {
-    leds(0, NUM_LEDS / 4 - 1) = CRGB::Black;
+    leds[0, NUM_LEDS / 4 - 1] = CRGB::Black;
     flash1status = 1;
     timeElapsed1 = 0;
   }
@@ -405,7 +405,7 @@ void flashingLights()
   // When status 1 is older than flash1secondOff
   if ( flash1status == 1 && ( timeElapsed1 > flashFirstOff ) )
   {
-    leds(0, NUM_LEDS / 4 - 1) = baseColor1;
+    leds[0, NUM_LEDS / 4 - 1] = baseColor1;
     flash1status = 2;
     timeElapsed1 = 0;
   }
@@ -413,7 +413,7 @@ void flashingLights()
   // When status 2 is older than flashPause
   if ( flash1status == 2 && ( timeElapsed1 > flashDuration ) )
   {
-    leds(0, NUM_LEDS / 4 - 1) = CRGB::Black;
+    leds[0, NUM_LEDS / 4 - 1] = CRGB::Black;
     flash1status = 3;
     timeElapsed1 = 0;
   }
@@ -426,7 +426,7 @@ void flashingLights()
   // When status 3 is older than flash2secondOff
   if ( flash2status == 3 && ( timeElapsed2 > flash2secondOff ) )
   {
-    leds(NUM_LEDS / 4 * 3, NUM_LEDS - 1) = baseColor2;
+    leds[NUM_LEDS / 4 * 3, NUM_LEDS - 1] = baseColor2;
     flash2status = 0;
     timeElapsed2 = 0;
   }
@@ -434,7 +434,7 @@ void flashingLights()
   // When status 0 is older than flashPause
   if ( flash2status == 0 && ( timeElapsed2 > flashDuration ) )
   {
-    leds(NUM_LEDS / 4 * 3, NUM_LEDS - 1) = CRGB::Black;
+    leds[NUM_LEDS / 4 * 3, NUM_LEDS - 1] = CRGB::Black;
     flash2status = 1;
     timeElapsed2 = 0;
   }
@@ -442,7 +442,7 @@ void flashingLights()
   // When status 1 is older than flash2secondOff
   if ( flash2status == 1 && ( timeElapsed2 > flashFirstOff ) )
   {
-    leds(NUM_LEDS / 4 * 3, NUM_LEDS - 1) = baseColor2;
+    leds[NUM_LEDS / 4 * 3, NUM_LEDS - 1] = baseColor2;
     flash2status = 2;
     timeElapsed2 = 0;
   }
@@ -450,7 +450,7 @@ void flashingLights()
   // When status 2 is older than flashPause
   if ( flash2status == 2 && ( timeElapsed2 > flashDuration ) )
   {
-    leds(NUM_LEDS / 4 * 3, NUM_LEDS - 1) = CRGB::Black;
+    leds[NUM_LEDS / 4 * 3, NUM_LEDS - 1] = CRGB::Black;
     flash2status = 3;
     timeElapsed2 = 0;
   }

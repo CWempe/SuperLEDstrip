@@ -8,6 +8,7 @@
 #include <EEPROM.h>
 #include <Embedis.h>
 #include "spi_flash.h"
+// #include "FastLED_RGBW.h"
 
 /*
  * Function prototypes
@@ -40,7 +41,10 @@ Embedis embedis(Serial);
  *  FastLED
  */
 FASTLED_USING_NAMESPACE 
-CRGBArray<NUM_LEDS> leds;
+
+// CRGBArray<NUM_LEDS> leds;
+CRGB leds[NUM_LEDS];
+
 uint8_t gHue  = 0; // rotating "base color" used by many of the patterns
 uint8_t gHue2 = 0; // rotating "color" incremented by some pattern with specific speed
 uint8_t rotationSpeed = DEFAULT_ROTATION_SPEED; // default speed for color rotation

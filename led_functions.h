@@ -66,7 +66,7 @@ void setupFastLED()
 void loopFastLED()
 {
   if ( gLastPatternNumber != gCurrentPatternNumber) {
-    leds(0, NUM_LEDS - 1) = CRGB::Black;
+    leds[0, NUM_LEDS - 1] = CRGB::Black;
     gLastPatternNumber = gCurrentPatternNumber;
   }
   gPatterns[gCurrentPatternNumber]();
