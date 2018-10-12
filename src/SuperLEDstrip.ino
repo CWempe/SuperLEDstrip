@@ -1,5 +1,4 @@
 #include <Nextion.h>
-#include <FastLED.h>
 #include <elapsedMillis.h>
 #include <stdlib.h>
 #include <Homie.h>
@@ -8,6 +7,10 @@
 #include <spi_flash.h>
 #include <DHT.h>
 #include <SoftwareSerial.h>
+
+#define FASTLED_RGBW
+#define FASTLED_ESP8266_DMA
+#include <FastLED.h>
 
 #include "custom_values.h"
 
