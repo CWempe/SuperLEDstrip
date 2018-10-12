@@ -32,6 +32,9 @@
 #define DEFAULT_FPS        120  // frames per second
 #define DEFAULT_TEMPO       80  // betas per minute
 #define DEFAULT_ROTATION_SPEED 20  // higher is slower; 1 = increments Hue value per 1 every FRAME
+// `FASTLED_RGBW` and `FASTLED_DMA` only work with coryking's FastLED
+#define FASTLED_RGBW            // define this if you use RGBW SK6812 strips
+#define FASTLED_ESP8266_DMA     // define this if you connected the led strip to GPIO pin 3 (commenly RX)
 
 // Start with lights off?
 bool lightON = false;
