@@ -25,7 +25,7 @@ void halloween()
       FastLED.setBrightness(currentBrightness);
     } else {
       // try again later when not flashing
-      halloweenFlickerTimer = random16(500, 8000);
+      halloweenFlickerTimer = random16(500, 2000);
     }
     HalloweenFlickerTimer.setPeriod(halloweenFlickerTimer);
   }
