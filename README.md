@@ -110,6 +110,13 @@ see:
 * https://github.com/itead/ITEADLIB_Arduino_Nextion#uno-like-mainboards
 * https://www.reddit.com/r/arduino/comments/4b6jfi/nexconfigh_for_nextion_display_on_arduino_uno/
 
+####
+
+You also might want to change some custom values in `custom_values.h`.  
+Like `DISPLAY_TITLE`, `DATA_PIN`, `NUM_LEDS`, `LEDS_PER_METER`, `LED_TYPE` or `COLOR_ORDER`.
+
+When using the custom FastLED library you are also able to use RGBW SK6812 strips and DMA mode by defining these features.
+
 ## Usage
 
 First you need to combine the hardware components.
@@ -203,6 +210,8 @@ Now you can see the result by clicking `Debug` or hit `Compile` to create a bina
 
 ## OTA-Update
 
+*Seems to be [broken](https://github.com/marvinroger/homie-esp8266/issues/530) at the moment!*
+
 With the integration of homie-esp8266 there comes the ability to flash the firmware via wifi.
 
 * make sure the device is connected to your mqtt broker
@@ -227,3 +236,16 @@ You can find configuration examples in the `openhab` folder.
 [add_tile_inkscape]: photos/add_tile_inkscape.png
 [add_tile_nextion]: photos/add_tile_nextion.png
 [openhab_sitemap]: photos/openhab_sitemap.png
+
+## Changelog
+
+**2.3.0**
+
+* Migrate to PlatformIO
+* Add option to correct color and color temperature via FastLED
+* Move random color pattern to arcade tab
+* Add support for RGBW and DMA via custom library ([coryking/FastLED](https://github.com/coryking/FastLED))
+* Add support for external graphics in display svg
+* Add patterns
+  * spanish flag
+  * halloween
