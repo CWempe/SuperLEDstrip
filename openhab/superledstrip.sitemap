@@ -39,7 +39,7 @@ sitemap superledstrip label="SuperLEDstrip"
                                                   506='magenta',
                                                   507='cyan',
                                                   508='yellow',
-                                                  509='random color' ]
+                                                  602='random color' ]
         Setpoint    item=sLED_tempo   minValue=0 maxValue=255
         Text        item=sLED_temp
         Text        item=sLED_humid
