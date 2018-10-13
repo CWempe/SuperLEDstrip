@@ -53,6 +53,7 @@ int rotationSpeedMs; // rotationSpeed converted to delay between color changing 
 static CEveryNMilliseconds ColorRotation(100);
 CRGB baseColor1 = CRGB::Blue;
 CRGB baseColor2 = CRGB::Blue;
+CRGB customColor = CRGB(255,255,255);
 // Array of random default colors
 CRGB randomColorArray[] = {CRGB::White, CRGB( 255, 147, 41), CRGB::Red, CRGB::Green, CRGB::Blue, CRGB::Magenta, CRGB::Cyan, CRGB::Yellow};
 uint8_t randomColorsCountdown = 2;    // will be set to 0 (disable countdown) via first use of setupRandomColor
@@ -104,6 +105,7 @@ SimplePatternList gPatterns = { oneColor, stars, confetti, rainbow, bpm, kitt, f
 
 
 #include "led_functions.h"
+#include "led_custom_color.h"
 
 
 /*
@@ -197,6 +199,7 @@ void setup(void)
   temperatureNode.advertise("degrees");
   humidityNode.advertise("percentage");
   lightNode.advertise("on").settable(lightOnHandler);
+  lightNode.advertise("customColor").settable(lightCustomColorHandler);
   lightNode.advertise("brightness").settable(lightBrightnessHandler);
   lightNode.advertise("scene").settable(lightSceneHandler);
   lightNode.advertise("tempo").settable(lightTempoHandler);
