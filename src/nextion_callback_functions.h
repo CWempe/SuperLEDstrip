@@ -114,7 +114,7 @@ void p05c05PopCallback(void *ptr) { setScene(505); }
 void p05c06PopCallback(void *ptr) { setScene(506); }
 void p05c07PopCallback(void *ptr) { setScene(507); }
 void p05c08PopCallback(void *ptr) { setScene(508); }
-void p05c09PopCallback(void *ptr) { setScene(509); }
+void p05c09PopCallback(void *ptr) { }
 // page 6
 void p06PopCallback(void *ptr) { }
 void p06titlePopCallback(void *ptr) { }
@@ -130,7 +130,7 @@ void p06t05PopCallback(void *ptr) { updateTab(); }
 void p06t06PopCallback(void *ptr) { updateTab(); }
 void p06t07PopCallback(void *ptr) { updateTab(); }
 void p06c01PopCallback(void *ptr) { setScene(601); }
-void p06c02PopCallback(void *ptr) { }
+void p06c02PopCallback(void *ptr) { setScene(602); }
 void p06c03PopCallback(void *ptr) { }
 void p06c04PopCallback(void *ptr) { }
 void p06c05PopCallback(void *ptr) { }

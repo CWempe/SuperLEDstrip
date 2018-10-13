@@ -198,18 +198,18 @@ void setScene (uint16_t scene) {
     case 508:   // yellow
       setupOneColor(CRGB::Yellow);
       break;
-    case 509:   // random color
-      setupRandomColor();
-      break;
       
     // page 6
     case 601:   // arcade pulse
       gCurrentPatternNumber = 10;
       break;
+    case 602:   // random color
+      setupRandomColor();
+      break;
   }
 
   // reset randomColorsCountdown if another scene is selected
-  if ( scene != 509 ) {
+  if ( scene != 602 ) {
     randomColorsCountdown = 2;
   }
   // publish new scene number via mqtt
