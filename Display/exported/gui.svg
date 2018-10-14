@@ -249,13 +249,13 @@
     </g>
     <g
        id="tile_small"
-       transform="matrix(1.0000692,0,0,1.0001509,-0.00297706,0.98527092)"
-       inkscape:tile-cx="43.000001"
+       transform="translate(0,1)"
+       inkscape:tile-cx="41"
        inkscape:tile-cy="95.170596"
-       inkscape:tile-w="82.00007"
-       inkscape:tile-h="41.000001"
+       inkscape:tile-w="82.00"
+       inkscape:tile-h="41"
        inkscape:tile-x0="2.0009172"
-       inkscape:tile-y0="75.999999">
+       inkscape:tile-y0="76">
       <rect
          transform="matrix(0.98180344,0,0,0.96422702,0.78340565,4.3811664)"
          inkscape:label="cell1"
@@ -272,6 +272,83 @@
          height="36.994419"
          x="4.0026999"
          y="75.00341"
+         inkscape:label="cell1" />
+    </g>
+    <g
+       id="tile_very_small"
+       inkscape:tile-cx="41"
+       inkscape:tile-cy="41"
+       inkscape:tile-w="41"
+       inkscape:tile-h="41"
+       inkscape:tile-x0="0"
+       inkscape:tile-y0="76">
+      <rect
+         inkscape:label="cell1"
+         y="78"
+         x="4"
+         height="35"
+         width="37"
+         id="rectverysamall"
+         style="display:inline;opacity:0.66000001;fill:url(#shadow_stop_1);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:354.33071899;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter5030)" />
+      <rect
+         style="display:inline;opacity:1;fill:url(#cards);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:360;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect54"
+         width="37"
+         height="37"
+         x="4"
+         y="75"
+         inkscape:label="cell1" />
+    </g>
+    <g
+       id="tile_very_small2"
+       transform="translate(0,1)"
+       inkscape:tile-cx="43"
+       inkscape:tile-cy="43"
+       inkscape:tile-w="35"
+       inkscape:tile-h="41"
+       inkscape:tile-x0="2"
+       inkscape:tile-y0="76">
+      <rect
+         transform="matrix(1,0,0,0.96422702,0,4.3811664)"
+         inkscape:label="cell1"
+         y="76"
+         x="4"
+         height="37"
+         width="31"
+         id="rect57"
+         style="display:inline;opacity:0.66000001;fill:url(#shadow_stop_1);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:360;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter5030)" />
+      <rect
+         style="display:inline;opacity:1;fill:url(#cards);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:360;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect59"
+         width="31"
+         height="37"
+         x="4"
+         y="75"
+         inkscape:label="cell1" />
+    </g>
+    <g
+       id="tile_slider"
+       inkscape:tile-cx="242"
+       inkscape:tile-cy="41"
+       inkscape:tile-w="242"
+       inkscape:tile-h="41"
+       inkscape:tile-x0="0"
+       inkscape:tile-y0="0">
+      <rect
+         inkscape:label="cell1"
+         y="4"
+         x="0"
+         height="35"
+         width="242"
+         id="rect60"
+         style="display:inline;opacity:0.66000001;fill:url(#shadow_stop_1);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:354.33071899;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter5030)" />
+      <rect
+         style="display:inline;opacity:1;fill:url(#cards);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:360;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect62"
+         width="242"
+         height="37"
+         x="0"
+         y="0"
          inkscape:label="cell1" />
     </g>
     <path
@@ -2061,6 +2138,16 @@
          id="path20"
          d="M 0,38 H 38 V 0 H 0 Z" />
     </clipPath>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#tab_indicator"
+       id="linearGradient16145"
+       gradientTransform="matrix(5,0,0,0.2,-150,0)"
+       x1="70"
+       y1="350"
+       x2="80"
+       y2="350"
+       gradientUnits="userSpaceOnUse" />
   </defs>
   <sodipodi:namedview
      pagecolor="#ffffff"
@@ -2079,7 +2166,7 @@
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="4"
-     showguides="false"
+     showguides="true"
      inkscape:guide-bbox="true"
      inkscape:snap-path-mask="false"
      inkscape:snap-path-clip="false"
@@ -2091,15 +2178,17 @@
      guideopacity="0.49803922"
      guidehicolor="#16ff00"
      guidehiopacity="0.49803922"
-     inkscape:zoom="3.32"
+     inkscape:zoom="3.1525"
      inkscape:cx="200"
      inkscape:cy="120"
      inkscape:window-x="1912"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="tile_06"
+     inkscape:current-layer="g2355"
      inkscape:object-nodes="false"
-     inkscape:snap-nodes="false">
+     inkscape:snap-nodes="true"
+     inkscape:snap-bbox="true"
+     inkscape:bbox-paths="true">
     <sodipodi:guide
        position="4,226.64633"
        orientation="1,0"
@@ -2316,6 +2405,27 @@
        orientation="0,1"
        id="guide4426"
        inkscape:locked="false" />
+    <sodipodi:guide
+       position="363,122"
+       orientation="1,0"
+       id="guide16113"
+       inkscape:locked="false"
+       inkscape:label=""
+       inkscape:color="rgb(0,0,255)" />
+    <sodipodi:guide
+       position="367,112"
+       orientation="1,0"
+       inkscape:locked="false"
+       id="guide16115"
+       inkscape:label=""
+       inkscape:color="rgb(0,0,255)" />
+    <sodipodi:guide
+       position="398,104"
+       orientation="1,0"
+       id="guide16117"
+       inkscape:locked="false"
+       inkscape:label=""
+       inkscape:color="rgb(0,0,255)" />
   </sodipodi:namedview>
   <g
      inkscape:groupmode="layer"
@@ -2437,7 +2547,7 @@
      inkscape:groupmode="layer"
      id="cells"
      inkscape:label="cells big"
-     style="display:inline">
+     style="display:none">
     <use
        x="0"
        y="0"
@@ -2693,6 +2803,172 @@
        xlink:href="#tile_small"
        transform="translate(246.00021,123)"
        id="use5064"
+       width="100%"
+       height="100%" />
+  </g>
+  <g
+     style="display:inline"
+     inkscape:label="cells customColor"
+     id="g2325"
+     inkscape:groupmode="layer">
+    <use
+       height="100%"
+       width="100%"
+       id="use2293"
+       xlink:href="#tile_slider"
+       inkscape:tiled-clone-of="#tile_slider"
+       y="0"
+       x="0"
+       style="display:inline"
+       transform="translate(4,76)" />
+    <use
+       height="100%"
+       width="100%"
+       id="use2309"
+       transform="matrix(0.98273101,0,0,1.0112887,246.38855,0.15536797)"
+       xlink:href="#tile_very_small"
+       inkscape:tiled-clone-of="#tile_very_small"
+       y="0"
+       x="0"
+       style="display:inline" />
+    <use
+       height="100%"
+       width="100%"
+       id="use2311"
+       transform="matrix(0.99402744,0,0,1.0002704,328.11309,-0.02886111)"
+       xlink:href="#tile_very_small2"
+       inkscape:tiled-clone-of="#tile_very_small"
+       y="0"
+       x="0"
+       style="display:inline" />
+    <use
+       style="display:inline"
+       x="0"
+       y="0"
+       inkscape:tiled-clone-of="#tile_very_small"
+       xlink:href="#tile_very_small2"
+       transform="matrix(0.99401967,0,0,1.0002707,363.11311,-0.0288962)"
+       id="use16119"
+       width="100%"
+       height="100%" />
+    <use
+       style="display:inline"
+       x="0"
+       y="0"
+       inkscape:tiled-clone-of="#tile_very_small"
+       xlink:href="#tile_very_small2"
+       transform="matrix(0.99402744,0,0,1.0002704,328.11309,40.971139)"
+       id="use16121"
+       width="100%"
+       height="100%" />
+    <use
+       height="100%"
+       width="100%"
+       id="use16123"
+       transform="matrix(0.99402744,0,0,1.0002704,363.11309,40.971139)"
+       xlink:href="#tile_very_small2"
+       inkscape:tiled-clone-of="#tile_very_small"
+       y="0"
+       x="0"
+       style="display:inline" />
+    <use
+       style="display:inline"
+       x="0"
+       y="0"
+       inkscape:tiled-clone-of="#tile_very_small"
+       xlink:href="#tile_very_small"
+       transform="matrix(0.98360368,0,0,1.0112788,287.35196,0.15607657)"
+       id="use30532"
+       width="100%"
+       height="100%" />
+    <use
+       style="display:inline"
+       x="0"
+       y="0"
+       inkscape:tiled-clone-of="#tile_very_small"
+       xlink:href="#tile_very_small"
+       transform="matrix(0.98273275,0,0,1.0112886,246.38854,41.086943)"
+       id="use30534"
+       width="100%"
+       height="100%" />
+    <use
+       height="100%"
+       width="100%"
+       id="use30536"
+       transform="matrix(0.98360542,0,0,1.0112787,287.35203,41.087652)"
+       xlink:href="#tile_very_small"
+       inkscape:tiled-clone-of="#tile_very_small"
+       y="0"
+       x="0"
+       style="display:inline" />
+    <use
+       style="display:inline"
+       x="0"
+       y="0"
+       inkscape:tiled-clone-of="#tile_very_small"
+       xlink:href="#tile_very_small"
+       transform="matrix(0.98273101,0,0,1.0112887,246.38855,82.155369)"
+       id="use30538"
+       width="100%"
+       height="100%" />
+    <use
+       height="100%"
+       width="100%"
+       id="use30540"
+       transform="matrix(0.98360368,0,0,1.0112788,287.35196,82.156077)"
+       xlink:href="#tile_very_small"
+       inkscape:tiled-clone-of="#tile_very_small"
+       y="0"
+       x="0"
+       style="display:inline" />
+    <use
+       height="100%"
+       width="100%"
+       id="use30542"
+       transform="matrix(0.98273275,0,0,1.0112886,246.38854,123.08694)"
+       xlink:href="#tile_very_small"
+       inkscape:tiled-clone-of="#tile_very_small"
+       y="0"
+       x="0"
+       style="display:inline" />
+    <use
+       style="display:inline"
+       x="0"
+       y="0"
+       inkscape:tiled-clone-of="#tile_very_small"
+       xlink:href="#tile_very_small"
+       transform="matrix(0.98360542,0,0,1.0112787,287.35203,123.08765)"
+       id="use30544"
+       width="100%"
+       height="100%" />
+    <use
+       transform="translate(4,117)"
+       style="display:inline"
+       x="0"
+       y="0"
+       inkscape:tiled-clone-of="#tile_slider"
+       xlink:href="#tile_slider"
+       id="use16118"
+       width="100%"
+       height="100%" />
+    <use
+       height="100%"
+       width="100%"
+       id="use16120"
+       xlink:href="#tile_slider"
+       inkscape:tiled-clone-of="#tile_slider"
+       y="0"
+       x="0"
+       style="display:inline"
+       transform="translate(4,158)" />
+    <use
+       transform="translate(4,199)"
+       style="display:inline"
+       x="0"
+       y="0"
+       inkscape:tiled-clone-of="#tile_slider"
+       xlink:href="#tile_slider"
+       id="use16122"
        width="100%"
        height="100%" />
   </g>
@@ -7621,17 +7897,17 @@
              id="_94316080"
              style="fill-rule:evenodd"
              transform="matrix(3.543307e-5,0,0,3.543307e-5,9.091797e-6,3.428073e-4)"
-             points="503250,2128320 503250,3484380 500000,17871800 1925560,19541500 3603860,19541500 12399400,19541200 14078000,19541200 15056800,18394600 15499400,17871400 15500000,3484100 15500000,2127950 14456200,905320 14076000,459500 13873800,459500 2131100,458480 1928810,458480 " />
+             points="15499400,17871400 15500000,3484100 15500000,2127950 14456200,905320 14076000,459500 13873800,459500 2131100,458480 1928810,458480 503250,2128320 503250,3484380 500000,17871800 1925560,19541500 3603860,19541500 12399400,19541200 14078000,19541200 15056800,18394600 " />
           <polygon
              id="_95104984"
              style="fill:#000000;fill-opacity:1;fill-rule:evenodd"
              transform="matrix(3.543307e-5,0,0,3.543307e-5,9.091797e-6,3.428073e-4)"
-             points="503250,2128320 503250,3484380 500000,17871800 1925560,19541500 3603860,19541500 12399400,19541200 14078000,19541200 15056800,18394600 15499400,17871400 15500000,3484100 15500000,2127950 14456200,905320 14076000,459500 13873800,459500 2131100,458480 1928810,458480 " />
+             points="15499400,17871400 15500000,3484100 15500000,2127950 14456200,905320 14076000,459500 13873800,459500 2131100,458480 1928810,458480 503250,2128320 503250,3484380 500000,17871800 1925560,19541500 3603860,19541500 12399400,19541200 14078000,19541200 15056800,18394600 " />
           <polygon
              id="_97350032"
              style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd"
              transform="matrix(3.543307e-5,0,0,3.543307e-5,9.091797e-6,3.428073e-4)"
-             points="950000,3458180 950000,2285360 2134720,905600 2769360,904020 13868900,905320 15053500,2284710 15053200,3457810 15053900,17714500 13872200,19094100 12451500,19094100 3551730,19094500 2131100,19094500 946470,17714700 " />
+             points="3551730,19094500 2131100,19094500 946470,17714700 950000,3458180 950000,2285360 2134720,905600 2769360,904020 13868900,905320 15053500,2284710 15053200,3457810 15053900,17714500 13872200,19094100 12451500,19094100 " />
           <path
              id="_98178992"
              style="fill:#000000;fill-opacity:1;fill-rule:evenodd"
@@ -7663,11 +7939,11 @@
         <image
            sodipodi:absref="C:\Users\cwempe\Documents\Arduino\SuperLEDstrip_PIO\Display\exported\./external_images/HSV-Logo.svg"
            xlink:href="./external_images/HSV-Logo.svg"
-           id="image1382"
-           height="80"
-           width="80"
+           x="10"
            y="20"
-           x="10" />
+           width="80"
+           height="80"
+           id="image1382" />
       </g>
     </g>
     <g
@@ -7749,7 +8025,7 @@
          y="158" />
     </g>
     <g
-       style="display:inline"
+       style="display:none"
        inkscape:label="tile arcade"
        id="tile_06"
        inkscape:groupmode="layer">
@@ -8013,6 +8289,20 @@
          d="m 195.546,166.31836 c -1.39999,0 -2.54492,1.14495 -2.54492,2.54493 v 15.27343 c 0,1.40002 1.14493,2.54493 2.54492,2.54493 h 22.91015 c 1.39999,0 2.53125,-1.14491 2.53125,-2.54493 l 0.0137,-15.27343 c 0,-1.39998 -1.14494,-2.54493 -2.54493,-2.54493 z m 2.54687,2.54493 h 17.81641 v 15.27343 h -17.81641 z m 8.90821,0.63672 -2.04883,2.04882 h -2.90235 v 2.90235 l -2.04882,2.04883 2.04882,2.04882 v 2.90235 h 2.90235 l 2.04883,2.04883 2.04882,-2.04883 h 2.90235 v -2.90235 l 2.04883,-2.04882 -2.04883,-2.04883 v -2.90235 h -2.90235 z m 0,3.28515 c 2.04862,0 3.71289,1.66623 3.71289,3.71485 0,2.04865 -1.66427,3.71289 -3.71289,3.71289 z"
          id="dosplay_medium"
          inkscape:connector-curvature="0" />
+    </g>
+    <g
+       style="display:inline"
+       inkscape:groupmode="layer"
+       id="g2355"
+       inkscape:label="tile customColor">
+      <rect
+         style="display:inline;opacity:1;fill:url(#linearGradient16145);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:354.33071899;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect2327"
+         width="50"
+         height="2"
+         x="200"
+         y="70"
+         inkscape:label="tab light active" />
     </g>
   </g>
   <g
