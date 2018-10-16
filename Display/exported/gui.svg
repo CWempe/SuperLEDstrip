@@ -20,7 +20,7 @@
    inkscape:export-filename="\\qnap\home\Projekte\LED-Leiste für Klaas\Display\exported\display_matarial_design_017_dark_clubs_p.png"
    inkscape:export-xdpi="90"
    inkscape:export-ydpi="90"
-   inkscape:label="thumb_blue">
+   inkscape:label="elements">
   <metadata
      id="metadata102">
     <rdf:RDF>
@@ -2271,12 +2271,12 @@
      guidehicolor="#16ff00"
      guidehiopacity="0.49803922"
      inkscape:zoom="3.2275"
-     inkscape:cx="200"
+     inkscape:cx="83.501161"
      inkscape:cy="120"
      inkscape:window-x="1912"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="exportedSVG"
+     inkscape:current-layer="layer1"
      inkscape:object-nodes="false"
      inkscape:snap-nodes="true"
      inkscape:snap-bbox="true"
@@ -7961,7 +7961,7 @@
           <g
              id="Ebene_1">
             <polygon
-               points="0.0001,26.4871 17.6581,52.9741 35.3159,26.4871 17.6581,-0.0001 "
+               points="17.6581,52.9741 35.3159,26.4871 17.6581,-0.0001 0.0001,26.4871 "
                class="fil0"
                id="_44070144"
                style="fill:#1d9053" />
@@ -7999,7 +7999,7 @@
              id="_97350032"
              style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd"
              transform="matrix(3.543307e-5,0,0,3.543307e-5,9.091797e-6,3.428073e-4)"
-             points="13868900,905320 15053500,2284710 15053200,3457810 15053900,17714500 13872200,19094100 12451500,19094100 3551730,19094500 2131100,19094500 946470,17714700 950000,3458180 950000,2285360 2134720,905600 2769360,904020 " />
+             points="15053900,17714500 13872200,19094100 12451500,19094100 3551730,19094500 2131100,19094500 946470,17714700 950000,3458180 950000,2285360 2134720,905600 2769360,904020 13868900,905320 15053500,2284710 15053200,3457810 " />
           <path
              id="_98178992"
              style="fill:#000000;fill-opacity:1;fill-rule:evenodd"
@@ -8525,7 +8525,7 @@
          y="0"
          x="0"
          xlink:href="#ic_unarchive_24px"
-         style="fill:url(#tile_icon_active);stroke:none"
+         style="display:inline;fill:url(#tile_icon_active);stroke:none"
          id="use21499" />
       <text
          transform="scale(1.0000207,0.99997931)"
@@ -9006,33 +9006,37 @@
          inkscape:label="tab7 active" />
     </g>
   </g>
-  <circle
-     style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:5.66929102;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     id="thumb_red"
-     cx="109"
-     cy="94.5"
-     r="6" />
-  <circle
-     r="6"
-     cy="217.5"
-     cx="109"
-     id="thumb_white"
-     style="fill:url(#tile_icon_active);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:5.66929102;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
-  <circle
-     r="6"
-     cy="135.5"
-     cx="109"
-     id="thumb_green"
-     style="fill:#00ff00;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:5.66929102;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
-  <circle
-     style="fill:#0000ff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:5.66929102;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     id="thumb_blue"
-     cx="109"
-     cy="176.5"
-     r="6" />
   <g
      inkscape:groupmode="layer"
      id="layer1"
-     inkscape:label="elements"
-     style="display:inline" />
+     inkscape:label="elements">
+    <g
+       id="elements"
+       style="display:inline">
+      <circle
+         r="6"
+         cy="94.5"
+         cx="109"
+         id="thumb_red"
+         style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:5.66929102;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <circle
+         style="fill:url(#tile_icon_active);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:5.66929102;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="thumb_white"
+         cx="109"
+         cy="217.5"
+         r="6" />
+      <circle
+         style="fill:#00ff00;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:5.66929102;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="thumb_green"
+         cx="109"
+         cy="135.5"
+         r="6" />
+      <circle
+         r="6"
+         cy="176.5"
+         cx="109"
+         id="thumb_blue"
+         style="fill:#0000ff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:5.66929102;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    </g>
+  </g>
 </svg>
