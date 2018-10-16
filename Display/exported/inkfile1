@@ -1,6 +1,8 @@
 # this is a Inkfile
 
 
+gui_000_test.png         gui_themed.svg    -*
+
 gui_00_background.png         gui_themed.svg    -*   "+background" "+main" "+app bar"
 
 gui_01_specials.png           gui_themed.svg    -*   "+background" "+main" "+app bar" "+tabs"   "+cells big" "+fab"     "+tiles" "+tile specials"

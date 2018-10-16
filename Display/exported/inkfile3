@@ -1,7 +1,10 @@
 # this is a Inkfile
 
 
-#gui_19_thumbs.png           gui_themed.svg    -*   "+background" "+main" "+app bar" "+tabs"   "+cells customColor" "+fab"   "+tiles" "+elements"
+gui_17_custom_color.png           gui_themed.svg    -*   "+background" "+main" "+app bar" "+tabs"   "+cells customColor" "+fab"   "+tiles" "+tile customColor"
+gui_17_custom_color_thumbs.png    gui_themed.svg    -*   "+background" "+main" "+app bar" "+tabs"   "+cells customColor" "+fab"   "+tiles" "+tile customColor"        "+elements"
+gui_18_custom_color_pressed.png   gui_themed.svg    -*   "+background" "+main" "+app bar" "+tabs"   "+cells customColor" "+fab"   "+tiles" "+tile customColor"        "+pressed" "+pressed cells custom color" "+pressed tabs" "+pressed fab"
+
 gui_19_thumb_red.png        gui_themed.svg    -*   "+background" "+main" "+app bar" "+tabs"   "+cells customColor" "+fab"   "+tiles" "+elements" @103:139:115:152
 gui_20_thumb_green.png      gui_themed.svg    -*   "+background" "+main" "+app bar" "+tabs"   "+cells customColor" "+fab"   "+tiles" "+elements" @103:98:115:111
 gui_21_thumb_blue.png       gui_themed.svg    -*   "+background" "+main" "+app bar" "+tabs"   "+cells customColor" "+fab"   "+tiles" "+elements" @103:57:115:70

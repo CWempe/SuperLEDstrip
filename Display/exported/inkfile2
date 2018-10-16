@@ -15,7 +15,3 @@ gui_14_tab07_pressed.png     gui_themed.svg     -*   "+background" "+main" "+app
 
 gui_15_settings.png           gui_themed.svg    -*   "+background" "+main" "+app bar" "+tabs"   "+cells small" "+fab"   "+tiles" "+tile settings"
 gui_16_settings_pressed.png   gui_themed.svg    -*   "+background" "+main" "+app bar" "+tabs"   "+cells small" "+fab"   "+tiles" "+tile settings"        "+pressed" "+pressed cells small" "+pressed tabs" "+pressed fab"
-
-
-gui_17_custom_color.png           gui_themed.svg    -*   "+background" "+main" "+app bar" "+tabs"   "+cells customColor" "+fab"   "+tiles" "+tile customColor"
-gui_18_custom_color_pressed.png   gui_themed.svg    -*   "+background" "+main" "+app bar" "+tabs"   "+cells customColor" "+fab"   "+tiles" "+tile customColor"        "+pressed" "+pressed cells custom color" "+pressed tabs" "+pressed fab"
