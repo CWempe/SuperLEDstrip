@@ -108,13 +108,18 @@ MKDIR %OUTPUTPATH%\%FOLDER%
   primary_bright=%PRIMARYBRIGHT% secondary_bright=%SECONDARYBRIGHT% ^
   theme=%THEME%
   
-copy /Y %WORKDIR%\inkfile %OUTPUTPATH%\%FOLDER%\inkfile
+REM Split inti multiple inkfiles, because the job did not finish wen everything was in one file :/
+copy /Y %WORKDIR%\inkfile1 %OUTPUTPATH%\%FOLDER%\inkfile1
+copy /Y %WORKDIR%\inkfile2 %OUTPUTPATH%\%FOLDER%\inkfile2
+copy /Y %WORKDIR%\inkfile3 %OUTPUTPATH%\%FOLDER%\inkfile3
 
 ECHO Replace relative path to external images with absolut path for inkmake...
 %FARTEXE% %GUITHEMED% "./external_images/" "%EXTERNALIMAGES%\\"
 
 ECHO create images based on layers in svg file...
-call %INKMAKE% -s %WORKDIR% -o %OUTPUTPATH%\%FOLDER%
+call %INKMAKE% -s %WORKDIR% -o %OUTPUTPATH%\%FOLDER% %OUTPUTPATH%\%FOLDER%\inkfile1
+call %INKMAKE% -s %WORKDIR% -o %OUTPUTPATH%\%FOLDER% %OUTPUTPATH%\%FOLDER%\inkfile2
+call %INKMAKE% -s %WORKDIR% -o %OUTPUTPATH%\%FOLDER% %OUTPUTPATH%\%FOLDER%\inkfile3
 
 ECHO.
 ECHO Generate GIF..
@@ -124,6 +129,7 @@ ECHO Generate GIF..
  %OUTPUTPATH%\%FOLDER%\gui_05_flags.png^
  %OUTPUTPATH%\%FOLDER%\gui_07_clubs.png^
  %OUTPUTPATH%\%FOLDER%\gui_09_colors.png^
+ %OUTPUTPATH%\%FOLDER%\gui_17_custom_color.png^
  %OUTPUTPATH%\%FOLDER%\gui_11_arcade.png^
  %OUTPUTPATH%\%FOLDER%\gui_13_tab07.png^
  %OUTPUTPATH%\%FOLDER%\gui_15_settings.png^
