@@ -195,11 +195,14 @@ void NextionSetup()
     p09settings.attachPop(p09settingsPopCallback);
     p09power.attachPop(p09powerPopCallback);
     p09sliderRed.attachPop(p09sliderRedPopCallback);
-    p09sliderRed.attachPush(p09sliderRedPushCallback);
+    p09redM.attachPop(p09redMPopCallback);
+    p09redP.attachPop(p09redPPopCallback);
     p09sliderGreen.attachPop(p09sliderGreenPopCallback);
-    p09sliderGreen.attachPush(p09sliderGreenPushCallback);
+    p09greenM.attachPop(p09greenMPopCallback);
+    p09greenP.attachPop(p09greenPPopCallback);
     p09sliderBlue.attachPop(p09sliderBluePopCallback);
-    p09sliderBlue.attachPush(p09sliderBluePushCallback);
+    p09blueM.attachPop(p09blueMPopCallback);
+    p09blueP.attachPop(p09bluePPopCallback);
     //
     dbSerialPrintln("setup done");
 }

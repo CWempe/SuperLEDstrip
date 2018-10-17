@@ -191,10 +191,12 @@ void p09tempPopCallback(void *ptr) { }
 void p09humidPopCallback(void *ptr) { }
 void p09settingsPopCallback(void *ptr) { setTextAll(); }
 void p09powerPopCallback(void *ptr) { toggleBrightness(); }
-
 void p09sliderRedPopCallback(void *ptr)    { getRed(); }
-void p09sliderRedPushCallback(void *ptr)   { getRed(); }
+void p09redMPopCallback(void *ptr)         { getRed(); }
+void p09redPPopCallback(void *ptr)         { getRed(); }
 void p09sliderGreenPopCallback(void *ptr)  { getGreen(); }
-void p09sliderGreenPushCallback(void *ptr) { getGreen(); }
+void p09greenMPopCallback(void *ptr)       { getGreen(); }
+void p09greenPPopCallback(void *ptr)       { getGreen(); }
 void p09sliderBluePopCallback(void *ptr)   { getBlue(); }
-void p09sliderBluePushCallback(void *ptr)  { getBlue(); }
+void p09blueMPopCallback(void *ptr)        { getBlue(); }
+void p09bluePPopCallback(void *ptr)        { getBlue(); }
