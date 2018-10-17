@@ -190,3 +190,16 @@ NexText   p08temp02   = NexText(  7, 18, "p08temp02");
 NexText   p08humid02  = NexText(  7, 19, "p08humid02");
 NexText   p08speed01  = NexText(  7, 31, "p08speed01");
 
+// page 9
+NexPage   p09         = NexPage(  8,  0, "p09");
+NexText   p09title    = NexText(  8,  1, "p09title");
+NexText   p09temp     = NexText(  8, 18, "p09temp");
+NexText   p09humid    = NexText(  8, 19, "p09humid");
+NexButton p09settings = NexButton(8, 10, "p09settings");
+NexButton p09power    = NexButton(8, 14, "p09power");
+NexSlider p09sliderRed   = NexSlider(8, 16, "p09sliderRed");
+NexSlider p09sliderGreen = NexSlider(8, 17, "p09sliderGreen");
+NexSlider p09sliderBlue  = NexSlider(8, 28, "p09sliderBlue");
+NexText   red         = NexText(  8,  18, "red");
+NexText   green       = NexText(  8,  19, "green");
+NexText   blue        = NexText(  8,  20, "blue");

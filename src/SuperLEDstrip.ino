@@ -36,6 +36,9 @@ void setTextRotationSpeed(void);
 void updateRotationSpeed(void);
 void changeRotationSpeed(bool increaseSpeed);
 void setRotationSpeed(uint8_t speed);
+void getRed(void);
+void getGreen(void);
+void getBlue(void);
 void readEepromScene(void);
 
 

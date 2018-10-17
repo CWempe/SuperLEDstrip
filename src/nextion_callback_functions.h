@@ -184,4 +184,17 @@ void p08c08PopCallback(void *ptr) { changeRotationSpeed(false); }
 void p08temp02PopCallback(void *ptr) { }
 void p08humid02PopCallback(void *ptr) { }
 void p08speed01PopCallback(void *ptr) { changeRotationSpeed(true); }
+// page 9
+void p09PopCallback(void *ptr) { }
+void p09titlePopCallback(void *ptr) { }
+void p09tempPopCallback(void *ptr) { }
+void p09humidPopCallback(void *ptr) { }
+void p09settingsPopCallback(void *ptr) { setTextAll(); }
+void p09powerPopCallback(void *ptr) { toggleBrightness(); }
 
+void p09sliderRedPopCallback(void *ptr)    { getRed(); }
+void p09sliderRedPushCallback(void *ptr)   { getRed(); }
+void p09sliderGreenPopCallback(void *ptr)  { getGreen(); }
+void p09sliderGreenPushCallback(void *ptr) { getGreen(); }
+void p09sliderBluePopCallback(void *ptr)   { getBlue(); }
+void p09sliderBluePushCallback(void *ptr)  { getBlue(); }

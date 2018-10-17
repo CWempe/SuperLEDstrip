@@ -187,6 +187,20 @@ void NextionSetup()
     p08temp02.attachPop(p08tempPopCallback);
     p08humid02.attachPop(p08humidPopCallback);
     p08speed01.attachPop(p08speed01PopCallback);
+    // page 9
+    p09.attachPop(p09PopCallback);
+    p09title.attachPop(p09titlePopCallback);
+    p09temp.attachPop(p09tempPopCallback);
+    p09humid.attachPop(p09humidPopCallback);
+    p09settings.attachPop(p09settingsPopCallback);
+    p09power.attachPop(p09powerPopCallback);
+    p09sliderRed.attachPop(p09sliderRedPopCallback);
+    p09sliderRed.attachPush(p09sliderRedPushCallback);
+    p09sliderGreen.attachPop(p09sliderGreenPopCallback);
+    p09sliderGreen.attachPush(p09sliderGreenPushCallback);
+    p09sliderBlue.attachPop(p09sliderBluePopCallback);
+    p09sliderBlue.attachPush(p09sliderBluePushCallback);
+    //
     dbSerialPrintln("setup done");
 }
 

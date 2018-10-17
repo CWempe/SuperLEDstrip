@@ -12,7 +12,7 @@ void updateCustomColor() {
 
 void updateCustomColorRed(uint8_t red, bool updateRGB = true) {
     customColor.red = red;
-
+    
     // Send updated RGB values to mqtt and display.
     // But only do so if you do not want to change other colors at the same time.
     // In that case only send update when you changed the last color.
