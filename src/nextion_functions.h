@@ -71,7 +71,11 @@ void getRed ()
   uint32_t red = 999;
   p09sliderRed.getValue(&red);
   Homie.getLogger() << "Red: " << red << endl;
-  // Sometimes getValue does not get the value and returns 0
+  // Sometimes getValue does not get the value so we try again
+  if ( red != 999) {
+    p09sliderRed.getValue(&red);
+    Homie.getLogger() << "Red: " << red << endl;
+  }
   if ( red != 999) {
     updateCustomColorRed(red);
   }  
@@ -82,7 +86,11 @@ void getGreen ()
   uint32_t green = 999;
   p09sliderGreen.getValue(&green);
   Homie.getLogger() << "Green: " << green << endl;
-  // Sometimes getValue does not get the value and returns 0
+  // Sometimes getValue does not get the value so we try again
+  if ( green != 999) {
+    p09sliderGreen.getValue(&green);
+    Homie.getLogger() << "Green: " << green << endl;
+  }
   if ( green != 999) {
     updateCustomColorGreen(green);
   }
@@ -94,7 +102,11 @@ void getBlue ()
   uint32_t blue = 999;
   p09sliderBlue.getValue(&blue);
   Homie.getLogger() << "Blue: " << blue << endl;
-  // Sometimes getValue does not get the value and returns 0
+  // Sometimes getValue does not get the value so we try again
+  if ( blue != 999) {
+    p09sliderBlue.getValue(&blue);
+    Homie.getLogger() << "Blue: " << blue << endl;
+  }
   if ( blue != 999) {
     updateCustomColorBlue(blue);
   }
