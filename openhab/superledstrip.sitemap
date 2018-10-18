@@ -4,6 +4,7 @@ sitemap superledstrip label="SuperLEDstrip"
         Text        item=sLED_signal
         Text        item=sLED_uptime
         Switch      item=sLED_light
+        Colorpicker item=sLED_led
         Slider      item=sLED_brightness
         Selection   item=sLED_scene    mappings=[ 101='rainbow',
                                                   102='stars',
@@ -39,6 +40,7 @@ sitemap superledstrip label="SuperLEDstrip"
                                                   506='magenta',
                                                   507='cyan',
                                                   508='yellow',
+                                                  509='custom color',
                                                   602='random color' ]
         Setpoint    item=sLED_tempo   minValue=0 maxValue=255
         Text        item=sLED_temp

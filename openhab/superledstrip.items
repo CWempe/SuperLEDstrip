@@ -5,6 +5,8 @@ Number sLED_uptime     "Uptime [%d s]"  <clock>  { mqtt="<[mosquitto:homie/5ccf7
 
 Switch sLED_light      "Light"           <light>      { mqtt="<[mosquitto:homie/5ccf7f15b638/light/on:state:ON:true], <[mosquitto:homie/5ccf7f15b638/light/on:state:OFF:false], >[mosquitto:homie/5ccf7f15b638/light/on/set:command:ON:true], >[mosquitto:homie/5ccf7f15b638/light/on/set:command:OFF:false]" }
 Dimmer sLED_brightness "Brightness [%d]" <slider>     { mqtt="<[mosquitto:homie/5ccf7f15b638/light/brightness:state:default], >[mosquitto:homie/5ccf7f15b638/light/brightness/set:command:*:default]" }
+Color  sLED_led        "Color"           <colorlight> 
+String sLED_color      "Color"           <colorlight> { mqtt=">[mosquitto:homie/5ccf7f15b638/light/customColor/set:command:*:default]" }
 Number sLED_scene      "Scene"           <colorwheel> { mqtt="<[mosquitto:homie/5ccf7f15b638/light/scene:state:default], >[mosquitto:homie/5ccf7f15b638/light/scene/set:command:*:default]" }
 Number sLED_tempo      "Tempo [%d bpm]"  <chart>      { mqtt="<[mosquitto:homie/5ccf7f15b638/light/tempo:state:default], >[mosquitto:homie/5ccf7f15b638/light/tempo/set:command:*:default]" }
 

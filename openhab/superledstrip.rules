@@ -1,0 +1,13 @@
+rule "Set RGB value sLED"
+when
+        Item sLED_led changed
+then
+        val hsbValue = sLED_led.state as HSBType
+        val brightness = hsbValue.brightness.intValue
+        val redValue   = ((((hsbValue.red.intValue * 255) / 100) * brightness) / 100).toString
+        val greenValue = ((((hsbValue.green.intValue * 255) / 100) * brightness) / 100).toString
+        val blueValue  = ((((hsbValue.blue.intValue *255) / 100) * brightness) / 100).toString
+        
+        val color = redValue + "," + greenValue + "," + blueValue
+        sendCommand( sLED_color, color )        
+end
