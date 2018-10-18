@@ -12,6 +12,7 @@ void updateCustomColor() {
 
 void updateCustomColorRed(uint8_t red, bool updateRGB = true) {
     customColor.red = red;
+    updateDisplayRed = true;
     
     // Send updated RGB values to mqtt and display.
     // But only do so if you do not want to change other colors at the same time.
@@ -23,6 +24,7 @@ void updateCustomColorRed(uint8_t red, bool updateRGB = true) {
 
 void updateCustomColorGreen(uint8_t green, bool updateRGB = true) {
     customColor.green = green;
+    updateDisplayGreen = true;
 
     // Send updated RGB values to mqtt and display.
     // But only do so if you do not want to change other colors at the same time.
@@ -34,6 +36,7 @@ void updateCustomColorGreen(uint8_t green, bool updateRGB = true) {
 
 void updateCustomColorBlue(uint8_t blue, bool updateRGB = true) {
     customColor.blue = blue;
+    updateDisplayBlue = true;
 
     // Send updated RGB values to mqtt and display.
     // But only do so if you do not want to change other colors at the same time.

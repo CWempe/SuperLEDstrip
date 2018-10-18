@@ -74,6 +74,10 @@ bool     halloweenFlickerState = false; // helper to save current state of flick
 uint16_t halloweenFlashTimer = 1000;    // initial flash timer value
 bool     halloweenFlashState = false;   // helper to save current state of flashing; true = flashing on
 
+bool updateDisplayRed   = false;
+bool updateDisplayGreen = false;
+bool updateDisplayBlue  = false;
+
 
 /*
  * Nextion display
@@ -236,5 +240,7 @@ void loop(void)
   loopDHT();
 
   Homie.loop();
+
+  updateDisplayColors();
 
 }

@@ -1,4 +1,3 @@
-
 void setTextTitle()
 {
     title.setText(DISPLAY_TITLE);
@@ -110,4 +109,63 @@ void getBlue ()
   if ( blue != 999) {
     updateCustomColorBlue(blue);
   }
+}
+
+void setRed ()
+{
+    uint8_t red = customColor.red;
+
+    // set slider
+    delay (10);     // a short delay to make the setValue work more stable
+    p09sliderRed.setValue(red);
+    delay (10);
+    
+    // set value next to slider; needs to be converted to char
+    char sRed[4];
+    dtostrf(red, 3, 0, sRed);
+    p09red.setText(sRed);
+
+    updateDisplayRed = false;
+}
+
+void setGreen ()
+{
+    uint8_t green = customColor.green;
+
+    // set slider
+    delay (10);     // a short delay to make the setValue work more stable
+    p09sliderGreen.setValue(green);
+    delay (10);
+    
+    // set value next to slider; needs to be converted to char
+    char sGreen[4];
+    dtostrf(green, 3, 0, sGreen);
+    p09green.setText(sGreen);
+
+    updateDisplayGreen = false;
+}
+
+void setBlue ()
+{
+    uint8_t blue = customColor.blue;
+
+    // set slider
+    delay (10);     // a short delay to make the setValue work more stable
+    p09sliderBlue.setValue(blue);
+    delay (10);
+    
+    // set value next to slider; needs to be converted to char
+    char sBlue[4];
+    dtostrf(blue, 3, 0, sBlue);
+    p09blue.setText(sBlue);
+
+    updateDisplayBlue= false;
+}
+
+// this function is used because directly `setValue` in updateCustomColor* causes the program to crash
+void updateDisplayColors ()
+{
+    if ( updateDisplayRed   == true ) { setRed();   delay(10);}
+    if ( updateDisplayGreen == true ) { setGreen(); delay(10);}
+    if ( updateDisplayBlue  == true ) { setBlue(); }
 }
