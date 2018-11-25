@@ -114,7 +114,7 @@ void p05c05PopCallback(void *ptr) { setScene(505); }
 void p05c06PopCallback(void *ptr) { setScene(506); }
 void p05c07PopCallback(void *ptr) { setScene(507); }
 void p05c08PopCallback(void *ptr) { setScene(508); }
-void p05c09PopCallback(void *ptr) { }
+void p05c09PopCallback(void *ptr) { setScene(509); }
 // page 6
 void p06PopCallback(void *ptr) { }
 void p06titlePopCallback(void *ptr) { }
