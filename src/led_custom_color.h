@@ -1,7 +1,13 @@
-void updateCustomColor() {
+void updateCustomColor(bool show = true) {
+    if ( gCurrentPatternNumber == 10 ) {
+        gCurrentPatternNumber = 0;
+    }
+    
+    if ( show ) {
        // set led strip with new color
        // customColor = CRGB(customColor.red, customColor.green, customColor.blue);
        setupOneColor(customColor);
+    }
 
        char customColorString[15] = "";
        sprintf(customColorString, "%i,%i,%i", customColor.red, customColor.green, customColor.blue);
