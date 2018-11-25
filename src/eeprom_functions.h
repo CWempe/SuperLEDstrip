@@ -10,16 +10,22 @@ void setupEeprom() {
 
 void readEepromScene() {
   String sceneValue;
+  uint16_t scene;
+
   // read value from eeprom
   Embedis::get("sceneValue", sceneValue);
 
   if ( sceneValue == "" ) {
     // set to DEFAULT_SCENE if no value was stored
-    setScene(DEFAULT_SCENE);
+    scene = DEFAULT_SCENE;
   } else {
   // set Scene to the Number that was read from the eeprom
-    setScene(sceneValue.toInt());
+    scene = sceneValue.toInt();
   }
+  setScene(scene);
+
+  // publish loaded scene via mqtt
+  lightNode.setProperty("scene").send(String(scene));
 }
 
 void readEepromBrightness() {
@@ -62,4 +68,40 @@ void readEepromRotationSpeed() {
   // set RotationSpeed to the Number that was read from the eeprom
     setRotationSpeed(rotationSpeedValue.toInt());
   }
+}
+
+//
+// custom color
+//
+
+void writeEeepromCustomColor() {
+  // Write current custom color to Eeeprom
+  Embedis::set("customColorRed", String(customColor.red));
+  Embedis::set("customColorGreen", String(customColor.green));
+  Embedis::set("customColorBlue", String(customColor.blue));
+
+  if ( DEBUGLEVEL >= 1 ) {
+    Homie.getLogger() << "[DEBUG1] WRITE: Custom Color: " << customColor.red << "," << customColor.green << "," << customColor.blue << endl;
+  }
+}
+
+void readEeepromCustomColor() {
+  String red;
+  String green;
+  String blue;
+  
+  // Read values from Eeeprom
+  Embedis::get("customColorRed", red);
+  Embedis::get("customColorGreen", green);
+  Embedis::get("customColorBlue", blue);
+
+  // set values
+  updateCustomColorRed(red.toInt(), false);
+  updateCustomColorGreen(green.toInt(), false);
+  updateCustomColorBlue(blue.toInt(), true);
+  
+  if ( DEBUGLEVEL >= 1 ) {
+    Homie.getLogger() << "[DEBUG1] READ: Custom Color: " << red.toInt() << "," << green.toInt() << "," << blue.toInt() << endl;
+  }
+
 }

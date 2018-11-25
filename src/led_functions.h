@@ -54,10 +54,11 @@ void toggleBrightness()
 void setupFastLED()
 {
   // restore last values from eeprom
-  readEepromScene();
+  readEeepromCustomColor();
   readEepromBrightness();
   readEepromTempo();
   readEepromRotationSpeed();
+  readEepromScene();
   FastLED.addLeds<LED_TYPE, DATA_PIN, COLOR_ORDER>(leds, NUM_LEDS);
   FastLED.setCorrection( COLOR_CORRECTION );
   FastLED.setTemperature( COLOR_TEMPERATURE) ;

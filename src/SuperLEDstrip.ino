@@ -39,6 +39,9 @@ void setRotationSpeed(uint8_t speed);
 void getRed(void);
 void getGreen(void);
 void getBlue(void);
+void updateCustomColorRed(uint8_t red, bool updateRGB);
+void updateCustomColorGreen(uint8_t green, bool updateRGB);
+void updateCustomColorBlue(uint8_t blue, bool updateRGB);
 void readEepromScene(void);
 
 
