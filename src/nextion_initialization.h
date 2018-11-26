@@ -203,6 +203,10 @@ void NextionSetup()
     p09sliderBlue.attachPop(p09sliderBluePopCallback);
     p09blueM.attachPop(p09blueMPopCallback);
     p09blueP.attachPop(p09bluePPopCallback);
+    p09save1.attachPop(p09save1PopCallback);
+    p09save2.attachPop(p09save2PopCallback);
+    p09load1.attachPop(p09load1PopCallback);
+    p09load2.attachPop(p09load2PopCallback);
     //
     dbSerialPrintln("setup done");
 }

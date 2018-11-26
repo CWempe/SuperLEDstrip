@@ -200,3 +200,7 @@ void p09greenPPopCallback(void *ptr)       { getGreen(); }
 void p09sliderBluePopCallback(void *ptr)   { getBlue(); }
 void p09blueMPopCallback(void *ptr)        { getBlue(); }
 void p09bluePPopCallback(void *ptr)        { getBlue(); }
+void p09save1PopCallback(void *ptr)        { saveCustomColorPreset (1); }
+void p09load1PopCallback(void *ptr)        { loadCustomColorPreset (1); }
+void p09save2PopCallback(void *ptr)        { saveCustomColorPreset (2);  }
+void p09load2PopCallback(void *ptr)        { loadCustomColorPreset (2);  }

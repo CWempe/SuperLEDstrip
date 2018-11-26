@@ -74,26 +74,59 @@ void readEepromRotationSpeed() {
 // custom color
 //
 
-void writeEeepromCustomColor() {
+void writeEeepromCustomColor(uint8_t preset = 0) {  
+  String FileRed = "customColorRed";
+  String FileGreen = "customColorGreen";
+  String FileBlue = "customColorBlue";
+
+  // Use other file names if function is called with preset > 0
+  if ( preset > 0 ) {
+    FileRed   = "customColorRed" + preset;
+    FileGreen = "customColorGreen" + preset;
+    FileBlue  = "customColorBlue" + preset;
+  }
+
+  if ( DEBUGLEVEL >= 1 ) {
+    Homie.getLogger() << "[DEBUG1] WRITE: FileRed: " << FileRed << endl;
+    Homie.getLogger() << "[DEBUG1] WRITE: FileGreen: " << FileGreen << endl;
+    Homie.getLogger() << "[DEBUG1] WRITE: FileBlue: " << FileBlue << endl;
+  }
   // Write current custom color to Eeeprom
-  Embedis::set("customColorRed", String(customColor.red));
-  Embedis::set("customColorGreen", String(customColor.green));
-  Embedis::set("customColorBlue", String(customColor.blue));
+  Embedis::set(FileRed, String(customColor.red));
+  Embedis::set(FileGreen, String(customColor.green));
+  Embedis::set(FileBlue, String(customColor.blue));
 
   if ( DEBUGLEVEL >= 1 ) {
     Homie.getLogger() << "[DEBUG1] WRITE: Custom Color: " << customColor.red << "," << customColor.green << "," << customColor.blue << endl;
   }
 }
 
-void readEeepromCustomColor() {
+void readEeepromCustomColor(uint8_t preset = 0) {
   String red;
   String green;
   String blue;
   
+  String FileRed = "customColorRed";
+  String FileGreen = "customColorGreen";
+  String FileBlue = "customColorBlue";
+
+  // Use other file names if function is called with preset > 0
+  if ( preset > 0 ) {
+    FileRed   = "customColorRed" + preset;
+    FileGreen = "customColorGreen" + preset;
+    FileBlue  = "customColorBlue" + preset;
+  }
+
+  if ( DEBUGLEVEL >= 1 ) {
+    Homie.getLogger() << "[DEBUG1] READ: FileRed: " << FileRed << endl;
+    Homie.getLogger() << "[DEBUG1] READ: FileGreen: " << FileGreen << endl;
+    Homie.getLogger() << "[DEBUG1] READ: FileBlue: " << FileBlue << endl;
+  }
+
   // Read values from Eeeprom
-  Embedis::get("customColorRed", red);
-  Embedis::get("customColorGreen", green);
-  Embedis::get("customColorBlue", blue);
+  Embedis::get(FileRed, red);
+  Embedis::get(FileGreen, green);
+  Embedis::get(FileBlue, blue);
 
   // set values
   updateCustomColorRed(red.toInt(), false);

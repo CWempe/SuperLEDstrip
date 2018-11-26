@@ -209,3 +209,7 @@ NexButton p09blueP       = NexButton(8, 27, "p09blueP");
 NexText   p09red         = NexText(  8, 15, "p09red");
 NexText   p09green       = NexText(  8, 22, "p09green");
 NexText   p09blue        = NexText(  8, 25, "p09blue");
+NexButton p09save1       = NexButton(8, 29, "p09save1");
+NexButton p09load1       = NexButton(8, 31, "p09load1");
+NexButton p09save2       = NexButton(8, 30, "p09save2");
+NexButton p09load2       = NexButton(8, 32, "p09load2");

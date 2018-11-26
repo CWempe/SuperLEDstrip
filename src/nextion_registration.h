@@ -47,6 +47,7 @@ NexTouch *nex_listen_list[] =
     &p09red,   &p09sliderRed,   &p09redM,   &p09redP,
     &p09green, &p09sliderGreen, &p09greenM, &p09greenP,
     &p09blue,  &p09sliderBlue,  &p09blueM,  &p09blueP,
+    &p09save1, &p09load1, &p09save2, &p09load2,
     NULL
 };
 

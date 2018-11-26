@@ -85,3 +85,18 @@ bool lightCustomColorHandler (HomieRange range, String value) {
     updateCustomColorBlue(blue, true);
     return true;
 }
+
+
+void saveCustomColorPreset (uint8_t preset = 0) {
+  writeEeepromCustomColor(preset);
+  if ( DEBUGLEVEL >= 1 ) {
+    Homie.getLogger() << "[DEBUG1] saved preset " << preset << endl;
+  }
+}
+
+void loadCustomColorPreset (uint8_t preset = 0) {
+  readEeepromCustomColor(preset);
+  if ( DEBUGLEVEL >= 1 ) {
+    Homie.getLogger() << "[DEBUG1] loaded preset" << preset << endl;
+  }
+}
