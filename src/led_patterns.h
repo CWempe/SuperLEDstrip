@@ -363,24 +363,15 @@ void flashingLights()
    *                      ... and again
    */ 
   
-  int flashDuration = 80;             // ON time
-  int flashFirstOff = 40;                // first OFF time
-  int flash1secondOff = 400;          // second OFF time for flash light 1
-  int flash2secondOff = 300;          // second OFF time for flash light 2
-  static long flash1LastChange = 0;   // last Time the status of flash1 changed
-  static long flash2LastChange = 0;   // last Time the status of flash2 changed
+  uint8_t flashDuration = 80;             // ON time
+  uint8_t flashFirstOff = 40;                // first OFF time
+  uint16_t flash1secondOff = 400;          // second OFF time for flash light 1
+  uint16_t flash2secondOff = 300;          // second OFF time for flash light 2
   static uint8_t flash1status = 3;    // 0=first ON; 1=first OFF; 2=second ON; 3=second OFF
   static uint8_t flash2status = 3;
 
   //Serial.print("flash1LastChange: ");
   //Serial.println(flash1LastChange);
-
-  EVERY_N_SECONDS(10)
-  {
-    int flash1secondOff = 300 + random8(200);
-    int flash2secondOff = 300 + random8(200);
-  }
-
 
   /*
    *  left lights
