@@ -239,6 +239,12 @@ You can find configuration examples in the `openhab` folder.
 
 ## Changelog
 
+**2.4.0**
+
+* Add pattern "custom color"
+  * Add support to save and load tweo different custom colrs
+
+
 **2.3.0**
 
 * Migrate to PlatformIO
