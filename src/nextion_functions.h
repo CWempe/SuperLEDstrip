@@ -10,16 +10,20 @@ void setTextTemp()
     p08temp02.setText(sTemp);
 }
 
-void setTextHumid()
-{
-    humid.setText(sHumid);
-    p08humid02.setText(sHumid);
-}
+#if SENSOR_TYPE == DHT
+  void setTextHumid()
+  {
+      humid.setText(sHumid);
+      p08humid02.setText(sHumid);
+  }
+#endif
 
 void setTextAllSensors()
 {
     setTextTemp();
-    setTextHumid();
+    #if SENSOR_TYPE == DHT
+      setTextHumid();
+    #endif
 }
 
 void setTextRotationSpeed()

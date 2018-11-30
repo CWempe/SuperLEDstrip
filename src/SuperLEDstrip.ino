@@ -9,9 +9,12 @@
 #include <EEPROM.h>
 #include <Embedis.h>
 #include <spi_flash.h>
-#include <DHT.h>
 #include <SoftwareSerial.h>
 #include <FastLED.h>
+
+#if SENSOR_TYPE == DHT
+  #include <DHT.h>
+#endif
 
 
 /*
@@ -92,11 +95,14 @@ SoftwareSerial HMISerial(NEXTION_TX, NEXTION_RX);
  * define HomieNodes
  */
 HomieNode temperatureNode("temperature", "temperature");
-HomieNode humidityNode("humidity", "humidity");
+#if SENSOR_TYPE == DHT
+  HomieNode humidityNode("humidity", "humidity");
+  #include "dht_functions.h"
+#endif
+#include "temp_functions.h"
 HomieNode lightNode("light", "switch");
 
 
-#include "dht_functions.h"
 #include "eeprom_functions.h";
 
 
@@ -207,7 +213,9 @@ void setup(void)
   Homie.setSetupFunction(setupHandler).setLoopFunction(loopHandler);
   temperatureNode.advertise("unit");
   temperatureNode.advertise("degrees");
-  humidityNode.advertise("percentage");
+  #if SENSOR_TYPE == DHT
+    humidityNode.advertise("percentage");
+  #endif
   lightNode.advertise("on").settable(lightOnHandler);
   lightNode.advertise("customColor").settable(lightCustomColorHandler);
   lightNode.advertise("brightness").settable(lightBrightnessHandler);
@@ -240,7 +248,9 @@ void loop(void)
     loopFastLED();
   }
 
-  loopDHT();
+  #if SENSOR_TYPE == DHT
+    loopDHT();
+  #endif
 
   Homie.loop();
 

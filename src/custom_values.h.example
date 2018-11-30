@@ -55,8 +55,9 @@ bool lightON = false;
 
 
 /*
- * DHT sensor
+ * DHT and DS18B20 sensor
  */
+#define SENSOR_TYPE         DHT  // define weather to use DHT or DS18B20 (TEMP) sensor
 #define DHT_DATA_PIN        D4
 #define DHT_POWER_PIN       D0   // DHT will pe turned off between reads to prevent heating itself
 #define DHT_READ_INTERVAL  120   // Interval the sensor data is read
