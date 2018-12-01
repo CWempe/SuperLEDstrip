@@ -129,8 +129,22 @@ HomieNode lightNode("light", "switch");
 #include "pattern_halloween.h"
 
 typedef void (*SimplePatternList[])();
-//     Pattern IDs              0          1      2         3        4    5     6               7              8     9         10         11   12           13             14
-SimplePatternList gPatterns = { oneColor, stars, confetti, rainbow, bpm, kitt, flashingLights, runningPalette, xmas, Fire2012, arc_pulse, ice, randomColor, colorRotation, halloween };
+SimplePatternList gPatterns = { oneColor,          //  0
+                                stars,             //  1
+                                confetti,          //  2
+                                rainbow,           //  3
+                                bpm,               //  4
+                                kitt,              //  5
+                                flashingLights,    //  6
+                                runningPalette,    //  7
+                                xmas,              //  8
+                                Fire2012,          //  9
+                                arc_pulse,         // 10
+                                ice,               // 11
+                                randomColor,       // 12
+                                colorRotation,     // 13
+                                halloween          // 14
+                               };
 
 
 #include "led_functions.h"
