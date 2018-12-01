@@ -12,8 +12,12 @@
 #include <SoftwareSerial.h>
 #include <FastLED.h>
 
-#if SENSOR_TYPE == DHT
+#ifdef SENSOR_DHT
   #include <DHT.h>
+#endif
+#ifdef SENSOR_DS18B20
+  #include <DallasTemperature.h>
+  #include <OneWire.h>
 #endif
 
 
@@ -90,19 +94,28 @@ bool updateDisplayBlue  = false;
  */
 SoftwareSerial HMISerial(NEXTION_TX, NEXTION_RX);
 
-
 /*
- * define HomieNodes
+ * DHT and DS18B20
  */
-HomieNode temperatureNode("temperature", "temperature");
-#if SENSOR_TYPE == DHT
+#if defined(SENSOR_DHT) || defined(SENSOR_DS18B20)
+  float fTemp         = 0;
+  char  sTemp[10]     = "";
+  HomieNode temperatureNode("temperature", "temperature");
+#endif
+#ifdef SENSOR_DHT
+  float fHumid        = 0;
+  char  sHumid[10]    = "";
   HomieNode humidityNode("humidity", "humidity");
   #include "dht_functions.h"
 #endif
-#include "temp_functions.h"
+#ifdef SENSOR_DS18B20
+  OneWire oneWire(TEMP_DATA_PIN);
+  DallasTemperature sensors(&oneWire);
+  #include "temp_functions.h"
+#endif
+
+
 HomieNode lightNode("light", "switch");
-
-
 #include "eeprom_functions.h";
 
 
@@ -144,8 +157,12 @@ SimplePatternList gPatterns = { oneColor, stars, confetti, rainbow, bpm, kitt, f
  */
 
 void setupHandler() {
-  temperatureNode.setProperty("unit").send("°C");
-  humidityNode.setProperty("unit").send("%");
+  #if defined(SENSOR_DHT) || defined(SENSOR_DS18B20)
+    temperatureNode.setProperty("unit").send("°C");
+  #endif
+  #ifdef SENSOR_DHT
+    humidityNode.setProperty("unit").send("%");
+  #endif
   
 }
 
@@ -205,15 +222,22 @@ void setup(void)
 {
   Serial.begin(115200);
   
-  setupDHT();
+  #ifdef SENSOR_DHT
+    setupDHT();
+  #endif
+  #ifdef SENSOR_DS18B20
+    setupTemp();
+  #endif
 
   Homie_setFirmware(HOMIE_FW_NAME, HOMIE_FW_VERSION); // The underscore is not a typo! See Magic bytes
   Homie.disableResetTrigger();                 // disable ResetTrigger, because it creates some problemes for me
   //Homie.setStandalone();                     // uncomment if you do not want to use wifi
   Homie.setSetupFunction(setupHandler).setLoopFunction(loopHandler);
-  temperatureNode.advertise("unit");
-  temperatureNode.advertise("degrees");
-  #if SENSOR_TYPE == DHT
+  #if defined(SENSOR_DHT) || defined(SENSOR_DS18B20)
+    temperatureNode.advertise("unit");
+    temperatureNode.advertise("degrees");
+  #endif
+  #ifdef SENSOR_DHT
     humidityNode.advertise("percentage");
   #endif
   lightNode.advertise("on").settable(lightOnHandler);
@@ -248,12 +272,17 @@ void loop(void)
     loopFastLED();
   }
 
-  #if SENSOR_TYPE == DHT
+  #ifdef SENSOR_DHT
     loopDHT();
+  #endif
+  #ifdef SENSOR_DS18B20
+    EVERY_N_SECONDS(SENSOR_READ_INTERVAL) {
+      loopTemp();
+    }
   #endif
 
   Homie.loop();
 
   updateDisplayColors();
-
+  
 }

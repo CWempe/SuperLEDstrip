@@ -6,24 +6,28 @@ void setTextTitle()
 
 void setTextTemp()
 {
+  #if defined(SENSOR_DS18B20) || defined(SENSOR_DHT)
     temp.setText(sTemp);
     p08temp02.setText(sTemp);
+  #endif
 }
 
-#if SENSOR_TYPE == DHT
-  void setTextHumid()
-  {
-      humid.setText(sHumid);
-      p08humid02.setText(sHumid);
-  }
-#endif
+void setTextHumid()
+{
+  #ifdef SENSOR_DHT
+    humid.setText(sHumid);
+    p08humid02.setText(sHumid);
+  #endif
+}
 
 void setTextAllSensors()
 {
+  #if defined(SENSOR_DS18B20) || defined(SENSOR_DHT)
     setTextTemp();
-    #if SENSOR_TYPE == DHT
-      setTextHumid();
-    #endif
+  #endif
+  #ifdef SENSOR_DHT
+    setTextHumid();
+  #endif
 }
 
 void setTextRotationSpeed()

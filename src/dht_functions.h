@@ -4,12 +4,6 @@
 bool DHT_POWER_STATE;           // power state of DHT
 DHT dht(DHT_DATA_PIN, DHT_TYPE);
 elapsedMillis timeElapsedDHT;
-float fTemp         = 0;
-char  sTemp[10]     = "";
-float fHumid        = 0;
-char  sHumid[10]    = "";
-
-
 
 void setupDHT()
 {
@@ -22,7 +16,7 @@ void setupDHT()
 void loopDHT()
 {
   // When sensor is on and intervall time is reached, then power on
-  if ( !DHT_POWER_STATE && (timeElapsedDHT/1000) > DHT_READ_INTERVAL )
+  if ( !DHT_POWER_STATE && (timeElapsedDHT/1000) > SENSOR_READ_INTERVAL )
   {
     digitalWrite(DHT_POWER_PIN, HIGH);
     DHT_POWER_STATE = true;
@@ -32,15 +26,19 @@ void loopDHT()
   // When seonsor is on and warmup time is reached, then read data and power off
   if ( DHT_POWER_STATE && (timeElapsedDHT/1000) > DHT_WARMUP )
   {
-    fTemp = dht.readTemperature() + DHT_OFFSET_TEMP;
+    fTemp = dht.readTemperature() + OFFSET_TEMP;
     dtostrf(fTemp, 4, 1, sTemp);
     sprintf(sTemp, "%s C", sTemp);
-    temperatureNode.setProperty("degrees").send(String(fTemp));
+    if ( fTemp > 0 ) {
+      temperatureNode.setProperty("degrees").send(String(fTemp));
+    }
 
-    fHumid = dht.readHumidity() + DHT_OFFSET_HUMID;
+    fHumid = dht.readHumidity() + OFFSET_HUMID;
     dtostrf(fHumid, 3, 0, sHumid);
     sprintf(sHumid, "%s %", sHumid);
-    humidityNode.setProperty("percentage").send(String(fHumid));
+    if ( fHumid >= 0 ) {
+      humidityNode.setProperty("percentage").send(String(fHumid));
+    }
     
     setTextAllSensors();
     

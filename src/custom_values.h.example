@@ -10,6 +10,8 @@
  *  - LED_TYPE
  *  - NEXTION_TX
  *  - NEXTION_RX
+ *  - SENSOR_DTH / SENSOR_DS18B20
+ *  - TEMP_DATA_PIN
  *  - DHT_DATA_PIN
  *  - DHT_POWER_PIN
  */
@@ -43,7 +45,7 @@ bool lightON = false;
  * Homie parameters
  */
 #define HOMIE_FW_NAME     "SuperLEDstrip"
-#define HOMIE_FW_VERSION  "2.4.0"
+#define HOMIE_FW_VERSION  "2.4.1"
 #define HOMIE_STANDALONE  false   // here you can enable Homies standalone mode
 
 /*
@@ -53,18 +55,20 @@ bool lightON = false;
 #define NEXTION_TX          D1
 #define NEXTION_RX          D2
 
-
 /*
  * DHT and DS18B20 sensor
  */
-#define SENSOR_TYPE         DHT  // define weather to use DHT or DS18B20 (TEMP) sensor
-#define DHT_DATA_PIN        D4
-#define DHT_POWER_PIN       D0   // DHT will pe turned off between reads to prevent heating itself
-#define DHT_READ_INTERVAL  120   // Interval the sensor data is read
-#define DHT_WARMUP           5   // Time between power on and reading data
-#define DHT_TYPE         DHT22   // Change this if you have a DHT11
+// define weather to use DHT or DS18B20 sensor
+// #define SENSOR_DHT
+#define SENSOR_DS18B20
+
+#define SENSOR_READ_INTERVAL  60   // Interval the sensor data is read in seconds
+#define TEMP_DATA_PIN         D3   // PIN connected to DS18B20
+#define DHT_DATA_PIN          D2
+#define DHT_POWER_PIN         D8   // DHT will pe turned off between reads to prevent heating itself
+#define DHT_WARMUP             5   // Time between power on and reading data
+#define DHT_TYPE           DHT22   // Change this if you have a DHT11
 
 // define custom offsets is necessary
-#define DHT_OFFSET_TEMP      0   // can be nagativ and float (like -0.8)
-#define DHT_OFFSET_HUMID     0   // can be nagativ and float (like -0.8)
-
+#define OFFSET_TEMP      0
+#define OFFSET_HUMID     0
