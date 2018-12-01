@@ -239,6 +239,10 @@ You can find configuration examples in the `openhab` folder.
 
 ## Changelog
 
+**2.4.1**
+
+* Add option to use DS18B20 instead of DHT22 sensor or neither
+
 **2.4.0**
 
 * Add pattern "custom color"
