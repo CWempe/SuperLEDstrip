@@ -15,6 +15,7 @@ sitemap superledstrip label="SuperLEDstrip"
                                                   107='ice',
                                                   108='color rotation',
                                                   109='halloween',
+                                                  110='static palette',
                                                   201='german police',
                                                   202='american police',
                                                   203='orange flashing lights',
@@ -42,8 +43,39 @@ sitemap superledstrip label="SuperLEDstrip"
                                                   508='yellow',
                                                   509='custom color',
                                                   602='random color' ]
-        Setpoint    item=sLED_tempo   minValue=0 maxValue=255
+        Selection   item=sLED_palette  mappings=[   0='rotation',
+                                                    1='CloudColors_p',
+                                                    2='LavaColors_p',
+                                                    3='OceanColors_p',
+                                                    4='ForestColors_p',
+                                                    5='RainbowColors_p',
+                                                    6='RainbowStripeColors_p',
+                                                    7='PartyColors_p',
+                                                    8='HeatColors_p',
+                                                    9='Rainbow_gp',
+                                                  100='thk_gp',
+                                                  101='purplefly_gp',
+                                                  102='lala_p',
+                                                  150='bayern_p',
+                                                  151='m1860_p',
+                                                  152='dortmund_p',
+                                                  153='bremen_p',
+                                                  154='esv_p',
+                                                  155='hamburg_p',
+                                                  180='germany_p',
+                                                  181='italy_p',
+                                                  182='brazil_p',
+                                                  183='sweden_p',
+                                                  184='england_p',
+                                                  185='france_p',
+                                                  186='spain_p' ]
+        Colorpicker item=sLED_led
+        Setpoint    item=sLED_tempo   label="bpm (±10)"  minValue=0 maxValue=255 step=10
+        Setpoint    item=sLED_tempo   label="bpm (±1)"  minValue=0 maxValue=255
+        Setpoint    item=sLED_speed   minValue=0 maxValue=20
         Text        item=sLED_temp
         Text        item=sLED_humid
+        Text        item=sLED_signal
+        Text        item=sLED_uptime
     }
 }
