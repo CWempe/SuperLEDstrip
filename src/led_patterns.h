@@ -77,94 +77,100 @@ void runningPalette()
 // This function sets up a palette of Bayern Munich.
 void setupPaletteBayern()
 {
-  CRGB white = CRGB::Grey;
-  CRGB blue  = CRGB::Blue;
-  CRGB red   = CRGB::Red;
+  // CRGB white = CRGB::Grey;
+  // CRGB blue  = CRGB::Blue;
+  // CRGB red   = CRGB::Red;
   
   gCurrentPatternNumber = 7;
   currentBlending = NOBLEND;
-  currentPalette = CRGBPalette16(
-                                 white, white,  red,  red,
-                                 red,  blue,  blue, blue,
-                                 white, white,  red,  red,
-                                 red,  blue,  blue, blue ); 
+  // currentPalette = CRGBPalette16(
+  //                                white, white,  red,  red,
+  //                                red,  blue,  blue, blue,
+  //                                white, white,  red,  red,
+  //                                red,  blue,  blue, blue ); 
+  setPalette(150);
 }
 
 // This function sets up a palette of white and brightblue stripes.
 void setupPalette1860()
 {
-  CRGB blue   = CRGB::DodgerBlue;
-  CRGB white  = CRGB::Grey;
+  // CRGB blue   = CRGB::DodgerBlue;
+  // CRGB white  = CRGB::Grey;
   
   gCurrentPatternNumber = 7;
   currentBlending = NOBLEND;
-  currentPalette = CRGBPalette16(
-                                 blue,  blue,  white,  white,
-                                 blue,  blue,  white,  white,
-                                 blue,  blue,  white,  white,
-                                 blue,  blue,  white,  white );
+  // currentPalette = CRGBPalette16(
+  //                                blue,  blue,  white,  white,
+  //                                blue,  blue,  white,  white,
+  //                                blue,  blue,  white,  white,
+  //                                blue,  blue,  white,  white );
+  setPalette(151);
 }
 
 // This function sets up a palette of green stripes.
 void setupPaletteBVB()
 {
-  CRGB yellow = CRGB::Gold;
-  CRGB black  = CRGB::Black;
+  // CRGB yellow = CRGB::Gold;
+  // CRGB black  = CRGB::Black;
   
   gCurrentPatternNumber = 7;
   currentBlending = NOBLEND;
-  currentPalette = CRGBPalette16(
-                                 yellow,  yellow,  black,  black,
-                                 yellow,  yellow,  black,  black,
-                                 yellow,  yellow,  black,  black,
-                                 yellow,  yellow,  black,  black );
+  // currentPalette = CRGBPalette16(
+  //                                yellow,  yellow,  black,  black,
+  //                                yellow,  yellow,  black,  black,
+  //                                yellow,  yellow,  black,  black,
+  //                                yellow,  yellow,  black,  black );
+  setPalette(152);
 }
 
 // This function sets up a palette of green stripes.
 void setupPaletteWerder()
 {
-  CRGB green  = CHSV( HUE_GREEN, 255, 255);
-  CRGB white  = CRGB::Grey;
+  // CRGB green  = CHSV( HUE_GREEN, 255, 255);
+  // CRGB white  = CRGB::Grey;
   
   currentBlending = NOBLEND;
-  currentPalette = CRGBPalette16(
-                                 green,  green,  white,  white,
-                                 green,  green,  white,  white,
-                                 green,  green,  white,  white,
-                                 green,  green,  white,  white );
+  // currentPalette = CRGBPalette16(
+  //                                green,  green,  white,  white,
+  //                                green,  green,  white,  white,
+  //                                green,  green,  white,  white,
+  //                                green,  green,  white,  white );
   gCurrentPatternNumber = 7;
+  setPalette(153);
 }
 
 // This function sets up a palette of green stripes.
 void setupPaletteESV()
 {
-  CRGB blue   = CRGB(  0, 118, 182);
-  CRGB green  = CRGB(130, 175,  32);
-  CRGB white  = CRGB::Grey;
+  // CRGB blue   = CRGB(  0, 118, 182);
+  // CRGB green  = CRGB(130, 175,  32);
+  // CRGB white  = CRGB::Grey;
 
   currentBlending = NOBLEND;
-  currentPalette = CRGBPalette16(
-                                 white,  white,  white,  blue,
-                                 blue,  blue,  blue,  blue,
-                                 white,  white,  white,  green,
-                                 green,  green,  green,  green );
+  // currentPalette = CRGBPalette16(
+  //                                white,  white,  white,  blue,
+  //                                blue,  blue,  blue,  blue,
+  //                                white,  white,  white,  green,
+  //                                green,  green,  green,  green );
   gCurrentPatternNumber = 7;
+  setPalette(154);
 }
 
 // This function sets up a palette of green stripes.
 void setupPaletteHSV()
 {
-  CRGB blue   = CRGB::Blue;
-  CRGB black  = CRGB::Black;
-  CRGB white  = CRGB::Grey;
+  // CRGB blue   = CRGB::Blue;
+  // CRGB black  = CRGB::Black;
+  // CRGB white  = CRGB::Grey;
 
   currentBlending = NOBLEND;
-  currentPalette = CRGBPalette16(
-                                 white,  white,  white,  blue,
-                                 blue,  blue,  blue,  blue,
-                                 white,  white,  white,  black,
-                                 black,  black,  black,  black );
+  // currentPalette = CRGBPalette16(
+  //                                white,  white,  white,  blue,
+  //                                blue,  blue,  blue,  blue,
+  //                                white,  white,  white,  black,
+  //                                black,  black,  black,  black );
   gCurrentPatternNumber = 7;
+  setPalette(155);
 }
 
 
@@ -183,6 +189,7 @@ void setupPaletteGermany()
                                  red,    red,    yellow,  yellow,
                                  yellow, black,  black,   black,
                                  red,    red,    yellow,  yellow );
+  // setPalette(150);
 }
 
 // This function sets up a palette of the italian flag.
