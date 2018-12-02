@@ -204,4 +204,10 @@ void setPalette (uint8_t palette) {
       currentPalette = spain_p;
       break;
   }
+  
+  // publish new palette number via mqtt
+  lightNode.setProperty("palette").send(String(palette));
+
+  // store current palette number to eeprom
+  Embedis::set("paletteValue", String(palette));
 }
