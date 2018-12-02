@@ -3,12 +3,15 @@
 CRGB white       = CRGB::Grey;
 CRGB black       = CRGB::Black;
 CRGB red         = CRGB::Red;
-CRGB yellow      = CRGB::Gold;
+CRGB darkred     = CRGB::DarkRed;
+CRGB yellow      = CRGB::Yellow;
+CRGB gold        = CRGB::Gold;
 CRGB blue        = CRGB::Blue;
 CRGB dodgerblue  = CRGB::DodgerBlue;
 CRGB blue2       = CRGB(  0, 118, 182);
 CRGB green       = CHSV( HUE_GREEN, 255, 255);
 CRGB green2      = CRGB(130, 175,  32);
+CRGB darkgreen   = CRGB::DarkGreen;
 
 
 // custom palettes
@@ -32,30 +35,23 @@ CRGBPalette16 lala_p = CRGBPalette16(
 
 // clubs
 
-
 CRGBPalette16 bayern_p = CRGBPalette16(
                               white, white,  red,  red,
                               red,  blue,  blue, blue,
                               white, white,  red,  red,
                               red,  blue,  blue, blue );
  
-
-
 CRGBPalette16 m1860_p = CRGBPalette16(
                               dodgerblue,  dodgerblue,  white,  white,
                               dodgerblue,  dodgerblue,  white,  white,
                               dodgerblue,  dodgerblue,  white,  white,
                               dodgerblue,  dodgerblue,  white,  white );
 
-
-
 CRGBPalette16 dortmund_p = CRGBPalette16(
-                              yellow,  yellow,  black,  black,
-                              yellow,  yellow,  black,  black,
-                              yellow,  yellow,  black,  black,
-                              yellow,  yellow,  black,  black );
-
-
+                              gold,  gold,  black,  black,
+                              gold,  gold,  black,  black,
+                              gold,  gold,  black,  black,
+                              gold,  gold,  black,  black );
 
 CRGBPalette16 bremen_p = CRGBPalette16(
                               green,  green,  white,  white,
@@ -63,14 +59,11 @@ CRGBPalette16 bremen_p = CRGBPalette16(
                               green,  green,  white,  white,
                               green,  green,  white,  white );
 
-
-
 CRGBPalette16 esv_p = CRGBPalette16(
                               white,  white,  white,  blue2,
                               blue2,  blue2,  blue2,  blue2,
                               white,  white,  white,  green2,
                               green2, green2, green2, green2 );
-
 
 CRGBPalette16 hamburg_p = CRGBPalette16(
                               white,  white,  white,  blue,
@@ -78,6 +71,50 @@ CRGBPalette16 hamburg_p = CRGBPalette16(
                               white,  white,  white,  black,
                               black,  black,  black,  black );
 
+
+// flags
+
+CRGBPalette16 germany_p = CRGBPalette16(
+                              black,  black,  black,   red,
+                              red,    red,    yellow,  yellow,
+                              yellow, black,  black,   black,
+                              red,    red,    yellow,  yellow );
+
+CRGBPalette16 italy_p = CRGBPalette16(
+                              darkgreen, darkgreen, darkgreen, white,
+                              white,     darkred,   darkred,   darkred,
+                              darkgreen, darkgreen, darkgreen, white,
+                              white,     darkred,   darkred,   darkred );
+
+CRGBPalette16 brazil_p = CRGBPalette16(
+                              green, green, green,   blue,
+                              blue,  blue,  yellow,  yellow,
+                              green, green, green,   blue,
+                              blue,  blue,  yellow,  yellow );
+
+CRGBPalette16 sweden_p = CRGBPalette16(
+                                 blue,   blue,   blue,   blue,
+                                 yellow, yellow, yellow, yellow,
+                                 blue,   blue,   blue,   blue,
+                                 yellow, yellow, yellow, yellow );
+
+CRGBPalette16 england_p = CRGBPalette16(
+                                 white, white, white, white,
+                                 red,   red,   red,    red,
+                                 white, white, white,  white,
+                                 red,   red,   red,   red );
+
+CRGBPalette16 france_p = CRGBPalette16(
+                                 blue,  blue,    blue,    white,
+                                 white, darkred, darkred, darkred,
+                                 blue,  blue,    blue,    white,
+                                 white, darkred, darkred, darkred );
+
+CRGBPalette16 spain_p = CRGBPalette16(
+                                 red,    red,    red,    red,
+                                 yellow, yellow, yellow, yellow,
+                                 red,    red,    red,    red,
+                                 yellow, yellow, yellow, yellow );
 
 
 void setPalette (uint8_t palette) {
@@ -142,6 +179,29 @@ void setPalette (uint8_t palette) {
       break;
     case 155:
       currentPalette = hamburg_p;
+      break;
+
+    // flags
+    case 180:
+      currentPalette = germany_p;
+      break;
+    case 181:
+      currentPalette = italy_p;
+      break;
+    case 182:
+      currentPalette = brazil_p;
+      break;
+    case 183:
+      currentPalette = sweden_p;
+      break;
+    case 184:
+      currentPalette = england_p;
+      break;
+    case 185:
+      currentPalette = france_p;
+      break;
+    case 186:
+      currentPalette = spain_p;
       break;
   }
 }

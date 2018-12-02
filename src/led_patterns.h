@@ -75,218 +75,98 @@ void runningPalette()
 
 
 // This function sets up a palette of Bayern Munich.
-void setupPaletteBayern()
-{
-  // CRGB white = CRGB::Grey;
-  // CRGB blue  = CRGB::Blue;
-  // CRGB red   = CRGB::Red;
-  
+void setupPaletteBayern() {
   gCurrentPatternNumber = 7;
   currentBlending = NOBLEND;
-  // currentPalette = CRGBPalette16(
-  //                                white, white,  red,  red,
-  //                                red,  blue,  blue, blue,
-  //                                white, white,  red,  red,
-  //                                red,  blue,  blue, blue ); 
   setPalette(150);
 }
 
 // This function sets up a palette of white and brightblue stripes.
-void setupPalette1860()
-{
-  // CRGB blue   = CRGB::DodgerBlue;
-  // CRGB white  = CRGB::Grey;
-  
+void setupPalette1860() {
   gCurrentPatternNumber = 7;
   currentBlending = NOBLEND;
-  // currentPalette = CRGBPalette16(
-  //                                blue,  blue,  white,  white,
-  //                                blue,  blue,  white,  white,
-  //                                blue,  blue,  white,  white,
-  //                                blue,  blue,  white,  white );
   setPalette(151);
 }
 
 // This function sets up a palette of green stripes.
-void setupPaletteBVB()
-{
-  // CRGB yellow = CRGB::Gold;
-  // CRGB black  = CRGB::Black;
-  
+void setupPaletteBVB() {
   gCurrentPatternNumber = 7;
   currentBlending = NOBLEND;
-  // currentPalette = CRGBPalette16(
-  //                                yellow,  yellow,  black,  black,
-  //                                yellow,  yellow,  black,  black,
-  //                                yellow,  yellow,  black,  black,
-  //                                yellow,  yellow,  black,  black );
   setPalette(152);
 }
 
 // This function sets up a palette of green stripes.
-void setupPaletteWerder()
-{
-  // CRGB green  = CHSV( HUE_GREEN, 255, 255);
-  // CRGB white  = CRGB::Grey;
-  
-  currentBlending = NOBLEND;
-  // currentPalette = CRGBPalette16(
-  //                                green,  green,  white,  white,
-  //                                green,  green,  white,  white,
-  //                                green,  green,  white,  white,
-  //                                green,  green,  white,  white );
+void setupPaletteWerder() {
   gCurrentPatternNumber = 7;
+  currentBlending = NOBLEND;
   setPalette(153);
 }
 
 // This function sets up a palette of green stripes.
-void setupPaletteESV()
-{
-  // CRGB blue   = CRGB(  0, 118, 182);
-  // CRGB green  = CRGB(130, 175,  32);
-  // CRGB white  = CRGB::Grey;
-
-  currentBlending = NOBLEND;
-  // currentPalette = CRGBPalette16(
-  //                                white,  white,  white,  blue,
-  //                                blue,  blue,  blue,  blue,
-  //                                white,  white,  white,  green,
-  //                                green,  green,  green,  green );
+void setupPaletteESV() {
   gCurrentPatternNumber = 7;
+  currentBlending = NOBLEND;
   setPalette(154);
 }
 
 // This function sets up a palette of green stripes.
-void setupPaletteHSV()
-{
-  // CRGB blue   = CRGB::Blue;
-  // CRGB black  = CRGB::Black;
-  // CRGB white  = CRGB::Grey;
-
-  currentBlending = NOBLEND;
-  // currentPalette = CRGBPalette16(
-  //                                white,  white,  white,  blue,
-  //                                blue,  blue,  blue,  blue,
-  //                                white,  white,  white,  black,
-  //                                black,  black,  black,  black );
+void setupPaletteHSV() {
   gCurrentPatternNumber = 7;
+  currentBlending = NOBLEND;
   setPalette(155);
 }
 
-
 // This function sets up a palette of the german flag.
 // also works for Belgium
-void setupPaletteGermany()
-{
-  CRGB black  = CRGB::Black;
-  CRGB red    = CRGB::Red;
-  CRGB yellow = CRGB::Yellow;
-  
+void setupPaletteGermany() {
   gCurrentPatternNumber = 7;
   currentBlending = NOBLEND;
-  currentPalette = CRGBPalette16(
-                                 black,  black,  black,   red,
-                                 red,    red,    yellow,  yellow,
-                                 yellow, black,  black,   black,
-                                 red,    red,    yellow,  yellow );
-  // setPalette(150);
+  setPalette(180);
 }
 
 // This function sets up a palette of the italian flag.
-void setupPaletteItaly()
-{
-  CRGB green  = CRGB::DarkGreen;
-  CRGB white  = CRGB::Grey;
-  CRGB red    = CRGB::DarkRed;
-  
+void setupPaletteItaly() {  
   gCurrentPatternNumber = 7;
   currentBlending = NOBLEND;
-  currentPalette = CRGBPalette16(
-                                 green,  green,  green,   white,
-                                 white,    red,    red,  red,
-                                 green, green,  green,   white,
-                                 white,    red,    red,  red );
+  setPalette(181);
 }
-
 
 // This function sets up a palette of the brazilian flag.
-void setupPaletteBrazil()
-{
-  CRGB blue   = CRGB::Blue;
-  CRGB green  = CRGB::Green;
-  CRGB yellow = CRGB::Yellow;
-  
+void setupPaletteBrazil() {
   gCurrentPatternNumber = 7;
   currentBlending = NOBLEND;
-  currentPalette = CRGBPalette16(
-                                 green, green, green,   blue,
-                                 blue,  blue,  yellow,  yellow,
-                                 green, green, green,   blue,
-                                 blue,  blue,  yellow,  yellow );
+  setPalette(182);
 }
-
 
 // This function sets up a palette of the swedish flag.
-void setupPaletteSweden()
-{
-  CRGB blue   = CRGB::Blue;
-  CRGB yellow = CRGB::Yellow;
-
+void setupPaletteSweden() {
   gCurrentPatternNumber = 7;
   currentBlending = NOBLEND;
-  currentPalette = CRGBPalette16(
-                                 blue, blue, blue,   blue,
-                                 yellow,  yellow,  yellow,  yellow,
-                                 blue, blue, blue,   blue,
-                                 yellow,  yellow,  yellow,  yellow );
+  setPalette(183);
 }
-
 
 // This function sets up a palette of the english flag.
 // also works for Denmark
-void setupPaletteEngland()
-{
-  CRGB white  = CRGB::Grey;
-  CRGB red    = CRGB::DarkRed;
-
+void setupPaletteEngland() {
   gCurrentPatternNumber = 7;
   currentBlending = NOBLEND;
-  currentPalette = CRGBPalette16(
-                                 white, white, white,   white,
-                                 red,  red,  red,  red,
-                                 white, white, white,   white,
-                                 red,  red,  red,  red );
+  setPalette(184);
 }
 
 // This function sets up a palette of the french flag.
-void setupPaletteFrance()
-{
-  CRGB blue   = CRGB::Blue;
-  CRGB white  = CRGB::Grey;
-  CRGB red    = CRGB::DarkRed;
-  
+void setupPaletteFrance() {
   gCurrentPatternNumber = 7;
   currentBlending = NOBLEND;
-  currentPalette = CRGBPalette16(
-                                 blue,  blue,  blue,   white,
-                                 white,    red,    red,  red,
-                                 blue, blue,  blue,   white,
-                                 white,    red,    red,  red );
+  setPalette(185);
+
 }
 
 // This function sets up a palette of the spanish flag.
 void setupPaletteSpain()
 {
-  CRGB red   = CRGB::Red;
-  CRGB yellow = CRGB::Yellow;
-
   gCurrentPatternNumber = 7;
   currentBlending = NOBLEND;
-  currentPalette = CRGBPalette16(
-                                 red, red, red,   red,
-                                 yellow,  yellow,  yellow,  yellow,
-                                 red, red, red,   red,
-                                 yellow,  yellow,  yellow,  yellow );
+  setPalette(186);
 }
 
 void stars()
