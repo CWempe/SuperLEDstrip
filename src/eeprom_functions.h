@@ -28,6 +28,26 @@ void readEepromScene() {
   lightNode.setProperty("scene").send(String(scene));
 }
 
+void readEepromPalette() {
+  String paletteValue;
+  uint8_t palette;
+
+  // read value from eeprom
+  Embedis::get("paletteValue", paletteValue);
+
+  if ( paletteValue == "" ) {
+    // set to DEFAULT_SCENE if no value was stored
+    palette = DEFAULT_PALETTE;
+  } else {
+  // set Scene to the Number that was read from the eeprom
+    palette = paletteValue.toInt();
+  }
+  setPalette(palette);
+
+  // publish loaded scene via mqtt
+  lightNode.setProperty("palette").send(String(palette));
+}
+
 void readEepromBrightness() {
   String brightnessValue;
   // read value from eeprom

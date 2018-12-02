@@ -29,7 +29,9 @@ void Fire2012(void);
 void arc_pulse(void);
 void setupHalloween(void);
 void halloween(void);
+// void gradientFill(void);
 void setScene(uint16_t scene);
+void setPalette(uint8_t palette);
 void setBrightness(uint8_t newBrightness);
 void setTempo(uint8_t tempo);
 
@@ -126,6 +128,8 @@ HomieNode lightNode("light", "switch");
  */
 
 #include "led_patterns.h"
+#include "led_palette_functions.h"
+#include "led_palettes.h"
 #include "pattern_halloween.h"
 
 typedef void (*SimplePatternList[])();
@@ -143,7 +147,8 @@ SimplePatternList gPatterns = { oneColor,          //  0
                                 ice,               // 11
                                 randomColor,       // 12
                                 colorRotation,     // 13
-                                halloween          // 14
+                                halloween,         // 14
+                                staticPalette      // 15
                                };
 
 
@@ -188,6 +193,11 @@ bool lightBrightnessHandler(const HomieRange& range, const String& value) {
 
 bool lightSceneHandler(const HomieRange& range, const String& value) {
   setScene(value.toInt());
+  return true;
+}
+
+bool lightPaletteHandler(const HomieRange& range, const String& value) {
+  setPalette(value.toInt());
   return true;
 }
 
@@ -258,6 +268,7 @@ void setup(void)
   lightNode.advertise("customColor").settable(lightCustomColorHandler);
   lightNode.advertise("brightness").settable(lightBrightnessHandler);
   lightNode.advertise("scene").settable(lightSceneHandler);
+  lightNode.advertise("palette").settable(lightPaletteHandler);
   lightNode.advertise("tempo").settable(lightTempoHandler);
   lightNode.advertise("rotationSpeed").settable(lightRotationSpeedHandler);
   Homie.setGlobalInputHandler(globalInputHandler);

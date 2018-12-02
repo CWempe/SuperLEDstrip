@@ -116,6 +116,9 @@ void setScene (uint16_t scene) {
     case 109:   // Halloween
       setupHalloween();
       break;
+    case 110:   // static pattern
+      setupStaticPalette();
+      break;
       
     // page 2
     case 201:   // german police
