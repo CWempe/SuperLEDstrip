@@ -1,10 +1,7 @@
 sitemap superledstrip label="SuperLEDstrip"
 {
     Frame label="Strip1" {
-        Text        item=sLED_signal
-        Text        item=sLED_uptime
         Switch      item=sLED_light
-        Colorpicker item=sLED_led
         Slider      item=sLED_brightness
         Selection   item=sLED_scene    mappings=[ 101='rainbow',
                                                   102='stars',
@@ -73,6 +70,7 @@ sitemap superledstrip label="SuperLEDstrip"
         Setpoint    item=sLED_tempo   label="bpm (±10)"  minValue=0 maxValue=255 step=10
         Setpoint    item=sLED_tempo   label="bpm (±1)"  minValue=0 maxValue=255
         Setpoint    item=sLED_speed   minValue=0 maxValue=20
+        Setpoint    item=sLED_paletteSize  minValue=1 maxValue=20
         Text        item=sLED_temp
         Text        item=sLED_humid
         Text        item=sLED_signal
