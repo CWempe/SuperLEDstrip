@@ -90,6 +90,20 @@ void readEepromRotationSpeed() {
   }
 }
 
+void readEepromPaletteSize() {
+  String paletteSizeValue;
+  // read value from eeprom
+  Embedis::get("paletteSizeValue", paletteSizeValue);
+
+  if ( paletteSizeValue == "" ) {
+    // set to DEFAULT_ROTATION_SPEED if no value was stored
+    setPaletteSize(DEFAULT_PALETTESIZE);
+  } else {
+  // set paletteSize to the Number that was read from the eeprom
+    setPaletteSize(paletteSizeValue.toInt());
+  }
+}
+
 //
 // custom color
 //

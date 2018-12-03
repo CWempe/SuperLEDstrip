@@ -118,6 +118,9 @@ CRGBPalette16 spain_p = CRGBPalette16(
 
 
 void setPalette (uint8_t palette) {
+  // palettes are rotationable in general we assume
+  paletteRotationable = true;
+
   switch (palette) {
     case 0:   // rotate all 
       currentPalette = RainbowColors_p; //placeholder until rotate function is implemented
@@ -153,12 +156,17 @@ void setPalette (uint8_t palette) {
     // custom palettes
     case 100:
       currentPalette = thk_gp;
+      paletteRotationable = false;
       break;
     case 101:
       currentPalette = purplefly_gp;
       break;
     case 102:
       currentPalette = lala_p;
+      break;
+    case 103:
+      currentPalette = thk_gp;
+      paletteRotationable = true;
       break;
 
     // clubs

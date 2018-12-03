@@ -28,6 +28,16 @@ void setRotationSpeed(uint8_t speed) {
   updateRotationSpeed();
 }
 
+void setPaletteSize(uint8_t paletteSize) {
+  if (paletteSize == 0 ) {
+    paletteSize = 1;   // streching the palette to infinity makes no sense
+  }
+  incIndex = 255 / NUM_LEDS * paletteSize;  // update incIndex
+  lightNode.setProperty("paletteSize").send(String(paletteSize));
+  // store current palette size to eeprom
+  Embedis::set("paletteSizeValue", String(paletteSize));
+}
+
 
 
 
@@ -59,6 +69,8 @@ void setupFastLED()
   readEepromTempo();
   readEepromRotationSpeed();
   readEepromScene();
+  readEepromPalette();
+  readEepromPaletteSize();
   FastLED.addLeds<LED_TYPE, DATA_PIN, COLOR_ORDER>(leds, NUM_LEDS);
   FastLED.setCorrection( COLOR_CORRECTION );
   FastLED.setTemperature( COLOR_TEMPERATURE) ;

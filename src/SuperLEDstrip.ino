@@ -45,6 +45,7 @@ void setTextRotationSpeed(void);
 void updateRotationSpeed(void);
 void changeRotationSpeed(bool increaseSpeed);
 void setRotationSpeed(uint8_t speed);
+void setPaletteSize(uint8_t paletteSize);
 void getRed(void);
 void getGreen(void);
 void getBlue(void);
@@ -65,6 +66,8 @@ uint8_t gHue  = 0; // rotating "base color" used by many of the patterns
 uint8_t gHue2 = 0; // rotating "color" incremented by some pattern with specific speed
 uint8_t rotationSpeed = DEFAULT_ROTATION_SPEED; // default speed for color rotation
 int rotationSpeedMs; // rotationSpeed converted to delay between color changing in ms
+uint8_t paletteSize = DEFAULT_PALETTESIZE;
+uint8_t incIndex = 255 / NUM_LEDS * paletteSize;
 static CEveryNMilliseconds ColorRotation(100);
 CRGB baseColor1 = CRGB::Blue;
 CRGB baseColor2 = CRGB::Blue;
@@ -85,6 +88,7 @@ uint16_t halloweenFlickerTimer = 1000;  // initial flicker timer value
 bool     halloweenFlickerState = false; // helper to save current state of flickering; true = light of
 uint16_t halloweenFlashTimer = 1000;    // initial flash timer value
 bool     halloweenFlashState = false;   // helper to save current state of flashing; true = flashing on
+bool     paletteRotationable = true;    // helper to define if a palette can be attatched to itselfe nicely
 
 bool updateDisplayRed   = false;
 bool updateDisplayGreen = false;
@@ -207,8 +211,12 @@ bool lightTempoHandler(const HomieRange& range, const String& value) {
 }
 
 bool lightRotationSpeedHandler(const HomieRange& range, const String& value) {
-  Homie.getLogger() << "rotationSpeed is " << value << endl;
   setRotationSpeed(value.toInt());
+  return true;
+}
+
+bool lightPaletteSizeHandler(const HomieRange& range, const String& value) {
+  setPaletteSize(value.toInt());
   return true;
 }
 
@@ -271,6 +279,7 @@ void setup(void)
   lightNode.advertise("palette").settable(lightPaletteHandler);
   lightNode.advertise("tempo").settable(lightTempoHandler);
   lightNode.advertise("rotationSpeed").settable(lightRotationSpeedHandler);
+  lightNode.advertise("paletteSize").settable(lightPaletteSizeHandler);
   Homie.setGlobalInputHandler(globalInputHandler);
   if ( HOMIE_STANDALONE == true ) {
     Homie.setHomieBootMode(HomieBootMode::STANDALONE);
