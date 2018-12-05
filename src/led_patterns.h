@@ -68,23 +68,28 @@ void runningPalette()
   static uint8_t startIndex = 0;
   invert = false;
   
-  // increase startIndex everytime this function is called
-  startIndex = startIndex + 1;
-
-  // define if the palette should be started inverted
-  // and change this behavier every time startIndex is 0
-  if ( paletteRotationable == false) {
-    if ( startIndex == 0 &&  startPaletteInverted == false) {
-      startPaletteInverted = true;
-    } else if ( startIndex == 0 &&  startPaletteInverted == true) {
+  
+  EVERY_N_MILLIS_I(runningPalette, rotationSpeedMs / 10) {
+    // increase startIndex everytime this function is called
+    startIndex = startIndex + 1;
+  
+    // define if the palette should be started inverted
+    // and change this behavier every time startIndex is 0
+    if ( paletteRotationable == false) {
+      if ( startIndex == 0 &&  startPaletteInverted == false) {
+        startPaletteInverted = true;
+      } else if ( startIndex == 0 &&  startPaletteInverted == true) {
+        startPaletteInverted = false;
+      }
+    } else {
       startPaletteInverted = false;
     }
-  } else {
-    startPaletteInverted = false;
+  
+    // generade led array based on the current startIndex
+    showPalette(startIndex);
+    // Update Timer
+    runningPalette.setPeriod(rotationSpeedMs / 10);
   }
-
-  // generade led array based on the current startIndex
-  showPalette(startIndex);
 }
 
 
