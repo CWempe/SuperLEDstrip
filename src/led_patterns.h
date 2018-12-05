@@ -66,11 +66,25 @@ void FillLEDsFromPaletteColors( uint8_t colorIndex)
 void runningPalette()
 {
   static uint8_t startIndex = 0;
-  EVERY_N_MILLISECONDS(1000/NUM_LEDS)
-  {
-    startIndex = startIndex + 1;
+  invert = false;
+  
+  // increase startIndex everytime this function is called
+  startIndex = startIndex + 1;
+
+  // define if the palette should be started inverted
+  // and change this behavier every time startIndex is 0
+  if ( paletteRotationable == false) {
+    if ( startIndex == 0 &&  startPaletteInverted == false) {
+      startPaletteInverted = true;
+    } else if ( startIndex == 0 &&  startPaletteInverted == true) {
+      startPaletteInverted = false;
+    }
+  } else {
+    startPaletteInverted = false;
   }
-  FillLEDsFromPaletteColors( startIndex);
+
+  // generade led array based on the current startIndex
+  showPalette(startIndex);
 }
 
 

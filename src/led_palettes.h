@@ -25,7 +25,7 @@ DEFINE_GRADIENT_PALETTE( purplefly_gp ) {
 DEFINE_GRADIENT_PALETTE( thk_gp ) {
     0, 255,  0,  0,
   127, 255, 63,  0,
-  255, 255, 0,255};
+  255, 255, 0, 255};
 
 
 CRGBPalette16 lala_p = CRGBPalette16( 
@@ -163,10 +163,6 @@ void setPalette (uint8_t palette) {
       break;
     case 102:
       currentPalette = lala_p;
-      break;
-    case 103:
-      currentPalette = thk_gp;
-      paletteRotationable = true;
       break;
 
     // clubs

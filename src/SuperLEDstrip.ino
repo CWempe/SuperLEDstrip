@@ -28,8 +28,9 @@ void setTextAllSensors(void);
 void Fire2012(void);
 void arc_pulse(void);
 void setupHalloween(void);
+void staticPalette();
+void showPalette (uint8_t colorIndex);
 void halloween(void);
-// void gradientFill(void);
 void setScene(uint16_t scene);
 void setPalette(uint8_t palette);
 void setBrightness(uint8_t newBrightness);
@@ -89,6 +90,8 @@ bool     halloweenFlickerState = false; // helper to save current state of flick
 uint16_t halloweenFlashTimer = 1000;    // initial flash timer value
 bool     halloweenFlashState = false;   // helper to save current state of flashing; true = flashing on
 bool     paletteRotationable = true;    // helper to define if a palette can be attatched to itselfe nicely
+bool     startPaletteInverted = false;
+bool     invert = false;
 
 bool updateDisplayRed   = false;
 bool updateDisplayGreen = false;
