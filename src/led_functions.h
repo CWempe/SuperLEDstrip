@@ -76,12 +76,32 @@ void setupFastLED()
   FastLED.setTemperature( COLOR_TEMPERATURE) ;
 }
 
-void loopFastLED()
-{
+void loopFastLED() {
   if ( gLastPatternNumber != gCurrentPatternNumber) {
     leds(0, NUM_LEDS - 1) = CRGB::Black;
     gLastPatternNumber = gCurrentPatternNumber;
   }
+
+  if ( autoChangePalette == true ) {
+    EVERY_N_MILLIS_I(changePalette, autoChangePaletteMS) {
+      // automatically change palette if palette number is 0
+      uint8_t nextPalette = random8( 1, 9+3);
+      if ( nextPalette <= 9 ) {
+        setPalette(nextPalette);
+      } else {
+        setPalette(nextPalette - 9  + 99);
+      }
+      // Update Timer
+      changePalette.setPeriod(autoChangePaletteMS);
+    }
+  }
+
+  if ( fadePalette == true ) {
+    nblendPaletteTowardPalette( currentPalette, targetPalette, maxChanges);
+  } else {
+    currentPalette = targetPalette;
+  }
+  
   gPatterns[gCurrentPatternNumber]();
   FastLED.show();
 }

@@ -77,6 +77,7 @@ CRGB customColor = CRGB(255,255,255);
 CRGB randomColorArray[] = {CRGB::White, CRGB( 255, 147, 41), CRGB::Red, CRGB::Green, CRGB::Blue, CRGB::Magenta, CRGB::Cyan, CRGB::Yellow};
 uint8_t randomColorsCountdown = 2;    // will be set to 0 (disable countdown) via first use of setupRandomColor
 CRGBPalette16 currentPalette;
+CRGBPalette16 targetPalette;
 TBlendType    currentBlending;
 uint8_t currentBrightness = DEFAULT_BRIGHTNESS;
 uint8_t gCurrentPatternNumber; // Index number of which pattern is current
@@ -92,6 +93,11 @@ bool     halloweenFlashState = false;   // helper to save current state of flash
 bool     paletteRotationable = true;    // helper to define if a palette can be attatched to itselfe nicely
 bool     startPaletteInverted = false;
 bool     invert = false;
+uint8_t  maxChanges = 10;               // How fast should palettes change (1-48)
+bool     fadePalette = true;
+bool     autoChangePalette = false;     // automatically change palette
+uint16_t autoChangePaletteMS = 5000;       // automatically change palette every X seconds
+
 
 bool updateDisplayRed   = false;
 bool updateDisplayGreen = false;
@@ -204,7 +210,12 @@ bool lightSceneHandler(const HomieRange& range, const String& value) {
 }
 
 bool lightPaletteHandler(const HomieRange& range, const String& value) {
-  setPalette(value.toInt());
+  if ( value.toInt() == 0 ) {
+    autoChangePalette = true;
+  } else {
+    autoChangePalette = false;
+    setPalette(value.toInt());
+  }
   return true;
 }
 

@@ -25,7 +25,7 @@ DEFINE_GRADIENT_PALETTE( purplefly_gp ) {
 DEFINE_GRADIENT_PALETTE( thk_gp ) {
     0, 255,  0,  0,
   127, 255, 63,  0,
-  255, 255, 0, 255};
+  255, 220, 0, 220};
 
 
 CRGBPalette16 lala_p = CRGBPalette16( 
@@ -122,96 +122,104 @@ void setPalette (uint8_t palette) {
   paletteRotationable = true;
 
   switch (palette) {
-    case 0:   // rotate all 
-      currentPalette = RainbowColors_p; //placeholder until rotate function is implemented
+    case 0:
+      autoChangePalette = true;
       break;
     case 1:
-      currentPalette = CloudColors_p;
+      targetPalette = CloudColors_p;
       break;
     case 2:
-      currentPalette = LavaColors_p;
+      targetPalette = LavaColors_p;
       break;
     case 3:
-      currentPalette = OceanColors_p;
+      targetPalette = OceanColors_p;
       break;
     case 4:
-      currentPalette = ForestColors_p;
+      targetPalette = ForestColors_p;
       break;
     case 5:
-      currentPalette = RainbowColors_p;
+      targetPalette = RainbowColors_p;
+      paletteRotationable = false;
       break;
     case 6:
-      currentPalette = RainbowStripeColors_p;
+      targetPalette = RainbowStripeColors_p;
+      paletteRotationable = false;
       break;
     case 7:
-      currentPalette = PartyColors_p;
+      targetPalette = PartyColors_p;
+      paletteRotationable = false;
       break;
     case 8:
-      currentPalette = HeatColors_p;
+      targetPalette = HeatColors_p;
       break;
     case 9:
-      currentPalette = Rainbow_gp;
+      targetPalette = Rainbow_gp;
+      paletteRotationable = false;
       break;
 
     // custom palettes
     case 100:
-      currentPalette = thk_gp;
+      targetPalette = thk_gp;
       paletteRotationable = false;
       break;
     case 101:
-      currentPalette = purplefly_gp;
+      targetPalette = purplefly_gp;
+      paletteRotationable = false;
       break;
     case 102:
-      currentPalette = lala_p;
+      targetPalette = lala_p;
+      paletteRotationable = false;
       break;
 
     // clubs
     case 150:
-      currentPalette = bayern_p;
+      targetPalette = bayern_p;
       break;
     case 151:
-      currentPalette = m1860_p;
+      targetPalette = m1860_p;
       break;
     case 152:
-      currentPalette = dortmund_p;
+      targetPalette = dortmund_p;
       break;
     case 153:
-      currentPalette = bremen_p;
+      targetPalette = bremen_p;
       break;
     case 154:
-      currentPalette = esv_p;
+      targetPalette = esv_p;
       break;
     case 155:
-      currentPalette = hamburg_p;
+      targetPalette = hamburg_p;
       break;
 
     // flags
     case 180:
-      currentPalette = germany_p;
+      targetPalette = germany_p;
       break;
     case 181:
-      currentPalette = italy_p;
+      targetPalette = italy_p;
       break;
     case 182:
-      currentPalette = brazil_p;
+      targetPalette = brazil_p;
       break;
     case 183:
-      currentPalette = sweden_p;
+      targetPalette = sweden_p;
       break;
     case 184:
-      currentPalette = england_p;
+      targetPalette = england_p;
       break;
     case 185:
-      currentPalette = france_p;
+      targetPalette = france_p;
       break;
     case 186:
-      currentPalette = spain_p;
+      targetPalette = spain_p;
       break;
   }
-  
-  // publish new palette number via mqtt
-  lightNode.setProperty("palette").send(String(palette));
 
-  // store current palette number to eeprom
-  Embedis::set("paletteValue", String(palette));
+  if ( autoChangePalette == false ) {
+    // publish new palette number via mqtt
+    lightNode.setProperty("palette").send(String(palette));
+  
+    // store current palette number to eeprom
+    Embedis::set("paletteValue", String(palette));
+  }
 }
