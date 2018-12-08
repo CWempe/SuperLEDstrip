@@ -1,6 +1,7 @@
 sitemap superledstrip label="SuperLEDstrip"
 {
     Frame label="Strip1" {
+        Text        item=sLED_status
         Switch      item=sLED_light
         Slider      item=sLED_brightness
         Selection   item=sLED_scene    mappings=[ 101='rainbow',

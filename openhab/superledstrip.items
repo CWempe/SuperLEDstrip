@@ -1,4 +1,5 @@
 /* SuperLEDstrip */
+Switch sLED_status     "Status [%s]"    <switch> { mqtt="<[mosquitto:homie/SuperLEDstrip/$online:state:MAP(homie_status.map)]" }
 Number sLED_signal     "Signal [%d %%]" <signal> { mqtt="<[mosquitto:homie/SuperLEDstrip/$stats/signal:state:default]"}
 Number sLED_uptime     "Uptime [%d s]"  <time>   { mqtt="<[mosquitto:homie/SuperLEDstrip/$stats/uptime:state:default]"}
 
