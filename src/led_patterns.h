@@ -217,14 +217,15 @@ void rainbow()
 /*
   This function changes the momentum if necessary and in/decreses index
 
- index:
-  240 |        / \                / \ 
-      |      /     \            /     \
-      |    /         \        /         \
-      |  /             \    /             \
-      |/_________________\/_________________\
-    0                                          time
-  momentum: ⬆       ⬇           ⬆       ⬇      
+     index:
+        240 |        / \                / \ 
+            |      /     \            /     \
+            |    /         \        /         \
+            |  /             \    /             \
+            |/_________________\/_________________\
+          0                                          time
+  momentum:  ⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬇⬇⬇⬇⬇⬇⬇⬇⬇⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬇⬇⬇⬇⬇⬇⬇⬇⬇
+  (⬆ ≙ true; ⬇ ≙ false)
   
   use 240 instead of 255 because of https://github.com/FastLED/FastLED/issues/515
 */
