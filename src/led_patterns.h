@@ -66,12 +66,17 @@ void FillLEDsFromPaletteColors( uint8_t colorIndex)
 void runningPalette()
 {
   static uint8_t startIndex = 0;
-  invert = false;
   
-  // startIndex = calculateNextStartIndex(startIndex);
-
   // generade led array based on the current startIndex
   showPalette(startIndex);
+
+  EVERY_N_MILLIS_I(runningPalette, rotationSpeedMs / 10) {
+    // calculate next index of palette for the first pixel
+    calculateNextIndex( &startIndex, &paletteMomentumStart );
+    
+    // Update Timer
+    runningPalette.setPeriod(rotationSpeedMs / 10);
+  }
 }
 
 void colorRotation()
@@ -217,26 +222,26 @@ void rainbow()
       |      /     \            /     \
       |    /         \        /         \
       |  /             \    /             \
-      |/_________________\/ ________________\
-    0                                          t
+      |/_________________\/_________________\
+    0                                          time
   momentum: ⬆       ⬇           ⬆       ⬇      
   
   use 240 instead of 255 because of https://github.com/FastLED/FastLED/issues/515
 */
 
 void calculateNextIndex(uint8_t *index, bool *momentum) {
-    // change the momentum if we reach a new periode at 0 or 240
+    // change the momentum if we reach 0 or 240
     if ( paletteRotationable == false &&
-           ( ( *index == 240 && *momentum == true  ) ||
-             ( *index ==   0 && *momentum == false ) ) ) {
+           ( ( *index >= ( 240 - incIndex) && *momentum == true  ) ||
+             ( *index <= (   0 + incIndex) && *momentum == false ) ) ) {
       *momentum = !*momentum;
     }
 
-    // inkrement or dekrement depending on momentum    
+    // increment or decrement by incIndex depending on momentum    
     if ( *momentum == true ) {
-      *index = *index + 1;
+      *index = *index + incIndex;
     } else {
-      *index = *index - 1;
+      *index = *index - incIndex;
     }
 }
 
