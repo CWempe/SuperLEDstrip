@@ -12,7 +12,7 @@ Number sLED_scene      "Scene"           <colorwheel> { mqtt="<[mosquitto:homie/
 Number sLED_palette    "Palette"         <colorwheel> { mqtt="<[mosquitto:homie/SuperLEDstrip/light/palette:state:default], >[mosquitto:homie/SuperLEDstrip/light/palette/set:command:*:default]" }
 Number sLED_tempo      "Tempo [%d bpm]"     <heating> { mqtt="<[mosquitto:homie/SuperLEDstrip/light/tempo:state:default], >[mosquitto:homie/SuperLEDstrip/light/tempo/set:command:*:default]" }
 Number sLED_speed      "RotationSpeed [%d]" <heating> { mqtt="<[mosquitto:homie/SuperLEDstrip/light/rotationSpeed:state:default], >[mosquitto:homie/SuperLEDstrip/light/rotationSpeed/set:command:*:default]" }
-Number sLED_paletteSize "Palettes/Strip [%d]" <chart> { mqtt="<[mosquitto:homie/SuperLEDstrip/light/paletteSize:state:default], >[mosquitto:homie/SuperLEDstrip/light/paletteSize/set:command:*:default]" }
+Number sLED_paletteSize "Palettes/5m [%d]"  <chart>   { mqtt="<[mosquitto:homie/SuperLEDstrip/light/paletteSize:state:default], >[mosquitto:homie/SuperLEDstrip/light/paletteSize/set:command:*:default]" }
 
 Number sLED_temp       "Temperatur [%.1f °C]" <temperature> { mqtt="<[mosquitto:homie/SuperLEDstrip/temperature/degrees:state:default]"}
 Number sLED_humid      "Humidity [%.1f %%]"   <humidity>    { mqtt="<[mosquitto:homie/SuperLEDstrip/humidity/percentage:state:default]"}

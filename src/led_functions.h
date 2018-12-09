@@ -32,13 +32,16 @@ void setPaletteSize(uint8_t paletteSize) {
   if (paletteSize == 0 ) {
     paletteSize = 1;   // streching the palette to infinity makes no sense
   }
-  incIndex = 255 / NUM_LEDS * paletteSize;  // update incIndex
+  
+  incIndex = round(255 / (float)( LEDS_PER_METER * 5 ) * paletteSize);  // update incIndex
+
+  if (incIndex == 0 ) {
+    incIndex = 1;   // streching the palette to infinity makes no sense
+  }
   lightNode.setProperty("paletteSize").send(String(paletteSize));
   // store current palette size to eeprom
   Embedis::set("paletteSizeValue", String(paletteSize));
 }
-
-
 
 
 // toggle brightness between 0 and current
