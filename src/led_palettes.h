@@ -26,6 +26,39 @@ DEFINE_GRADIENT_PALETTE( thk_gp ) {
     0, 255,  0,  0,
   127, 255, 63,  0,
   255, 220, 0, 220};
+ 
+// https://www.color-hex.com/color-palette/69287
+DEFINE_GRADIENT_PALETTE( midnight_light_gp ) {
+    0, 35,  8, 39,
+   63, 73, 22, 71,
+  127,124, 38, 94,
+  191,255, 84, 84,
+  255,255,129, 60};
+
+// https://www.color-hex.com/color-palette/62352
+DEFINE_GRADIENT_PALETTE( tragic_gp ) {
+    0, 37,112, 81,
+   63, 53, 96, 81,
+  127, 69, 80, 81,
+  191, 85, 64, 81,
+  255,101, 48, 81};
+  
+
+// http://soliton.vm.bytemark.co.uk/pub/cpt-city/bhw/bhw1/tn/bhw1_05.png.index.html
+DEFINE_GRADIENT_PALETTE( bhw1_05_gp ) {
+    0,  5,239,137,
+  255,158, 35,221};
+
+// http://soliton.vm.bytemark.co.uk/pub/cpt-city/mpl/tn/plasma.png.index.html
+DEFINE_GRADIENT_PALETTE( plasma_gp ) {
+    0,13,   8,135,
+   63,126,  3,168,
+  127,204, 71,120,
+  191,248,148, 65,
+  255,240,249, 33};
+
+
+
 
 
 CRGBPalette16 lala_p = CRGBPalette16( 
@@ -168,6 +201,22 @@ void setPalette (uint8_t palette) {
       break;
     case 102:
       targetPalette = lala_p;
+      paletteRotationable = false;
+      break;
+    case 103:
+      targetPalette = midnight_light_gp;
+      paletteRotationable = false;
+      break;
+    case 104:
+      targetPalette = tragic_gp;
+      paletteRotationable = false;
+      break;
+    case 105:
+      targetPalette = bhw1_05_gp;
+      paletteRotationable = false;
+      break;
+    case 106:
+      targetPalette = plasma_gp;
       paletteRotationable = false;
       break;
 
