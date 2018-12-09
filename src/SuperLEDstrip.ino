@@ -54,6 +54,7 @@ void updateCustomColorRed(uint8_t red, bool updateRGB);
 void updateCustomColorGreen(uint8_t green, bool updateRGB);
 void updateCustomColorBlue(uint8_t blue, bool updateRGB);
 void readEepromScene(void);
+void calculateNextIndex(uint8_t *index, bool *momentum);
 
 
 Embedis embedis(Serial);
@@ -92,6 +93,9 @@ uint16_t halloweenFlashTimer = 1000;    // initial flash timer value
 bool     halloweenFlashState = false;   // helper to save current state of flashing; true = flashing on
 bool     paletteRotationable = true;    // helper to define if a palette can be attatched to itselfe nicely
 bool     startPaletteInverted = false;
+bool     paletteMomentumStart = true;   // Defines the momentum of the palette (forward or reverse) at the first pixel of the stripe.
+                                        // The color index of the palette might descend from 255 to 0 if it cannot attached back to back.
+bool     paletteMomentumPixel = true;   // Same as paletteMomentumPixel but for each pixel of the strip.
 bool     invert = false;
 uint8_t  maxChanges = 10;               // How fast should palettes change (1-48)
 bool     fadePalette = true;

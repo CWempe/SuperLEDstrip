@@ -68,28 +68,23 @@ void runningPalette()
   static uint8_t startIndex = 0;
   invert = false;
   
-  
+  // startIndex = calculateNextStartIndex(startIndex);
+
+  // generade led array based on the current startIndex
+  showPalette(startIndex);
+}
+
+void colorRotation()
+{
+  static uint8_t startIndex = 0;
+  // static CRGB color;
+
   EVERY_N_MILLIS_I(runningPalette, rotationSpeedMs / 10) {
-    // increase startIndex everytime this function is called
-    startIndex = startIndex + 1;
-  
-    // define if the palette should be started inverted
-    // and change this behavier every time startIndex is 0
-    if ( paletteRotationable == false) {
-      if ( startIndex == 0 &&  startPaletteInverted == false) {
-        startPaletteInverted = true;
-      } else if ( startIndex == 0 &&  startPaletteInverted == true) {
-        startPaletteInverted = false;
-      }
-    } else {
-      startPaletteInverted = false;
-    }
-  
-    // generade led array based on the current startIndex
-    showPalette(startIndex);
+    calculateNextIndex( &startIndex, &paletteMomentumStart );
     // Update Timer
     runningPalette.setPeriod(rotationSpeedMs / 10);
   }
+  fill_solid(leds, NUM_LEDS, ColorFromPalette( currentPalette, startIndex, 255));
 }
 
 
@@ -213,15 +208,36 @@ void rainbow()
   fill_rainbow( leds, NUM_LEDS, gHue, 7);
 }
 
-void colorRotation()
-{
-  baseColor1.setHue(gHue2);
-  fill_solid(leds, NUM_LEDS, baseColor1);
-  EVERY_N_MILLIS_I(ColorRotation, rotationSpeedMs) {
-    // Update Timer
-    ColorRotation.setPeriod(rotationSpeedMs);
-    gHue2++;  // cycle the "base color" through the rainbow
-  }
+
+/*
+  This function changes the momentum if necessary and in/decreses index
+
+ index:
+  240 |        / \                / \ 
+      |      /     \            /     \
+      |    /         \        /         \
+      |  /             \    /             \
+      |/_________________\/ ________________\
+    0                                          t
+  momentum: ⬆       ⬇           ⬆       ⬇      
+  
+  use 240 instead of 255 because of https://github.com/FastLED/FastLED/issues/515
+*/
+
+void calculateNextIndex(uint8_t *index, bool *momentum) {
+    // change the momentum if we reach a new periode at 0 or 240
+    if ( paletteRotationable == false &&
+           ( ( *index == 240 && *momentum == true  ) ||
+             ( *index ==   0 && *momentum == false ) ) ) {
+      *momentum = !*momentum;
+    }
+
+    // inkrement or dekrement depending on momentum    
+    if ( *momentum == true ) {
+      *index = *index + 1;
+    } else {
+      *index = *index - 1;
+    }
 }
 
 
