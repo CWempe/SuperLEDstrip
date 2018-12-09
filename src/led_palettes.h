@@ -160,107 +160,136 @@ void setPalette (uint8_t palette) {
       break;
     case 1:
       targetPalette = CloudColors_p;
+      currentBlending = LINEARBLEND;
       break;
     case 2:
       targetPalette = LavaColors_p;
+      currentBlending = LINEARBLEND;
       break;
     case 3:
       targetPalette = OceanColors_p;
+      currentBlending = LINEARBLEND;
       break;
     case 4:
       targetPalette = ForestColors_p;
+      currentBlending = LINEARBLEND;
       break;
     case 5:
       targetPalette = RainbowColors_p;
-      paletteRotationable = false;
+      paletteRotationable = true;
+      currentBlending = LINEARBLEND;
       break;
     case 6:
       targetPalette = RainbowStripeColors_p;
       paletteRotationable = false;
+      currentBlending = NOBLEND;
       break;
     case 7:
       targetPalette = PartyColors_p;
       paletteRotationable = false;
+      currentBlending = LINEARBLEND;
       break;
     case 8:
       targetPalette = HeatColors_p;
+      currentBlending = LINEARBLEND;
       break;
     case 9:
       targetPalette = Rainbow_gp;
-      paletteRotationable = false;
+      paletteRotationable = true;
+      currentBlending = LINEARBLEND;
       break;
 
     // custom palettes
     case 100:
       targetPalette = thk_gp;
       paletteRotationable = false;
+      currentBlending = LINEARBLEND;
       break;
     case 101:
       targetPalette = purplefly_gp;
       paletteRotationable = false;
+      currentBlending = LINEARBLEND;
       break;
     case 102:
       targetPalette = lala_p;
       paletteRotationable = false;
+      currentBlending = LINEARBLEND;
       break;
     case 103:
       targetPalette = midnight_light_gp;
       paletteRotationable = false;
+      currentBlending = LINEARBLEND;
       break;
     case 104:
       targetPalette = tragic_gp;
       paletteRotationable = false;
+      currentBlending = LINEARBLEND;
       break;
     case 105:
       targetPalette = bhw1_05_gp;
       paletteRotationable = false;
+      currentBlending = LINEARBLEND;
       break;
     case 106:
       targetPalette = plasma_gp;
       paletteRotationable = false;
+      currentBlending = LINEARBLEND;
       break;
 
     // clubs
     case 150:
       targetPalette = bayern_p;
+      currentBlending = NOBLEND;
       break;
     case 151:
       targetPalette = m1860_p;
+      currentBlending = NOBLEND;
       break;
     case 152:
       targetPalette = dortmund_p;
+      currentBlending = NOBLEND;
       break;
     case 153:
       targetPalette = bremen_p;
+      currentBlending = NOBLEND;
       break;
     case 154:
       targetPalette = esv_p;
+      currentBlending = NOBLEND;
       break;
     case 155:
       targetPalette = hamburg_p;
+      currentBlending = NOBLEND;
       break;
 
     // flags
     case 180:
       targetPalette = germany_p;
+      currentBlending = NOBLEND;
       break;
     case 181:
       targetPalette = italy_p;
+      currentBlending = NOBLEND;
       break;
     case 182:
       targetPalette = brazil_p;
+      currentBlending = NOBLEND;
       break;
     case 183:
       targetPalette = sweden_p;
+      currentBlending = NOBLEND;
       break;
     case 184:
       targetPalette = england_p;
+      currentBlending = NOBLEND;
       break;
     case 185:
       targetPalette = france_p;
+      currentBlending = NOBLEND;
       break;
     case 186:
       targetPalette = spain_p;
+      currentBlending = NOBLEND;
       break;
   }
 
