@@ -151,6 +151,10 @@ void setScene (uint16_t scene) {
     case 110:   // static pattern
       setupStaticPalette();
       break;
+    case 111:   // running palette
+      gCurrentPatternNumber = 7;
+      break;
+
       
     // page 2
     case 201:   // german police

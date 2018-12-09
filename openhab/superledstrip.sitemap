@@ -14,6 +14,7 @@ sitemap superledstrip label="SuperLEDstrip"
                                                   108='color rotation',
                                                   109='halloween',
                                                   110='static palette',
+                                                  111='running palette',
                                                   201='german police',
                                                   202='american police',
                                                   203='orange flashing lights',
