@@ -137,6 +137,7 @@ SoftwareSerial HMISerial(NEXTION_TX, NEXTION_RX);
 HomieNode lightNode("light", "switch");
 #include "eeprom_functions.h";
 
+#include "buttons.h"
 
 /*
  * #########################
@@ -298,6 +299,7 @@ void setup(void)
   lightNode.advertise("tempo").settable(lightTempoHandler);
   lightNode.advertise("rotationSpeed").settable(lightRotationSpeedHandler);
   lightNode.advertise("paletteSize").settable(lightPaletteSizeHandler);
+  HomieSetupButtons();
   Homie.setGlobalInputHandler(globalInputHandler);
   if ( HOMIE_STANDALONE == true ) {
     Homie.setHomieBootMode(HomieBootMode::STANDALONE);
@@ -332,6 +334,8 @@ void loop(void)
       loopTemp();
     }
   #endif
+
+  loopButtons();
 
   Homie.loop();
 
