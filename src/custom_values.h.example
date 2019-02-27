@@ -73,3 +73,8 @@ bool lightON = false;
 // define custom offsets is necessary
 #define OFFSET_TEMP      0
 #define OFFSET_HUMID     0
+
+/*
+ * Buttons
+ */
+#define BUTTON01_PIN        D7
