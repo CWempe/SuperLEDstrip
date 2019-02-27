@@ -244,6 +244,9 @@ void setScene (uint16_t scene) {
     case 509:   // customColor
       setupOneColor(customColor);
       break;
+    case 510:   // OrangeRed
+      setupOneColor(CRGB::OrangeRed);
+      break;
       
     // page 6
     case 601:   // arcade pulse

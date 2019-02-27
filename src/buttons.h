@@ -25,10 +25,30 @@ int lastButton01Value = -1;
       currentScene = sceneValue.toInt();
   
       switch (currentScene) {
-        case 501:   // white to rainbow
+        case 501:   // switch to rainbow
           setScene(101);
           break;
-        case 101:   // white to rainbow
+        case 101:   // switch to running palette
+          setScene(111);
+          break;
+        case 111:   // switch to red
+          setScene(503);
+          break;
+        case 503:   // switch to OrangeRed
+          setScene(510);
+          break;
+        case 510:   // switch to magenta
+          setScene(506);
+          break;
+        case 506:   // switch to blue
+          setScene(505);
+          break;
+        case 505:   // switch to green
+          setScene(504);
+          break;
+
+
+        default:   // default to white
           setScene(501);
           break;
       }
