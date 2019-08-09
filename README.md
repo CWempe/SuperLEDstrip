@@ -239,6 +239,20 @@ You can find configuration examples in the `openhab` folder.
 
 ## Changelog
 
+**2.5.1**
+
+* Add support for Button01
+  Changes between pre defined scenes
+
+**2.5.0**
+
+* Add color palletes
+  * Add pre defines color palletes
+  * Add pallete scenes (animation styles) `static pallete`, `running pallete` and `color rotation`
+  * Make palletes and pallete scenes selectable via mqtt
+  * Make pallete size changeable (via mqtt)
+  * Save pallete to eeeprom and restore after reboot
+
 **2.4.1**
 
 * Add option to use DS18B20 instead of DHT22 sensor or neither
