@@ -20,6 +20,7 @@ Display/exported/fart.exe
 Display/exported/gui_themed.svg
 
 # PlatformIO
+.pio/
 .pioenvs
 .piolibdeps
 .vscode
