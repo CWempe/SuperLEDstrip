@@ -1,12 +1,12 @@
 # this is a Inkfile
 
 
-gui_09_colors.png            gui_themed.svg     -*   "+background" "+main" "+app bar" "+tabs"   "+cells big" "+fab"     "+tiles" "+tile colors"
-gui_10_colors_pressed.png    gui_themed.svg     -*   "+background" "+main" "+app bar" "+tabs"   "+cells big" "+fab"     "+tiles" "+tile colors"          "+pressed" "+pressed cells big"   "+pressed tabs" "+pressed fab"
+gui_09_colors.png             gui_themed.svg    -*   "+background" "+main" "+app bar" "+tabs"   "+cells big" "+fab"  "+tiles" "+tile colors"
+gui_10_colors_pressed.png     gui_themed.svg    -*   "+background" "+main" "+app bar" "+tabs"   "+cells big" "+fab"  "+tiles" "+tile colors"          "+pressed" "+pressed cells big"   "+pressed tabs" "+pressed fab"
 
 
-gui_11_arcade.png            gui_themed.svg     -*   "+background" "+main" "+app bar" "+tabs"   "+cells big" "+fab"     "+tiles" "+tile arcade"
-gui_12_arcade_pressed.png    gui_themed.svg     -*   "+background" "+main" "+app bar" "+tabs"   "+cells big" "+fab"     "+tiles" "+tile arcade"          "+pressed" "+pressed cells big"   "+pressed tabs" "+pressed fab"
+gui_11_arcade.png             gui_themed.svg    -*   "+background" "+main" "+app bar" "+tabs"   "+cells big" "+fab"  "+tiles" "+tile arcade"
+gui_12_arcade_pressed.png     gui_themed.svg    -*   "+background" "+main" "+app bar" "+tabs"   "+cells big" "+fab"  "+tiles" "+tile arcade"          "+pressed" "+pressed cells big"   "+pressed tabs" "+pressed fab"
 
 
 gui_13_palletes.png           gui_themed.svg    -*   "+background" "+main" "+app bar" "+tabs"   "+cells small" "+fab"  "+tiles" "+tile palletes"
