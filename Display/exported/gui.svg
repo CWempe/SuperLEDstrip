@@ -16,7 +16,7 @@
    version="1.1"
    pencil:version="1.2.2"
    sodipodi:docname="gui.svg"
-   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
    inkscape:export-filename="\\qnap\home\Projekte\LED-Leiste für Klaas\Display\exported\display_matarial_design_017_dark_clubs_p.png"
    inkscape:export-xdpi="90"
    inkscape:export-ydpi="90"
@@ -46,6 +46,22 @@
   </metadata>
   <defs
      id="defs100">
+    <linearGradient
+       id="linearGradient16277"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="0"
+         id="stop16275" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient16235"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="0"
+         id="stop16233" />
+    </linearGradient>
     <linearGradient
        id="linearGradient21572"
        osb:paint="solid">
@@ -2260,6 +2276,24 @@
        xlink:href="#tab_indicator"
        inkscape:collect="always"
        gradientTransform="translate(258.11051,-75.807609)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#tab_icon_active"
+       id="linearGradient16445"
+       x1="315"
+       y1="48.000004"
+       x2="333"
+       y2="48.000004"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#tab_icon_active"
+       id="linearGradient16489"
+       x1="265"
+       y1="48"
+       x2="285"
+       y2="48"
+       gradientUnits="userSpaceOnUse" />
   </defs>
   <sodipodi:namedview
      pagecolor="#ffffff"
@@ -2291,12 +2325,12 @@
      guidehicolor="#16ff00"
      guidehiopacity="0.49803922"
      inkscape:zoom="2.2821871"
-     inkscape:cx="235.59721"
-     inkscape:cy="104.37362"
+     inkscape:cx="136.18803"
+     inkscape:cy="118.52975"
      inkscape:window-x="1912"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="tile_light"
+     inkscape:current-layer="tabs"
      inkscape:object-nodes="false"
      inkscape:snap-nodes="true"
      inkscape:snap-bbox="true"
@@ -2651,8 +2685,14 @@
          id="path5282"
          d="m 270.45455,42.545455 h 9.0909 a 5.4545455,5.4545455 0 0 1 5.45455,5.45455 5.4545455,5.4545455 0 0 1 -5.45455,5.45454 c -1.61818,0 -3.06363,-0.7 -4.06363,-1.81818 h -0.96364 c -1,1.11818 -2.44545,1.81818 -4.06363,1.81818 A 5.4545455,5.4545455 0 0 1 265,48.000005 a 5.4545455,5.4545455 0 0 1 5.45455,-5.45455 m -0.9091,2.72727 v 1.81819 h -1.81818 v 1.81818 h 1.81818 v 1.81818 h 1.81819 v -1.81818 h 1.81818 v -1.81818 h -1.81818 v -1.81819 h -1.81819 m 8.63637,2.72728 a 1.3636364,1.3636364 0 0 0 -1.36364,1.36363 1.3636364,1.3636364 0 0 0 1.36364,1.36364 1.3636364,1.3636364 0 0 0 1.36363,-1.36364 1.3636364,1.3636364 0 0 0 -1.36363,-1.36363 m 2.72727,-2.72728 a 1.3636364,1.3636364 0 0 0 -1.36364,1.36364 1.3636364,1.3636364 0 0 0 1.36364,1.36364 1.3636364,1.3636364 0 0 0 1.36364,-1.36364 1.3636364,1.3636364 0 0 0 -1.36364,-1.36364 z"
          inkscape:connector-curvature="0"
-         style="display:inline;fill:#ffffff;fill-opacity:1;stroke-width:0.90909094"
+         style="display:inline;fill:url(#linearGradient16489);fill-opacity:1.0;stroke-width:0.90909094"
          inkscape:label="gamepad" />
+      <path
+         d="m 327,47.000005 v 2 h -2 v -2 z m -2,-2 v 2 h -2 v -2 z m 0,4 v 2 h -2 v -2 z m 2,2 v 2 h -2 v -2 z m 0,-8 v 2 h -2 v -2 z m 6,12 v -14 c 0,-1.1 -0.9,-2 -2,-2 h -14 c -1.1,0 -2,0.9 -2,2 v 14 c 0,1.1 0.9,2 2,2 h 14 c 1.1,0 2,-0.9 2,-2 z m -15,-10 v -2 h 2 v 2 z m 0,4 v -2 h 2 v 2 z m 0,4 v -2 h 2 v 2 z m 7,2 v -2 h -2 v 2 h -2 v -2 h 2 v -2 h -2 v -2 h 2 v -2 h -2 v -2 h 2 v -2 h -2 v -2 h 2 v 2 h 2 v -2 h 6 v 14 z"
+         id="gradient"
+         inkscape:connector-curvature="0"
+         style="fill:url(#linearGradient16445);fill-opacity:1.0;stroke:none"
+         inkscape:label="gradient" />
     </g>
   </g>
   <g
@@ -7981,7 +8021,7 @@
           <g
              id="Ebene_1">
             <polygon
-               points="17.6581,-0.0001 0.0001,26.4871 17.6581,52.9741 35.3159,26.4871 "
+               points="17.6581,52.9741 35.3159,26.4871 17.6581,-0.0001 0.0001,26.4871 "
                class="fil0"
                id="_44070144"
                style="fill:#1d9053" />
@@ -8009,17 +8049,17 @@
              id="_94316080"
              style="fill-rule:evenodd"
              transform="matrix(3.543307e-5,0,0,3.543307e-5,9.091797e-6,3.428073e-4)"
-             points="15500000,2127950 14456200,905320 14076000,459500 13873800,459500 2131100,458480 1928810,458480 503250,2128320 503250,3484380 500000,17871800 1925560,19541500 3603860,19541500 12399400,19541200 14078000,19541200 15056800,18394600 15499400,17871400 15500000,3484100 " />
+             points="15499400,17871400 15500000,3484100 15500000,2127950 14456200,905320 14076000,459500 13873800,459500 2131100,458480 1928810,458480 503250,2128320 503250,3484380 500000,17871800 1925560,19541500 3603860,19541500 12399400,19541200 14078000,19541200 15056800,18394600 " />
           <polygon
              id="_95104984"
              style="fill:#000000;fill-opacity:1;fill-rule:evenodd"
              transform="matrix(3.543307e-5,0,0,3.543307e-5,9.091797e-6,3.428073e-4)"
-             points="15500000,2127950 14456200,905320 14076000,459500 13873800,459500 2131100,458480 1928810,458480 503250,2128320 503250,3484380 500000,17871800 1925560,19541500 3603860,19541500 12399400,19541200 14078000,19541200 15056800,18394600 15499400,17871400 15500000,3484100 " />
+             points="15499400,17871400 15500000,3484100 15500000,2127950 14456200,905320 14076000,459500 13873800,459500 2131100,458480 1928810,458480 503250,2128320 503250,3484380 500000,17871800 1925560,19541500 3603860,19541500 12399400,19541200 14078000,19541200 15056800,18394600 " />
           <polygon
              id="_97350032"
              style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd"
              transform="matrix(3.543307e-5,0,0,3.543307e-5,9.091797e-6,3.428073e-4)"
-             points="15053200,3457810 15053900,17714500 13872200,19094100 12451500,19094100 3551730,19094500 2131100,19094500 946470,17714700 950000,3458180 950000,2285360 2134720,905600 2769360,904020 13868900,905320 15053500,2284710 " />
+             points="15053900,17714500 13872200,19094100 12451500,19094100 3551730,19094500 2131100,19094500 946470,17714700 950000,3458180 950000,2285360 2134720,905600 2769360,904020 13868900,905320 15053500,2284710 15053200,3457810 " />
           <path
              id="_98178992"
              style="fill:#000000;fill-opacity:1;fill-rule:evenodd"
@@ -8051,11 +8091,11 @@
         <image
            sodipodi:absref="C:\Users\cwempe\Documents\Arduino\SuperLEDstrip_PIO\Display\exported\./external_images/HSV-Logo.svg"
            xlink:href="./external_images/HSV-Logo.svg"
-           id="image1382"
-           height="80"
-           width="80"
+           x="10"
            y="20"
-           x="10" />
+           width="80"
+           height="80"
+           id="image1382" />
       </g>
     </g>
     <g
