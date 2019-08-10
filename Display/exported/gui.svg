@@ -2314,7 +2314,8 @@
        x1="15.500954"
        y1="95"
        x2="70.500954"
-       y2="95" />
+       y2="95"
+       gradientTransform="matrix(1.1090909,0,0,0.27272728,-5.1919668,69.090909)" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#gradient_bw"
@@ -2324,7 +2325,7 @@
        y1="95"
        x2="70.500954"
        y2="95"
-       gradientTransform="matrix(1,0,0,0.72727273,82.000067,25.90909)" />
+       gradientTransform="matrix(1.1090909,0,0,0.72727273,76.808031,25.90909)" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#gradient_bw"
@@ -2334,7 +2335,7 @@
        y1="95"
        x2="70.500954"
        y2="95"
-       gradientTransform="matrix(1,0,0,0.72727273,0,23.909091)" />
+       gradientTransform="matrix(1.1090909,0,0,0.45454546,-5.4907468,53.221714)" />
   </defs>
   <sodipodi:namedview
      pagecolor="#ffffff"
@@ -2371,7 +2372,7 @@
      inkscape:window-x="1912"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g309"
+     inkscape:current-layer="tile_07"
      inkscape:object-nodes="false"
      inkscape:snap-nodes="true"
      inkscape:snap-bbox="true"
@@ -8062,7 +8063,7 @@
           <g
              id="Ebene_1">
             <polygon
-               points="17.6581,52.9741 35.3159,26.4871 17.6581,-0.0001 0.0001,26.4871 "
+               points="0.0001,26.4871 17.6581,52.9741 35.3159,26.4871 17.6581,-0.0001 "
                class="fil0"
                id="_44070144"
                style="fill:#1d9053" />
@@ -8090,17 +8091,17 @@
              id="_94316080"
              style="fill-rule:evenodd"
              transform="matrix(3.543307e-5,0,0,3.543307e-5,9.091797e-6,3.428073e-4)"
-             points="14076000,459500 13873800,459500 2131100,458480 1928810,458480 503250,2128320 503250,3484380 500000,17871800 1925560,19541500 3603860,19541500 12399400,19541200 14078000,19541200 15056800,18394600 15499400,17871400 15500000,3484100 15500000,2127950 14456200,905320 " />
+             points="15056800,18394600 15499400,17871400 15500000,3484100 15500000,2127950 14456200,905320 14076000,459500 13873800,459500 2131100,458480 1928810,458480 503250,2128320 503250,3484380 500000,17871800 1925560,19541500 3603860,19541500 12399400,19541200 14078000,19541200 " />
           <polygon
              id="_95104984"
              style="fill:#000000;fill-opacity:1;fill-rule:evenodd"
              transform="matrix(3.543307e-5,0,0,3.543307e-5,9.091797e-6,3.428073e-4)"
-             points="14076000,459500 13873800,459500 2131100,458480 1928810,458480 503250,2128320 503250,3484380 500000,17871800 1925560,19541500 3603860,19541500 12399400,19541200 14078000,19541200 15056800,18394600 15499400,17871400 15500000,3484100 15500000,2127950 14456200,905320 " />
+             points="15056800,18394600 15499400,17871400 15500000,3484100 15500000,2127950 14456200,905320 14076000,459500 13873800,459500 2131100,458480 1928810,458480 503250,2128320 503250,3484380 500000,17871800 1925560,19541500 3603860,19541500 12399400,19541200 14078000,19541200 " />
           <polygon
              id="_97350032"
              style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd"
              transform="matrix(3.543307e-5,0,0,3.543307e-5,9.091797e-6,3.428073e-4)"
-             points="950000,3458180 950000,2285360 2134720,905600 2769360,904020 13868900,905320 15053500,2284710 15053200,3457810 15053900,17714500 13872200,19094100 12451500,19094100 3551730,19094500 2131100,19094500 946470,17714700 " />
+             points="2131100,19094500 946470,17714700 950000,3458180 950000,2285360 2134720,905600 2769360,904020 13868900,905320 15053500,2284710 15053200,3457810 15053900,17714500 13872200,19094100 12451500,19094100 3551730,19094500 " />
           <path
              id="_98178992"
              style="fill:#000000;fill-opacity:1;fill-rule:evenodd"
@@ -8476,32 +8477,33 @@
          inkscape:label="tab light active" />
       <g
          style="display:inline"
-         id="static pallete">
+         id="static pallete"
+         transform="translate(0,2.8183105e-6)">
         <rect
-           y="84"
-           x="15.500954"
-           height="22"
-           width="55"
+           y="92"
+           x="12"
+           height="6"
+           width="61"
            id="rect16541"
-           style="fill:url(#linearGradient17360);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:17.09998322;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+           style="fill:url(#linearGradient17360);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:9.40466976;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
         <rect
-           y="90.124672"
-           x="14.125628"
-           height="9.7506542"
-           width="57.750652"
+           y="90.508698"
+           x="13.508701"
+           height="8.9825974"
+           width="57.982597"
            id="rect17386"
-           style="fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:3.24934602;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+           style="fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:3.01740289;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
       </g>
       <g
          style="display:inline"
          id="color rotation"
          transform="translate(0,-3.1646922)">
         <rect
-           style="fill:url(#linearGradient17535);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:14.58291435;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           style="fill:url(#linearGradient17535);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:15.35776043;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
            id="rect17531"
-           width="55"
+           width="61"
            height="16"
-           x="97.501022"
+           x="94"
            y="87" />
         <rect
            style="fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:3;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -8518,20 +8520,20 @@
       <g
          style="display:inline"
          id="running pallete"
-         transform="translate(0,-2.403531)">
+         transform="translate(0,-7.261168)">
         <g
            transform="translate(165.29878,-1)"
            id="g17702">
           <rect
-             y="85"
-             x="15.500954"
-             height="16"
-             width="55"
+             y="91.403534"
+             x="11.70122"
+             height="10"
+             width="61"
              id="rect17698"
-             style="fill:url(#linearGradient17704);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:14.58291435;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+             style="fill:url(#linearGradient17704);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:12.14137554;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
           <rect
-             y="89.516808"
-             x="22.552547"
+             y="92.920334"
+             x="26.201216"
              height="6.9831982"
              width="26.983007"
              id="rect17700"
@@ -8539,11 +8541,11 @@
         </g>
         <path
            id="path4-5"
-           d="m 220.53636,97.055436 v 3.000004 h -12 v 6 h 2 v -4 h 10 v 3 l 4,-4 z"
+           d="m 210.0972,100.36717 v 3.00001 h -12 v 6 h 2 v -4 h 10 v 3 l 4,-4 z"
            inkscape:connector-curvature="0" />
         <path
            inkscape:connector-curvature="0"
-           d="m 217.43197,110.80706 v -3 h 12 v -6 h -2 v 4 h -10 v -3 l -4,4 z"
+           d="m 206.99281,114.1188 v -3 h 12 v -6 h -2 v 4 h -10 v -3 l -4,4 z"
            id="path17787" />
       </g>
     </g>
