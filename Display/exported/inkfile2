@@ -9,8 +9,8 @@ gui_11_arcade.png            gui_themed.svg     -*   "+background" "+main" "+app
 gui_12_arcade_pressed.png    gui_themed.svg     -*   "+background" "+main" "+app bar" "+tabs"   "+cells big" "+fab"     "+tiles" "+tile arcade"          "+pressed" "+pressed cells big"   "+pressed tabs" "+pressed fab"
 
 
-gui_13_tab07.png             gui_themed.svg     -*   "+background" "+main" "+app bar" "+tabs"   "+cells big" "+fab"     "+tiles" "+tile 07"
-gui_14_tab07_pressed.png     gui_themed.svg     -*   "+background" "+main" "+app bar" "+tabs"   "+cells big" "+fab"     "+tiles" "+tile 07"              "+pressed" "+pressed cells big"   "+pressed tabs" "+pressed fab"
+gui_13_palletes.png           gui_themed.svg    -*   "+background" "+main" "+app bar" "+tabs"   "+cells small" "+fab"  "+tiles" "+tile palletes"
+gui_14_palletes_pressed.png   gui_themed.svg    -*   "+background" "+main" "+app bar" "+tabs"   "+cells small" "+fab"  "+tiles" "+tile palletes"        "+pressed" "+pressed cells small"   "+pressed tabs" "+pressed fab"
 
 
 gui_15_settings.png           gui_themed.svg    -*   "+background" "+main" "+app bar" "+tabs"   "+cells small" "+fab"   "+tiles" "+tile settings"
