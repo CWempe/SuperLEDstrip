@@ -48,6 +48,50 @@
      id="defs100">
     <linearGradient
        inkscape:collect="always"
+       id="gradient_midnight_light">
+      <stop
+         style="stop-color:#230827;stop-opacity:1"
+         offset="0"
+         id="stop21423" />
+      <stop
+         id="stop21425"
+         offset="0.24324326"
+         style="stop-color:#491647;stop-opacity:1" />
+      <stop
+         style="stop-color:#7c265e;stop-opacity:1"
+         offset="0.50816977"
+         id="stop21427" />
+      <stop
+         id="stop21429"
+         offset="0.75675684"
+         style="stop-color:#ff5454;stop-opacity:1" />
+      <stop
+         style="stop-color:#ff813c;stop-opacity:1"
+         offset="1"
+         id="stop21431" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="gradient_purplefly">
+      <stop
+         style="stop-color:#000000;stop-opacity:1"
+         offset="0"
+         id="stop20300" />
+      <stop
+         id="stop20302"
+         offset="0.17948721"
+         style="stop-color:#ef007a;stop-opacity:1" />
+      <stop
+         id="stop20304"
+         offset="0.79487187"
+         style="stop-color:#fcff4e;stop-opacity:1" />
+      <stop
+         style="stop-color:#000000;stop-opacity:1"
+         offset="1"
+         id="stop20306" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
        id="gradient_thk">
       <stop
          style="stop-color:#c81e0f;stop-opacity:1"
@@ -63,24 +107,28 @@
          id="stop18791" />
     </linearGradient>
     <linearGradient
-       id="gradient_purplefly"
+       id="gradient_isnt_it_tragic"
        inkscape:collect="always">
       <stop
          id="stop18186"
          offset="0"
-         style="stop-color:#000000;stop-opacity:1" />
+         style="stop-color:#257051;stop-opacity:1" />
       <stop
-         style="stop-color:#ef007a;stop-opacity:1"
-         offset="0.17948721"
+         style="stop-color:#356051;stop-opacity:1"
+         offset="0.24324326"
          id="stop18830" />
       <stop
-         style="stop-color:#fcff4e;stop-opacity:1"
-         offset="0.79487187"
+         id="stop20345"
+         offset="0.50816977"
+         style="stop-color:#455051;stop-opacity:1" />
+      <stop
+         style="stop-color:#554051;stop-opacity:1"
+         offset="0.75675684"
          id="stop18192" />
       <stop
          id="stop18188"
          offset="1"
-         style="stop-color:#000000;stop-opacity:1" />
+         style="stop-color:#653051;stop-opacity:1" />
     </linearGradient>
     <linearGradient
        inkscape:collect="always"
@@ -2392,6 +2440,28 @@
        y1="95"
        x2="70.500954"
        y2="95" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#gradient_midnight_light"
+       id="linearGradient20262"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.4181818,0,0,1.6818182,146.01682,-24.272741)"
+       x1="16.911217"
+       y1="95.297302"
+       x2="69.090706"
+       y2="95.297302"
+       spreadMethod="pad" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#gradient_isnt_it_tragic"
+       id="linearGradient21385"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.4181818,0,0,1.6818182,228.01681,-24.272741)"
+       x1="16.911217"
+       y1="95.297302"
+       x2="69.090706"
+       y2="95.297302"
+       spreadMethod="pad" />
   </defs>
   <sodipodi:namedview
      pagecolor="#ffffff"
@@ -8119,7 +8189,7 @@
           <g
              id="Ebene_1">
             <polygon
-               points="0.0001,26.4871 17.6581,52.9741 35.3159,26.4871 17.6581,-0.0001 "
+               points="17.6581,-0.0001 0.0001,26.4871 17.6581,52.9741 35.3159,26.4871 "
                class="fil0"
                id="_44070144"
                style="fill:#1d9053" />
@@ -8147,17 +8217,17 @@
              id="_94316080"
              style="fill-rule:evenodd"
              transform="matrix(3.543307e-5,0,0,3.543307e-5,9.091797e-6,3.428073e-4)"
-             points="1928810,458480 503250,2128320 503250,3484380 500000,17871800 1925560,19541500 3603860,19541500 12399400,19541200 14078000,19541200 15056800,18394600 15499400,17871400 15500000,3484100 15500000,2127950 14456200,905320 14076000,459500 13873800,459500 2131100,458480 " />
+             points="500000,17871800 1925560,19541500 3603860,19541500 12399400,19541200 14078000,19541200 15056800,18394600 15499400,17871400 15500000,3484100 15500000,2127950 14456200,905320 14076000,459500 13873800,459500 2131100,458480 1928810,458480 503250,2128320 503250,3484380 " />
           <polygon
              id="_95104984"
              style="fill:#000000;fill-opacity:1;fill-rule:evenodd"
              transform="matrix(3.543307e-5,0,0,3.543307e-5,9.091797e-6,3.428073e-4)"
-             points="1928810,458480 503250,2128320 503250,3484380 500000,17871800 1925560,19541500 3603860,19541500 12399400,19541200 14078000,19541200 15056800,18394600 15499400,17871400 15500000,3484100 15500000,2127950 14456200,905320 14076000,459500 13873800,459500 2131100,458480 " />
+             points="500000,17871800 1925560,19541500 3603860,19541500 12399400,19541200 14078000,19541200 15056800,18394600 15499400,17871400 15500000,3484100 15500000,2127950 14456200,905320 14076000,459500 13873800,459500 2131100,458480 1928810,458480 503250,2128320 503250,3484380 " />
           <polygon
              id="_97350032"
              style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd"
              transform="matrix(3.543307e-5,0,0,3.543307e-5,9.091797e-6,3.428073e-4)"
-             points="12451500,19094100 3551730,19094500 2131100,19094500 946470,17714700 950000,3458180 950000,2285360 2134720,905600 2769360,904020 13868900,905320 15053500,2284710 15053200,3457810 15053900,17714500 13872200,19094100 " />
+             points="946470,17714700 950000,3458180 950000,2285360 2134720,905600 2769360,904020 13868900,905320 15053500,2284710 15053200,3457810 15053900,17714500 13872200,19094100 12451500,19094100 3551730,19094500 2131100,19094500 " />
           <path
              id="_98178992"
              style="fill:#000000;fill-opacity:1;fill-rule:evenodd"
@@ -8619,6 +8689,22 @@
          id="pallete_purplefly"
          style="display:inline;fill:url(#linearGradient18718);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:26.40895081;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          inkscape:label="pallete_purplefly" />
+      <rect
+         inkscape:label="pallete_midnight_light"
+         style="display:inline;fill:url(#linearGradient20262);fill-opacity:1.0;fill-rule:nonzero;stroke:none;stroke-width:26.40895081;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="pallete_midnight_light"
+         width="78"
+         height="37"
+         x="168"
+         y="117" />
+      <rect
+         y="117"
+         x="250"
+         height="37"
+         width="78"
+         id="pallete_isnt_it_tragic"
+         style="display:inline;fill:url(#linearGradient21385);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:26.40895081;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="pallete_isnt_it_tragic" />
     </g>
     <g
        inkscape:label="tile settings"
