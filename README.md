@@ -6,7 +6,7 @@ The graphical layout is based on [Googles Material Design Guidelines](https://ma
 
 ![display animation][display_gif]
 
-[![SuperLEDstrip v1.0 ](http://img.youtube.com/vi/CBAr6hmqsu4/0.jpg)](http://www.youtube.com/watch?v=CBAr6hmqsu4)
+[![SuperLEDstrip v1.0](http://img.youtube.com/vi/CBAr6hmqsu4/0.jpg)](http://www.youtube.com/watch?v=CBAr6hmqsu4)
 
 ## Requirements
 
@@ -17,7 +17,7 @@ The graphical layout is based on [Googles Material Design Guidelines](https://ma
   But any other Arduino compatible device should do.
 * [**WS2812B LED strip**](https://de.aliexpress.com/item/1m-4m-5m-WS2812B-Smart-led-pixel-strip-Black-White-PCB-30-60-144-leds-m/2036819167.html?spm=a2g0s.9042311.0.0.Bdc3IG)  
   or any other LED strip that is [suported by FastLED](https://github.com/FastLED/FastLED#supported-led-chipsets)
-   * It is recommended to use a **capacitor** to smooth out the power supply.  
+  * It is recommended to use a **capacitor** to smooth out the power supply.  
       I used one with *1000 µF* and *16 V*.
 * **level shifter** from 3.3V to 5V  
   like [Texas Instruments SN74HCT245N](http://www.ti.com/lit/ds/symlink/sn74hct245.pdf)
@@ -26,7 +26,7 @@ The graphical layout is based on [Googles Material Design Guidelines](https://ma
   to get current temperture and humidity  
   This is not necessary, but it is very cheap. So why not?
 * [**Nextion HMI touch screen**](https://nextion.itead.cc/)  
-  I used the 3.2" basic model ([NX4024T032](https://www.itead.cc/wiki/NX4024T032))    
+  I used the 3.2" basic model ([NX4024T032](https://www.itead.cc/wiki/NX4024T032))
   You cannot simply use another size without putting much effort into resizing all graphics!
   * a few **connectors** to make it easier to (dis-)connect the display  
     [XHP-4](http://www.jst-mfg.com/product/pdf/eng/eXH.pdf)  
@@ -35,34 +35,34 @@ The graphical layout is based on [Googles Material Design Guidelines](https://ma
   * a suitable male adapter like [these](https://de.aliexpress.com/item/10-pair-Led-Light-Strip-connector-DC-male-to-DC-female-Plug-Jack-cctv-connect-Adapter/1672619063.html) (not tested)
 * **470Ω resistor**
 * some more tools, cables and connectors
-  * I used [Phoenix Contact MC 1,5/ 3-ST-3,5](http://www.produktinfo.conrad.com/datenblaetter/725000-749999/740631-da-01-en-LEITERPLATTENSTECKER_MC_1_5__3_ST_3_5.pdf) and [MCV 1,5/ 3-G-3,5 ](http://www.produktinfo.conrad.com/datenblaetter/725000-749999/740686-da-01-en-LEITERPLATTENSTECKER_MCV_1_5__3_G_3_5.pdf) to connect the LED cables, because they are small and are specified to work with the expected current..  
+  * I used [Phoenix Contact MC 1,5/ 3-ST-3,5](http://www.produktinfo.conrad.com/datenblaetter/725000-749999/740631-da-01-en-LEITERPLATTENSTECKER_MC_1_5__3_ST_3_5.pdf) and [MCV 1,5/ 3-G-3,5](http://www.produktinfo.conrad.com/datenblaetter/725000-749999/740686-da-01-en-LEITERPLATTENSTECKER_MCV_1_5__3_G_3_5.pdf) to connect the LED cables, because they are small and are specified to work with the expected current..  
    But they are not good looking.
   * adding a **fuse** is a good idea for security, too
-    
+
 ### Software
 
 * You might need [**Git**](https://git-scm.com/download/win) to download some libraries  
   In Windows (10) start `Git Bash` and change to the libraries directory.  
-  `cd ~/Documents/Arduino/libraries/`      
+  `cd ~/Documents/Arduino/libraries/`
   Here you can `git clone`some libraries if necessary.
 * [**Arduino IDE**](https://www.arduino.cc/en/Main/Software) (tested with v1.8.5)
   * [**ESP8266 platform package**](https://github.com/esp8266/Arduino#installing-with-boards-manager) (tested with v2.3.0)  
      If you use an esp8266 device
   * Most libraries are availabe via the Library Manager in Arduino  
     Some need to be downloaded manually (via git).
-      * [**FastLED**](https://github.com/FastLED/FastLED) (tested with v3.1.6; via Library Manager)
-      * [**ITEADLIB\_Arduino\_Nextion**](https://github.com/itead/ITEADLIB_Arduino_Nextion#latestunstable) (tested with v0.9.0)
-      * [**EEPROM**](https://www.arduino.cc/en/Reference/EEPROM) (tested with v1.0.0; via Library Manager)
-      * [**Embedis**](https://github.com/thingSoC/embedis) (tested with v1.2.0; via Library Manager)
-      * [**elapsedMillis**](https://github.com/pfeerick/elapsedMillis) (tested with v1.0.4; via Library Manager)
-      * [**DHT sensor library**](https://github.com/adafruit/DHT-sensor-library) (tested with v1.3.0; via Library Manager)
-      * [**Adafruit Unified Sensor**](https://github.com/adafruit/Adafruit_Sensor) (tested with v1.0.2; via Library Manager)
-      * [**homie-esp8266**](https://github.com/marvinroger/homie-esp8266)) (tested with v2.0.0-beta.1, via zip file)  
-        Homie itself has some [dependencies](https://marvinroger.github.io/homie-esp8266/develop/quickstart/getting-started/#1a-for-the-arduino-ide):
-         * [ArduinoJson](http://arduinojson.org/) (=>v5.0.8 [<v5.11](https://github.com/bblanchon/ArduinoJson/issues/541); tested with v5.10.1; via Library Manager)
-         * [Bounce2](https://github.com/thomasfredericks/Bounce2) (tested with v2.3.0; via Library Manager)
-         * [ESPAsyncTCP](https://github.com/me-no-dev/ESPAsyncTCP) (>= c8ed544; via git)
-         * [AsyncMqttClient](https://github.com/marvinroger/async-mqtt-client) (tested with v0.8.1)
+    * [**FastLED**](https://github.com/FastLED/FastLED) (tested with v3.1.6; via Library Manager)
+    * [**ITEADLIB\_Arduino\_Nextion**](https://github.com/itead/ITEADLIB_Arduino_Nextion#latestunstable) (tested with v0.9.0)
+    * [**EEPROM**](https://www.arduino.cc/en/Reference/EEPROM) (tested with v1.0.0; via Library Manager)
+    * [**Embedis**](https://github.com/thingSoC/embedis) (tested with v1.2.0; via Library Manager)
+    * [**elapsedMillis**](https://github.com/pfeerick/elapsedMillis) (tested with v1.0.4; via Library Manager)
+    * [**DHT sensor library**](https://github.com/adafruit/DHT-sensor-library) (tested with v1.3.0; via Library Manager)
+    * [**Adafruit Unified Sensor**](https://github.com/adafruit/Adafruit_Sensor) (tested with v1.0.2; via Library Manager)
+    * [**homie-esp8266**](https://github.com/marvinroger/homie-esp8266)) (tested with v2.0.0-beta.1, via zip file)  
+      Homie itself has some [dependencies](https://marvinroger.github.io/homie-esp8266/develop/quickstart/getting-started/#1a-for-the-arduino-ide):
+      * [ArduinoJson](http://arduinojson.org/) (=>v5.0.8 [<v5.11](https://github.com/bblanchon/ArduinoJson/issues/541); tested with 5.10.1; via Library Manager)
+      * [Bounce2](https://github.com/thomasfredericks/Bounce2) (tested with v2.3.0; via Library Manager)
+      * [ESPAsyncTCP](https://github.com/me-no-dev/ESPAsyncTCP) (>= c8ed544; via git)
+      * [AsyncMqttClient](https://github.com/marvinroger/async-mqtt-client) (tested with v0.8.1)
 
 In case you want to edit the content of the display to use other theme colors or add/replace some LED patterns, you also need the following programs.  
 Only tested and used with Windows 10.
@@ -73,13 +73,14 @@ Only tested and used with Windows 10.
    to edit the graphics
 * [**inkmake**](https://github.com/wader/inkmake)  
    to automatically create and export the necessary png files from the svg file
-    * requires [Ruby](http://rubyinstaller.org/)
+  * requires [Ruby](http://rubyinstaller.org/)
 * [**msxml**](https://www.microsoft.com/en-us/download/details.aspx?id=21714)  
    to automatically replace colors in the svg file before exporting to png
 
 ### Preparation
 
 #### Nextion
+
 Before you can start to compile the project you need to make some changes to the Nextion library.
 
 Open the following file with a text editor.  
@@ -87,19 +88,19 @@ Open the following file with a text editor.
 
 Disable debug by commenting it.
 
-```
+```c
 //#define DEBUG_SERIAL_ENABLE  
 ```
 
 And replace
 
-```
+```c
 //#define nexSerial Serial
 ```
 
 with
 
-```
+```c
 #include <SoftwareSerial.h>
 extern SoftwareSerial HMISerial;
 #define nexSerial HMISerial
@@ -107,10 +108,8 @@ extern SoftwareSerial HMISerial;
 
 see:
 
-* https://github.com/itead/ITEADLIB_Arduino_Nextion#uno-like-mainboards
-* https://www.reddit.com/r/arduino/comments/4b6jfi/nexconfigh_for_nextion_display_on_arduino_uno/
-
-####
+* <https://github.com/itead/ITEADLIB_Arduino_Nextion#uno-like-mainboards>
+* <https://www.reddit.com/r/arduino/comments/4b6jfi/nexconfigh_for_nextion_display_on_arduino_uno/>
 
 You also might want to change some custom values in `custom_values.h`.  
 Like `DISPLAY_TITLE`, `DATA_PIN`, `NUM_LEDS`, `LEDS_PER_METER`, `LED_TYPE` or `COLOR_ORDER`.
@@ -137,34 +136,35 @@ After this you copy the compiled HMI file (will be uploaded to the release page)
 ## Customizing
 
 ### Arduino Code
+
 Let's say you want to add an LED pattern you developed as the function `mynewpattern()`.
 
 First you need to add the pattern in `SuperLEDstripe.ino` if you create a new animation.
 If your are only ading a new color pattern for an existing animation (like `runningPalette`) you can skip this part.
 
-```
+```c
 //     Pattern IDs              0          1      2         3        4    5     6               7              8     9        10  
 SimplePatternList gPatterns = { oneColor, stars, confetti, rainbow, bpm, kitt, flashingLights, runningPalette, xmas, Fire2012,  mynewpattern};
 ```
 
 Add the new secen to the `setScene()` function in `led_functions.h`.
 
-```
+```c
     case 304:   // swedish flag
       setupPaletteSweden();
-      break;     
+      break;
 ```
 
 While you are developing you might want to change the default scene to be your new one.
 
-```
+```c
 #define DEFAULT_SCENE      304
 ```
 
 To start the pattern from a cell (virtual button) from the display, you add the pattern to the according callback function in `nextion_callback_functions.h`.  
 Here it is `p01c07PopCallback` (p01 = page 1; c07 = cell 7).
 
-```
+```c
 void p01c07PopCallback(void *ptr) { gCurrentPatternNumber = 10; }
 ```
 
@@ -173,7 +173,7 @@ void p01c07PopCallback(void *ptr) { gCurrentPatternNumber = 10; }
 You also need to change the graphics of the display, if you add a new pattern.
 First you need to download some pictures from the internet that are not includes in this project.
 
-```
+```c
 ./Display/exported/get_images.sh
 ```
 
@@ -189,7 +189,7 @@ For each tile group (settings, flags, ...) you need two exports. One with the `p
 The export script `Display\exported\create_colored_svg_custom.bat` will do all this automatically.
 To use other theme colors you can change these in line 20.
 
-```
+```c
 call:SetColor  dark, white
 ```
 
@@ -206,7 +206,6 @@ Then you select the page (top right corner) and the tile you want the new patter
 ![add tile to display][add_tile_nextion]
 
 Now you can see the result by clicking `Debug` or hit `Compile` to create a binary file. Put this file (*File | Open build folder*) in the root directory of your microSD card , put it into the display, connect power and wait while the new firmware is flashed.
-
 
 ## OTA-Update
 
@@ -228,7 +227,6 @@ Once you got your device connected to your mqtt broker you can configure your sm
 
 You can find configuration examples in the `openhab` folder.
 
-
 [display_gif]: photos/gui.gif
 [breadboard]: photos/WeMos_LEDstrip_Nextion_DHT_bb.png
 [pcb]: photos/WeMos_LEDstrip_Nextion_DHT_pcb.png
@@ -239,12 +237,12 @@ You can find configuration examples in the `openhab` folder.
 
 ## Changelog
 
-**2.5.1**
+### 2.5.1
 
 * Add support for Button01
   Changes between pre defined scenes
 
-**2.5.0**
+### 2.5.0
 
 * Add color palletes
   * Add pre defines color palletes
@@ -253,17 +251,16 @@ You can find configuration examples in the `openhab` folder.
   * Make pallete size changeable (via mqtt)
   * Save pallete to eeeprom and restore after reboot
 
-**2.4.1**
+### 2.4.1
 
 * Add option to use DS18B20 instead of DHT22 sensor or neither
 
-**2.4.0**
+### 2.4.0
 
 * Add pattern "custom color"
   * Add support to save and load tweo different custom colrs
 
-
-**2.3.0**
+### 2.3.0
 
 * Migrate to PlatformIO
 * Add option to correct color and color temperature via FastLED
