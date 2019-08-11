@@ -35,6 +35,7 @@ NexTouch *nex_listen_list[] =
     &p07settings, &p07power,
     &p07t01, &p07t02, &p07t03, &p07t04, &p07t05, &p07t06, &p07t07, 
     &p07c01, &p07c02, &p07c03, &p07c04, &p07c05, &p07c06, &p07c07, &p07c08, 
+    &p07c09, &p07c10, &p07c11, &p07c12, &p07c13, &p07c14, &p07c15, &p07c16,
     
     &p08, &p08title, &p08temp, &p08humid,
     &p08settings, &p08power,

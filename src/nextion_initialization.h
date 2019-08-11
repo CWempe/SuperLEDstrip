@@ -162,6 +162,14 @@ void NextionSetup()
     p07c06.attachPop(p07c06PopCallback);
     p07c07.attachPop(p07c07PopCallback);
     p07c08.attachPop(p07c08PopCallback);
+    p07c09.attachPop(p07c09PopCallback);
+    p07c10.attachPop(p07c10PopCallback);
+    p07c11.attachPop(p07c11PopCallback);
+    p07c12.attachPop(p07c12PopCallback);
+    p07c13.attachPop(p07c13PopCallback);
+    p07c14.attachPop(p07c14PopCallback);
+    p07c15.attachPop(p07c15PopCallback);
+    p07c16.attachPop(p07c16PopCallback);
     // page 8
     p08.attachPop(p08PopCallback);
     p08title.attachPop(p08titlePopCallback);

@@ -151,14 +151,22 @@ void p07t04PopCallback(void *ptr) { updateTab(); }
 void p07t05PopCallback(void *ptr) { updateTab(); }
 void p07t06PopCallback(void *ptr) { updateTab(); }
 void p07t07PopCallback(void *ptr) { updateTab(); }
-void p07c01PopCallback(void *ptr) { }
-void p07c02PopCallback(void *ptr) { }
-void p07c03PopCallback(void *ptr) { }
+void p07c01PopCallback(void *ptr) { setScene(110); }
+void p07c02PopCallback(void *ptr) { setScene(108); }
+void p07c03PopCallback(void *ptr) { setScene(111); }
 void p07c04PopCallback(void *ptr) { }
-void p07c05PopCallback(void *ptr) { }
-void p07c06PopCallback(void *ptr) { }
-void p07c07PopCallback(void *ptr) { }
-void p07c08PopCallback(void *ptr) { }
+void p07c05PopCallback(void *ptr) { setPalette(5); }
+void p07c06PopCallback(void *ptr) { setPalette(3); }
+void p07c07PopCallback(void *ptr) { setPalette(4); }
+void p07c08PopCallback(void *ptr) { setPalette(100); }
+void p07c09PopCallback(void *ptr) { setPalette(7); }
+void p07c10PopCallback(void *ptr) { setPalette(102); }
+void p07c11PopCallback(void *ptr) { }
+void p07c12PopCallback(void *ptr) { }
+void p07c13PopCallback(void *ptr) { }
+void p07c14PopCallback(void *ptr) { }
+void p07c15PopCallback(void *ptr) { }
+void p07c16PopCallback(void *ptr) { }
 // page 8
 void p08PopCallback(void *ptr) { }
 void p08titlePopCallback(void *ptr) { }
