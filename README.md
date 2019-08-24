@@ -237,6 +237,10 @@ You can find configuration examples in the `openhab` folder.
 
 ## Changelog
 
+### 2.5.4
+
+* Add version number to display
+
 ### 2.5.3
 
 * Add USA flag
