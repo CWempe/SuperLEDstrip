@@ -1,4 +1,5 @@
-//include custom values
+//include global and custom values
+#include "global_values.h"
 #include "custom_values.h"
 
 // include libraries
