@@ -6,11 +6,9 @@ void NextionSetup()
     // page 1
     p01.attachPop(p01PopCallback);
     title.attachPop(titlePopCallback);
-    temp.attachPop(titlePopCallback);
-    humid.attachPop(titlePopCallback);
+    version.attachPop(versionPopCallback);
     p01title.attachPop(p01titlePopCallback);
-    p01temp.attachPop(p01tempPopCallback);
-    p01humid.attachPop(p01humidPopCallback);
+    p01version.attachPop(p01versionPopCallback);
     p01settings.attachPop(p01settingsPopCallback);
     p01power.attachPop(p01powerPopCallback);
     p01t01.attachPop(p01t01PopCallback);
@@ -32,8 +30,7 @@ void NextionSetup()
     // page 2
     p02.attachPop(p02PopCallback);
     p02title.attachPop(p02titlePopCallback);
-    p02temp.attachPop(p02tempPopCallback);
-    p02humid.attachPop(p02humidPopCallback);
+    p02version.attachPop(p02versionPopCallback);
     p02settings.attachPop(p02settingsPopCallback);
     p02power.attachPop(p02powerPopCallback);
     p02t01.attachPop(p02t01PopCallback);
@@ -54,8 +51,7 @@ void NextionSetup()
     // page 3
     p03.attachPop(p03PopCallback);
     p03title.attachPop(p03titlePopCallback);
-    p03temp.attachPop(p03tempPopCallback);
-    p03humid.attachPop(p03humidPopCallback);
+    p03version.attachPop(p03versionPopCallback);
     p03settings.attachPop(p03settingsPopCallback);
     p03power.attachPop(p03powerPopCallback);
     p03t01.attachPop(p03t01PopCallback);
@@ -76,8 +72,7 @@ void NextionSetup()
     // page 4
     p04.attachPop(p04PopCallback);
     p04title.attachPop(p04titlePopCallback);
-    p04temp.attachPop(p04tempPopCallback);
-    p04humid.attachPop(p04humidPopCallback);
+    p04version.attachPop(p04versionPopCallback);
     p04settings.attachPop(p04settingsPopCallback);
     p04power.attachPop(p04powerPopCallback);
     p04t01.attachPop(p04t01PopCallback);
@@ -98,8 +93,7 @@ void NextionSetup()
     // page 5
     p05.attachPop(p05PopCallback);
     p05title.attachPop(p05titlePopCallback);
-    p05temp.attachPop(p05tempPopCallback);
-    p05humid.attachPop(p05humidPopCallback);
+    p05version.attachPop(p05versionPopCallback);
     p05settings.attachPop(p05settingsPopCallback);
     p05power.attachPop(p05powerPopCallback);
     p05t01.attachPop(p05t01PopCallback);
@@ -121,8 +115,7 @@ void NextionSetup()
     // page 6
     p06.attachPop(p06PopCallback);
     p06title.attachPop(p06titlePopCallback);
-    p06temp.attachPop(p06tempPopCallback);
-    p06humid.attachPop(p06humidPopCallback);
+    p06version.attachPop(p06versionPopCallback);
     p06settings.attachPop(p06settingsPopCallback);
     p06power.attachPop(p06powerPopCallback);
     p06t01.attachPop(p06t01PopCallback);
@@ -143,8 +136,7 @@ void NextionSetup()
     // page 7
     p07.attachPop(p07PopCallback);
     p07title.attachPop(p07titlePopCallback);
-    p07temp.attachPop(p07tempPopCallback);
-    p07humid.attachPop(p07humidPopCallback);
+    p07version.attachPop(p07versionPopCallback);
     p07settings.attachPop(p07settingsPopCallback);
     p07power.attachPop(p07powerPopCallback);
     p07t01.attachPop(p07t01PopCallback);
@@ -173,8 +165,7 @@ void NextionSetup()
     // page 8
     p08.attachPop(p08PopCallback);
     p08title.attachPop(p08titlePopCallback);
-    p08temp.attachPop(p08tempPopCallback);
-    p08humid.attachPop(p08humidPopCallback);
+    p08version.attachPop(p08versionPopCallback);
     p08settings.attachPop(p08settingsPopCallback);
     p08power.attachPop(p08powerPopCallback);
     p08t01.attachPop(p08t01PopCallback);
@@ -192,14 +183,13 @@ void NextionSetup()
     p08c06.attachPop(p08c06PopCallback);
     p08c07.attachPop(p08c07PopCallback);
     p08c08.attachPop(p08c08PopCallback);
-    p08temp02.attachPop(p08tempPopCallback);
-    p08humid02.attachPop(p08humidPopCallback);
+    p08temp02.attachPop(p08temp02PopCallback);
+    p08humid02.attachPop(p08humid02PopCallback);
     p08speed01.attachPop(p08speed01PopCallback);
     // page 9
     p09.attachPop(p09PopCallback);
     p09title.attachPop(p09titlePopCallback);
-    p09temp.attachPop(p09tempPopCallback);
-    p09humid.attachPop(p09humidPopCallback);
+    p09version.attachPop(p09versionPopCallback);
     p09settings.attachPop(p09settingsPopCallback);
     p09power.attachPop(p09powerPopCallback);
     p09sliderRed.attachPop(p09sliderRedPopCallback);

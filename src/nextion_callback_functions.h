@@ -2,12 +2,12 @@
 // global
 // page 1
 void titlePopCallback(void *ptr) { }
+void versionPopCallback(void *ptr) { }
 void tempPopCallback(void *ptr) { }
 void humidPopCallback(void *ptr) { }
 void p01PopCallback(void *ptr) { }
 void p01titlePopCallback(void *ptr) { }
-void p01tempPopCallback(void *ptr) { }
-void p01humidPopCallback(void *ptr) { }
+void p01versionPopCallback(void *ptr) { }
 void p01settingsPopCallback(void *ptr) { setTextAll(); }
 void p01powerPopCallback(void *ptr) { toggleBrightness(); }
 void p01t01PopCallback(void *ptr) { updateTab(); }
@@ -29,8 +29,7 @@ void p01c09PopCallback(void *ptr) { setScene(109); }
 // page 2
 void p02PopCallback(void *ptr) { }
 void p02titlePopCallback(void *ptr) { }
-void p02tempPopCallback(void *ptr) { }
-void p02humidPopCallback(void *ptr) { }
+void p02versionPopCallback(void *ptr) { }
 void p02settingsPopCallback(void *ptr) { setTextAll(); }
 void p02powerPopCallback(void *ptr) { toggleBrightness(); }
 void p02t01PopCallback(void *ptr) { updateTab(); }
@@ -51,8 +50,7 @@ void p02c08PopCallback(void *ptr) { }
 // page 3
 void p03PopCallback(void *ptr) { }
 void p03titlePopCallback(void *ptr) { }
-void p03tempPopCallback(void *ptr) { }
-void p03humidPopCallback(void *ptr) { }
+void p03versionPopCallback(void *ptr) { }
 void p03settingsPopCallback(void *ptr) { setTextAll(); }
 void p03powerPopCallback(void *ptr) { toggleBrightness(); }
 void p03t01PopCallback(void *ptr) { updateTab(); }
@@ -73,8 +71,7 @@ void p03c08PopCallback(void *ptr) { setScene(308); }
 // page 4
 void p04PopCallback(void *ptr) { }
 void p04titlePopCallback(void *ptr) { }
-void p04tempPopCallback(void *ptr) { }
-void p04humidPopCallback(void *ptr) { }
+void p04versionPopCallback(void *ptr) { }
 void p04settingsPopCallback(void *ptr) { setTextAll(); }
 void p04powerPopCallback(void *ptr) { toggleBrightness(); }
 void p04t01PopCallback(void *ptr) { updateTab(); }
@@ -95,8 +92,7 @@ void p04c08PopCallback(void *ptr) { }
 // page 5
 void p05PopCallback(void *ptr) { }
 void p05titlePopCallback(void *ptr) { }
-void p05tempPopCallback(void *ptr) { }
-void p05humidPopCallback(void *ptr) { }
+void p05versionPopCallback(void *ptr) { }
 void p05settingsPopCallback(void *ptr) { setTextAll(); }
 void p05powerPopCallback(void *ptr) { toggleBrightness(); }
 void p05t01PopCallback(void *ptr) { updateTab(); }
@@ -118,8 +114,7 @@ void p05c09PopCallback(void *ptr) { setScene(509); }
 // page 6
 void p06PopCallback(void *ptr) { }
 void p06titlePopCallback(void *ptr) { }
-void p06tempPopCallback(void *ptr) { }
-void p06humidPopCallback(void *ptr) { }
+void p06versionPopCallback(void *ptr) { }
 void p06settingsPopCallback(void *ptr) { setTextAll(); }
 void p06powerPopCallback(void *ptr) { toggleBrightness(); }
 void p06t01PopCallback(void *ptr) { updateTab(); }
@@ -140,8 +135,7 @@ void p06c08PopCallback(void *ptr) { }
 // page 7
 void p07PopCallback(void *ptr) { }
 void p07titlePopCallback(void *ptr) { }
-void p07tempPopCallback(void *ptr) { }
-void p07humidPopCallback(void *ptr) { }
+void p07versionPopCallback(void *ptr) { }
 void p07settingsPopCallback(void *ptr) { setTextAll(); }
 void p07powerPopCallback(void *ptr) { toggleBrightness(); }
 void p07t01PopCallback(void *ptr) { updateTab(); }
@@ -170,8 +164,7 @@ void p07c16PopCallback(void *ptr) { }
 // page 8
 void p08PopCallback(void *ptr) { }
 void p08titlePopCallback(void *ptr) { }
-void p08tempPopCallback(void *ptr) { }
-void p08humidPopCallback(void *ptr) { }
+void p08versionPopCallback(void *ptr) { }
 void p08settingsPopCallback(void *ptr) { setTextAll(); }
 void p08powerPopCallback(void *ptr) { toggleBrightness(); }
 void p08t01PopCallback(void *ptr) { updateTab(); }
@@ -195,8 +188,7 @@ void p08speed01PopCallback(void *ptr) { changeRotationSpeed(true); }
 // page 9
 void p09PopCallback(void *ptr) { }
 void p09titlePopCallback(void *ptr) { }
-void p09tempPopCallback(void *ptr) { }
-void p09humidPopCallback(void *ptr) { }
+void p09versionPopCallback(void *ptr) { }
 void p09settingsPopCallback(void *ptr) { setTextAll(); }
 void p09powerPopCallback(void *ptr) { toggleBrightness(); }
 void p09sliderRedPopCallback(void *ptr)    { getRed(); }

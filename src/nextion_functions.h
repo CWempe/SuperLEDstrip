@@ -1,7 +1,10 @@
 void setTextTitle()
 {
-    title.setText(DISPLAY_TITLE);
-    p01title.setText(DISPLAY_TITLE);
+  sprintf(cVersion, "v%s", cVersionNumber);
+  title.setText(DISPLAY_TITLE);
+  version.setText(cVersion);
+  p01title.setText(DISPLAY_TITLE);
+  p01version.setText(cVersion);
 }
 
 void setTextTemp()
