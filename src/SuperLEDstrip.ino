@@ -112,8 +112,7 @@ bool updateDisplayBlue  = false;
  * Nextion display
  */
 SoftwareSerial HMISerial(NEXTION_TX, NEXTION_RX);
-char cVersion[10] = "";
-char cVersionNumber[9] = HOMIE_FW_VERSION;
+char cVersion[10] = "v";
 
 /*
  * DHT and DS18B20

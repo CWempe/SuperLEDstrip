@@ -1,6 +1,6 @@
 void setTextTitle()
 {
-  sprintf(cVersion, "v%s", cVersionNumber);
+  strcat(cVersion, HOMIE_FW_VERSION);
   title.setText(DISPLAY_TITLE);
   version.setText(cVersion);
   p01title.setText(DISPLAY_TITLE);
