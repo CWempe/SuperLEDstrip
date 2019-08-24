@@ -26,6 +26,7 @@ sitemap superledstrip label="SuperLEDstrip"
                                                   305='english/danish flag',
                                                   306='french flag',
                                                   307='spanish flag',
+                                                  307='american flag',
                                                   401='BVB',
                                                   402='FC Bayern Munich',
                                                   403='Werder Bremen',
@@ -71,7 +72,8 @@ sitemap superledstrip label="SuperLEDstrip"
                                                   183='sweden_p',
                                                   184='england_p',
                                                   185='france_p',
-                                                  186='spain_p' ]
+                                                  186='spain_p',
+                                                  187='usa_p' ]
         Colorpicker item=sLED_led
         Setpoint    item=sLED_tempo   label="bpm (±10)"  minValue=0 maxValue=255 step=10
         Setpoint    item=sLED_tempo   label="bpm (±1)"  minValue=0 maxValue=255
