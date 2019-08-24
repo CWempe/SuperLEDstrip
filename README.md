@@ -237,6 +237,10 @@ You can find configuration examples in the `openhab` folder.
 
 ## Changelog
 
+### 2.5.2
+
+* Make pre defined palletes and pallete scenes selectable via Display
+
 ### 2.5.1
 
 * Add support for Button01
