@@ -131,7 +131,7 @@ ECHO Generate GIF..
  %OUTPUTPATH%\%FOLDER%\gui_09_colors.png^
  %OUTPUTPATH%\%FOLDER%\gui_17_custom_color_thumbs.png^
  %OUTPUTPATH%\%FOLDER%\gui_11_arcade.png^
- %OUTPUTPATH%\%FOLDER%\gui_13_tab07.png^
+ %OUTPUTPATH%\%FOLDER%\gui_13_palletes.png^
  %OUTPUTPATH%\%FOLDER%\gui_15_settings.png^
  %PHOTOPATH%\gui.gif
 
