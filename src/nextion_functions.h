@@ -1,5 +1,6 @@
 void setTextTitle()
 {
+  char cVersion[10] = "v";
   strcat(cVersion, HOMIE_FW_VERSION);
   title.setText(DISPLAY_TITLE);
   version.setText(cVersion);
