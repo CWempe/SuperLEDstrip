@@ -149,6 +149,12 @@ CRGBPalette16 spain_p = CRGBPalette16(
                                  red,    red,    red,    red,
                                  yellow, yellow, yellow, yellow );
 
+CRGBPalette16 usa_p = CRGBPalette16(
+                                 blue,    white, blue,   white,
+                                 blue,    white, blue,   red,
+                                 white,   red,   white,  red,
+                                 white,   red,   white,  red );
+
 
 void setPalette (uint8_t palette) {
   // palettes are rotationable in general we assume
@@ -289,6 +295,10 @@ void setPalette (uint8_t palette) {
       break;
     case 186:
       targetPalette = spain_p;
+      currentBlending = NOBLEND;
+      break;
+    case 187:
+      targetPalette = usa_p;
       currentBlending = NOBLEND;
       break;
   }

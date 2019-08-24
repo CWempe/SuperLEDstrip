@@ -188,6 +188,14 @@ void setupPaletteSpain()
   setPalette(186);
 }
 
+// This function sets up a palette of the american flag.
+void setupPaletteUSA()
+{
+  gCurrentPatternNumber = 7;
+  currentBlending = NOBLEND;
+  setPalette(187);
+}
+
 void stars()
 {
   fadeToBlackBy( leds, NUM_LEDS, 1);
