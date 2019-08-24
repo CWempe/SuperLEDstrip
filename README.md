@@ -237,6 +237,10 @@ You can find configuration examples in the `openhab` folder.
 
 ## Changelog
 
+### 2.5.3
+
+* Add USA flag
+
 ### 2.5.2
 
 * Make pre defined palletes and pallete scenes selectable via Display
