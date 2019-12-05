@@ -74,5 +74,8 @@ void HomieSetupButtons() {
     debouncer01.attach(BUTTON01_PIN);
     debouncer01.interval(50);
     button01Node.advertise("pressed");
+    button01Node.advertise("switch");
+    button01Node.advertise("event_on_press");
+    button01Node.advertise("action");
   #endif
 }
