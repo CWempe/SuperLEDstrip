@@ -300,7 +300,7 @@ void setup(void)
   lightNode.advertise("tempo").settable(lightTempoHandler);
   lightNode.advertise("rotationSpeed").settable(lightRotationSpeedHandler);
   lightNode.advertise("paletteSize").settable(lightPaletteSizeHandler);
-  HomieSetupButtons();
+  HomieSetupButton01();
   Homie.setGlobalInputHandler(globalInputHandler);
   if ( HOMIE_STANDALONE == true ) {
     Homie.setHomieBootMode(HomieBootMode::STANDALONE);
