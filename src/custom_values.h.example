@@ -22,7 +22,7 @@
 /*
  * FastLED
  */
-#define DATA_PIN            D3
+#define DATA_PIN            RX
 #define NUM_LEDS            30
 #define LEDS_PER_METER      60
 #define LED_TYPE        WS2811
@@ -31,6 +31,7 @@
 #define COLOR_TEMPERATURE   Tungsten40W  // default: UncorrectedTemperature
 #define DEFAULT_BRIGHTNESS  50
 #define DEFAULT_SCENE      101  // default: 101 (rainbow); see list in led_functions.h
+#define DEFAULT_PALETTE      0  // 
 #define DEFAULT_FPS        120  // frames per second
 #define DEFAULT_TEMPO       80  // betas per minute
 #define DEFAULT_ROTATION_SPEED 20  // higher is slower; 1 = increments Hue value per 1 every FRAME
