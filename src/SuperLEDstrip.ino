@@ -273,12 +273,13 @@ void loopHandler() {
 void setup(void)
 {
   Serial.begin(115200);
+  setupEeprom();
   
   if ( DEBUGLEVEL >= 1 ) {
     Homie.getLogger() << "" << endl;
     Homie.getLogger() << "[DEBUG1] starting..." << endl;
   }
-  
+
   #ifdef SENSOR_DHT
     setupDHT();
   #endif
@@ -310,11 +311,10 @@ void setup(void)
   if ( HOMIE_STANDALONE == true ) {
     Homie.setHomieBootMode(HomieBootMode::STANDALONE);
   }
-  Homie.setup();
 
+  Homie.setup();  
   NextionSetup();
   setTextTitle();
-  setupEeprom();
   delay(1000);
   setupFastLED();
 }
