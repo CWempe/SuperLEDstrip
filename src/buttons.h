@@ -72,6 +72,7 @@ int lastButton01Value = -1;
       if (value != "true" && value != "false") return false;
       button01_switch = (value == "true");
       if ( !HOMIE_STANDALONE ) { button01Node.setProperty("switch").send(button01_switch ? "true" : "false"); };
+      writeEeepromButton01switch();
       return true;
     }
 
@@ -79,6 +80,7 @@ int lastButton01Value = -1;
       if (value != "true" && value != "false") return false;
       button01_event_on_press = (value == "true");
       if ( !HOMIE_STANDALONE ) { button01Node.setProperty("event-on-press").send(button01_event_on_press ? "true" : "false"); };
+      writeEeepromButton01eventOnPress();
       return true;
     }
 
@@ -86,6 +88,7 @@ int lastButton01Value = -1;
       if (value != "true" && value != "false") return false;
       button01_action = (value == "true");
       if ( !HOMIE_STANDALONE ) { button01Node.setProperty("action").send(button01_action ? "true" : "false"); };
+      writeEeepromButton01action();
       return true;
     }
 
@@ -99,5 +102,9 @@ int lastButton01Value = -1;
     button01Node.advertise("switch").settable(button01switchHandler);
     button01Node.advertise("event-on-press").settable(button01event_on_pressHandler);
     button01Node.advertise("action").settable(button01actionHandler);
+
+    readEepromButton01switch();
+    readEepromButton01eventOnPress();
+    readEepromButton01action();
   }
 #endif
