@@ -274,6 +274,11 @@ void setup(void)
 {
   Serial.begin(115200);
   
+  if ( DEBUGLEVEL >= 1 ) {
+    Homie.getLogger() << "" << endl;
+    Homie.getLogger() << "[DEBUG1] starting..." << endl;
+  }
+  
   #ifdef SENSOR_DHT
     setupDHT();
   #endif
