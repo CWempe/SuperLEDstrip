@@ -77,7 +77,7 @@ bool lightON = false;
  * Buttons
  */
 // comment out buttons you do not use
-#define BUTTON01_PIN        D4
+#define BUTTON01_PIN        D8
 
 #ifdef BUTTON01_PIN
   // Is this a switch or a push button
@@ -86,4 +86,16 @@ bool lightON = false;
   bool button01_event_on_press = true;
   // Wether an action other than publishing the event via mqtt should be executed
   bool button01_action = true;
+#endif
+
+
+/*
+ * Digital Output
+ */
+// comment out outputs you do not use
+
+#define OUTPUT01_PIN        D1
+
+#ifdef OUTPUT01_PIN
+  bool output01_invert = true;
 #endif
