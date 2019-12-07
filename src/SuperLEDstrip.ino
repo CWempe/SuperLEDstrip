@@ -306,11 +306,13 @@ void setup(void)
   lightNode.advertise("tempo").settable(lightTempoHandler);
   lightNode.advertise("rotationSpeed").settable(lightRotationSpeedHandler);
   lightNode.advertise("paletteSize").settable(lightPaletteSizeHandler);
-  HomieSetupButton01();
   Homie.setGlobalInputHandler(globalInputHandler);
   if ( HOMIE_STANDALONE == true ) {
     Homie.setHomieBootMode(HomieBootMode::STANDALONE);
   }
+  #ifdef BUTTON01_PIN
+    HomieSetupButton01();
+  #endif
 
   Homie.setup();  
   NextionSetup();
@@ -341,7 +343,10 @@ void loop(void)
     }
   #endif
 
-  loopButtons();
+
+  #ifdef BUTTON01_PIN
+    loopButton01();
+  #endif
 
   Homie.loop();
 
