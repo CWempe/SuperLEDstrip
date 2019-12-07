@@ -9,10 +9,7 @@
   HomieNode output01Node("output01", "switch");
 
   // output01_on
-  void publichOutput01on() {
-    if ( !HOMIE_STANDALONE ) {
-      output01Node.setProperty("on").send(output01_on ? "true" : "false");
-    };
+  void publishOutput01on() {
   }
 
   void updateOutput01on(String value, bool write = true) {
@@ -23,7 +20,7 @@
     }
     // set output; consider output01_invert
     digitalWrite(OUTPUT01_PIN, (output01_on == !output01_invert) ? HIGH : LOW);
-    publichOutput01on();
+    publishOutput01on();
     if (write) writeEeepromOutput01on();
   }
 
@@ -34,19 +31,12 @@
   }
 
   // output01_invert
-  void publichOutput01invert() {
-    if ( !HOMIE_STANDALONE ) {
-      output01Node.setProperty("invert").send(output01_invert ? "true" : "false");
-    };
+  void publishOutput01invert() {
   }
 
   void updateOutput01invert(String value, bool write = true) {
     output01_invert = (value == "true" || value == String(true));
-    if ( DEBUGLEVEL >= 1 ) {
-      Homie.getLogger() << "[DEBUG1] UPDATE: value: " << value << endl;
-      Homie.getLogger() << "[DEBUG1] UPDATE: output01_invert: " << output01_invert << endl;
-    }
-    publichOutput01invert();
+    publishOutput01invert();
     if (write) writeEeepromOutput01invert();
   }
 
