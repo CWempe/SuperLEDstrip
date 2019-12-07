@@ -21,6 +21,7 @@
     if (value != "true" && value != "false") return false;
     output01_invert = (value == "true");
     if ( !HOMIE_STANDALONE ) { output01Node.setProperty("invert").send(value); };
+    writeEeepromOutput01invert();
     return true;
   }
 
@@ -29,5 +30,7 @@
     digitalWrite(OUTPUT01_PIN, HIGH);
     output01Node.advertise("on").settable(output01OnHandler);
     output01Node.advertise("invert").settable(output01invertHandler);
+
+    readEepromOutput01invert();
   }
 #endif

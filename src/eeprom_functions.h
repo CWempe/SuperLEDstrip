@@ -248,3 +248,31 @@ void readEeepromCustomColor(uint8_t preset = 0) {
     }
   }
 #endif
+
+//
+// Output01
+//
+#ifdef OUTPUT01_PIN
+  // output01_invert
+  void writeEeepromOutput01invert() {
+    if ( DEBUGLEVEL >= 1 ) {
+      Homie.getLogger() << "[DEBUG1] WRITE: output01_invert: " << output01_invert << endl;
+    }
+    Embedis::set("output01_invert", String(output01_invert));
+  }
+
+  void readEepromOutput01invert() {
+    String StrOutput01_invert;
+    // read value from eeprom
+    Embedis::get("output01_invert", StrOutput01_invert);
+
+    if ( StrOutput01_invert == String(true) ) {
+      output01_invert = true;
+    } else {
+      output01_invert = false;
+    }
+    if ( DEBUGLEVEL >= 1 ) {
+      Homie.getLogger() << "[DEBUG1] READ: output01_invert: " << output01_invert << endl;
+    }
+  }
+#endif
