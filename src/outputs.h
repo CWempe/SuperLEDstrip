@@ -13,14 +13,14 @@
     bool on = (value == "true");
     // set output; consider output01_invert
     digitalWrite(OUTPUT01_PIN, (on == !output01_invert) ? HIGH : LOW);
-    output01Node.setProperty("on").send(value);
+    if ( !HOMIE_STANDALONE ) { output01Node.setProperty("on").send(value); };
     return true;
   }
 
   bool output01invertHandler(const HomieRange& range, const String& value) {
     if (value != "true" && value != "false") return false;
     output01_invert = (value == "true");
-    output01Node.setProperty("invert").send(value);
+    if ( !HOMIE_STANDALONE ) { output01Node.setProperty("invert").send(value); };
     return true;
   }
 
