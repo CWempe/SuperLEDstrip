@@ -17,9 +17,17 @@
     return true;
   }
 
+  bool output01invertHandler(const HomieRange& range, const String& value) {
+    if (value != "true" && value != "false") return false;
+    output01_invert = (value == "true");
+    output01Node.setProperty("invert").send(value);
+    return true;
+  }
+
   void HomieSetupOutput01() {
     pinMode(OUTPUT01_PIN, OUTPUT);
     digitalWrite(OUTPUT01_PIN, HIGH);
     output01Node.advertise("on").settable(output01OnHandler);
+    output01Node.advertise("invert").settable(output01invertHandler);
   }
 #endif
