@@ -17,11 +17,20 @@
     return true;
   }
 
+  void publichOutput01invert() {
+    if ( !HOMIE_STANDALONE ) {
+      output01Node.setProperty("invert").send(output01_invert ? "true" : "false");
+    };
+  }
+  void updateOutput01invert(String value, bool write = true) {
+    output01_invert = (value == "true");
+    publichOutput01invert();
+    if (write) writeEeepromOutput01invert();
+  }
+
   bool output01invertHandler(const HomieRange& range, const String& value) {
     if (value != "true" && value != "false") return false;
-    output01_invert = (value == "true");
-    if ( !HOMIE_STANDALONE ) { output01Node.setProperty("invert").send(value); };
-    writeEeepromOutput01invert();
+    updateOutput01invert(value);
     return true;
   }
 
