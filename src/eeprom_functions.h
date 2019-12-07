@@ -179,6 +179,7 @@ void readEeepromCustomColor(uint8_t preset = 0) {
 #ifdef BUTTON01_PIN
   // button01_switch
   void writeEeepromButton01switch() {
+    Embedis::set("button01_switch", String(button01_switch));
     if ( DEBUGLEVEL >= 1 ) {
       Homie.getLogger() << "[DEBUG1] WRITE: button01_switch: " << button01_switch << endl;
     }
@@ -199,10 +200,12 @@ void readEeepromCustomColor(uint8_t preset = 0) {
       Homie.getLogger() << "[DEBUG1] READ: button01_switch: " << button01_switch << endl;
       Homie.getLogger() << "[DEBUG1] READ: StrButton01_switch: " << StrButton01_switch << endl;
     }
+    updateButton01switch(StrButton01_switch, false);
   }
 
   // button01_event_on_press
   void writeEeepromButton01eventOnPress() {
+    Embedis::set("button01_event_on_press", String(button01_event_on_press));
     if ( DEBUGLEVEL >= 1 ) {
       Homie.getLogger() << "[DEBUG1] WRITE: button01_event_on_press: " << button01_event_on_press << endl;
     }
@@ -223,6 +226,7 @@ void readEeepromCustomColor(uint8_t preset = 0) {
       Homie.getLogger() << "[DEBUG1] READ: button01_event_on_press: " << button01_event_on_press << endl;
       Homie.getLogger() << "[DEBUG1] READ: StrButton01_event_on_press: " << StrButton01_event_on_press << endl;
     }
+    updateButton01event_on_press(StrButton01_event_on_press, false);
   }
 
   // button01_action
@@ -266,10 +270,10 @@ void readEeepromCustomColor(uint8_t preset = 0) {
     String StrOutput01_on;
     // read value from eeprom
     Embedis::get("output01_on", StrOutput01_on);
-    updateOutput01on(StrOutput01_on, false);
     if ( DEBUGLEVEL >= 1 ) {
       Homie.getLogger() << "[DEBUG1] READ: output01_on: " << output01_on << endl;
     }
+    updateOutput01on(StrOutput01_on, false);
   }
 
   // output01_invert
@@ -284,9 +288,9 @@ void readEeepromCustomColor(uint8_t preset = 0) {
     String StrOutput01_invert;
     // read value from eeprom
     Embedis::get("output01_invert", StrOutput01_invert);
-    updateOutput01invert(StrOutput01_invert, false);
     if ( DEBUGLEVEL >= 1 ) {
       Homie.getLogger() << "[DEBUG1] READ: output01_invert: " << output01_invert << endl;
     }
+    updateOutput01invert(StrOutput01_invert, false);
   }
 #endif
