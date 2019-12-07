@@ -11,7 +11,8 @@
   bool output01OnHandler(const HomieRange& range, const String& value) {
     if (value != "true" && value != "false") return false;
     bool on = (value == "true");
-    digitalWrite(OUTPUT01_PIN, on ? LOW : HIGH);
+    // set output; consider output01_invert
+    digitalWrite(OUTPUT01_PIN, (on == !output01_invert) ? HIGH : LOW);
     output01Node.setProperty("on").send(value);
     return true;
   }
