@@ -1,5 +1,5 @@
 # ignore files with individual, maybe secret, information
-custom_values.h
+custom_values.h*
 upload_firmware.sh
 
 # ignore complied firmware files
