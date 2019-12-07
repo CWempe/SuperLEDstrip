@@ -139,6 +139,7 @@ HomieNode lightNode("light", "switch");
 #include "eeprom_functions.h";
 
 #include "buttons.h"
+#include "outputs.h"
 
 /*
  * #########################
@@ -313,6 +314,9 @@ void setup(void)
   #ifdef BUTTON01_PIN
     HomieSetupButton01();
   #endif
+  #ifdef OUTPUT01_PIN
+    HomieSetupOutput01();
+  #endif
 
   Homie.setup();  
   NextionSetup();
@@ -342,7 +346,6 @@ void loop(void)
       loopTemp();
     }
   #endif
-
 
   #ifdef BUTTON01_PIN
     loopButton01();
