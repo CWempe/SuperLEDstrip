@@ -253,6 +253,25 @@ void readEeepromCustomColor(uint8_t preset = 0) {
 // Output01
 //
 #ifdef OUTPUT01_PIN
+  // output01_on
+  void writeEeepromOutput01on() {
+    String StrButton01_on;
+    Embedis::set("output01_on", String(output01_on));
+    if ( DEBUGLEVEL >= 1 ) {
+      Homie.getLogger() << "[DEBUG1] WRITE: output01_on: " << output01_on << endl;
+    }
+  }
+
+  void readEepromOutput01on() {
+    String StrOutput01_on;
+    // read value from eeprom
+    Embedis::get("output01_on", StrOutput01_on);
+    updateOutput01on(StrOutput01_on, false);
+    if ( DEBUGLEVEL >= 1 ) {
+      Homie.getLogger() << "[DEBUG1] READ: output01_on: " << output01_on << endl;
+    }
+  }
+
   // output01_invert
   void writeEeepromOutput01invert() {
     if ( DEBUGLEVEL >= 1 ) {

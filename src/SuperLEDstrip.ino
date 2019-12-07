@@ -54,6 +54,7 @@ void getBlue(void);
 void updateCustomColorRed(uint8_t red, bool updateRGB);
 void updateCustomColorGreen(uint8_t green, bool updateRGB);
 void updateCustomColorBlue(uint8_t blue, bool updateRGB);
+void updateOutput01on(String value, bool write);
 void updateOutput01invert(String value, bool write);
 void readEepromScene(void);
 void calculateNextIndex(uint8_t *index, bool *momentum);
