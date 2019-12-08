@@ -87,7 +87,7 @@
           }
         }
       }
-      Homie.getLogger() << "Button01 is now " << (button01Value ? "pressed" : "unpressed") << endl;
+      if ( DEBUGLEVEL >= 1 ) Homie.getLogger() << "[DEBUG1] Button01 is now " << (button01Value ? "pressed" : "unpressed") << endl;
       if ( !HOMIE_STANDALONE ) { button01Node.setProperty("pressed").send(button01Value ? "true" : "false"); };
       lastButton01Value = button01Value;
     }
