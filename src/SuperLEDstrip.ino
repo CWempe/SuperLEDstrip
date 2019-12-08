@@ -59,6 +59,8 @@ void updateButton01event_on_press(String value, bool write);
 void updateButton01action(String value, bool write);
 void updateOutput01on(String value, bool write);
 void updateOutput01invert(String value, bool write);
+void updateOutput02on(String value, bool write);
+void updateOutput02invert(String value, bool write);
 void readEepromScene(void);
 void calculateNextIndex(uint8_t *index, bool *momentum);
 
@@ -321,6 +323,9 @@ void setup(void)
   #endif
   #ifdef OUTPUT01_PIN
     HomieSetupOutput01();
+  #endif
+  #ifdef OUTPUT02_PIN
+    HomieSetupOutput02();
   #endif
 
   Homie.setup();  

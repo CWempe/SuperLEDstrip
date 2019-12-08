@@ -250,3 +250,36 @@ void readEeepromCustomColor(uint8_t preset = 0) {
     updateOutput01invert(StrOutput01_invert, false);
   }
 #endif
+
+//
+// Output02
+//
+#ifdef OUTPUT02_PIN
+  // output02_on
+  void writeEeepromOutput02on() {
+    Embedis::set("output02_on", String(output02_on));
+    if ( DEBUGLEVEL >= 1 ) Homie.getLogger() << "[DEBUG1] WRITE:  output02_on: " << output02_on << endl;
+  }
+
+  void readEepromOutput02on() {
+    String StrOutput02_on;
+    // read value from eeprom
+    Embedis::get("output02_on", StrOutput02_on);
+    if ( DEBUGLEVEL >= 1 ) Homie.getLogger() << "[DEBUG1] READ:   StrOutput02_on: " << StrOutput02_on << endl;
+    updateOutput02on(StrOutput02_on, false);
+  }
+
+  // output02_invert
+  void writeEeepromOutput02invert() {
+    if ( DEBUGLEVEL >= 1 ) Homie.getLogger() << "[DEBUG1] WRITE:  output02_invert: " << output02_invert << endl;
+    Embedis::set("output02_invert", String(output02_invert));
+  }
+
+  void readEepromOutput02invert() {
+    String StrOutput02_invert;
+    // read value from eeprom
+    Embedis::get("output02_invert", StrOutput02_invert);
+    if ( DEBUGLEVEL >= 1 ) Homie.getLogger() << "[DEBUG1] READ:   StrOutput02_invert: " << StrOutput02_invert << endl;
+    updateOutput02invert(StrOutput02_invert, false);
+  }
+#endif

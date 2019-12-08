@@ -57,3 +57,59 @@
     readEepromOutput01invert();
   }
 #endif
+
+//
+// Output02
+//
+#ifdef OUTPUT02_PIN
+  HomieNode output02Node("output02", "switch");
+
+  // output02_on
+  void publishOutput02on() {
+    if ( !HOMIE_STANDALONE ) output02Node.setProperty("on").send(output02_on ? "true" : "false");
+  }
+
+  void updateOutput02on(String value, bool write = true) {
+    output02_on = (value == "true" || value == String(true));
+    if ( DEBUGLEVEL >= 1 ) Homie.getLogger() << "[DEBUG1] UPDATE: output02_on: " << output02_on << endl;
+    // set output; consider output02_invert
+    digitalWrite(OUTPUT02_PIN, (output02_on == !output02_invert) ? HIGH : LOW);
+    publishOutput02on();
+    if (write) writeEeepromOutput02on();
+  }
+
+  bool output02OnHandler(const HomieRange& range, const String& value) {
+    if (value != "true" && value != "false") return false;
+    updateOutput02on(value);
+    return true;
+  }
+
+  // output02_invert
+  void publishOutput02invert() {
+    if ( !HOMIE_STANDALONE ) output02Node.setProperty("invert").send(output02_invert ? "true" : "false");
+  }
+
+  void updateOutput02invert(String value, bool write = true) {
+    output02_invert = (value == "true" || value == String(true));
+    if ( DEBUGLEVEL >= 1 ) Homie.getLogger() << "[DEBUG1] UPDATE: output02_invert: " << output02_invert << endl;
+    publishOutput02invert();
+    if (write) writeEeepromOutput02invert();
+  }
+
+  bool output02invertHandler(const HomieRange& range, const String& value) {
+    if (value != "true" && value != "false") return false;
+    updateOutput02invert(value);
+    return true;
+  }
+
+  // Setup
+  void HomieSetupOutput02() {
+    pinMode(OUTPUT02_PIN, OUTPUT);
+    digitalWrite(OUTPUT02_PIN, HIGH);
+    output02Node.advertise("on").settable(output02OnHandler);
+    output02Node.advertise("invert").settable(output02invertHandler);
+
+    readEepromOutput02on();
+    readEepromOutput02invert();
+  }
+#endif
