@@ -9,51 +9,72 @@
   Bounce debouncer01 = Bounce();
   HomieNode button01Node("button01", "button");
   int lastButton01Value = -1;
+  bool button01_do_scenes;
+  int button01_do_length = -1;
 
   // Loop
   void loopButton01() {
     debouncer01.update();
     int button01Value = debouncer01.read();
+    String sceneValue;
+    uint16_t currentScene;
+
 
     if (button01Value != lastButton01Value) {
       // set next 100er scene
       // on press or on release
       if ( button01Value == button01_event_on_press && button01_action ) {
 
-        String sceneValue;
-        uint16_t currentScene;
-    
-        // read value from eeprom
-        Embedis::get("sceneValue", sceneValue);
-        currentScene = sceneValue.toInt();
-    
-        switch (currentScene) {
-          case 501:   // switch to rainbow
-            setScene(101);
-            break;
-          case 101:   // switch to running palette
-            setScene(111);
-            break;
-          case 111:   // switch to red
-            setScene(503);
-            break;
-          case 503:   // switch to OrangeRed
-            setScene(510);
-            break;
-          case 510:   // switch to magenta
-            setScene(506);
-            break;
-          case 506:   // switch to blue
-            setScene(505);
-            break;
-          case 505:   // switch to green
-            setScene(504);
-            break;
-
-
-          default:   // default to white
-            setScene(501);
-            break;
+        if ( button01_do_scenes ) {
+          // change scene
+          // read value from eeprom
+          Embedis::get("sceneValue", sceneValue);
+          currentScene = sceneValue.toInt();
+      
+          switch (currentScene) {
+            case 501:   // switch to rainbow
+              setScene(101);
+              break;
+            case 101:   // switch to running palette
+              setScene(111);
+              break;
+            case 111:   // switch to red
+              setScene(503);
+              break;
+            case 503:   // switch to OrangeRed
+              setScene(510);
+              break;
+            case 510:   // switch to magenta
+              setScene(506);
+              break;
+            case 506:   // switch to blue
+              setScene(505);
+              break;
+            case 505:   // switch to green
+              setScene(504);
+              break;
+            default:   // default to white
+              setScene(501);
+              break;
+          }
+        } else {
+          // change state of button(s)
+          for (byte button_nr = 0; button_nr < button01_do_length; button_nr++) {
+            if ( DEBUGLEVEL >= 1 ) Homie.getLogger() << "[DEBUG1] do something with output #: " << button01_do[button_nr] << endl;
+            // toggle button
+            switch (button01_do[button_nr]) {
+              case 1:
+                #ifdef OUTPUT01_PIN
+                  updateOutput01on(String(!output01_on));
+                #endif
+                break;
+              case 2:
+                #ifdef OUTPUT02_PIN
+                  updateOutput02on(String(!output02_on));
+                #endif
+                break;
+            }
+          }
         }
       }
       Homie.getLogger() << "Button01 is now " << (button01Value ? "pressed" : "unpressed") << endl;
@@ -131,5 +152,12 @@
     readEepromButton01switch();
     readEepromButton01eventOnPress();
     readEepromButton01action();
+
+    // check is the defines array contains scenes or button numbers
+    button01_do_scenes = (button01_do[0] >= 100);
+    if ( DEBUGLEVEL >= 1 ) Homie.getLogger() << "[DEBUG1] button01_do_scenes: " << button01_do_scenes << endl;
+    // get lenght or array
+    button01_do_length = (sizeof(button01_do) / sizeof(button01_do[0]));
+    if ( DEBUGLEVEL >= 1 ) Homie.getLogger() << "[DEBUG1] button01_do_length: " << button01_do_length << endl;
   }
 #endif
