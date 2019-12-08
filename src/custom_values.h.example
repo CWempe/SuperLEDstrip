@@ -79,6 +79,7 @@ bool lightON = false;
 // comment out buttons you do not use
 #define BUTTON01_PIN        D8
 
+// default values
 #ifdef BUTTON01_PIN
   // Is this a switch or a push button
   bool button01_switch = false;
@@ -86,6 +87,12 @@ bool lightON = false;
   bool button01_event_on_press = true;
   // Wether an action other than publishing the event via mqtt should be executed
   bool button01_action = true;
+  // Decalare an arry with the outputs you want to toggle or the scenes you want to switch in the defined order
+  // If the first value is >100 all values will be considered as ouput numbers. If first value is >=100 they will be considered scenes.
+  // All Outputs defined in this array will be turned on/off (or toggles)
+  // All scenes defines in this array will be used in that order. After the last defined scene the led stripe will be turned off.
+  //  The next press will start again with the first defined scene.
+  uint16_t button01_do[] = { 1, 2 };
 #endif
 
 
@@ -95,7 +102,15 @@ bool lightON = false;
 // comment out outputs you do not use
 
 #define OUTPUT01_PIN        D1
-
 #ifdef OUTPUT01_PIN
-  bool output01_invert = true;
+  // initial state
+  bool output01_on = false;
+  bool output01_invert = false;
+#endif
+
+#define OUTPUT02_PIN        D2
+#ifdef OUTPUT02_PIN
+  // initial state
+  bool output02_on = false;
+  bool output02_invert = false;
 #endif
