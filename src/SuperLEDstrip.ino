@@ -61,6 +61,10 @@ void updateOutput01on(String value, bool write);
 void updateOutput01invert(String value, bool write);
 void updateOutput02on(String value, bool write);
 void updateOutput02invert(String value, bool write);
+void updateOutput03on(String value, bool write);
+void updateOutput03invert(String value, bool write);
+void updateOutput04on(String value, bool write);
+void updateOutput04invert(String value, bool write);
 void readEepromScene(void);
 void calculateNextIndex(uint8_t *index, bool *momentum);
 
@@ -326,6 +330,12 @@ void setup(void)
   #endif
   #ifdef OUTPUT02_PIN
     HomieSetupOutput02();
+  #endif
+  #ifdef OUTPUT03_PIN
+    HomieSetupOutput03();
+  #endif
+  #ifdef OUTPUT04_PIN
+    HomieSetupOutput04();
   #endif
 
   Homie.setup();  

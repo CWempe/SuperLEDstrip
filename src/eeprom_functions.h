@@ -283,3 +283,69 @@ void readEeepromCustomColor(uint8_t preset = 0) {
     updateOutput02invert(StrOutput02_invert, false);
   }
 #endif
+
+//
+// Output03
+//
+#ifdef OUTPUT03_PIN
+  // output03_on
+  void writeEeepromOutput03on() {
+    Embedis::set("output03_on", String(output03_on));
+    if ( DEBUGLEVEL >= 1 ) Homie.getLogger() << "[DEBUG1] WRITE:  output03_on: " << output03_on << endl;
+  }
+
+  void readEepromOutput03on() {
+    String StrOutput03_on;
+    // read value from eeprom
+    Embedis::get("output03_on", StrOutput03_on);
+    if ( DEBUGLEVEL >= 1 ) Homie.getLogger() << "[DEBUG1] READ:   StrOutput03_on: " << StrOutput03_on << endl;
+    updateOutput03on(StrOutput03_on, false);
+  }
+
+  // output03_invert
+  void writeEeepromOutput03invert() {
+    if ( DEBUGLEVEL >= 1 ) Homie.getLogger() << "[DEBUG1] WRITE:  output03_invert: " << output03_invert << endl;
+    Embedis::set("output03_invert", String(output03_invert));
+  }
+
+  void readEepromOutput03invert() {
+    String StrOutput03_invert;
+    // read value from eeprom
+    Embedis::get("output03_invert", StrOutput03_invert);
+    if ( DEBUGLEVEL >= 1 ) Homie.getLogger() << "[DEBUG1] READ:   StrOutput03_invert: " << StrOutput03_invert << endl;
+    updateOutput03invert(StrOutput03_invert, false);
+  }
+#endif
+
+//
+// Output04
+//
+#ifdef OUTPUT04_PIN
+  // output04_on
+  void writeEeepromOutput04on() {
+    Embedis::set("output04_on", String(output04_on));
+    if ( DEBUGLEVEL >= 1 ) Homie.getLogger() << "[DEBUG1] WRITE:  output04_on: " << output04_on << endl;
+  }
+
+  void readEepromOutput04on() {
+    String StrOutput04_on;
+    // read value from eeprom
+    Embedis::get("output04_on", StrOutput04_on);
+    if ( DEBUGLEVEL >= 1 ) Homie.getLogger() << "[DEBUG1] READ:   StrOutput04_on: " << StrOutput04_on << endl;
+    updateOutput04on(StrOutput04_on, false);
+  }
+
+  // output04_invert
+  void writeEeepromOutput04invert() {
+    if ( DEBUGLEVEL >= 1 ) Homie.getLogger() << "[DEBUG1] WRITE:  output04_invert: " << output04_invert << endl;
+    Embedis::set("output04_invert", String(output04_invert));
+  }
+
+  void readEepromOutput04invert() {
+    String StrOutput04_invert;
+    // read value from eeprom
+    Embedis::get("output04_invert", StrOutput04_invert);
+    if ( DEBUGLEVEL >= 1 ) Homie.getLogger() << "[DEBUG1] READ:   StrOutput04_invert: " << StrOutput04_invert << endl;
+    updateOutput04invert(StrOutput04_invert, false);
+  }
+#endif

@@ -73,6 +73,16 @@
                   updateOutput02on(String(!output02_on));
                 #endif
                 break;
+              case 3:
+                #ifdef OUTPUT03_PIN
+                  updateOutput03on(String(!output03_on));
+                #endif
+                break;
+              case 4:
+                #ifdef OUTPUT04_PIN
+                  updateOutput04on(String(!output04_on));
+                #endif
+                break;
             }
           }
         }
