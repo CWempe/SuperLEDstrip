@@ -10,6 +10,7 @@
   HomieNode button01Node("button01", "button");
   int lastButton01Value = -1;
 
+  // Loop
   void loopButton01() {
     debouncer01.update();
     int button01Value = debouncer01.read();
@@ -61,30 +62,61 @@
     }
   }
 
+  // button01_switch
+  void publishButton01switch() {
+    if ( !HOMIE_STANDALONE ) button01Node.setProperty("switch").send(button01_switch ? "true" : "false");
+  }
+
+  void updateButton01switch(String value, bool write = true) {
+    button01_switch = (value == "true" || value == String(true));
+    if ( DEBUGLEVEL >= 1 ) Homie.getLogger() << "[DEBUG1] UPDATE: button01_switch: " << button01_switch << endl;
+    publishButton01switch();
+    if (write) writeEeepromButton01switch();
+  }
+
   bool button01switchHandler(const HomieRange& range, const String& value) {
     if (value != "true" && value != "false") return false;
-    button01_switch = (value == "true");
-    if ( !HOMIE_STANDALONE ) { button01Node.setProperty("switch").send(button01_switch ? "true" : "false"); };
-    writeEeepromButton01switch();
+    updateButton01switch(value);
     return true;
+  }
+
+  // button01_event_on_press
+  void publishButton01event_on_press() {
+    if ( !HOMIE_STANDALONE ) button01Node.setProperty("event-on-press").send(button01_event_on_press ? "true" : "false");
+  }
+
+  void updateButton01event_on_press(String value, bool write = true) {
+    button01_event_on_press = (value == "true" || value == String(true));
+    if ( DEBUGLEVEL >= 1 ) Homie.getLogger() << "[DEBUG1] UPDATE: button01_event_on_press: " << button01_event_on_press << endl;
+    publishButton01event_on_press();
+    if (write) writeEeepromButton01eventOnPress();
   }
 
   bool button01event_on_pressHandler(const HomieRange& range, const String& value) {
     if (value != "true" && value != "false") return false;
-    button01_event_on_press = (value == "true");
-    if ( !HOMIE_STANDALONE ) { button01Node.setProperty("event-on-press").send(button01_event_on_press ? "true" : "false"); };
-    writeEeepromButton01eventOnPress();
+    updateButton01event_on_press(value);
     return true;
+  }
+
+  // button01_action
+  void publishButton01action() {
+    if ( !HOMIE_STANDALONE ) button01Node.setProperty("action").send(button01_action ? "true" : "false");
+  }
+
+  void updateButton01action(String value, bool write = true) {
+    button01_action = (value == "true" || value == String(true));
+    if ( DEBUGLEVEL >= 1 ) Homie.getLogger() << "[DEBUG1] UPDATE: button01_action: " << button01_action << endl;
+    publishButton01action();
+    if (write) writeEeepromButton01action();
   }
 
   bool button01actionHandler(const HomieRange& range, const String& value) {
     if (value != "true" && value != "false") return false;
-    button01_action = (value == "true");
-    if ( !HOMIE_STANDALONE ) { button01Node.setProperty("action").send(button01_action ? "true" : "false"); };
-    writeEeepromButton01action();
+    updateButton01action(value);
     return true;
   }
 
+  // Setup
   void HomieSetupButton01() {
     pinMode(BUTTON01_PIN, INPUT);
     digitalWrite(BUTTON01_PIN, LOW);

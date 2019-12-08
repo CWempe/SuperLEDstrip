@@ -167,9 +167,7 @@ void readEeepromCustomColor(uint8_t preset = 0) {
   updateCustomColorGreen(green.toInt(), false);
   updateCustomColorBlue(blue.toInt(), true);
   
-  if ( DEBUGLEVEL >= 1 ) {
-    Homie.getLogger() << "[DEBUG1] READ: Custom Color: " << red.toInt() << "," << green.toInt() << "," << blue.toInt() << endl;
-  }
+  if ( DEBUGLEVEL >= 1 ) Homie.getLogger() << "[DEBUG1] READ: Custom Color: " << red.toInt() << "," << green.toInt() << "," << blue.toInt() << endl;
 }
 
 
@@ -180,76 +178,43 @@ void readEeepromCustomColor(uint8_t preset = 0) {
   // button01_switch
   void writeEeepromButton01switch() {
     Embedis::set("button01_switch", String(button01_switch));
-    if ( DEBUGLEVEL >= 1 ) {
-      Homie.getLogger() << "[DEBUG1] WRITE: button01_switch: " << button01_switch << endl;
-    }
-    Embedis::set("button01_switch", String(button01_switch));
+    if ( DEBUGLEVEL >= 1 ) Homie.getLogger() << "[DEBUG1] WRITE:  button01_switch: " << button01_switch << endl;
   }
 
   void readEepromButton01switch() {
     String StrButton01_switch;
     // read value from eeprom
     Embedis::get("button01_switch", StrButton01_switch);
-
-    if ( StrButton01_switch == String(true) ) {
-      button01_switch = true;
-    } else {
-      button01_switch = false;
-    }
-    if ( DEBUGLEVEL >= 1 ) {
-      Homie.getLogger() << "[DEBUG1] READ: button01_switch: " << button01_switch << endl;
-      Homie.getLogger() << "[DEBUG1] READ: StrButton01_switch: " << StrButton01_switch << endl;
-    }
+    if ( DEBUGLEVEL >= 1 ) Homie.getLogger() << "[DEBUG1] READ:   StrButton01_switch: " << StrButton01_switch << endl;
     updateButton01switch(StrButton01_switch, false);
   }
 
   // button01_event_on_press
   void writeEeepromButton01eventOnPress() {
     Embedis::set("button01_event_on_press", String(button01_event_on_press));
-    if ( DEBUGLEVEL >= 1 ) {
-      Homie.getLogger() << "[DEBUG1] WRITE: button01_event_on_press: " << button01_event_on_press << endl;
-    }
-    Embedis::set("button01_event_on_press", String(button01_event_on_press));
+    if ( DEBUGLEVEL >= 1 ) Homie.getLogger() << "[DEBUG1] WRITE:  button01_event_on_press: " << button01_event_on_press << endl;
   }
 
   void readEepromButton01eventOnPress() {
     String StrButton01_event_on_press;
     // read value from eeprom
     Embedis::get("button01_event_on_press", StrButton01_event_on_press);
-
-    if ( StrButton01_event_on_press == String(true) ) {
-      button01_event_on_press = true;
-    } else {
-      button01_event_on_press = false;
-    }
-    if ( DEBUGLEVEL >= 1 ) {
-      Homie.getLogger() << "[DEBUG1] READ: button01_event_on_press: " << button01_event_on_press << endl;
-      Homie.getLogger() << "[DEBUG1] READ: StrButton01_event_on_press: " << StrButton01_event_on_press << endl;
-    }
+    if ( DEBUGLEVEL >= 1 ) Homie.getLogger() << "[DEBUG1] READ:   StrButton01_event_on_press: " << StrButton01_event_on_press << endl;
     updateButton01event_on_press(StrButton01_event_on_press, false);
   }
 
   // button01_action
   void writeEeepromButton01action() {
-    if ( DEBUGLEVEL >= 1 ) {
-      Homie.getLogger() << "[DEBUG1] WRITE: button01_action: " << button01_action << endl;
-    }
     Embedis::set("button01_action", String(button01_action));
+    if ( DEBUGLEVEL >= 1 ) Homie.getLogger() << "[DEBUG1] WRITE:  button01_action: " << button01_action << endl;
   }
 
   void readEepromButton01action() {
     String StrButton01_action;
     // read value from eeprom
     Embedis::get("button01_action", StrButton01_action);
-
-    if ( StrButton01_action == String(true) ) {
-      button01_action = true;
-    } else {
-      button01_action = false;
-    }
-    if ( DEBUGLEVEL >= 1 ) {
-      Homie.getLogger() << "[DEBUG1] READ: button01_action: " << button01_action << endl;
-    }
+    if ( DEBUGLEVEL >= 1 ) Homie.getLogger() << "[DEBUG1] READ:   StrButton01_action: " << StrButton01_action << endl;
+    updateButton01action(StrButton01_action, false);
   }
 #endif
 
@@ -259,28 +224,21 @@ void readEeepromCustomColor(uint8_t preset = 0) {
 #ifdef OUTPUT01_PIN
   // output01_on
   void writeEeepromOutput01on() {
-    String StrButton01_on;
     Embedis::set("output01_on", String(output01_on));
-    if ( DEBUGLEVEL >= 1 ) {
-      Homie.getLogger() << "[DEBUG1] WRITE: output01_on: " << output01_on << endl;
-    }
+    if ( DEBUGLEVEL >= 1 ) Homie.getLogger() << "[DEBUG1] WRITE:  output01_on: " << output01_on << endl;
   }
 
   void readEepromOutput01on() {
     String StrOutput01_on;
     // read value from eeprom
     Embedis::get("output01_on", StrOutput01_on);
-    if ( DEBUGLEVEL >= 1 ) {
-      Homie.getLogger() << "[DEBUG1] READ: output01_on: " << output01_on << endl;
-    }
+    if ( DEBUGLEVEL >= 1 ) Homie.getLogger() << "[DEBUG1] READ:   StrOutput01_on: " << StrOutput01_on << endl;
     updateOutput01on(StrOutput01_on, false);
   }
 
   // output01_invert
   void writeEeepromOutput01invert() {
-    if ( DEBUGLEVEL >= 1 ) {
-      Homie.getLogger() << "[DEBUG1] WRITE: output01_invert: " << output01_invert << endl;
-    }
+    if ( DEBUGLEVEL >= 1 ) Homie.getLogger() << "[DEBUG1] WRITE:  output01_invert: " << output01_invert << endl;
     Embedis::set("output01_invert", String(output01_invert));
   }
 
@@ -288,9 +246,7 @@ void readEeepromCustomColor(uint8_t preset = 0) {
     String StrOutput01_invert;
     // read value from eeprom
     Embedis::get("output01_invert", StrOutput01_invert);
-    if ( DEBUGLEVEL >= 1 ) {
-      Homie.getLogger() << "[DEBUG1] READ: output01_invert: " << output01_invert << endl;
-    }
+    if ( DEBUGLEVEL >= 1 ) Homie.getLogger() << "[DEBUG1] READ:   StrOutput01_invert: " << StrOutput01_invert << endl;
     updateOutput01invert(StrOutput01_invert, false);
   }
 #endif

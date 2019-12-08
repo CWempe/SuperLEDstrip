@@ -10,14 +10,12 @@
 
   // output01_on
   void publishOutput01on() {
+    if ( !HOMIE_STANDALONE ) output01Node.setProperty("on").send(output01_on ? "true" : "false");
   }
 
   void updateOutput01on(String value, bool write = true) {
     output01_on = (value == "true" || value == String(true));
-    if ( DEBUGLEVEL >= 1 ) {
-      Homie.getLogger() << "[DEBUG1] UPDATE: value: " << value << endl;
-      Homie.getLogger() << "[DEBUG1] UPDATE: output01_on: " << output01_on << endl;
-    }
+    if ( DEBUGLEVEL >= 1 ) Homie.getLogger() << "[DEBUG1] UPDATE: output01_on: " << output01_on << endl;
     // set output; consider output01_invert
     digitalWrite(OUTPUT01_PIN, (output01_on == !output01_invert) ? HIGH : LOW);
     publishOutput01on();
@@ -32,10 +30,12 @@
 
   // output01_invert
   void publishOutput01invert() {
+    if ( !HOMIE_STANDALONE ) output01Node.setProperty("invert").send(output01_invert ? "true" : "false");
   }
 
   void updateOutput01invert(String value, bool write = true) {
     output01_invert = (value == "true" || value == String(true));
+    if ( DEBUGLEVEL >= 1 ) Homie.getLogger() << "[DEBUG1] UPDATE: output01_invert: " << output01_invert << endl;
     publishOutput01invert();
     if (write) writeEeepromOutput01invert();
   }
