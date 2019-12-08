@@ -305,7 +305,7 @@ void setPalette (uint8_t palette) {
 
   if ( autoChangePalette == false ) {
     // publish new palette number via mqtt
-    lightNode.setProperty("palette").send(String(palette));
+    if (Homie.isConnected()) lightNode.setProperty("palette").send(String(palette));
   
     // store current palette number to eeprom
     Embedis::set("paletteValue", String(palette));

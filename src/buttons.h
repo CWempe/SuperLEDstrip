@@ -88,14 +88,14 @@
         }
       }
       if ( DEBUGLEVEL >= 1 ) Homie.getLogger() << "[DEBUG1] Button01 is now " << (button01Value ? "pressed" : "unpressed") << endl;
-      if ( !HOMIE_STANDALONE ) { button01Node.setProperty("pressed").send(button01Value ? "true" : "false"); };
+      if (Homie.isConnected()) button01Node.setProperty("pressed").send(button01Value ? "true" : "false");
       lastButton01Value = button01Value;
     }
   }
 
   // button01_switch
   void publishButton01switch() {
-    if ( !HOMIE_STANDALONE ) button01Node.setProperty("switch").send(button01_switch ? "true" : "false");
+    if (Homie.isConnected()) button01Node.setProperty("switch").send(button01_switch ? "true" : "false");
   }
 
   void updateButton01switch(String value, bool write = true) {
@@ -113,7 +113,7 @@
 
   // button01_event_on_press
   void publishButton01event_on_press() {
-    if ( !HOMIE_STANDALONE ) button01Node.setProperty("event-on-press").send(button01_event_on_press ? "true" : "false");
+    if (Homie.isConnected()) button01Node.setProperty("event-on-press").send(button01_event_on_press ? "true" : "false");
   }
 
   void updateButton01event_on_press(String value, bool write = true) {
@@ -131,7 +131,7 @@
 
   // button01_action
   void publishButton01action() {
-    if ( !HOMIE_STANDALONE ) button01Node.setProperty("action").send(button01_action ? "true" : "false");
+    if (Homie.isConnected()) button01Node.setProperty("action").send(button01_action ? "true" : "false");
   }
 
   void updateButton01action(String value, bool write = true) {

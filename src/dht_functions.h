@@ -30,14 +30,14 @@ void loopDHT()
     dtostrf(fTemp, 4, 1, sTemp);
     sprintf(sTemp, "%s C", sTemp);
     if ( fTemp > 0 ) {
-      temperatureNode.setProperty("degrees").send(String(fTemp));
+      if (Homie.isConnected()) temperatureNode.setProperty("degrees").send(String(fTemp));
     }
 
     fHumid = dht.readHumidity() + OFFSET_HUMID;
     dtostrf(fHumid, 3, 0, sHumid);
     sprintf(sHumid, "%s %", sHumid);
     if ( fHumid >= 0 ) {
-      humidityNode.setProperty("percentage").send(String(fHumid));
+      if (Homie.isConnected()) humidityNode.setProperty("percentage").send(String(fHumid));
     }
     
     setTextAllSensors();

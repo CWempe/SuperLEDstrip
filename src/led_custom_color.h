@@ -13,7 +13,7 @@ void updateCustomColor(bool show = true) {
     sprintf(customColorString, "%i,%i,%i", customColor.red, customColor.green, customColor.blue);
     // sprintf(customColorString, "%i,%i,%i,%i", customColor.red, customColor.green, customColor.blue, customColor.white);
     
-    lightNode.setProperty("customColor").send(customColorString);
+    if (Homie.isConnected()) lightNode.setProperty("customColor").send(customColorString);
     writeEeepromCustomColor();
 }
 

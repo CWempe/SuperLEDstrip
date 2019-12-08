@@ -6,14 +6,14 @@ void setBrightness(uint8_t newBrightness)
 {
    currentBrightness = newBrightness;
    FastLED.setBrightness(map(currentBrightness, 0, 100, 0, 255));
-   lightNode.setProperty("brightness").send(String(currentBrightness));
+   if (Homie.isConnected()) lightNode.setProperty("brightness").send(String(currentBrightness));
    // store current scene number to eeprom
    Embedis::set("brightnessValue", String(currentBrightness));
 }
 
 void setTempo(uint8_t tempo) {
   BeatsPerMinute = tempo;
-  lightNode.setProperty("tempo").send(String(BeatsPerMinute));
+  if (Homie.isConnected()) lightNode.setProperty("tempo").send(String(BeatsPerMinute));
   // store current scene number to eeprom
   Embedis::set("tempoValue", String(tempo));
 }
@@ -38,7 +38,7 @@ void setPaletteSize(uint8_t paletteSize) {
   if (incIndex == 0 ) {
     incIndex = 1;   // streching the palette to infinity makes no sense
   }
-  lightNode.setProperty("paletteSize").send(String(paletteSize));
+  if (Homie.isConnected()) lightNode.setProperty("paletteSize").send(String(paletteSize));
   // store current palette size to eeprom
   Embedis::set("paletteSizeValue", String(paletteSize));
 }
@@ -51,14 +51,14 @@ void toggleBrightness()
   {
     // When light is off switch back on to current brightness
     FastLED.setBrightness(map(currentBrightness, 0, 100, 0, 255));
-    lightNode.setProperty("on").send("true");
+    if (Homie.isConnected()) lightNode.setProperty("on").send("true");
     lightON = true;
   }
   else
   {
     // else set brightness to 0 and lightON to true
     FastLED.setBrightness(0);
-    lightNode.setProperty("on").send("false");
+    if (Homie.isConnected()) lightNode.setProperty("on").send("false");
     lightON = false;
   }  
 }
@@ -265,7 +265,7 @@ void setScene (uint16_t scene) {
     randomColorsCountdown = 2;
   }
   // publish new scene number via mqtt
-  lightNode.setProperty("scene").send(String(scene));
+  if (Homie.isConnected()) lightNode.setProperty("scene").send(String(scene));
 
   // store current scene number to eeprom
   Embedis::set("sceneValue", String(scene));

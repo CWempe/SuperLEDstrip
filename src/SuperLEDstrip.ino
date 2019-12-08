@@ -208,10 +208,10 @@ SimplePatternList gPatterns = { oneColor,          //  0
 
 void setupHandler() {
   #if defined(SENSOR_DHT) || defined(SENSOR_DS18B20)
-    temperatureNode.setProperty("unit").send("°C");
+    if (Homie.isConnected()) temperatureNode.setProperty("unit").send("°C");
   #endif
   #ifdef SENSOR_DHT
-    humidityNode.setProperty("unit").send("%");
+    if (Homie.isConnected()) humidityNode.setProperty("unit").send("%");
   #endif
   
 }
@@ -259,7 +259,7 @@ bool lightOnHandler(const HomieRange& range, const String& value) {
 
   bool on = (value == "true");
   FastLED.setBrightness(on ? currentBrightness : 0);
-  lightNode.setProperty("on").send(value);
+  if (Homie.isConnected()) lightNode.setProperty("on").send(value);
   lightON = (value == "true");
   Homie.getLogger() << "Light is " << (on ? "on" : "off") << endl;
 

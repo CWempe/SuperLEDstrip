@@ -53,7 +53,7 @@ void updateTab()
 }
 
 void updateRotationSpeed () {
-  lightNode.setProperty("rotationSpeed").send(String(rotationSpeed));
+  if (Homie.isConnected()) lightNode.setProperty("rotationSpeed").send(String(rotationSpeed));
   rotationSpeedMs = 3 * rotationSpeed * rotationSpeed - 120 * rotationSpeed + 1200;
   if ( rotationSpeedMs < 1 ) {
     rotationSpeedMs = 1;

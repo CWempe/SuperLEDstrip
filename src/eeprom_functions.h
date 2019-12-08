@@ -25,7 +25,7 @@ void readEepromScene() {
   setScene(scene);
 
   // publish loaded scene via mqtt
-  lightNode.setProperty("scene").send(String(scene));
+  if (Homie.isConnected()) lightNode.setProperty("scene").send(String(scene));
 }
 
 void readEepromPalette() {
@@ -45,7 +45,7 @@ void readEepromPalette() {
   setPalette(palette);
 
   // publish loaded scene via mqtt
-  lightNode.setProperty("palette").send(String(palette));
+  if (Homie.isConnected()) lightNode.setProperty("palette").send(String(palette));
 }
 
 void readEepromBrightness() {

@@ -19,7 +19,7 @@ void loopTemp() {
   dtostrf(fTemp, 4, 1, sTemp);
   sprintf(sTemp, "%s C", sTemp);
   
-  temperatureNode.setProperty("degrees").send(String(fTemp));
+  if (Homie.isConnected()) temperatureNode.setProperty("degrees").send(String(fTemp));
     Homie.getLogger() << "[DEBUG] DS18B20: " << sTemp << endl;
   setTextTemp();
 }

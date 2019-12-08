@@ -10,7 +10,7 @@
 
   // output01_on
   void publishOutput01on() {
-    if ( !HOMIE_STANDALONE ) output01Node.setProperty("on").send(output01_on ? "true" : "false");
+    if (Homie.isConnected()) output01Node.setProperty("on").send(output01_on ? "true" : "false");
   }
 
   void updateOutput01on(String value, bool write = true) {
@@ -30,7 +30,7 @@
 
   // output01_invert
   void publishOutput01invert() {
-    if ( !HOMIE_STANDALONE ) output01Node.setProperty("invert").send(output01_invert ? "true" : "false");
+    if (Homie.isConnected()) output01Node.setProperty("invert").send(output01_invert ? "true" : "false");
   }
 
   void updateOutput01invert(String value, bool write = true) {
@@ -66,7 +66,7 @@
 
   // output02_on
   void publishOutput02on() {
-    if ( !HOMIE_STANDALONE ) output02Node.setProperty("on").send(output02_on ? "true" : "false");
+    if (Homie.isConnected()) output02Node.setProperty("on").send(output02_on ? "true" : "false");
   }
 
   void updateOutput02on(String value, bool write = true) {
@@ -86,7 +86,7 @@
 
   // output02_invert
   void publishOutput02invert() {
-    if ( !HOMIE_STANDALONE ) output02Node.setProperty("invert").send(output02_invert ? "true" : "false");
+    if (Homie.isConnected()) output02Node.setProperty("invert").send(output02_invert ? "true" : "false");
   }
 
   void updateOutput02invert(String value, bool write = true) {
@@ -122,7 +122,7 @@
 
   // output03_on
   void publishOutput03on() {
-    if ( !HOMIE_STANDALONE ) output03Node.setProperty("on").send(output03_on ? "true" : "false");
+    if (Homie.isConnected()) output03Node.setProperty("on").send(output03_on ? "true" : "false");
   }
 
   void updateOutput03on(String value, bool write = true) {
@@ -142,7 +142,7 @@
 
   // output03_invert
   void publishOutput03invert() {
-    if ( !HOMIE_STANDALONE ) output03Node.setProperty("invert").send(output03_invert ? "true" : "false");
+    if (Homie.isConnected()) output03Node.setProperty("invert").send(output03_invert ? "true" : "false");
   }
 
   void updateOutput03invert(String value, bool write = true) {
@@ -178,7 +178,7 @@
 
   // output04_on
   void publishOutput04on() {
-    if ( !HOMIE_STANDALONE ) output04Node.setProperty("on").send(output04_on ? "true" : "false");
+    if (Homie.isConnected()) output04Node.setProperty("on").send(output04_on ? "true" : "false");
   }
 
   void updateOutput04on(String value, bool write = true) {
@@ -198,7 +198,7 @@
 
   // output04_invert
   void publishOutput04invert() {
-    if ( !HOMIE_STANDALONE ) output04Node.setProperty("invert").send(output04_invert ? "true" : "false");
+    if (Homie.isConnected()) output04Node.setProperty("invert").send(output04_invert ? "true" : "false");
   }
 
   void updateOutput04invert(String value, bool write = true) {
