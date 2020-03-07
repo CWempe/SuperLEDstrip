@@ -248,6 +248,11 @@ You can find configuration examples in the `openhab` folder.
 
 ## Changelog
 
+### 2.6.0
+
+* Make BUTTON01 configurable via `custom_values.h`
+* Add OUTPUT pins and make them configurable via `custom_values.h`
+
 ### 2.5.4
 
 * Add version number to display
