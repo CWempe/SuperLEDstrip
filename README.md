@@ -135,6 +135,17 @@ After this you copy the compiled HMI file (will be uploaded to the release page)
 
 ## Customizing
 
+### Buttons
+
+You can configure the purpose of your buttons in `custom_values.h`.
+Like changing tha state of one or multiple output pins or switching between pre-defined scenes.
+Just change the values of `button01_do[]`.
+
+### Outputs
+
+You can also define some output pins in `custom_values.h`.
+They can be inverted and you can define the initial state at start up.
+
 ### Arduino Code
 
 Let's say you want to add an LED pattern you developed as the function `mynewpattern()`.
