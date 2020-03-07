@@ -88,8 +88,8 @@ bool lightON = false;
   // Wether an action other than publishing the event via mqtt should be executed
   bool button01_action = true;
   // Decalare an arry with the outputs you want to toggle or the scenes you want to switch in the defined order
-  // If the first value is >100 all values will be considered as ouput numbers. If first value is >=100 they will be considered scenes.
-  // All Outputs defined in this array will be turned on/off (or toggles)
+  // If the first value is <100 all values will be considered as ouput numbers. If first value is >=100 they will be considered scenes.
+  // All Outputs defined in this array will be turned on/off (or toggled)
   // All scenes defines in this array will be used in that order. After the last defined scene the led stripe will be turned off.
   //  The next press will start again with the first defined scene.
   uint16_t button01_do[] = { 1, 2 };
