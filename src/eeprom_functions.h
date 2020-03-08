@@ -26,6 +26,8 @@ void readEepromScene() {
 
   // publish loaded scene via mqtt
   if (Homie.isConnected()) lightNode.setProperty("scene").send(String(scene));
+    
+  if ( DEBUGLEVEL >= 1 ) Homie.getLogger() << "[DEBUG1] READ: Scene: " << scene << endl;
 }
 
 void readEepromPalette() {
@@ -169,6 +171,92 @@ void readEeepromCustomColor(uint8_t preset = 0) {
   
   if ( DEBUGLEVEL >= 1 ) Homie.getLogger() << "[DEBUG1] READ: Custom Color: " << red.toInt() << "," << green.toInt() << "," << blue.toInt() << endl;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
+// lightsaber color
+//
+
+void writeEeepromLightsaberColor(uint8_t preset = 0) {  
+  String FileRed = "lightsaberColorRed";
+  String FileGreen = "lightsaberColorGreen";
+  String FileBlue = "lightsaberColorBlue";
+
+  // Use other file names if function is called with preset > 0
+  if ( preset > 0 ) {
+    FileRed   = "lightsaberColorRed" + preset;
+    FileGreen = "lightsaberColorGreen" + preset;
+    FileBlue  = "lightsaberColorBlue" + preset;
+  }
+
+  if ( DEBUGLEVEL >= 1 ) {
+    Homie.getLogger() << "[DEBUG1] WRITE: FileRed: " << FileRed << endl;
+    Homie.getLogger() << "[DEBUG1] WRITE: FileGreen: " << FileGreen << endl;
+    Homie.getLogger() << "[DEBUG1] WRITE: FileBlue: " << FileBlue << endl;
+  }
+  // Write current custom color to Eeeprom
+  Embedis::set(FileRed, String(lightsaber_color_current.red));
+  Embedis::set(FileGreen, String(lightsaber_color_current.green));
+  Embedis::set(FileBlue, String(lightsaber_color_current.blue));
+
+  if ( DEBUGLEVEL >= 1 ) {
+    Homie.getLogger() << "[DEBUG1] WRITE: Lightsaber Color: " << lightsaber_color_current.red << "," << lightsaber_color_current.green << "," << lightsaber_color_current.blue << endl;
+  }
+}
+
+void readEeepromLightsaberColor(uint8_t preset = 0) {
+  String red;
+  String green;
+  String blue;
+  
+  String FileRed = "lightsaberColorRed";
+  String FileGreen = "lightsaberColorGreen";
+  String FileBlue = "lightsaberColorBlue";
+
+  // Use other file names if function is called with preset > 0
+  if ( preset > 0 ) {
+    FileRed   = "lightsaberColorRed" + preset;
+    FileGreen = "lightsaberColorGreen" + preset;
+    FileBlue  = "lightsaberColorBlue" + preset;
+  }
+
+  if ( DEBUGLEVEL >= 1 ) {
+    Homie.getLogger() << "[DEBUG1] READ: FileRed: " << FileRed << endl;
+    Homie.getLogger() << "[DEBUG1] READ: FileGreen: " << FileGreen << endl;
+    Homie.getLogger() << "[DEBUG1] READ: FileBlue: " << FileBlue << endl;
+  }
+
+  // Read values from Eeeprom
+  Embedis::get(FileRed, red);
+  Embedis::get(FileGreen, green);
+  Embedis::get(FileBlue, blue);
+
+  // set values
+  lightsaber_color_current = CRGB(red.toInt(), green.toInt(), blue.toInt());
+  lightsaber_color_target = lightsaber_color_current;
+
+  if ( DEBUGLEVEL >= 1 ) Homie.getLogger() << "[DEBUG1] READ: Lightsaber Color: " << red.toInt() << "," << green.toInt() << "," << blue.toInt() << endl;
+}
+
+
+
+
+
+
+
+
+
 
 
 //

@@ -26,6 +26,9 @@ void lightsaber(void)
       // set color_current to color_target when lightsaber is off
       if ( lightsaber_lenght_current == 0 && lightsaber_color_current != lightsaber_color_target) {
         lightsaber_color_current = lightsaber_color_target;
+        writeEeepromLightsaberColor();
+        // store current scene number to eeprom because a new color might have been saved as a new scene instead previously
+        Embedis::set("sceneValue", "603");
         lightsaber_growing = true;
       }
     }
