@@ -117,10 +117,10 @@ uint16_t autoChangePaletteMS = 5000;       // automatically change palette every
 //  lightsaber
 bool    lightsaber_growing        = false;
 uint8_t lightsaber_lenght_current = 0;
-CRGB    lightsaber_color_current  = CRGB::Blue;
-CRGB    lightsaber_color_target   = CRGB::Blue;
+CRGB    lightsaber_color_current  = CRGB::Green;
+CRGB    lightsaber_color_target   = CRGB::Green;
 // millisenconds to turn on/off the lightsaber, smaller value = faster
-#define LIGHTSABER_SPEED          600
+#define LIGHTSABER_SPEED            300
 
 bool updateDisplayRed   = false;
 bool updateDisplayGreen = false;
