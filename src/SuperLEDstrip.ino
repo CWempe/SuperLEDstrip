@@ -147,7 +147,7 @@ SoftwareSerial HMISerial(NEXTION_TX, NEXTION_RX);
 
 
 HomieNode lightNode("light", "switch");
-#include "eeprom_functions.h";
+#include "eeprom_functions.h"
 
 #include "outputs.h"
 #include "buttons.h"
