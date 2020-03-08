@@ -114,6 +114,13 @@ bool     fadePalette = true;
 bool     autoChangePalette = false;     // automatically change palette
 uint16_t autoChangePaletteMS = 5000;       // automatically change palette every X seconds
 
+//  lightsaber
+bool    lightsaber_growing        = false;
+uint8_t lightsaber_lenght_current = 0;
+CRGB    lightsaber_color_current  = CRGB::Blue;
+CRGB    lightsaber_color_target   = CRGB::Blue;
+// millisenconds to turn on/off the lightsaber, smaller value = faster
+#define LIGHTSABER_SPEED          600
 
 bool updateDisplayRed   = false;
 bool updateDisplayGreen = false;
@@ -162,6 +169,7 @@ HomieNode lightNode("light", "switch");
 #include "led_palette_functions.h"
 #include "led_palettes.h"
 #include "pattern_halloween.h"
+#include "lightsaber.h"
 
 typedef void (*SimplePatternList[])();
 SimplePatternList gPatterns = { oneColor,          //  0
@@ -179,7 +187,8 @@ SimplePatternList gPatterns = { oneColor,          //  0
                                 randomColor,       // 12
                                 colorRotation,     // 13
                                 halloween,         // 14
-                                staticPalette      // 15
+                                staticPalette,     // 15
+                                lightsaber         // 16
                                };
 
 

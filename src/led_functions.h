@@ -258,11 +258,19 @@ void setScene (uint16_t scene) {
     case 602:   // random color
       setupRandomColor();
       break;
+    case 603:   // lightsaber
+      lightsaber_toggle();
+      break;
   }
 
   // reset randomColorsCountdown if another scene is selected
   if ( scene != 602 ) {
     randomColorsCountdown = 2;
+  }
+  // reset lightsaber if another scene is selected
+  if ( scene != 603 ) {
+    bool lightsaber_growing = false;
+    uint8_t lightsaber_lenght_current = 0;
   }
   // publish new scene number via mqtt
   if (Homie.isConnected()) lightNode.setProperty("scene").send(String(scene));
