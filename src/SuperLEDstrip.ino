@@ -165,11 +165,11 @@ HomieNode lightNode("light", "switch");
  * #########################
  */
 
+#include "lightsaber.h"
 #include "led_patterns.h"
 #include "led_palette_functions.h"
 #include "led_palettes.h"
 #include "pattern_halloween.h"
-#include "lightsaber.h"
 
 typedef void (*SimplePatternList[])();
 SimplePatternList gPatterns = { oneColor,          //  0

@@ -13,6 +13,9 @@ void setupOneColor(CRGB color)
   } else if ( gCurrentPatternNumber == 16 ) {
     // set new color for lightsaber
     lightsaber_color_target = color;
+    if ( lightsaber_color_current == lightsaber_color_target ) {
+      lightsaber_toggle();
+    }
   }
   else {
     // else set the whole stripe in one color
