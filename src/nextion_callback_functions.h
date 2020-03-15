@@ -126,7 +126,7 @@ void p06t06PopCallback(void *ptr) { updateTab(); }
 void p06t07PopCallback(void *ptr) { updateTab(); }
 void p06c01PopCallback(void *ptr) { setScene(601); }
 void p06c02PopCallback(void *ptr) { setScene(602); }
-void p06c03PopCallback(void *ptr) { }
+void p06c03PopCallback(void *ptr) { setScene(603); }
 void p06c04PopCallback(void *ptr) { }
 void p06c05PopCallback(void *ptr) { }
 void p06c06PopCallback(void *ptr) { }
