@@ -248,6 +248,10 @@ You can find configuration examples in the `openhab` folder.
 
 ## Changelog
 
+### 2.6.1
+
+* Add pattern "lightsaber"
+
 ### 2.6.0
 
 * Make BUTTON01 configurable via `custom_values.h`
