@@ -41,28 +41,51 @@ The graphical layout is based on [Googles Material Design Guidelines](https://ma
 
 ### Software
 
-* You might need [**Git**](https://git-scm.com/download/win) to download some libraries  
-  In Windows (10) start `Git Bash` and change to the libraries directory.  
-  `cd ~/Documents/Arduino/libraries/`
-  Here you can `git clone`some libraries if necessary.
-* [**Arduino IDE**](https://www.arduino.cc/en/Main/Software) (tested with v1.8.5)
-  * [**ESP8266 platform package**](https://github.com/esp8266/Arduino#installing-with-boards-manager) (tested with v2.3.0)  
-     If you use an esp8266 device
-  * Most libraries are availabe via the Library Manager in Arduino  
-    Some need to be downloaded manually (via git).
-    * [**FastLED**](https://github.com/FastLED/FastLED) (tested with v3.1.6; via Library Manager)
-    * [**ITEADLIB\_Arduino\_Nextion**](https://github.com/itead/ITEADLIB_Arduino_Nextion#latestunstable) (tested with v0.9.0)
-    * [**EEPROM**](https://www.arduino.cc/en/Reference/EEPROM) (tested with v1.0.0; via Library Manager)
-    * [**Embedis**](https://github.com/thingSoC/embedis) (tested with v1.2.0; via Library Manager)
-    * [**elapsedMillis**](https://github.com/pfeerick/elapsedMillis) (tested with v1.0.4; via Library Manager)
-    * [**DHT sensor library**](https://github.com/adafruit/DHT-sensor-library) (tested with v1.3.0; via Library Manager)
-    * [**Adafruit Unified Sensor**](https://github.com/adafruit/Adafruit_Sensor) (tested with v1.0.2; via Library Manager)
-    * [**homie-esp8266**](https://github.com/marvinroger/homie-esp8266)) (tested with v2.0.0-beta.1, via zip file)  
-      Homie itself has some [dependencies](https://marvinroger.github.io/homie-esp8266/develop/quickstart/getting-started/#1a-for-the-arduino-ide):
-      * [ArduinoJson](http://arduinojson.org/) (=>v5.0.8 [<v5.11](https://github.com/bblanchon/ArduinoJson/issues/541); tested with 5.10.1; via Library Manager)
-      * [Bounce2](https://github.com/thomasfredericks/Bounce2) (tested with v2.3.0; via Library Manager)
-      * [ESPAsyncTCP](https://github.com/me-no-dev/ESPAsyncTCP) (>= c8ed544; via git)
-      * [AsyncMqttClient](https://github.com/marvinroger/async-mqtt-client) (tested with v0.8.1)
+Using VisualStudio Code and the PlatformIO Extension the necessary libraries are installed automatically vis `platformio.ini`.
+
+Here is the Dependency Graph with the latest successfully tested versions.
+
+```
+Dependency Graph
+|-- <Homie> 2.0.0
+|   |-- <ArduinoJson> 5.13.4
+|   |-- <AsyncMqttClient> 0.8.2
+|   |   |-- <ESPAsyncTCP> 1.2.2
+|   |   |   |-- <ESP8266WiFi> 1.0
+|   |-- <Bounce2> 2.52
+|   |-- <ESP Async WebServer> 1.2.3
+|   |   |-- <ESPAsyncTCP> 1.2.2
+|   |   |   |-- <ESP8266WiFi> 1.0
+|   |   |-- <Hash> 1.0
+|   |   |-- <ESP8266WiFi> 1.0
+|   |   |-- <ArduinoJson> 5.13.4
+|   |-- <Ticker> 1.0
+|   |-- <ESP8266WiFi> 1.0
+|   |-- <DNSServer> 1.1.1
+|   |   |-- <ESP8266WiFi> 1.0
+|   |-- <ESP8266HTTPClient> 1.2
+|   |   |-- <ESP8266WiFi> 1.0
+|   |-- <ESPAsyncTCP> 1.2.2
+|   |   |-- <ESP8266WiFi> 1.0
+|   |-- <ESP8266mDNS> 1.2
+|   |   |-- <ESP8266WiFi> 1.0
+|-- <ESPAsyncTCP> 1.2.2
+|   |-- <ESP8266WiFi> 1.0
+|-- <DHT sensor library> 1.3.8
+|   |-- <Adafruit Unified Sensor> 1.0.3
+|-- <DallasTemperature> 3.8.0
+|   |-- <OneWire> 2.3.5
+|-- <OneWire> 2.3.5
+|-- <Nextion> 0.7.0
+|   |-- <EspSoftwareSerial> 6.3.0
+|-- <FastLED> 3.2.6
+|   |-- <EspSoftwareSerial> 6.3.0
+|-- <Embedis> 1.2.0
+|-- <Adafruit Unified Sensor> 1.0.3
+|-- <elapsedMillis> 1.0.5
+|-- <EEPROM> 1.0
+|-- <EspSoftwareSerial> 6.3.0
+```
 
 In case you want to edit the content of the display to use other theme colors or add/replace some LED patterns, you also need the following programs.  
 Only tested and used with Windows 10.
