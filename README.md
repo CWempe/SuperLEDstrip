@@ -230,6 +230,16 @@ With the integration of homie-esp8266 there comes the ability to flash the firmw
 * Upload the firmware via the web interface of homie-ota or with the `upload_firmware.sh` script
 * select firmware and device in the web interface and start the process
 
+## Upload config.json (SPIFFS)
+
+Instead of configuriong your device via the Config-Mode of Homie, you can define your Homie-Configuration in `Data/config.json'.
+To upload the file via Seriel (USB) connection use the following command:
+
+`pio run -t uploadfs`
+
+If you use a `d1_mini_pro` board you still need to define `board = d1_mini` in your `platformio.ini`.
+Otherwise you get an `std::bad_alloc` error.
+
 ## openHAB
 
 Once you got your device connected to your mqtt broker you can configure your smart home (in this case [openHAB](http://www.openhab.org/)) to control SuperLEDstrip.
