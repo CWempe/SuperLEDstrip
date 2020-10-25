@@ -114,6 +114,13 @@ bool     fadePalette = true;
 bool     autoChangePalette = false;     // automatically change palette
 uint16_t autoChangePaletteMS = 5000;       // automatically change palette every X seconds
 
+//  lightsaber
+bool    lightsaber_growing        = false;
+uint8_t lightsaber_lenght_current = 0;
+CRGB    lightsaber_color_current  = CRGB::Green;
+CRGB    lightsaber_color_target   = CRGB::Green;
+// millisenconds to turn on/off the lightsaber, smaller value = faster
+#define LIGHTSABER_SPEED            300
 
 bool updateDisplayRed   = false;
 bool updateDisplayGreen = false;
@@ -147,7 +154,7 @@ SoftwareSerial HMISerial(NEXTION_TX, NEXTION_RX);
 
 
 HomieNode lightNode("light", "switch");
-#include "eeprom_functions.h";
+#include "eeprom_functions.h"
 
 #include "outputs.h"
 #include "buttons.h"
@@ -158,6 +165,7 @@ HomieNode lightNode("light", "switch");
  * #########################
  */
 
+#include "lightsaber.h"
 #include "led_patterns.h"
 #include "led_palette_functions.h"
 #include "led_palettes.h"
@@ -179,7 +187,8 @@ SimplePatternList gPatterns = { oneColor,          //  0
                                 randomColor,       // 12
                                 colorRotation,     // 13
                                 halloween,         // 14
-                                staticPalette      // 15
+                                staticPalette,     // 15
+                                lightsaber         // 16
                                };
 
 
