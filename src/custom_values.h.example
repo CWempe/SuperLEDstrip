@@ -19,10 +19,27 @@
 // Text that will be printed on the top left corner of the display
 #define DISPLAY_TITLE    "SuperLEDstrip"
 
+//Set DEBUG-LEVEL
+#define DEBUGLEVEL     0
+
+// Define your PCB or specify your PINs manually
+
+#define SUPERLEDSTRIPPCB    // ./WeMos_LEDstrip_Nextion_DHT.fzz
+// #define DECKENLAMPEPCB   // private PCB
+// #define WLEDSHIELD       // https://github.com/srg74/WLED-wemos-shield
+
 /*
  * FastLED
  */
 #define DATA_PIN            RX
+//overrite DATA_PIN according to defined pcb
+#ifdef WLEDSHIELD
+  #define DATA_PIN          D4
+#endif
+#if defined(SUPERLEDSTRIPPCB) || defined(DECKENLAMPEPCB)
+  #define DATA_PIN          RX
+#endif
+
 #define NUM_LEDS            30
 #define LEDS_PER_METER      60
 #define LED_TYPE        WS2811
@@ -38,7 +55,9 @@
 #define DEFAULT_FITPALETTE   1  // how often schould a palette fit completely on the whole strip
 // `FASTLED_RGBW` and `FASTLED_DMA` only work with coryking's FastLED
 #define FASTLED_RGBW            // define this if you use RGBW SK6812 strips
-#define FASTLED_ESP8266_DMA     // define this if you connected the led strip to GPIO pin 3 (commenly RX)
+#if DATA_PIN == RX || DATA_PIN == D3
+  #define FASTLED_ESP8266_DMA   // define this if you connected the led strip to GPIO pin 3 (commenly RX)
+#endif
 
 // Start with lights off?
 bool lightON = false;
@@ -52,13 +71,23 @@ bool lightON = false;
  * Nextion Display
  */
 // Master RX, TX, connected to Nextion TX, RX
-#define NEXTION_TX          D1
-#define NEXTION_RX          D2
+
+// #define NEXTION_TX          D3  // blue
+// #define NEXTION_RX          D4  // yellow
+#if defined(WLEDSHIELD) || defined(DECKENLAMPEPCB)
+  #define NEXTION_TX          D2  // blue
+  #define NEXTION_RX          D1  // yellow
+#endif
+#ifdef SUPERLEDSTRIPPCB
+  #define NEXTION_TX          D5  // blue
+  #define NEXTION_RX          D6  // yellow
+#endif
 
 /*
  * DHT and DS18B20 sensor
  */
 // define weather to use DHT or DS18B20 sensor
+// will be overwritten if WLEDSHIELD or SUPERLEDSTRIPPCB is defined
 // #define SENSOR_DHT
 #define SENSOR_DS18B20
 
@@ -72,6 +101,17 @@ bool lightON = false;
 // define custom offsets is necessary
 #define OFFSET_TEMP      0
 #define OFFSET_HUMID     0
+
+#if defined(WLEDSHIELD) || defined(DECKENLAMPEPCB)
+  #define SENSOR_DS18B20
+  #undef  SENSOR_DHT
+  #define TEMP_DATA_PIN         D7
+#endif
+#ifdef SUPERLEDSTRIPPCB
+  #define SENSOR_DS18B20
+  #undef  SENSOR_DHT
+  #define TEMP_DATA_PIN         D3
+#endif
 
 /*
  * Buttons
