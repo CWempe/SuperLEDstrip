@@ -70,7 +70,7 @@ bool lightON = false;
 /*
  * Nextion Display
  */
-// Master RX, TX, connected to Nextion TX, RX
+#define NEX_SOFTWARE_SERIAL
 
 // #define NEXTION_TX          D3  // blue
 // #define NEXTION_RX          D4  // yellow

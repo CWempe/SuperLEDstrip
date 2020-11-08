@@ -50,11 +50,11 @@ Dependency Graph
 |-- <Homie> 2.0.0
 |   |-- <ArduinoJson> 5.13.4
 |   |-- <AsyncMqttClient> 0.8.2
-|   |   |-- <ESPAsyncTCP> 1.2.2
+|   |   |-- <ESPAsyncTCP> 1.2.0
 |   |   |   |-- <ESP8266WiFi> 1.0
-|   |-- <Bounce2> 2.52
+|   |-- <Bounce2> 2.55.0
 |   |-- <ESP Async WebServer> 1.2.3
-|   |   |-- <ESPAsyncTCP> 1.2.2
+|   |   |-- <ESPAsyncTCP> 1.2.0
 |   |   |   |-- <ESP8266WiFi> 1.0
 |   |   |-- <Hash> 1.0
 |   |   |-- <ESP8266WiFi> 1.0
@@ -65,26 +65,27 @@ Dependency Graph
 |   |   |-- <ESP8266WiFi> 1.0
 |   |-- <ESP8266HTTPClient> 1.2
 |   |   |-- <ESP8266WiFi> 1.0
-|   |-- <ESPAsyncTCP> 1.2.2
+|   |-- <ESPAsyncTCP> 1.2.0
 |   |   |-- <ESP8266WiFi> 1.0
 |   |-- <ESP8266mDNS> 1.2
 |   |   |-- <ESP8266WiFi> 1.0
-|-- <ESPAsyncTCP> 1.2.2
+|-- <ArduinoJson> 5.10.1
+|-- <ESPAsyncTCP> 1.2.0
 |   |-- <ESP8266WiFi> 1.0
-|-- <DHT sensor library> 1.3.8
-|   |-- <Adafruit Unified Sensor> 1.0.3
-|-- <DallasTemperature> 3.8.0
+|-- <DHT sensor library> 1.4.0
+|   |-- <Adafruit Unified Sensor> 1.1.4
+|-- <DallasTemperature> 3.9.1
 |   |-- <OneWire> 2.3.5
 |-- <OneWire> 2.3.5
-|-- <Nextion> 0.7.0
-|   |-- <EspSoftwareSerial> 6.3.0
-|-- <FastLED> 3.2.6
-|   |-- <EspSoftwareSerial> 6.3.0
+|-- <Nextion> 0.0.0+20201108201848.sha.b8e2a3b
+|   |-- <EspSoftwareSerial> 6.8.5
+|-- <FastLED> 3.2.6+sha.3c4b378
+|   |-- <EspSoftwareSerial> 6.8.5
 |-- <Embedis> 1.2.0
-|-- <Adafruit Unified Sensor> 1.0.3
-|-- <elapsedMillis> 1.0.5
+|-- <Adafruit Unified Sensor> 1.1.4
+|-- <elapsedMillis> 1.0.6
 |-- <EEPROM> 1.0
-|-- <EspSoftwareSerial> 6.3.0
+|-- <EspSoftwareSerial> 6.8.5
 ```
 
 In case you want to edit the content of the display to use other theme colors or add/replace some LED patterns, you also need the following programs.  
@@ -105,6 +106,8 @@ Only tested and used with Windows 10.
 #### Nextion
 
 Before you can start to compile the project you need to make some changes to the Nextion library.
+
+This is already done in the branch linked in the `platformio.ini`.
 
 Open the following file with a text editor.  
 `C:\Users\<username>\Documents\Arduino\libraries\ITEADLIB_Arduino_Nextion\NexConfig.h`
