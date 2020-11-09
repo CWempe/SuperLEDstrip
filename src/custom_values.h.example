@@ -25,8 +25,8 @@
 // Define your PCB or specify your PINs manually
 
 #define SUPERLEDSTRIPPCB    // ./WeMos_LEDstrip_Nextion_DHT.fzz
-// #define DECKENLAMPEPCB   // private PCB
-// #define WLEDSHIELD       // https://github.com/srg74/WLED-wemos-shield
+// #define DECKENLAMPEPCB      // private PCB
+// #define WLEDSHIELD          // https://github.com/srg74/WLED-wemos-shield
 
 /*
  * FastLED
@@ -72,11 +72,12 @@ bool lightON = false;
  */
 #define NEX_SOFTWARE_SERIAL
 
+// Master RX, TX, connected to Nextion TX, RX
 // #define NEXTION_TX          D3  // blue
 // #define NEXTION_RX          D4  // yellow
 #if defined(WLEDSHIELD) || defined(DECKENLAMPEPCB)
-  #define NEXTION_TX          D2  // blue
-  #define NEXTION_RX          D1  // yellow
+  #define NEXTION_TX          D2  // I2C SDA, blue
+  #define NEXTION_RX          D1  // I2C SCL, yellow
 #endif
 #ifdef SUPERLEDSTRIPPCB
   #define NEXTION_TX          D5  // blue
@@ -91,17 +92,6 @@ bool lightON = false;
 // #define SENSOR_DHT
 #define SENSOR_DS18B20
 
-#define SENSOR_READ_INTERVAL  60   // Interval the sensor data is read in seconds
-#define TEMP_DATA_PIN         D3   // PIN connected to DS18B20
-#define DHT_DATA_PIN          D2
-#define DHT_POWER_PIN         D8   // DHT will pe turned off between reads to prevent heating itself
-#define DHT_WARMUP             5   // Time between power on and reading data
-#define DHT_TYPE           DHT22   // Change this if you have a DHT11
-
-// define custom offsets is necessary
-#define OFFSET_TEMP      0
-#define OFFSET_HUMID     0
-
 #if defined(WLEDSHIELD) || defined(DECKENLAMPEPCB)
   #define SENSOR_DS18B20
   #undef  SENSOR_DHT
@@ -113,11 +103,26 @@ bool lightON = false;
   #define TEMP_DATA_PIN         D3
 #endif
 
+#ifndef TEMP_DATA_PIN
+  #define TEMP_DATA_PIN         D7   // PIN connected to DS18B20
+#endif
+#define DHT_DATA_PIN          D2
+#define DHT_POWER_PIN         D8   // DHT will pe turned off between reads to prevent heating itself
+#define DHT_WARMUP             5   // Time between power on and reading data
+#define DHT_TYPE           DHT22   // Change this if you have a DHT11
+#define SENSOR_READ_INTERVAL  60   // Interval the sensor data is read in seconds
+
+// define custom offsets is necessary
+#define OFFSET_TEMP      0
+#define OFFSET_HUMID     0
+
 /*
  * Buttons
  */
 // comment out buttons you do not use
-#define BUTTON01_PIN        D8
+// #define BUTTON01_PIN        D8
+// #define BUTTON01_PIN        D3  // WLED-Shield (default)
+// #define BUTTON01_PIN        D5  // WLED-Shield (optional)
 
 // default values
 #ifdef BUTTON01_PIN
