@@ -56,4 +56,11 @@ inline uint16_t getRGBWsize(uint16_t nleds){
 	else return nbytes / 3;
 }
 
+void fill_solid( struct CRGBW * leds, int numToFill, CRGB color)
+{
+  for( int i = 0; i < numToFill; i++) {
+    leds[i] = color;
+  }
+}
+
 #endif
