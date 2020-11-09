@@ -78,7 +78,7 @@ void setupFastLED()
   #ifdef FASTLED_RGBW
     FastLED.addLeds<LED_TYPE, DATA_PIN, COLOR_ORDER>(ledsRGB, getRGBWsize(NUM_LEDS));
   #else
-  FastLED.addLeds<LED_TYPE, DATA_PIN, COLOR_ORDER>(leds, NUM_LEDS);
+    FastLED.addLeds<LED_TYPE, DATA_PIN, COLOR_ORDER>(leds, NUM_LEDS);
   #endif
   FastLED.setCorrection( COLOR_CORRECTION );
   FastLED.setTemperature( COLOR_TEMPERATURE) ;
@@ -86,7 +86,7 @@ void setupFastLED()
 
 void loopFastLED() {
   if ( gLastPatternNumber != gCurrentPatternNumber) {
-    leds(0, NUM_LEDS - 1) = CRGB::Black;
+    fill_part(leds, 0, NUM_LEDS - 1, CRGB::Black);
     gLastPatternNumber = gCurrentPatternNumber;
   }
 

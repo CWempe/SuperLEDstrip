@@ -59,6 +59,25 @@ Homie.getLogger() << "setupRandomColor started... " << endl;
   gCurrentPatternNumber = 12;
 }
 
+#ifdef FASTLED_RGBW
+  void fill_part( struct CRGBW * leds, int numFromFill, int numToFill, CRGB color)
+  {
+    if ( numFromFill <= numToFill ) {
+      for( int i = numFromFill; i < numToFill; i++) {
+        leds[i] = color;
+      }
+    }
+  }
+#else
+  void fill_part( struct CRGB * leds, int numFromFill, int numToFill, CRGB color)
+  {
+    if ( numFromFill <= numToFill ) {
+      for( int i = numFromFill; i < numToFill; i++) {
+        leds[i] = color;
+      }
+    }
+  }
+#endif
 
 void FillLEDsFromPaletteColors( uint8_t colorIndex)
 {
@@ -261,8 +280,6 @@ void calculateNextIndex(uint8_t *index, bool *momentum) {
     }
 }
 
-
-
 void bpm()
 {
   // colored stripes pulsing at a defined Beats-Per-Minute (BPM)
@@ -323,7 +340,7 @@ void flashingLights()
   // When status 3 is older than flash1secondOff
   if ( flash1status == 3 && ( timeElapsed1 > flash1secondOff ) )
   {
-    leds(0, NUM_LEDS / 4 - 1) = baseColor1;
+    fill_part(leds, 0, NUM_LEDS / 4 - 1, baseColor1);
     flash1status = 0;
     timeElapsed1 = 0;
   }
@@ -331,7 +348,8 @@ void flashingLights()
   // When status 0 is older than flashPause
   if ( flash1status == 0 && ( timeElapsed1 > flashDuration ) )
   {
-    leds(0, NUM_LEDS / 4 - 1) = CRGB::Black;
+    
+    fill_part(leds, 0, NUM_LEDS / 4 - 1, CRGB::Black);
     flash1status = 1;
     timeElapsed1 = 0;
   }
@@ -339,7 +357,7 @@ void flashingLights()
   // When status 1 is older than flash1secondOff
   if ( flash1status == 1 && ( timeElapsed1 > flashFirstOff ) )
   {
-    leds(0, NUM_LEDS / 4 - 1) = baseColor1;
+    fill_part(leds, 0, NUM_LEDS / 4 - 1, baseColor1);
     flash1status = 2;
     timeElapsed1 = 0;
   }
@@ -347,7 +365,7 @@ void flashingLights()
   // When status 2 is older than flashPause
   if ( flash1status == 2 && ( timeElapsed1 > flashDuration ) )
   {
-    leds(0, NUM_LEDS / 4 - 1) = CRGB::Black;
+    fill_part(leds, 0, NUM_LEDS / 4 - 1, CRGB::Black);
     flash1status = 3;
     timeElapsed1 = 0;
   }
@@ -360,7 +378,7 @@ void flashingLights()
   // When status 3 is older than flash2secondOff
   if ( flash2status == 3 && ( timeElapsed2 > flash2secondOff ) )
   {
-    leds(NUM_LEDS / 4 * 3, NUM_LEDS - 1) = baseColor2;
+    fill_part(leds, NUM_LEDS / 4 * 3, NUM_LEDS - 1, baseColor2);
     flash2status = 0;
     timeElapsed2 = 0;
   }
@@ -368,7 +386,7 @@ void flashingLights()
   // When status 0 is older than flashPause
   if ( flash2status == 0 && ( timeElapsed2 > flashDuration ) )
   {
-    leds(NUM_LEDS / 4 * 3, NUM_LEDS - 1) = CRGB::Black;
+    fill_part(leds, NUM_LEDS / 4 * 3, NUM_LEDS - 1, CRGB::Black);
     flash2status = 1;
     timeElapsed2 = 0;
   }
@@ -376,7 +394,7 @@ void flashingLights()
   // When status 1 is older than flash2secondOff
   if ( flash2status == 1 && ( timeElapsed2 > flashFirstOff ) )
   {
-    leds(NUM_LEDS / 4 * 3, NUM_LEDS - 1) = baseColor2;
+    fill_part(leds, NUM_LEDS / 4 * 3, NUM_LEDS - 1, baseColor2);
     flash2status = 2;
     timeElapsed2 = 0;
   }
@@ -384,7 +402,7 @@ void flashingLights()
   // When status 2 is older than flashPause
   if ( flash2status == 2 && ( timeElapsed2 > flashDuration ) )
   {
-    leds(NUM_LEDS / 4 * 3, NUM_LEDS - 1) = CRGB::Black;
+    fill_part(leds, NUM_LEDS / 4 * 3, NUM_LEDS - 1, CRGB::Black);
     flash2status = 3;
     timeElapsed2 = 0;
   }
@@ -417,6 +435,7 @@ void nblendU8TowardU8( uint8_t& cur, const uint8_t target, uint8_t amount)
 // Blend one CRGB color toward another CRGB color by a given amount.
 // Blending is linear, and done in the RGB color space.
 // This function modifies 'cur' in place.
+#ifndef FASTLED_RGBW
 CRGB fadeTowardColor( CRGB& cur, const CRGB& target, uint8_t amount)
 {
   nblendU8TowardU8( cur.red,   target.red,   amount);
@@ -424,16 +443,34 @@ CRGB fadeTowardColor( CRGB& cur, const CRGB& target, uint8_t amount)
   nblendU8TowardU8( cur.blue,  target.blue,  amount);
   return cur;
 }
+#else
+  CRGBW fadeTowardColor( CRGBW& cur, const CRGB& target, uint8_t amount)
+  {
+    nblendU8TowardU8( cur.red,   target.red,   amount);
+    nblendU8TowardU8( cur.green, target.green, amount);
+    nblendU8TowardU8( cur.blue,  target.blue,  amount);
+    // nblendU8TowardU8( cur.white, target.white, amount);
+    return cur;
+  }
+#endif
 
 // Fade an entire array of CRGBs toward a given background color by a given amount
 // This function modifies the pixel array in place.
+#ifndef FASTLED_RGBW
 void fadeTowardColor( CRGB* L, uint16_t N, const CRGB& bgColor, uint8_t fadeAmount)
 {
   for( uint16_t i = 0; i < N; i++) {
     fadeTowardColor( L[i], bgColor, fadeAmount);
   }
 }
-
+#else
+  void fadeTowardColor( CRGBW* L, uint16_t N, const CRGB& bgColor, uint8_t fadeAmount)
+  {
+    for( uint16_t i = 0; i < N; i++) {
+      fadeTowardColor( L[i], bgColor, fadeAmount);
+    }
+  }
+#endif
 
 void xmas()
 {

@@ -13,14 +13,14 @@ void lightsaber(void)
       // increase lightsaber lenght
       if ( lightsaber_lenght_current < NUM_LEDS) { lightsaber_lenght_current++; }
       // make all leds black
-      leds(0, NUM_LEDS - 1) = CRGB::Black;
+      fill_part(leds, 0, NUM_LEDS - 1, CRGB::Black);
       // now fill leds to lightsaber_lenght_current
       fill_solid(leds, lightsaber_lenght_current, lightsaber_color_current);
     } else {
       // decrease lightsaber lenght
       if ( lightsaber_lenght_current > 0) { lightsaber_lenght_current--; }
       // make all leds black
-      leds(0, NUM_LEDS - 1) = CRGB::Black;
+      fill_part(leds, 0, NUM_LEDS - 1, CRGB::Black);
       // now fill leds to lightsaber_lenght_current
       fill_solid(leds, lightsaber_lenght_current, lightsaber_color_current);
       // set color_current to color_target when lightsaber is off

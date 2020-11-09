@@ -37,6 +37,8 @@ void setScene(uint16_t scene);
 void setPalette(uint8_t palette);
 void setBrightness(uint8_t newBrightness);
 void setTempo(uint8_t tempo);
+void fill_part( struct CRGB * leds, int numFromFill, int numToFill, CRGB color);
+void fill_part( struct CRGBW * leds, int numFromFill, int numToFill, CRGB color);
 
 void updateTab(void);
 void setTextAll(void);
