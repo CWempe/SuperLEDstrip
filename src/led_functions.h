@@ -75,7 +75,11 @@ void setupFastLED()
   readEepromScene();
   readEepromPalette();
   readEepromPaletteSize();
+  #ifdef FASTLED_RGBW
+    FastLED.addLeds<LED_TYPE, DATA_PIN, COLOR_ORDER>(ledsRGB, getRGBWsize(NUM_LEDS));
+  #else
   FastLED.addLeds<LED_TYPE, DATA_PIN, COLOR_ORDER>(leds, NUM_LEDS);
+  #endif
   FastLED.setCorrection( COLOR_CORRECTION );
   FastLED.setTemperature( COLOR_TEMPERATURE) ;
 }

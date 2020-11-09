@@ -12,6 +12,7 @@
 #include <spi_flash.h>
 #include <SoftwareSerial.h>
 #include <FastLED.h>
+#include <FastLED_RGBW.h>
 
 #ifdef SENSOR_DHT
   #include <DHT.h>
@@ -74,8 +75,17 @@ Embedis embedis(Serial);
 /*
  *  FastLED
  */
+//  Definitions for FastLED RGBW Hack
+#ifdef FASTLED_RGBW
+  // FastLED with RGBW
+  CRGBW leds[NUM_LEDS];
+  // CRGBArray<NUM_LEDS> leds;
+  CRGB *ledsRGB = (CRGB *) &leds[0];
+#else
+  // CRGB leds[NUM_LEDS];
+  CRGBArray<NUM_LEDS> leds;
+#endif
 FASTLED_USING_NAMESPACE 
-CRGBArray<NUM_LEDS> leds;
 uint8_t gHue  = 0; // rotating "base color" used by many of the patterns
 uint8_t gHue2 = 0; // rotating "color" incremented by some pattern with specific speed
 uint8_t rotationSpeed = DEFAULT_ROTATION_SPEED; // default speed for color rotation
