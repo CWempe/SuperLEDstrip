@@ -15,10 +15,13 @@ The graphical layout is based on [Googles Material Design Guidelines](https://ma
 * [**Wemos D1 mini**](https://www.wemos.cc/)  
   An ESP8266 device is nice, because it is litte, cheap and we can add Wifi features later.  
   But any other Arduino compatible device should do.
-* [**WS2812B LED strip**](https://de.aliexpress.com/item/1m-4m-5m-WS2812B-Smart-led-pixel-strip-Black-White-PCB-30-60-144-leds-m/2036819167.html?spm=a2g0s.9042311.0.0.Bdc3IG)  
+* [**WS2812B LED strip**](https://de.aliexpress.com/item/2036819167.html)  
   or any other LED strip that is [suported by FastLED](https://github.com/FastLED/FastLED#supported-led-chipsets)
   * It is recommended to use a **capacitor** to smooth out the power supply.  
       I used one with *1000 µF* and *16 V*.
+  * [**SK6812**](https://de.aliexpress.com/item/32476317187.html) is also supported since v2.7.0.  
+    Define `FASTLED_RGBW` in `custom_values.h`.
+    * the white channel is irgnored for now
 * **level shifter** from 3.3V to 5V  
   like [Texas Instruments SN74HCT245N](http://www.ti.com/lit/ds/symlink/sn74hct245.pdf)
   * a 20 pin **IC socket** for this chip is a good idea, too
