@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.7.0
+
+* limited support for RGBW (SK6812 LEDs)
+* using official FastLED library again
+
 ## 2.6.1
 
 * Add pattern "lightsaber"
