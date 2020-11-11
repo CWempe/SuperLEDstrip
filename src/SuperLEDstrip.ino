@@ -283,6 +283,10 @@ bool lightOnHandler(const HomieRange& range, const String& value) {
 
   bool on = (value == "true");
   FastLED.setBrightness(on ? currentBrightness : 0);
+  #ifdef WLEDSHIELD
+    // Turn off Relais if brightness is set to 0; else torn on
+    updateOutput01on((on ? "true" : "false"));
+  #endif
   if (Homie.isConnected()) lightNode.setProperty("on").send(value);
   lightON = (value == "true");
   Homie.getLogger() << "Light is " << (on ? "on" : "off") << endl;

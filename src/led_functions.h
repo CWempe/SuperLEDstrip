@@ -4,11 +4,15 @@
 // newBrightness is percentage (0-100) and will be mapped to 0-255 for FastLED
 void setBrightness(uint8_t newBrightness)
 {
-   currentBrightness = newBrightness;
-   FastLED.setBrightness(map(currentBrightness, 0, 100, 0, 255));
-   if (Homie.isConnected()) lightNode.setProperty("brightness").send(String(currentBrightness));
-   // store current scene number to eeprom
-   Embedis::set("brightnessValue", String(currentBrightness));
+  currentBrightness = newBrightness;
+  FastLED.setBrightness(map(currentBrightness, 0, 100, 0, 255));
+  if (Homie.isConnected()) lightNode.setProperty("brightness").send(String(currentBrightness));
+  #ifdef WLEDSHIELD
+    // Turn ofs Relais if brightnes is set to 0; else torn on
+    updateOutput01on((newBrightness == 0 ? "false" : "true"));
+  #endif
+  // store current scene number to eeprom
+  Embedis::set("brightnessValue", String(currentBrightness));
 }
 
 void setTempo(uint8_t tempo) {
