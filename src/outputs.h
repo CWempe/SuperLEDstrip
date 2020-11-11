@@ -14,8 +14,13 @@
   }
 
   void updateOutput01on(String value, bool write = true) {
-    output01_on = (value == "true" || value == String(true));
-    if ( DEBUGLEVEL >= 1 ) Homie.getLogger() << "[DEBUG1] UPDATE: output01_on: " << output01_on << endl;
+    #ifdef RELAIS_ALWAYS_ON
+      output01_on = true;
+      if ( DEBUGLEVEL >= 1 ) Homie.getLogger() << "[DEBUG1] NO UPDATE: output01_on: " << output01_on << endl;
+    #else
+      output01_on = (value == "true" || value == String(true));
+      if ( DEBUGLEVEL >= 1 ) Homie.getLogger() << "[DEBUG1] UPDATE: output01_on: " << output01_on << endl;
+    #endif
     // set output; consider output01_invert
     digitalWrite(OUTPUT01_PIN, (output01_on == !output01_invert) ? HIGH : LOW);
     publishOutput01on();

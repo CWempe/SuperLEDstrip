@@ -28,6 +28,11 @@
 // #define DECKENLAMPEPCB      // private PCB
 // #define WLEDSHIELD          // https://github.com/srg74/WLED-wemos-shield
 
+#ifdef WLEDSHIELD
+  #define OUTPUT01_PIN        D6   // Relais
+  #define RELAIS_ALWAYS_ON         // Never turn relais off, but turn on at start
+#endif
+
 /*
  * FastLED
  */
@@ -149,7 +154,11 @@ bool lightON = false;
 #define OUTPUT01_PIN        D1
 #ifdef OUTPUT01_PIN
   // initial state
-  bool output01_on = false;
+  #ifdef WLEDSHIELD
+    bool output01_on = true;
+  #else
+    bool output01_on = false;
+  #endif
   bool output01_invert = false;
 #endif
 
