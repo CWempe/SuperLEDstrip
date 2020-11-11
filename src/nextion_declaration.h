@@ -7,14 +7,14 @@ char sRotationSpeed[2] = "";
 
 NexText   title       = NexText(  0, 19, "title");
 NexText   version     = NexText(  0, 24, "version");
-NexText   temp        = NexText(  0, 22, "temp");
-NexText   humid       = NexText(  0, 23, "humid");
+NexText   temp        = NexText(  0, 20, "temp");
+NexText   humid       = NexText(  0, 21, "humid");
 
 NexPage   p01         = NexPage(  0,  0, "p01");
 NexText   p01title    = NexText(  0,  1, "p01title");
 NexText   p01version  = NexText(  0, 25, "p01version");
 NexButton p01settings = NexButton(0,  9, "p01settings");
-NexButton p01power    = NexButton(0, 20, "p01power");
+NexButton p01power    = NexButton(0, 18, "p01power");
 NexButton p01t01      = NexButton(0,  2, "p01t01");
 NexButton p01t02      = NexButton(0,  3, "p01t02");
 NexButton p01t03      = NexButton(0,  4, "p01t03");
@@ -30,7 +30,7 @@ NexButton p01c05      = NexButton(0, 14, "p01c05");
 NexButton p01c06      = NexButton(0, 15, "p01c06");
 NexButton p01c07      = NexButton(0, 16, "p01c07");
 NexButton p01c08      = NexButton(0, 17, "p01c08");
-NexButton p01c09      = NexButton(0, 25, "p01c09");
+NexButton p01c09      = NexButton(0, 23, "p01c09");
 // page 2
 NexPage   p02         = NexPage(  1,  0, "p02");
 NexText   p02title    = NexText(  1,  1, "p02title");
