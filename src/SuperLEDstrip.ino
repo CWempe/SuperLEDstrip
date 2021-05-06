@@ -153,7 +153,7 @@ SoftwareSerial HMISerial(NEXTION_TX, NEXTION_RX);
 #if defined(SENSOR_DHT) || defined(SENSOR_DS18B20)
   float fTemp         = 0;
   char  sTemp[10]     = "";
-  HomieNode temperatureNode("temperature", "temperature");
+  HomieNode temperatureNode("temperature", "temperature", "temperature");
 #endif
 #ifdef SENSOR_DHT
   float fHumid        = 0;
@@ -168,7 +168,7 @@ SoftwareSerial HMISerial(NEXTION_TX, NEXTION_RX);
 #endif
 
 
-HomieNode lightNode("light", "switch");
+HomieNode lightNode("light", "light switch", "switch");
 #include "eeprom_functions.h"
 
 #include "outputs.h"
@@ -294,7 +294,7 @@ bool lightOnHandler(const HomieRange& range, const String& value) {
   return true;
 }
 
-bool globalInputHandler(const HomieNode& node, const String& property, const HomieRange& range, const String& value) {
+bool globalInputHandler(const HomieNode& node, const HomieRange& range, const String& property, const String& value) {
   Homie.getLogger() << "Received on node " << node.getId() << ": " << property << " = " << value << endl;
   
   return false;

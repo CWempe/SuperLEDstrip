@@ -6,7 +6,7 @@
 // Output01
 //
 #ifdef OUTPUT01_PIN
-  HomieNode output01Node("output01", "switch");
+  HomieNode output01Node("output01", "output01Node", "switch");
 
   // output01_on
   void publishOutput01on() {
