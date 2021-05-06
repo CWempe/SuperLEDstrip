@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.0.0
+
+* Switching to Homie 3.0.1 with support of Homie convention v3.0.1
+* Control WLED Relay via brightness
+* Add `RELAIS_ALWAYS_ON` for WLED pcb
+
 ## 2.7.0
 
 * limited support for RGBW (SK6812 LEDs)

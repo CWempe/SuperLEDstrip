@@ -7,4 +7,4 @@
  * Homie parameters
  */
 #define HOMIE_FW_NAME     "SuperLEDstrip"
-#define HOMIE_FW_VERSION  "2.7.0"
+#define HOMIE_FW_VERSION  "3.0.0"
