@@ -50,8 +50,8 @@ Here is the Dependency Graph with the latest successfully tested versions.
 
 ```
 Dependency Graph
-|-- <Homie> 2.0.0
-|   |-- <ArduinoJson> 5.13.4
+|-- <Homie> 3.0.1
+|   |-- <ArduinoJson> 6.11.5
 |   |-- <AsyncMqttClient> 0.8.2
 |   |   |-- <ESPAsyncTCP> 1.2.0
 |   |   |   |-- <ESP8266WiFi> 1.0
@@ -61,7 +61,7 @@ Dependency Graph
 |   |   |   |-- <ESP8266WiFi> 1.0
 |   |   |-- <Hash> 1.0
 |   |   |-- <ESP8266WiFi> 1.0
-|   |   |-- <ArduinoJson> 5.13.4
+|   |   |-- <ArduinoJson> 6.11.5
 |   |-- <Ticker> 1.0
 |   |-- <ESP8266WiFi> 1.0
 |   |-- <DNSServer> 1.1.1
@@ -72,7 +72,7 @@ Dependency Graph
 |   |   |-- <ESP8266WiFi> 1.0
 |   |-- <ESP8266mDNS> 1.2
 |   |   |-- <ESP8266WiFi> 1.0
-|-- <ArduinoJson> 5.10.1
+|-- <ArduinoJson> 6.11.5
 |-- <ESPAsyncTCP> 1.2.0
 |   |-- <ESP8266WiFi> 1.0
 |-- <DHT sensor library> 1.4.0
@@ -80,13 +80,14 @@ Dependency Graph
 |-- <DallasTemperature> 3.9.1
 |   |-- <OneWire> 2.3.5
 |-- <OneWire> 2.3.5
-|-- <Nextion> 0.0.0+20201108201848.sha.b8e2a3b
-|   |-- <EspSoftwareSerial> 6.8.5
-|-- <FastLED> 3.2.6+sha.3c4b378
+|-- <Nextion> 0.0.0+20201108223110.sha.b8e2a3b
 |   |-- <EspSoftwareSerial> 6.8.5
 |-- <Embedis> 1.2.0
 |-- <Adafruit Unified Sensor> 1.1.4
 |-- <elapsedMillis> 1.0.6
+|-- <FastLED> 3.3.3
+|   |-- <SPI> 1.0
+|   |-- <EspSoftwareSerial> 6.8.5
 |-- <EEPROM> 1.0
 |-- <EspSoftwareSerial> 6.8.5
 ```
