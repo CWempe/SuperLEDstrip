@@ -65,6 +65,9 @@ void toggleBrightness()
     if (Homie.isConnected()) lightNode.setProperty("on").send("false");
     lightON = false;
   }  
+
+  // Turn wled off everytime the button is pressed
+  wled_power(false);
 }
 
 

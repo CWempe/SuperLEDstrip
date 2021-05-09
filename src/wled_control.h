@@ -1,5 +1,4 @@
-
-void wled_post_data()
+void wled_power(bool pwrState)
 {
     HTTPClient http; 
     
@@ -10,8 +9,7 @@ void wled_post_data()
     StaticJsonDocument<200> doc;
 
     // Werte setzen
-    doc["on"] = "true";
-    doc["bri"] = 32;
+    doc["on"] = pwrState;
 
     // String erzeuigen    
     String requestBody;

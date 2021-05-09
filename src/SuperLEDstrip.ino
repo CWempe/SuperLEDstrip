@@ -73,10 +73,24 @@ void updateOutput04on(String value, bool write);
 void updateOutput04invert(String value, bool write);
 void readEepromScene(void);
 void calculateNextIndex(uint8_t *index, bool *momentum);
-void wled_post_data();
+void wled_power(void);
 
 
 Embedis embedis(Serial);
+
+
+/*
+ * #############################
+ * ### WLED ontrol Functions ###
+ * #############################
+ */
+
+// HTTPClient http;
+// const char httpURL[] = "http://192.168.1.83/json";
+// http.begin("http://192.168.1.83/json");
+// http.addHeader("Content-Type", "application/json");
+#include "wled_control.h"
+
 
 /*
  *  FastLED
@@ -224,14 +238,6 @@ SimplePatternList gPatterns = { oneColor,          //  0
 #include "nextion_initialization.h"
 #include "nextion_functions.h"
 
-
-/*
- * #############################
- * ### WLED ontrol Functions ###
- * #############################
- */
-
-#include "wled_control.h"
 
 /*
    #######################
@@ -398,7 +404,7 @@ void loop(void)
   // Test WLED_command
   EVERY_N_MILLISECONDS(1000 * 10)
   {
-    wled_post_data();
+    wled_power(true);
   }
 
   #ifdef SENSOR_DHT
