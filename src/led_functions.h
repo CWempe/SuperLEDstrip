@@ -138,6 +138,7 @@ void setScene (uint16_t scene) {
     // page 1
     case 101:   // rainbow
       gCurrentPatternNumber = 3;
+      wled_scene(9, 11);
       break;
     case 102:   // stars
       gCurrentPatternNumber = 1;
@@ -183,6 +184,7 @@ void setScene (uint16_t scene) {
       break;
     case 204:   // kitt
       gCurrentPatternNumber = 5;
+      wled_scene(40, 2);
       break;
       
     // page 3

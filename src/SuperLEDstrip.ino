@@ -74,6 +74,7 @@ void updateOutput04invert(String value, bool write);
 void readEepromScene(void);
 void calculateNextIndex(uint8_t *index, bool *momentum);
 void wled_power(void);
+void wled_scene(uint16_t effect, uint16_t pallette);
 
 
 Embedis embedis(Serial);
@@ -402,10 +403,10 @@ void loop(void)
   }
 
   // Test WLED_command
-  EVERY_N_MILLISECONDS(1000 * 10)
-  {
-    wled_power(true);
-  }
+  // EVERY_N_MILLISECONDS(1000 * 10)
+  // {
+  //   wled_power(true);
+  // }
 
   #ifdef SENSOR_DHT
     loopDHT();
