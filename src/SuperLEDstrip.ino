@@ -73,6 +73,7 @@ void updateOutput04on(String value, bool write);
 void updateOutput04invert(String value, bool write);
 void readEepromScene(void);
 void calculateNextIndex(uint8_t *index, bool *momentum);
+void wled_post_data();
 
 
 Embedis embedis(Serial);
@@ -223,6 +224,14 @@ SimplePatternList gPatterns = { oneColor,          //  0
 #include "nextion_initialization.h"
 #include "nextion_functions.h"
 
+
+/*
+ * #############################
+ * ### WLED ontrol Functions ###
+ * #############################
+ */
+
+#include "wled_control.h"
 
 /*
    #######################
@@ -384,6 +393,12 @@ void loop(void)
   EVERY_N_MILLISECONDS(1000 / DEFAULT_FPS)
   {
     loopFastLED();
+  }
+
+  // Test WLED_command
+  EVERY_N_MILLISECONDS(1000 * 10)
+  {
+    wled_post_data();
   }
 
   #ifdef SENSOR_DHT
