@@ -138,31 +138,39 @@ void setScene (uint16_t scene) {
     // page 1
     case 101:   // rainbow
       gCurrentPatternNumber = 3;
-      wled_send_json("{\"on\":true,\"seg\":{\"fx\":9,\"pal\":0}}");
+      wled_send_json("{\"on\":true,\"seg\":{\"fx\":9,\"sx\":128,\"pal\":0}}");
       break;
     case 102:   // stars
       gCurrentPatternNumber = 1;
+      wled_send_json("{\"on\":true,\"seg\":[{\"col\":[[255,255,255],[0,0,0],[0,0,0]],\"fx\":20,\"sx\":1,\"pal\":0}]}}");
       break;
     case 103:   // confetti
       gCurrentPatternNumber = 2;
+      wled_send_json("{\"on\":true,\"seg\":{\"fx\":74,\"sx\":128,\"pal\":0}}");
       break;
     case 104:   // bpm
       gCurrentPatternNumber = 4;
+      wled_send_json("{\"on\":true,\"seg\":{\"fx\":68,\"sx\":128,\"pal\":0}}");
       break;
     case 105:   // xmas
       gCurrentPatternNumber = 8;
+      wled_send_json("{\"on\":true,\"seg\":[{\"col\":[[255,0,0],[0,255,0],[0,0,0]],\"fx\":20,\"sx\":10,\"pal\":0}]}}");
       break;
     case 106:   // fire
       gCurrentPatternNumber = 9;
+      wled_send_json("{\"on\":true,\"seg\":{\"fx\":66,\"sx\":128,\"pal\":0}}");
       break;
     case 107:   // ice
       gCurrentPatternNumber = 11;
+      wled_send_json("{\"on\":true,\"seg\":[{\"fx\":115,\"sx\":128,\"pal\":9}]}}");
       break;
     case 108:   // color rotation
       gCurrentPatternNumber = 13;
+      wled_send_json("{\"on\":true,\"seg\":[{\"fx\":8,\"sx\":16,\"pal\":0}]}}");
       break;
     case 109:   // Halloween
       setupHalloween();
+      wled_send_json("{\"on\":true,\"seg\":{\"fx\":53,\"sx\":128,\"pal\":0}}");
       break;
     case 110:   // static pattern
       setupStaticPalette();
@@ -175,16 +183,19 @@ void setScene (uint16_t scene) {
     // page 2
     case 201:   // german police
       setupFlashingLights(CRGB::Blue, CRGB::Blue);
+      wled_send_json("{\"on\":true,\"seg\":[{\"col\":[[0,0,255],[0,0,255],[0,0,0]],\"fx\":50,\"sx\":128,\"pal\":0}]}}");
       break;
     case 202:   // american police
       setupFlashingLights(CRGB::Blue, CRGB::Red);
+      wled_send_json("{\"on\":true,\"seg\":[{\"col\":[[0,0,0],[0,0,0],[0,0,0]],\"fx\":48,\"sx\":128,\"pal\":0}]}}");
       break;
     case 203:   // orange flashing lights
       setupFlashingLights(CRGB::OrangeRed, CRGB::OrangeRed);
+      wled_send_json("{\"on\":true,\"seg\":[{\"col\":[[255,165,0],[255,165,0],[0,0,0]],\"fx\":50,\"sx\":128,\"pal\":0}]}}");
       break;
     case 204:   // kitt
       gCurrentPatternNumber = 5;
-      wled_send_json("{\"on\":true,\"seg\":[{\"col\":[[255,0,0]],\"fx\":40,\"pal\":0}]}}");
+      wled_send_json("{\"on\":true,\"seg\":[{\"col\":[[255,0,0],[0,0,0],[0,0,0]],\"fx\":40,\"sx\":128,\"pal\":0}]}}");
       break;
       
     // page 3
