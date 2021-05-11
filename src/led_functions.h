@@ -64,10 +64,10 @@ void toggleBrightness()
     FastLED.setBrightness(0);
     if (Homie.isConnected()) lightNode.setProperty("on").send("false");
     lightON = false;
-  }  
+  }
 
   // Turn wled off everytime the button is pressed
-  wled_power(false);
+  wled_send_json("{\"on\":false}");
 }
 
 
@@ -138,7 +138,7 @@ void setScene (uint16_t scene) {
     // page 1
     case 101:   // rainbow
       gCurrentPatternNumber = 3;
-      wled_scene(9, 11);
+      wled_send_json("{\"on\":true,\"seg\":{\"fx\":9,\"pal\":0}}");
       break;
     case 102:   // stars
       gCurrentPatternNumber = 1;
@@ -184,7 +184,7 @@ void setScene (uint16_t scene) {
       break;
     case 204:   // kitt
       gCurrentPatternNumber = 5;
-      wled_scene(40, 2);
+      wled_send_json("{\"on\":true,\"seg\":[{\"col\":[[255,0,0]],\"fx\":40,\"pal\":0}]}}");
       break;
       
     // page 3

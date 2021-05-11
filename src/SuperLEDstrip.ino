@@ -74,7 +74,7 @@ void updateOutput04invert(String value, bool write);
 void readEepromScene(void);
 void calculateNextIndex(uint8_t *index, bool *momentum);
 void wled_power(void);
-void wled_scene(uint16_t effect, uint16_t pallette);
+void wled_send_json(String json);
 
 
 Embedis embedis(Serial);
