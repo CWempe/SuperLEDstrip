@@ -296,7 +296,7 @@ void kitt()
   // a colored dot sweeping back and forth, with fading trails
   fadeToBlackBy( leds, NUM_LEDS, 20);
   int pos = beatsin16(DEFAULT_FPS/4,0,NUM_LEDS);
-  leds[pos] = CRGB::Red;
+  if ( pos != NUM_LEDS ) leds[pos] = CRGB::Red;
 }
 
 void setupFlashingLights( CRGB colorLeft, CRGB colorRight)
