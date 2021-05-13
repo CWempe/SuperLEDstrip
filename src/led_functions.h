@@ -201,27 +201,35 @@ void setScene (uint16_t scene) {
     // page 3
     case 301:   // german/beglium flag
       setupPaletteGermany();
+      wled_send_json("{\"on\":true,\"seg\":[{\"col\":[[0,0,0],[255,0,0],[255,255,0]],\"fx\":54,\"sx\":255,\"ix\":255,\"pal\":0}]}}");
       break;
     case 302:   // italian flag
       setupPaletteItaly();
+      wled_send_json("{\"on\":true,\"seg\":[{\"col\":[[0,100,0],[139,0,0],[255,255,255]],\"fx\":54,\"sx\":255,\"ix\":255,\"pal\":0}]}}");
       break;
     case 303:   // brazilian flag
       setupPaletteBrazil();
+      wled_send_json("{\"on\":true,\"seg\":[{\"col\":[[0,255,0],[0,0,255],[255,255,0]],\"fx\":54,\"sx\":255,\"ix\":255,\"pal\":0}]}}");
       break;
     case 304:   // swedish flag
       setupPaletteSweden();
+      wled_send_json("{\"on\":true,\"seg\":[{\"col\":[[255,255,0],[0,0,255],[0,0,0]],\"fx\":28,\"sx\":128,\"ix\":128,\"pal\":0}]}}");
       break;
     case 305:   // english/danish flag
       setupPaletteEngland();
+      wled_send_json("{\"on\":true,\"seg\":[{\"col\":[[255,0,0],[255,255,255],[0,0,0]],\"fx\":28,\"sx\":128,\"ix\":255,\"pal\":0}]}}");
       break;
     case 306:   // french flag
       setupPaletteFrance();
+      wled_send_json("{\"on\":true,\"seg\":[{\"col\":[[0,0,255],[139,0,0],[255,255,255]],\"fx\":54,\"sx\":255,\"ix\":255,\"pal\":0}]}}");
       break;
     case 307:   // spanish flag
       setupPaletteSpain();
+      wled_send_json("{\"on\":true,\"seg\":[{\"col\":[[255,255,0],[255,0,0],[0,0,0]],\"fx\":28,\"sx\":128,\"ix\":128,\"pal\":0}]}}");
       break;
     case 308:   // american flag
       setupPaletteUSA();
+      wled_send_json("{\"on\":true,\"seg\":[{\"col\":[[0,0,255],[139,0,0],[255,255,255]],\"fx\":54,\"sx\":255,\"ix\":128,\"pal\":0}]}}");
       break;
       
     // page 4
