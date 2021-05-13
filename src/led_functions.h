@@ -235,21 +235,27 @@ void setScene (uint16_t scene) {
     // page 4
     case 401:   // BVB
       setupPaletteBVB();
+      wled_send_json("{\"on\":true,\"seg\":[{\"col\":[[0,0,0],[255,255,0],[0,0,0]],\"fx\":28,\"sx\":128,\"ix\":128,\"pal\":0}]}}");
       break;
     case 402:   // FC Bayern Munich
       setupPaletteBayern();
+      wled_send_json("{\"on\":true,\"seg\":[{\"col\":[[0,0,255],[139,0,0],[255,255,255]],\"fx\":54,\"sx\":255,\"ix\":192,\"pal\":0}]}}");
       break;
     case 403:   // Werder Bremen
       setupPaletteWerder();
+      wled_send_json("{\"on\":true,\"seg\":[{\"col\":[[255,255,255],[0,255,0],[0,0,0]],\"fx\":28,\"sx\":128,\"ix\":128,\"pal\":0}]}}");
       break;
     case 404:   // 1860 Munich
       setupPalette1860();
+      wled_send_json("{\"on\":true,\"seg\":[{\"col\":[[255,255,255],[30,144,255],[0,0,0]],\"fx\":28,\"sx\":128,\"ix\":128,\"pal\":0}]}}");
       break;
     case 405:   // ESV München
       setupPaletteESV();
+      wled_send_json("{\"on\":true,\"seg\":[{\"col\":[[255,255,255],[0,118,182],[130,175,32]],\"fx\":54,\"sx\":255,\"ix\":192,\"pal\":0}]}}");
       break;
     case 406:   // HSV München
       setupPaletteHSV();
+      wled_send_json("{\"on\":true,\"seg\":[{\"col\":[[255,255,255],[0,0,255],[0,0,0]],\"fx\":28,\"sx\":128,\"ix\":128,\"pal\":0}]}}");
       break;
       
     // page 5
