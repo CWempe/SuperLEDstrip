@@ -150,7 +150,7 @@ void setScene (uint16_t scene) {
       break;
     case 104:   // bpm
       gCurrentPatternNumber = 4;
-      wled_send_json("{\"on\":true,\"seg\":{\"fx\":68,\"sx\":128,\"pal\":0}}");
+      wled_send_json("{\"on\":true,\"seg\":{\"fx\":68,\"sx\":64,\"pal\":0}}");
       break;
     case 105:   // xmas
       gCurrentPatternNumber = 8;
