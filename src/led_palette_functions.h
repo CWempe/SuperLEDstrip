@@ -1,6 +1,8 @@
 void setupStaticPalette() {
   gCurrentPatternNumber = 15;
   currentBlending = NOBLEND;
+  wled_fx = "83";
+  wled_set_fx_pal();
 }
 
 

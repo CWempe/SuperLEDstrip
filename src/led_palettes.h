@@ -167,42 +167,51 @@ void setPalette (uint8_t palette) {
     case 1:
       targetPalette = CloudColors_p;
       currentBlending = LINEARBLEND;
+      wled_pal = "7";
       break;
     case 2:
       targetPalette = LavaColors_p;
       currentBlending = LINEARBLEND;
+      wled_pal = "8";
       break;
     case 3:
       targetPalette = OceanColors_p;
       currentBlending = LINEARBLEND;
+      wled_pal = "9";
       break;
     case 4:
       targetPalette = ForestColors_p;
       currentBlending = LINEARBLEND;
+      wled_pal = "10";
       break;
     case 5:
       targetPalette = RainbowColors_p;
       paletteRotationable = true;
       currentBlending = LINEARBLEND;
+      wled_pal = "11";
       break;
     case 6:
       targetPalette = RainbowStripeColors_p;
       paletteRotationable = false;
       currentBlending = NOBLEND;
+      wled_pal = "12";
       break;
     case 7:
       targetPalette = PartyColors_p;
       paletteRotationable = false;
       currentBlending = LINEARBLEND;
+      wled_pal = "6";
       break;
     case 8:
       targetPalette = HeatColors_p;
       currentBlending = LINEARBLEND;
+      wled_pal = "54";
       break;
     case 9:
       targetPalette = Rainbow_gp;
       paletteRotationable = true;
       currentBlending = LINEARBLEND;
+      wled_pal = "11";
       break;
 
     // custom palettes
@@ -210,16 +219,21 @@ void setPalette (uint8_t palette) {
       targetPalette = thk_gp;
       paletteRotationable = false;
       currentBlending = LINEARBLEND;
+      wled_pal = "4";
+      wled_pal_custom = "[200,30,15],[234,90,0],[180,48,146]";
       break;
     case 101:
       targetPalette = purplefly_gp;
       paletteRotationable = false;
       currentBlending = LINEARBLEND;
+      wled_pal = "3";
       break;
     case 102:
       targetPalette = lala_p;
       paletteRotationable = false;
       currentBlending = LINEARBLEND;
+      wled_pal = "3";
+      wled_pal_custom = "[255,246,0],[195,0,255],[0,0,0]";
       break;
     case 103:
       targetPalette = midnight_light_gp;
@@ -302,6 +316,8 @@ void setPalette (uint8_t palette) {
       currentBlending = NOBLEND;
       break;
   }
+
+  wled_set_fx_pal();
 
   if ( autoChangePalette == false ) {
     // publish new palette number via mqtt

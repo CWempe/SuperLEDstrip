@@ -86,10 +86,12 @@ Embedis embedis(Serial);
  * #############################
  */
 
-// HTTPClient http;
-// const char httpURL[] = "http://192.168.1.83/json";
-// http.begin("http://192.168.1.83/json");
-// http.addHeader("Content-Type", "application/json");
+String wled_pal = "0";
+String wled_fx = "0";
+String wled_ix = "128";
+String wled_sx = "128";
+String wled_pal_custom = "";
+
 #include "wled_control.h"
 
 
