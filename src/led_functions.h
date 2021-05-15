@@ -152,7 +152,9 @@ void setScene (uint16_t scene) {
     // page 1
     case 101:   // rainbow
       gCurrentPatternNumber = 3;
-      wled_send_json("{\"on\":true,\"seg\":{\"fx\":9,\"sx\":128,\"pal\":0}}");
+      wled_fx = "65";
+      wled_pal = "11";
+      wled_set_fx_pal();
       break;
     case 102:   // stars
       gCurrentPatternNumber = 1;
