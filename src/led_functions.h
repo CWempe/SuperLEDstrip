@@ -180,9 +180,10 @@ void setScene (uint16_t scene) {
       gCurrentPatternNumber = 11;
       wled_send_json("{\"on\":true,\"seg\":[{\"fx\":115,\"sx\":128,\"pal\":9}]}}");
       break;
-    case 108:   // color rotation
+    case 108:   // color rotation rainbow
       gCurrentPatternNumber = 13;
       wled_fx = "8";
+      wled_pal = "11";
       wled_set_fx_pal();
       break;
     case 109:   // Halloween
@@ -199,7 +200,12 @@ void setScene (uint16_t scene) {
       wled_fx = "65";
       wled_set_fx_pal();
       break;
-    case 112:   // twinkles
+    case 112:   // color rotation
+      gCurrentPatternNumber = 13;
+      wled_fx = "8";
+      wled_set_fx_pal();
+      break;
+    case 113:   // twinkles
       // gCurrentPatternNumber = 7;
       wled_fx = "74";
       wled_set_fx_pal();
