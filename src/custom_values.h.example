@@ -68,6 +68,11 @@
 bool lightON = false;
 
 /*
+ * WLED parameters
+ */
+#define WLED_MAX_BRIGHTNESS  56  // set maximum poosible WLED brightness according to max current
+
+/*
  * Homie parameters
  */
 #define HOMIE_STANDALONE  false   // here you can enable Homies standalone mode

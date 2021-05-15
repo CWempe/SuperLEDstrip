@@ -11,6 +11,20 @@ void setBrightness(uint8_t newBrightness)
     // Turn ofs Relais if brightnes is set to 0; else torn on
     updateOutput01on((newBrightness == 0 ? "false" : "true"));
   #endif
+
+  // wled
+  
+  char cBrightness [4];
+  snprintf(cBrightness, 4, "%u", map(currentBrightness, 0, 100, 0, WLED_MAX_BRIGHTNESS));
+  wled_bri = cBrightness;
+  wled_send_json("{\"on\":true,\"bri\":" + wled_bri + "}");
+
+  if ( DEBUGLEVEL >= 1 ) {
+    Homie.getLogger() << "[DEBUG1] cBrightness: " << cBrightness << endl;
+    Homie.getLogger() << "[DEBUG1] wled_bri:    " << wled_bri << endl;
+  }
+
+
   // store current scene number to eeprom
   Embedis::set("brightnessValue", String(currentBrightness));
 }
