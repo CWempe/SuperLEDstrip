@@ -165,6 +165,14 @@ After this you copy the compiled HMI file (will be uploaded to the release page)
 
 ## Customizing
 
+### WLED
+
+Since version `3.1.0` SuperLEDstrip supports controlling a [WLED](https://github.com/Aircoookie/WLED) device.
+
+* Configure `WLED_JSON_URL` in `custom_values.h` befor compiling
+* Tested with wled version `0.12.0`.
+* Not all scenes look identical to SuperLEDstrip.
+
 ### Buttons
 
 You can configure the purpose of your buttons in `custom_values.h`.
