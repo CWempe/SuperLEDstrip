@@ -258,8 +258,6 @@ Now you can see the result by clicking `Debug` or hit `Compile` to create a bina
 
 ## OTA-Update
 
-*Seems to be [broken](https://github.com/marvinroger/homie-esp8266/issues/530) at the moment!*
-
 With the integration of homie-esp8266 there comes the ability to flash the firmware via wifi.
 
 * make sure the device is connected to your mqtt broker
