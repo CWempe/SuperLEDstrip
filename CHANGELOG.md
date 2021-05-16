@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.1.0
+
+* Controll a [WLED](https://github.com/Aircoookie/WLED) device (see README)
+
 ## 3.0.0
 
 * Switching to Homie 3.0.1 with support of Homie convention v3.0.1
