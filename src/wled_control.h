@@ -3,7 +3,7 @@ void wled_send_json(String json)
     HTTPClient http; 
     
     // Ziel definieren
-    http.begin("http://192.168.1.83/json");
+    http.begin(WLED_JSON_URL);
     http.addHeader("Content-Type", "application/json");
 
     // Daten abschicken
