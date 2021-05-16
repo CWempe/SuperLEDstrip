@@ -90,6 +90,7 @@ String wled_pal = "0";
 String wled_fx = "0";
 String wled_ix = "128";
 String wled_sx = "128";
+String wled_bri = "128";
 String wled_pal_custom = "";
 
 #include "wled_control.h"
