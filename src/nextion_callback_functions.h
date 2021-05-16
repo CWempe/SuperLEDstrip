@@ -146,7 +146,7 @@ void p07t05PopCallback(void *ptr) { updateTab(); }
 void p07t06PopCallback(void *ptr) { updateTab(); }
 void p07t07PopCallback(void *ptr) { updateTab(); }
 void p07c01PopCallback(void *ptr) { setScene(110); }
-void p07c02PopCallback(void *ptr) { setScene(108); }
+void p07c02PopCallback(void *ptr) { setScene(112); }
 void p07c03PopCallback(void *ptr) { setScene(111); }
 void p07c04PopCallback(void *ptr) { }
 void p07c05PopCallback(void *ptr) { setPalette(5); }
