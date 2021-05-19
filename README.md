@@ -172,6 +172,7 @@ Since version `3.1.0` SuperLEDstrip supports controlling a [WLED](https://github
 * Configure `WLED_JSON_URL` in `custom_values.h` befor compiling
 * Tested with wled version `0.12.0`.
 * Not all scenes look identical to SuperLEDstrip.
+* Arcade scenes are not supported.
 
 ### Buttons
 
