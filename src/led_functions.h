@@ -12,18 +12,18 @@ void setBrightness(uint8_t newBrightness)
     updateOutput01on((newBrightness == 0 ? "false" : "true"));
   #endif
 
-  // wled
-  
-  char cBrightness [4];
-  snprintf(cBrightness, 4, "%u", map(currentBrightness, 0, 100, 0, WLED_MAX_BRIGHTNESS));
-  wled_bri = cBrightness;
-  wled_send_json("{\"on\":true,\"bri\":" + wled_bri + "}");
+  #ifdef WLED_ENABLE
+    // WLED  
+    char cBrightness [4];
+    snprintf(cBrightness, 4, "%u", map(currentBrightness, 0, 100, 0, WLED_MAX_BRIGHTNESS));
+    wled_bri = cBrightness;
+    wled_send_json("{\"on\":true,\"bri\":" + wled_bri + "}");
 
-  if ( DEBUGLEVEL >= 1 ) {
-    Homie.getLogger() << "[DEBUG1] cBrightness: " << cBrightness << endl;
-    Homie.getLogger() << "[DEBUG1] wled_bri:    " << wled_bri << endl;
-  }
-
+    if ( DEBUGLEVEL >= 1 ) {
+      Homie.getLogger() << "[DEBUG1] cBrightness: " << cBrightness << endl;
+      Homie.getLogger() << "[DEBUG1] wled_bri:    " << wled_bri << endl;
+    }
+  #endif
 
   // store current scene number to eeprom
   Embedis::set("brightnessValue", String(currentBrightness));
@@ -81,7 +81,9 @@ void toggleBrightness()
   }
 
   // Turn wled off everytime the button is pressed
-  wled_send_json("{\"on\":false}");
+  #ifdef WLED_ENABLE
+    wled_send_json("{\"on\":false}");
+  #endif
 }
 
 
@@ -152,142 +154,204 @@ void setScene (uint16_t scene) {
     // page 1
     case 101:   // rainbow
       gCurrentPatternNumber = 3;
-      wled_fx = "65";
-      wled_pal = "11";
-      wled_set_fx_pal();
+      #ifdef WLED_ENABLE
+        wled_fx = "65";
+        wled_pal = "11";
+        wled_set_fx_pal();
+      #endif
       break;
     case 102:   // stars
       gCurrentPatternNumber = 1;
-      wled_send_json("{\"on\":true,\"seg\":[{\"col\":[[255,255,255],[0,0,0],[0,0,0]],\"fx\":20,\"sx\":1,\"pal\":0}]}}");
+      #ifdef WLED_ENABLE
+        wled_send_json("{\"on\":true,\"seg\":[{\"col\":[[255,255,255],[0,0,0],[0,0,0]],\"fx\":20,\"sx\":1,\"pal\":0}]}}");
+      #endif
       break;
     case 103:   // confetti
       gCurrentPatternNumber = 2;
-      wled_send_json("{\"on\":true,\"seg\":{\"fx\":74,\"sx\":128,\"pal\":0}}");
+      #ifdef WLED_ENABLE
+        wled_send_json("{\"on\":true,\"seg\":{\"fx\":74,\"sx\":128,\"pal\":0}}");
+      #endif
       break;
     case 104:   // bpm
       gCurrentPatternNumber = 4;
-      wled_send_json("{\"on\":true,\"seg\":{\"fx\":68,\"sx\":64,\"pal\":0}}");
+      #ifdef WLED_ENABLE
+        wled_send_json("{\"on\":true,\"seg\":{\"fx\":68,\"sx\":64,\"pal\":0}}");
+      #endif
       break;
     case 105:   // xmas
       gCurrentPatternNumber = 8;
-      wled_send_json("{\"on\":true,\"seg\":[{\"col\":[[255,0,0],[0,255,0],[0,0,0]],\"fx\":20,\"sx\":10,\"pal\":0}]}}");
+      #ifdef WLED_ENABLE
+        wled_send_json("{\"on\":true,\"seg\":[{\"col\":[[255,0,0],[0,255,0],[0,0,0]],\"fx\":20,\"sx\":10,\"pal\":0}]}}");
+      #endif
       break;
     case 106:   // fire
       gCurrentPatternNumber = 9;
-      wled_send_json("{\"on\":true,\"seg\":{\"fx\":66,\"sx\":128,\"pal\":0}}");
+      #ifdef WLED_ENABLE
+        wled_send_json("{\"on\":true,\"seg\":{\"fx\":66,\"sx\":128,\"pal\":0}}");
+      #endif
       break;
     case 107:   // ice
       gCurrentPatternNumber = 11;
-      wled_send_json("{\"on\":true,\"seg\":[{\"fx\":115,\"sx\":128,\"pal\":9}]}}");
+      #ifdef WLED_ENABLE
+        wled_send_json("{\"on\":true,\"seg\":[{\"fx\":115,\"sx\":128,\"pal\":9}]}}");
+      #endif
       break;
     case 108:   // color rotation rainbow
       gCurrentPatternNumber = 13;
-      wled_fx = "8";
-      wled_pal = "11";
-      wled_set_fx_pal();
+      #ifdef WLED_ENABLE
+        wled_fx = "8";
+        wled_pal = "11";
+        wled_set_fx_pal();
+      #endif
       break;
     case 109:   // Halloween
       setupHalloween();
-      wled_send_json("{\"on\":true,\"seg\":{\"fx\":53,\"sx\":128,\"pal\":0}}");
+      #ifdef WLED_ENABLE
+        wled_send_json("{\"on\":true,\"seg\":{\"fx\":53,\"sx\":128,\"pal\":0}}");
+      #endif
       break;
     case 110:   // static pattern
       setupStaticPalette();
-      wled_fx = "83";
-      wled_set_fx_pal();
+      #ifdef WLED_ENABLE
+        wled_fx = "83";
+        wled_set_fx_pal();
+      #endif
       break;
     case 111:   // running palette
       gCurrentPatternNumber = 7;
-      wled_fx = "65";
-      wled_set_fx_pal();
+      #ifdef WLED_ENABLE
+        wled_fx = "65";
+        wled_set_fx_pal();
+      #endif
       break;
     case 112:   // color rotation
       gCurrentPatternNumber = 13;
-      wled_fx = "8";
-      wled_set_fx_pal();
+      #ifdef WLED_ENABLE
+        wled_fx = "8";
+        wled_set_fx_pal();
+      #endif
       break;
     case 113:   // twinkles
       // gCurrentPatternNumber = 7;
-      wled_fx = "74";
-      wled_set_fx_pal();
+      #ifdef WLED_ENABLE
+        wled_fx = "74";
+        wled_set_fx_pal();
+      #endif
       break;
 
       
     // page 2
     case 201:   // german police
       setupFlashingLights(CRGB::Blue, CRGB::Blue);
-      wled_send_json("{\"on\":true,\"seg\":[{\"col\":[[0,0,255],[0,0,255],[0,0,0]],\"fx\":50,\"sx\":128,\"pal\":0}]}}");
+      #ifdef WLED_ENABLE
+        wled_send_json("{\"on\":true,\"seg\":[{\"col\":[[0,0,255],[0,0,255],[0,0,0]],\"fx\":50,\"sx\":128,\"pal\":0}]}}");
+      #endif
       break;
     case 202:   // american police
       setupFlashingLights(CRGB::Blue, CRGB::Red);
-      wled_send_json("{\"on\":true,\"seg\":[{\"col\":[[0,0,0],[0,0,0],[0,0,0]],\"fx\":48,\"sx\":128,\"pal\":0}]}}");
+      #ifdef WLED_ENABLE
+        wled_send_json("{\"on\":true,\"seg\":[{\"col\":[[0,0,0],[0,0,0],[0,0,0]],\"fx\":48,\"sx\":128,\"pal\":0}]}}");
+      #endif
       break;
     case 203:   // orange flashing lights
       setupFlashingLights(CRGB::OrangeRed, CRGB::OrangeRed);
-      wled_send_json("{\"on\":true,\"seg\":[{\"col\":[[255,165,0],[255,165,0],[0,0,0]],\"fx\":50,\"sx\":128,\"pal\":0}]}}");
+      #ifdef WLED_ENABLE
+        wled_send_json("{\"on\":true,\"seg\":[{\"col\":[[255,165,0],[255,165,0],[0,0,0]],\"fx\":50,\"sx\":128,\"pal\":0}]}}");
+      #endif
       break;
     case 204:   // kitt
       gCurrentPatternNumber = 5;
-      wled_send_json("{\"on\":true,\"seg\":[{\"col\":[[255,0,0],[0,0,0],[0,0,0]],\"fx\":40,\"sx\":128,\"pal\":0}]}}");
+      #ifdef WLED_ENABLE
+        wled_send_json("{\"on\":true,\"seg\":[{\"col\":[[255,0,0],[0,0,0],[0,0,0]],\"fx\":40,\"sx\":128,\"pal\":0}]}}");
+      #endif
       break;
       
     // page 3
     case 301:   // german/beglium flag
       setupPaletteGermany();
-      wled_send_json("{\"on\":true,\"seg\":[{\"col\":[[0,0,0],[255,0,0],[255,255,0]],\"fx\":54,\"sx\":255,\"ix\":255,\"pal\":0}]}}");
+      #ifdef WLED_ENABLE
+        wled_send_json("{\"on\":true,\"seg\":[{\"col\":[[0,0,0],[255,0,0],[255,255,0]],\"fx\":54,\"sx\":255,\"ix\":255,\"pal\":0}]}}");
+      #endif
       break;
     case 302:   // italian flag
       setupPaletteItaly();
-      wled_send_json("{\"on\":true,\"seg\":[{\"col\":[[0,100,0],[139,0,0],[255,255,255]],\"fx\":54,\"sx\":255,\"ix\":255,\"pal\":0}]}}");
+      #ifdef WLED_ENABLE
+        wled_send_json("{\"on\":true,\"seg\":[{\"col\":[[0,100,0],[139,0,0],[255,255,255]],\"fx\":54,\"sx\":255,\"ix\":255,\"pal\":0}]}}");
+      #endif
       break;
     case 303:   // brazilian flag
       setupPaletteBrazil();
-      wled_send_json("{\"on\":true,\"seg\":[{\"col\":[[0,255,0],[0,0,255],[255,255,0]],\"fx\":54,\"sx\":255,\"ix\":255,\"pal\":0}]}}");
+      #ifdef WLED_ENABLE
+        wled_send_json("{\"on\":true,\"seg\":[{\"col\":[[0,255,0],[0,0,255],[255,255,0]],\"fx\":54,\"sx\":255,\"ix\":255,\"pal\":0}]}}");
+      #endif
       break;
     case 304:   // swedish flag
       setupPaletteSweden();
-      wled_send_json("{\"on\":true,\"seg\":[{\"col\":[[255,255,0],[0,0,255],[0,0,0]],\"fx\":28,\"sx\":128,\"ix\":128,\"pal\":0}]}}");
+      #ifdef WLED_ENABLE
+        wled_send_json("{\"on\":true,\"seg\":[{\"col\":[[255,255,0],[0,0,255],[0,0,0]],\"fx\":28,\"sx\":128,\"ix\":128,\"pal\":0}]}}");
+      #endif
       break;
     case 305:   // english/danish flag
       setupPaletteEngland();
-      wled_send_json("{\"on\":true,\"seg\":[{\"col\":[[255,0,0],[255,255,255],[0,0,0]],\"fx\":28,\"sx\":128,\"ix\":255,\"pal\":0}]}}");
+      #ifdef WLED_ENABLE
+        wled_send_json("{\"on\":true,\"seg\":[{\"col\":[[255,0,0],[255,255,255],[0,0,0]],\"fx\":28,\"sx\":128,\"ix\":255,\"pal\":0}]}}");
+      #endif
       break;
     case 306:   // french flag
       setupPaletteFrance();
-      wled_send_json("{\"on\":true,\"seg\":[{\"col\":[[0,0,255],[139,0,0],[255,255,255]],\"fx\":54,\"sx\":255,\"ix\":255,\"pal\":0}]}}");
+      #ifdef WLED_ENABLE
+        wled_send_json("{\"on\":true,\"seg\":[{\"col\":[[0,0,255],[139,0,0],[255,255,255]],\"fx\":54,\"sx\":255,\"ix\":255,\"pal\":0}]}}");
+      #endif
       break;
     case 307:   // spanish flag
       setupPaletteSpain();
-      wled_send_json("{\"on\":true,\"seg\":[{\"col\":[[255,255,0],[255,0,0],[0,0,0]],\"fx\":28,\"sx\":128,\"ix\":128,\"pal\":0}]}}");
+      #ifdef WLED_ENABLE
+        wled_send_json("{\"on\":true,\"seg\":[{\"col\":[[255,255,0],[255,0,0],[0,0,0]],\"fx\":28,\"sx\":128,\"ix\":128,\"pal\":0}]}}");
+      #endif
       break;
     case 308:   // american flag
       setupPaletteUSA();
-      wled_send_json("{\"on\":true,\"seg\":[{\"col\":[[0,0,255],[139,0,0],[255,255,255]],\"fx\":54,\"sx\":255,\"ix\":128,\"pal\":0}]}}");
+      #ifdef WLED_ENABLE
+        wled_send_json("{\"on\":true,\"seg\":[{\"col\":[[0,0,255],[139,0,0],[255,255,255]],\"fx\":54,\"sx\":255,\"ix\":128,\"pal\":0}]}}");
+      #endif
       break;
       
     // page 4
     case 401:   // BVB
       setupPaletteBVB();
-      wled_send_json("{\"on\":true,\"seg\":[{\"col\":[[0,0,0],[255,255,0],[0,0,0]],\"fx\":28,\"sx\":128,\"ix\":128,\"pal\":0}]}}");
+      #ifdef WLED_ENABLE
+        wled_send_json("{\"on\":true,\"seg\":[{\"col\":[[0,0,0],[255,255,0],[0,0,0]],\"fx\":28,\"sx\":128,\"ix\":128,\"pal\":0}]}}");
+      #endif
       break;
     case 402:   // FC Bayern Munich
       setupPaletteBayern();
-      wled_send_json("{\"on\":true,\"seg\":[{\"col\":[[0,0,255],[139,0,0],[255,255,255]],\"fx\":54,\"sx\":255,\"ix\":192,\"pal\":0}]}}");
+      #ifdef WLED_ENABLE
+        wled_send_json("{\"on\":true,\"seg\":[{\"col\":[[0,0,255],[139,0,0],[255,255,255]],\"fx\":54,\"sx\":255,\"ix\":192,\"pal\":0}]}}");
+      #endif
       break;
     case 403:   // Werder Bremen
       setupPaletteWerder();
-      wled_send_json("{\"on\":true,\"seg\":[{\"col\":[[255,255,255],[0,255,0],[0,0,0]],\"fx\":28,\"sx\":128,\"ix\":128,\"pal\":0}]}}");
+      #ifdef WLED_ENABLE
+        wled_send_json("{\"on\":true,\"seg\":[{\"col\":[[255,255,255],[0,255,0],[0,0,0]],\"fx\":28,\"sx\":128,\"ix\":128,\"pal\":0}]}}");
+      #endif
       break;
     case 404:   // 1860 Munich
       setupPalette1860();
-      wled_send_json("{\"on\":true,\"seg\":[{\"col\":[[255,255,255],[30,144,255],[0,0,0]],\"fx\":28,\"sx\":128,\"ix\":128,\"pal\":0}]}}");
+      #ifdef WLED_ENABLE
+        wled_send_json("{\"on\":true,\"seg\":[{\"col\":[[255,255,255],[30,144,255],[0,0,0]],\"fx\":28,\"sx\":128,\"ix\":128,\"pal\":0}]}}");
+      #endif
       break;
     case 405:   // ESV München
       setupPaletteESV();
-      wled_send_json("{\"on\":true,\"seg\":[{\"col\":[[255,255,255],[0,118,182],[130,175,32]],\"fx\":54,\"sx\":255,\"ix\":192,\"pal\":0}]}}");
+      #ifdef WLED_ENABLE
+        wled_send_json("{\"on\":true,\"seg\":[{\"col\":[[255,255,255],[0,118,182],[130,175,32]],\"fx\":54,\"sx\":255,\"ix\":192,\"pal\":0}]}}");
+      #endif
       break;
     case 406:   // HSV München
       setupPaletteHSV();
-      wled_send_json("{\"on\":true,\"seg\":[{\"col\":[[255,255,255],[0,0,255],[0,0,0]],\"fx\":28,\"sx\":128,\"ix\":128,\"pal\":0}]}}");
+      #ifdef WLED_ENABLE
+        wled_send_json("{\"on\":true,\"seg\":[{\"col\":[[255,255,255],[0,0,255],[0,0,0]],\"fx\":28,\"sx\":128,\"ix\":128,\"pal\":0}]}}");
+      #endif
       break;
       
     // page 5

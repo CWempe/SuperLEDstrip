@@ -23,30 +23,32 @@ void setupOneColor(CRGB color)
     gCurrentPatternNumber = 0;
   
     // WLED
-    char baseColor1red [4];
-    char baseColor1green [4];
-    char baseColor1blue [4];
-    String sBaseColor1red;
-    String sBaseColor1green;
-    String sBaseColor1blue;
+    #ifdef WLED_ENABLE
+      char baseColor1red [4];
+      char baseColor1green [4];
+      char baseColor1blue [4];
+      String sBaseColor1red;
+      String sBaseColor1green;
+      String sBaseColor1blue;
 
-    // Convert integer to char
-    snprintf(baseColor1red, 4, "%u", color.red);
-    snprintf(baseColor1green, 4, "%u", color.green);
-    snprintf(baseColor1blue, 4, "%u", color.blue);
-    
-    // Convert char to String
-    sBaseColor1red += baseColor1red;
-    sBaseColor1green += baseColor1green;
-    sBaseColor1blue += baseColor1blue;
+      // Convert integer to char
+      snprintf(baseColor1red, 4, "%u", color.red);
+      snprintf(baseColor1green, 4, "%u", color.green);
+      snprintf(baseColor1blue, 4, "%u", color.blue);
+      
+      // Convert char to String
+      sBaseColor1red += baseColor1red;
+      sBaseColor1green += baseColor1green;
+      sBaseColor1blue += baseColor1blue;
 
-    wled_send_json("{\"on\":true,\"seg\":[{\"col\":[[" + sBaseColor1red + "," + sBaseColor1green + "," + sBaseColor1blue + "],[0,0,0],[0,0,0]],\"fx\":83,\"pal\":0}]}}");
+      wled_send_json("{\"on\":true,\"seg\":[{\"col\":[[" + sBaseColor1red + "," + sBaseColor1green + "," + sBaseColor1blue + "],[0,0,0],[0,0,0]],\"fx\":83,\"pal\":0}]}}");
 
-    if ( DEBUGLEVEL >= 1 ) {
-      Homie.getLogger() << "[DEBUG1] baseColor1 red:   " << sBaseColor1red << endl;
-      Homie.getLogger() << "[DEBUG1] baseColor1 green: " << sBaseColor1green << endl;
-      Homie.getLogger() << "[DEBUG1] baseColor1 blue:  " << sBaseColor1blue << endl;
-    }
+      if ( DEBUGLEVEL >= 1 ) {
+        Homie.getLogger() << "[DEBUG1] baseColor1 red:   " << sBaseColor1red << endl;
+        Homie.getLogger() << "[DEBUG1] baseColor1 green: " << sBaseColor1green << endl;
+        Homie.getLogger() << "[DEBUG1] baseColor1 blue:  " << sBaseColor1blue << endl;
+      }
+    #endif
   }
 }
 

@@ -73,8 +73,10 @@ void updateOutput04on(String value, bool write);
 void updateOutput04invert(String value, bool write);
 void readEepromScene(void);
 void calculateNextIndex(uint8_t *index, bool *momentum);
-void wled_power(void);
-void wled_send_json(String json);
+#ifdef WLED_ENABLE
+  void wled_power(void);
+  void wled_send_json(String json);
+#endif
 
 
 Embedis embedis(Serial);
@@ -86,15 +88,16 @@ Embedis embedis(Serial);
  * #############################
  */
 
-String wled_pal = "0";
-String wled_fx = "0";
-String wled_ix = "128";
-String wled_sx = "128";
-String wled_bri = "128";
-String wled_pal_custom = "";
+#ifdef WLED_ENABLE
+  String wled_pal = "0";
+  String wled_fx = "0";
+  String wled_ix = "128";
+  String wled_sx = "128";
+  String wled_bri = "128";
+  String wled_pal_custom = "";
 
-#include "wled_control.h"
-
+  #include "wled_control.h"
+#endif
 
 /*
  *  FastLED
